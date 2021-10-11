@@ -15,12 +15,47 @@ namespace RustedWarfareClient
         public static void Main()
         {
             Socket socket = new(SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect("188.235.146.172", 5123);
-
+            socket.Connect("192.168.1.200", 5123);
+            //socket.Connect("localhost", 5123);
             SendPreregisterConnection(socket, new PreregisterPacketTemplate("1dNDN"));
-            var registered = ReceiveRegisterConnection(socket);
-
+            RegisterPacketTemplate? registered = ReceiveRegisterConnection(socket);
+            SendPlayerInfo(socket, new SendPlayerTemplate("1dNDN", registered.ServerKey, registered.ServerUuid));
+            byte[] bytes = new byte[4000];
+            socket.Receive(bytes);
+            
+            Console.WriteLine(registered.ServerKey);
             socket.Close();
+        }
+
+        private static void SendPlayerInfo(Socket socket, SendPlayerTemplate template)
+        {
+            List<byte> bytes = new();
+            int countStringHeaderBytes = 0;
+            byte[] randomBytes = new byte[64];
+            new Random().NextBytes(randomBytes);
+            
+            WriteStringToPacket(ref bytes, template.PackageName, ref countStringHeaderBytes);
+            WriteIntToPacket(ref bytes, template.ProtocolVersion);
+            WriteIntToPacket(ref bytes, template.GameVersion);
+            WriteIntToPacket(ref bytes, template.GameVersion);
+            WriteStringToPacket(ref bytes, template.Nickname, ref countStringHeaderBytes);
+
+            if (template.Password == "")
+            {
+                bytes.Add(0);
+            } else
+            {
+                bytes.Add(1);
+                WriteStringToPacket(ref bytes, ComputeSha256Hash(template.Password).ToUpper(), ref countStringHeaderBytes);
+            }
+
+            WriteStringToPacket(ref bytes, template.AnotherPackageName, ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, ComputeUuidForPacket(template.ClientUuid, template.ServerUuid), ref countStringHeaderBytes);
+            WriteIntToPacket(ref bytes, template.AnotherMagicValue);
+            WriteStringToPacket(ref bytes, template.Token, ref countStringHeaderBytes);
+            Console.WriteLine(template.Token);
+            WriteStringToPacket(ref bytes, template.Token, ref countStringHeaderBytes);
+            socket.Send(CreatePacket(PacketType.PACKET_PLAYER_INFO, bytes, countStringHeaderBytes));
         }
 
         private static RegisterPacketTemplate ReceiveRegisterConnection(Socket socket)
@@ -43,8 +78,8 @@ namespace RustedWarfareClient
                 GameVersion = ReadIntFromPacket(bytes, ref offset),
                 AnotherGameVersion = ReadIntFromPacket(bytes, ref offset),
                 PkgName = ReadStringFromPacket(bytes, ref offset),
-                ConnectUuid = ReadStringFromPacket(bytes, ref offset),
-                Key = ReadIntFromPacket(bytes, ref offset)
+                ServerUuid = ReadStringFromPacket(bytes, ref offset),
+                ServerKey = ReadIntFromPacket(bytes, ref offset)
             };
         }
 

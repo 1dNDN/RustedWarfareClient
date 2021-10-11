@@ -9,7 +9,7 @@ namespace RustedWarfareClient.Models
         public int GameVersion;
         public int AnotherGameVersion;
         public string PkgName;
-        public string ConnectUuid;
-        public int Key;
+        public string ServerUuid;
+        public int ServerKey;
     }
 }

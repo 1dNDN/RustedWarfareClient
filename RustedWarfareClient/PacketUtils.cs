@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace RustedWarfareClient
@@ -16,10 +18,7 @@ namespace RustedWarfareClient
         public static byte[] ReadBytesFromPacket(IReadOnlyList<byte> packet, int count, ref int offset)
         {
             byte[] result = new byte[count];
-            for (int i = 0; i < count; i++)
-            {
-                result[i] = packet[i + offset];
-            }
+            for (int i = 0; i < count; i++) result[i] = packet[i + offset];
 
             offset += count;
             return result;
@@ -47,6 +46,14 @@ namespace RustedWarfareClient
 
         public static void WriteStringToPacket(ref List<byte> bytes, string str, ref int countStringHeaderBytes)
         {
+            if (str.Length == 0)
+            {
+                bytes.Add(0);
+                countStringHeaderBytes++;
+                return;
+                //TODO: Проверить работу с паролем и без него
+            }
+
             countStringHeaderBytes += 2;
             bytes.AddRange(BitConverter.GetBytes((short)str.Length).Reverse());
             bytes.AddRange(Encoding.ASCII.GetBytes(str));
@@ -55,6 +62,64 @@ namespace RustedWarfareClient
         public static void WriteIntToPacket(ref List<byte> bytes, int number)
         {
             bytes.AddRange(BitConverter.GetBytes(number).Reverse());
+        }
+
+        public static string ComputeSha256Hash(string rawData)
+        {
+            // Create a SHA256   
+            using SHA256 sha256Hash = SHA256.Create();
+            // ComputeHash - returns byte array  
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+            // Convert byte array to a string   
+            StringBuilder builder = new();
+            for (int i = 0; i < bytes.Length; i++) builder.Append(bytes[i].ToString("X2"));
+            return builder.ToString();
+        }
+
+        public static string ComputeSha256Hash(byte[] rawData)
+        {
+            // Create a SHA256   
+            using SHA256 sha256Hash = SHA256.Create();
+            // ComputeHash - returns byte array  
+            byte[] bytes = sha256Hash.ComputeHash(rawData);
+
+            // Convert byte array to a string   
+            StringBuilder builder = new();
+            for (int i = 0; i < bytes.Length; i++) builder.Append(bytes[i].ToString("X2"));
+            return builder.ToString();
+        }
+
+        public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
+        {
+            Guid clientGuid = Guid.Parse(clientUuid);
+            Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
+            Guid serverGuid = Guid.Parse(serverUuid);
+            Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
+            BigInteger clientNumGuid = new(clientGuid.ToByteArray());
+            Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
+            BigInteger serverNumGuid = new(serverGuid.ToByteArray());
+            Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
+            BigInteger sumGuid = clientNumGuid + serverNumGuid;
+            Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
+            string sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
+            Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
+            return sumGuidHash;
+        }
+
+        public static string ComputeKeyForPacket(int serverKey)
+        {
+            return $"c:{serverKey}" +
+                   $"m:{(serverKey * 87 + 24)}" +
+                   $"0:{44000 * serverKey}" +
+                   $"1:{serverKey}" +
+                   $"2:{13000 * serverKey}" +
+                   $"3:{(28000 + serverKey)}" +
+                   $"4:{75000 * serverKey}" +
+                   $"5:{(160000 + serverKey)}" +
+                   $"6:{850000 * serverKey}" +
+                   $"t1:{44000 * serverKey}" +
+                   $"d:{5 * serverKey}";
         }
 
         public enum PacketType
