@@ -29,6 +29,12 @@ namespace RustedWarfareClient
             byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
             return BitConverter.ToInt16(bytes);
         }
+        
+        public static short ReadLongFromPacket(IReadOnlyList<byte> packet, ref int offset)
+        {
+            byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
+            return BitConverter.ToInt16(bytes);
+        }
 
         public static string ReadStringFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {
@@ -37,24 +43,36 @@ namespace RustedWarfareClient
             return Encoding.ASCII.GetString(stringbytes);
         }
 
-        public static byte[] CreatePacket(PacketType type, List<byte> payload, int countStringHeaderBytes)
+        public static byte[] CreatePacket(PacketType type, List<byte> payload)
         {
             payload.InsertRange(0, BitConverter.GetBytes((int)type).Reverse());
-            payload.InsertRange(0, BitConverter.GetBytes(payload.Count - countStringHeaderBytes).Reverse());
+            payload.InsertRange(0, BitConverter.GetBytes(payload.Count - 4).Reverse());
             return payload.ToArray();
         }
 
-        public static void WriteStringToPacket(ref List<byte> bytes, string str, ref int countStringHeaderBytes)
+        public static void WriteStringToPacket(ref List<byte> bytes, string str)
         {
             if (str.Length == 0)
             {
                 bytes.Add(0);
-                countStringHeaderBytes++;
                 return;
-                //TODO: Проверить работу с паролем и без него
             }
 
-            countStringHeaderBytes += 2;
+            bytes.AddRange(BitConverter.GetBytes((short)str.Length).Reverse());
+            bytes.AddRange(Encoding.ASCII.GetBytes(str));
+        }
+
+        public static void WriteIsStringToPacket(ref List<byte> bytes, string str)
+        {
+            if (str.Length == 0 || str == "")
+            {
+                // Write Boolean False
+                bytes.Add(0);
+                return;
+            }
+            // Write Boolean True
+            bytes.Add(1);
+            
             bytes.AddRange(BitConverter.GetBytes((short)str.Length).Reverse());
             bytes.AddRange(Encoding.ASCII.GetBytes(str));
         }
