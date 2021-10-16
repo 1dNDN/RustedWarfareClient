@@ -29,6 +29,12 @@ namespace RustedWarfareClient
             byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
             return BitConverter.ToInt16(bytes);
         }
+        
+        public static short ReadLongFromPacket(IReadOnlyList<byte> packet, ref int offset)
+        {
+            byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
+            return BitConverter.ToInt16(bytes);
+        }
 
         public static string ReadStringFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {

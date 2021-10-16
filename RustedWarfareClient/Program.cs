@@ -19,7 +19,6 @@ namespace RustedWarfareClient
             //socket.Connect("localhost", 5123);
             SendPreregisterConnection(socket, new PreregisterPacketTemplate());
             RegisterPacketTemplate? registered = ReceiveRegisterConnection(socket);
-            Console.WriteLine("Result " + registered.Type);
             SendPlayerInfo(socket, new SendPlayerTemplate("1dNDN", registered.ServerKey, registered.ServerUuid));
             byte[] bytes = new byte[4000];
             socket.Receive(bytes);
@@ -27,7 +26,12 @@ namespace RustedWarfareClient
             Console.WriteLine(registered.ServerKey);
             socket.Close();
         }
-
+        
+        /**
+         * Registering players with the server
+         * Trigger conditions : 161
+         * Send : Packet-110
+         */
         private static void SendPlayerInfo(Socket socket, SendPlayerTemplate template)
         {
             List<byte> bytes = new();
@@ -81,6 +85,12 @@ namespace RustedWarfareClient
                 ServerKey = ReadIntFromPacket(bytes, ref offset)
             };
         }
+        
+        /**
+         * Send initial packet to server, start handshake with server
+         * Trigger conditions : Not
+         * Send : Packet-160
+         */
 
         private static void SendPreregisterConnection(Socket socket, PreregisterPacketTemplate template )
         {
@@ -101,6 +111,29 @@ namespace RustedWarfareClient
             }
 
             socket.Send(CreatePacket(PacketType.PACKET_PREREGISTER_CONNECTION, bytes));
+        }
+        
+        /**
+         * Return ping packets to the server, so that the server normal display delay
+         * Trigger conditions : Packet-108
+         * Send : Packet-109
+         */
+        
+        private static void SendReturnPingPacket(Socket socket, long time)
+        {
+            List<byte> bytes = new();
+            
+            //TODO Write Long
+            /*
+             * Long : [Packet-108] -> First eight valid bytes
+             * Byte : 1
+             * Byte : 60
+             */
+            bytes.Add(1);
+            bytes.Add(60);
+
+
+            socket.Send(CreatePacket(PacketType.PACKET_HEART_BEAT_RESPONSE, bytes));
         }
     }
 }
