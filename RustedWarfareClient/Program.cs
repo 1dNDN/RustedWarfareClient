@@ -15,10 +15,11 @@ namespace RustedWarfareClient
         public static void Main()
         {
             Socket socket = new(SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect("192.168.1.200", 5123);
+            socket.Connect("192.168.0.100", 5123);
             //socket.Connect("localhost", 5123);
-            SendPreregisterConnection(socket, new PreregisterPacketTemplate("1dNDN"));
+            SendPreregisterConnection(socket, new PreregisterPacketTemplate());
             RegisterPacketTemplate? registered = ReceiveRegisterConnection(socket);
+            Console.WriteLine("Result " + registered.Type);
             SendPlayerInfo(socket, new SendPlayerTemplate("1dNDN", registered.ServerKey, registered.ServerUuid));
             byte[] bytes = new byte[4000];
             socket.Receive(bytes);
@@ -30,15 +31,14 @@ namespace RustedWarfareClient
         private static void SendPlayerInfo(Socket socket, SendPlayerTemplate template)
         {
             List<byte> bytes = new();
-            int countStringHeaderBytes = 0;
             byte[] randomBytes = new byte[64];
             new Random().NextBytes(randomBytes);
             
-            WriteStringToPacket(ref bytes, template.PackageName, ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, template.PackageName);
             WriteIntToPacket(ref bytes, template.ProtocolVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
-            WriteStringToPacket(ref bytes, template.Nickname, ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, template.Nickname);
 
             if (template.Password == "")
             {
@@ -46,16 +46,15 @@ namespace RustedWarfareClient
             } else
             {
                 bytes.Add(1);
-                WriteStringToPacket(ref bytes, ComputeSha256Hash(template.Password).ToUpper(), ref countStringHeaderBytes);
+                WriteStringToPacket(ref bytes, ComputeSha256Hash(template.Password).ToUpper());
             }
 
-            WriteStringToPacket(ref bytes, template.AnotherPackageName, ref countStringHeaderBytes);
-            WriteStringToPacket(ref bytes, ComputeUuidForPacket(template.ClientUuid, template.ServerUuid), ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, template.AnotherPackageName);
+            WriteStringToPacket(ref bytes, ComputeUuidForPacket(template.ClientUuid, template.ServerUuid));
             WriteIntToPacket(ref bytes, template.AnotherMagicValue);
-            WriteStringToPacket(ref bytes, template.Token, ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, template.Token);
             Console.WriteLine(template.Token);
-            WriteStringToPacket(ref bytes, template.Token, ref countStringHeaderBytes);
-            socket.Send(CreatePacket(PacketType.PACKET_PLAYER_INFO, bytes, countStringHeaderBytes));
+            socket.Send(CreatePacket(PacketType.PACKET_PLAYER_INFO, bytes));
         }
 
         private static RegisterPacketTemplate ReceiveRegisterConnection(Socket socket)
@@ -86,16 +85,13 @@ namespace RustedWarfareClient
         private static void SendPreregisterConnection(Socket socket, PreregisterPacketTemplate template )
         {
             List<byte> bytes = new();
-            int countStringHeaderBytes = 0;
 
-            WriteStringToPacket(ref bytes, template.PackageName, ref countStringHeaderBytes);
+            WriteStringToPacket(ref bytes, template.PackageName);
             WriteIntToPacket(ref bytes, template.ProtocolVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
             WriteIntToPacket(ref bytes, template.AnotherGameVersion);
-            bytes.Add(0);
-            WriteStringToPacket(ref bytes, template.Nickname, ref countStringHeaderBytes);
 
-            socket.Send(CreatePacket(PacketType.PACKET_PREREGISTER_CONNECTION, bytes, countStringHeaderBytes));
+            socket.Send(CreatePacket(PacketType.PACKET_PREREGISTER_CONNECTION, bytes));
         }
     }
 }
