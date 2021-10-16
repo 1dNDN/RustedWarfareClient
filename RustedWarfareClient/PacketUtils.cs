@@ -37,24 +37,22 @@ namespace RustedWarfareClient
             return Encoding.ASCII.GetString(stringbytes);
         }
 
-        public static byte[] CreatePacket(PacketType type, List<byte> payload, int countStringHeaderBytes)
+        public static byte[] CreatePacket(PacketType type, List<byte> payload)
         {
             payload.InsertRange(0, BitConverter.GetBytes((int)type).Reverse());
-            payload.InsertRange(0, BitConverter.GetBytes(payload.Count - countStringHeaderBytes).Reverse());
+            payload.InsertRange(0, BitConverter.GetBytes(payload.Count).Reverse());
             return payload.ToArray();
         }
 
-        public static void WriteStringToPacket(ref List<byte> bytes, string str, ref int countStringHeaderBytes)
+        public static void WriteStringToPacket(ref List<byte> bytes, string str)
         {
             if (str.Length == 0)
             {
                 bytes.Add(0);
-                countStringHeaderBytes++;
                 return;
                 //TODO: Проверить работу с паролем и без него
             }
 
-            countStringHeaderBytes += 2;
             bytes.AddRange(BitConverter.GetBytes((short)str.Length).Reverse());
             bytes.AddRange(Encoding.ASCII.GetBytes(str));
         }
@@ -92,18 +90,20 @@ namespace RustedWarfareClient
 
         public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
         {
+            Console.WriteLine($"{nameof(clientUuid)} {clientUuid}");
+            Console.WriteLine($"{nameof(serverUuid)} {serverUuid}");
             Guid clientGuid = Guid.Parse(clientUuid);
-            Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
+            Console.WriteLine($"{nameof(clientGuid)} {clientGuid}");
             Guid serverGuid = Guid.Parse(serverUuid);
-            Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
+            Console.WriteLine($"{nameof(serverGuid)} {serverGuid}");
             BigInteger clientNumGuid = new(clientGuid.ToByteArray());
-            Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
+            Console.WriteLine($"{nameof(clientNumGuid)} {clientNumGuid}");
             BigInteger serverNumGuid = new(serverGuid.ToByteArray());
-            Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
+            Console.WriteLine($"{nameof(serverNumGuid)} {serverNumGuid}");
             BigInteger sumGuid = clientNumGuid + serverNumGuid;
-            Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
+            Console.WriteLine($"{nameof(sumGuid)} {sumGuid}");
             string sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
-            Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
+            Console.WriteLine($"{nameof(sumGuidHash)} {sumGuidHash}");
             return sumGuidHash;
         }
 
