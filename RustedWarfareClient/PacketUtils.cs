@@ -58,11 +58,13 @@ namespace RustedWarfareClient
 
         public static void WriteIsStringToPacket(ref List<byte> bytes, string str)
         {
-            if (str.Length == 0)
+            if (str.Length == 0 || str == "")
             {
+                // Write Boolean False
                 bytes.Add(0);
                 return;
             }
+            // Write Boolean True
             bytes.Add(1);
             
             bytes.AddRange(BitConverter.GetBytes((short)str.Length).Reverse());

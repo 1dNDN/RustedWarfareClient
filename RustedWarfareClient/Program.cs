@@ -91,6 +91,15 @@ namespace RustedWarfareClient
             WriteIntToPacket(ref bytes, template.GameVersion);
             WriteIntToPacket(ref bytes, template.AnotherGameVersion);
 
+            if (template.ProtocolVersion >= 2)
+            {
+                WriteIsStringToPacket(ref bytes,template.RelayID);
+            }
+            if (template.ProtocolVersion >= 3)
+            {
+                WriteStringToPacket(ref bytes,template.Nickname);
+            }
+
             socket.Send(CreatePacket(PacketType.PACKET_PREREGISTER_CONNECTION, bytes));
         }
     }
