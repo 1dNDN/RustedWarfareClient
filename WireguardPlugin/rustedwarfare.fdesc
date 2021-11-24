@@ -59,16 +59,17 @@ struct T_packet_register_connection_msg_id
 
 struct T_packet_team_list_msg_id
 {
-
+    T_my_msg_header header ;
 }
 
 struct T_packet_heart_beat_msg_id
 {
-
+    T_my_msg_header header ;
 }
 
 struct T_packet_server_info_msg_id
-{
+{    
+    T_my_msg_header header ;
 }
 
 struct T_packet_preregister_connection_msg_id
@@ -112,17 +113,17 @@ struct T_packet_player_info_msg_id
 
 struct T_packet_c_msg_id
 {
-
+    T_my_msg_header header ;
 }
 
 struct T_packet_heart_beat_response_msg_id
 {
-
+    T_my_msg_header header ;
 }
 
 struct T_packet_disconnect_msg_id
 {
-
+    T_my_msg_header header ;
 }
 
 switch T_my_msg_switch T_my_msg_id
