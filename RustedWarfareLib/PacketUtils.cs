@@ -30,10 +30,10 @@ namespace RustedWarfareLib
             return BitConverter.ToInt16(bytes);
         }
         
-        public static short ReadLongFromPacket(IReadOnlyList<byte> packet, ref int offset)
+        public static long ReadLongFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {
-            byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
-            return BitConverter.ToInt16(bytes);
+            byte[] bytes = ReadBytesFromPacket(packet, 4, ref offset).Reverse().ToArray();
+            return BitConverter.ToInt64(bytes);
         }
 
         public static string ReadStringFromPacket(IReadOnlyList<byte> packet, ref int offset)
