@@ -5,19 +5,19 @@ enum32 T_my_msg_id
     #Server Commands
     packet_register_connection_msg_id 161
     packet_team_list_msg_id 115
-#    PACKET_HEART_BEAT 108
+    packet_heart_beat_msg_id 108
 #    PACKET_SEND_CHAT 141
-#    PACKET_SERVER_INFO 106
+    packet_server_info_msg_id 106
 #    PACKET_KICK 150
 #    PACKET_SYNCCHECKSUM_STATUS 31
 #    PACKET_A 30
 
     #Client Commands
     packet_preregister_connection_msg_id 160
-#    PACKET_HEART_BEAT_RESPONSE 109
+    packet_heart_beat_response_msg_id 109
 #    PACKET_ADD_CHAT 140
     packet_player_info_msg_id 110
-#    PACKET_DISCONNECT 111
+    packet_disconnet_msg_id 111
 #    PACKET_ACCEPT_START_GAME 112
 #    PACKET_ACCEPT_BUTTON_GAME 20
 
@@ -46,6 +46,16 @@ struct T_packet_team_list_msg_id
 
 }
 
+struct T_packet_heart_beat_msg_id
+{
+
+}
+
+struct T_packet_server_info_msg_id
+{
+
+}
+
 struct T_packet_preregister_connection_msg_id
 {
 
@@ -56,14 +66,24 @@ struct T_packet_player_info_msg_id
 
 }
 
+struct T_packet_disconnet_msg_id
+{
+
+}
+
+struct T_packet_heart_beat_response_msg_id
+{
+
+}
+
 switch T_my_msg_switch T_my_msg_id
 {
     case T_my_msg_id::packet_register_connection_msg_id : T_packet_register_connection_msg_id "" ;
     case T_my_msg_id::packet_team_list_msg_id : T_packet_team_list_msg_id "" ;
+    case T_my_msg_id::packet_heart_beat_msg_id : T_packet_heart_beat_msg_id "" ;
+    case T_my_msg_id::packet_server_info_msg_id : T_packet_server_info_msg_id "" ;
     case T_my_msg_id::packet_preregister_connection_msg_id : T_packet_preregister_connection_msg_id "" ;
     case T_my_msg_id::packet_player_info_msg_id : T_packet_player_info_msg_id "" ;
-
-    #default :
-    #T_my_msg_header header ;
-    #raw(size_after_header) the_end_of_the_message ;
+    case T_my_msg_id::packet_disconnet_msg_id : T_packet_disconnet_msg_id "" ;
+    case T_my_msg_id::packet_heart_beat_response_msg_id : T_packet_heart_beat_response_msg_id "" ;
 } 
