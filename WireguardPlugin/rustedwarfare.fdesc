@@ -38,7 +38,17 @@ struct T_my_msg_header
 
 struct T_packet_register_connection_msg_id
 {
-
+    T_my_msg_header header ;
+    int16 lenght_server_id ;
+    string(lenght_server_id) server_id ;
+    int32 protocol_version ;
+    int32 game_version ;
+    int32 another_game_version ;
+    int16 length_pkg_name ;
+    string(length_pkg_name) pkg_name ;
+    int16 length_server_uuid ;
+    string(length_server_uuid) server_uuid ;
+    int32 server_key ;
 }
 
 struct T_packet_team_list_msg_id
