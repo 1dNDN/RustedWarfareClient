@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
 
 using RustedWarfareLib.Models;
 
@@ -22,7 +19,7 @@ namespace RustedWarfareClient
             SendPlayerInfo(socket, new SendPlayerTemplate("1dNDN", registered.ServerKey, registered.ServerUuid));
             byte[] bytes = new byte[4000];
             socket.Receive(bytes);
-            
+
             Console.WriteLine(registered.ServerKey);
             socket.Close();
         }
