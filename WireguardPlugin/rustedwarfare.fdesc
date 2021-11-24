@@ -17,7 +17,7 @@ enum32 T_my_msg_id
     packet_heart_beat_response_msg_id 109
 #    PACKET_ADD_CHAT 140
     packet_player_info_msg_id 110
-    packet_disconnet_msg_id 111
+    packet_disconnect_msg_id 111
 #    PACKET_ACCEPT_START_GAME 112
 #    PACKET_ACCEPT_BUTTON_GAME 20
 
@@ -27,6 +27,12 @@ enum32 T_my_msg_id
 #    PACKET_SYNC 35
 #    PACKET_START_GAME 120
 #    PACKET_PASSWD_ERROR 113
+#TODO: 163
+#TODO: 151
+#TODO: 152
+#TODO: 117
+#TODO: 118
+#TODO: 170
 }
 
 struct T_my_msg_header
@@ -39,8 +45,8 @@ struct T_my_msg_header
 struct T_packet_register_connection_msg_id
 {
     T_my_msg_header header ;
-    int16 lenght_server_id ;
-    string(lenght_server_id) server_id ;
+    int16 length_server_id ;
+    string(length_server_id) server_id ;
     int32 protocol_version ;
     int32 game_version ;
     int32 another_game_version ;
@@ -63,25 +69,58 @@ struct T_packet_heart_beat_msg_id
 
 struct T_packet_server_info_msg_id
 {
-
 }
 
 struct T_packet_preregister_connection_msg_id
 {
-
+    T_my_msg_header header ;
+    int16 length_package_name ;
+    string(length_package_name) package_name ;
+    int32 protocol_version ;
+    int32 game_version ;
+    int32 another_game_version ;
+    int8 length_relay_id ; #TODO: maybe flag
+    string(length_relay_id) relay_id ;
+    int16 length_nickname ;
+    string(length_nickname) nickname ;
 }
 
 struct T_packet_player_info_msg_id
 {
-
+    T_my_msg_header header ;
+    int16 length_package_name ;
+    string(length_package_name) package_name ;
+    int32 protocol_version ;
+    int32 game_version ;
+    int32 another_game_version ;
+    int16 length_nickname ;
+    string(length_nickname) nickname ;
+    int8 have_password ;
+    if (have_password == 1)
+    {
+        int16 length_password;
+        string(length_password) password;
+    }
+    int16 length_another_package_name ;
+    string(length_another_package_name) another_package_name ;
+    int16 length_uuid_sum ;
+    string(length_server_uuid) server_uuid ;
+    int32 magic_value ;
+    int16 length_token ;
+    string(length_token) token ;
 }
 
-struct T_packet_disconnet_msg_id
+struct T_packet_c_msg_id
 {
 
 }
 
 struct T_packet_heart_beat_response_msg_id
+{
+
+}
+
+struct T_packet_disconnect_msg_id
 {
 
 }
@@ -94,6 +133,6 @@ switch T_my_msg_switch T_my_msg_id
     case T_my_msg_id::packet_server_info_msg_id : T_packet_server_info_msg_id "" ;
     case T_my_msg_id::packet_preregister_connection_msg_id : T_packet_preregister_connection_msg_id "" ;
     case T_my_msg_id::packet_player_info_msg_id : T_packet_player_info_msg_id "" ;
-    case T_my_msg_id::packet_disconnet_msg_id : T_packet_disconnet_msg_id "" ;
+    case T_my_msg_id::packet_disconnect_msg_id : T_packet_disconnect_msg_id "" ;
     case T_my_msg_id::packet_heart_beat_response_msg_id : T_packet_heart_beat_response_msg_id "" ;
 } 
