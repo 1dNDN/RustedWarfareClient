@@ -32,7 +32,7 @@ namespace RustedWarfareLib
         
         public static long ReadLongFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {
-            byte[] bytes = ReadBytesFromPacket(packet, 4, ref offset).Reverse().ToArray();
+            byte[] bytes = ReadBytesFromPacket(packet, 8, ref offset).Reverse().ToArray();
             return BitConverter.ToInt64(bytes);
         }
 
