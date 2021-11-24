@@ -5,7 +5,7 @@ using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RustedWarfareClient
+namespace RustedWarfareLib
 {
     public static class PacketUtils
     {

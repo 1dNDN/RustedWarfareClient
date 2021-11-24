@@ -1,4 +1,4 @@
-namespace RustedWarfareClient.Models
+namespace RustedWarfareLib.Models
 {
     public class PreregisterPacketTemplate
     {
@@ -12,21 +12,18 @@ namespace RustedWarfareClient.Models
         public PreregisterPacketTemplate()
         {
         }
-        
+
         public PreregisterPacketTemplate(string relayId)
         {
             ProtocolVersion = 2;
             RelayID = relayId;
         }
 
-        public PreregisterPacketTemplate(string relayId,string nickname)
+        public PreregisterPacketTemplate(string relayId, string nickname)
         {
             ProtocolVersion = 3;
             RelayID = relayId;
             Nickname = nickname;
         }
-
-        
     }
-
 }

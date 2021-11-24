@@ -1,7 +1,6 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
-namespace RustedWarfareClient.Models
+namespace RustedWarfareLib.Models
 {
     public class SendPlayerTemplate
     {
@@ -17,7 +16,7 @@ namespace RustedWarfareClient.Models
         public SendPlayerTemplate(string nickname, int key, string serverUuid, string password = "", string uuid = "")
         {
             Nickname = nickname;
-            this.ServerKey = key;
+            ServerKey = key;
             ServerUuid = serverUuid;
             if (uuid == string.Empty)
                 ClientUuid = Guid.NewGuid().ToString();

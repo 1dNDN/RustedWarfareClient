@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RustedWarfareClient", "RustedWarfareClient\RustedWarfareClient.csproj", "{3D804F64-5202-414F-AAE2-B7E342CBFB74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RustedWarfareLib", "RustedWarfareLib\RustedWarfareLib.csproj", "{A2BFDB0A-A6EB-4BE7-A723-5D17B69BBC97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3D804F64-5202-414F-AAE2-B7E342CBFB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D804F64-5202-414F-AAE2-B7E342CBFB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D804F64-5202-414F-AAE2-B7E342CBFB74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BFDB0A-A6EB-4BE7-A723-5D17B69BBC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BFDB0A-A6EB-4BE7-A723-5D17B69BBC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BFDB0A-A6EB-4BE7-A723-5D17B69BBC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BFDB0A-A6EB-4BE7-A723-5D17B69BBC97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

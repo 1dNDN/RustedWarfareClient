@@ -1,4 +1,4 @@
-namespace RustedWarfareClient.Models
+namespace RustedWarfareLib.Models
 {
     public class RegisterPacketTemplate
     {
