@@ -24,7 +24,7 @@ namespace RustedWarfareLib
             return result;
         }
 
-        public static short ReadInt16FromPacket(IReadOnlyList<byte> packet, ref int offset)
+        public static short ReadShortFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {
             byte[] bytes = ReadBytesFromPacket(packet, 2, ref offset).Reverse().ToArray();
             return BitConverter.ToInt16(bytes);
@@ -38,7 +38,7 @@ namespace RustedWarfareLib
 
         public static string ReadStringFromPacket(IReadOnlyList<byte> packet, ref int offset)
         {
-            short charCount = ReadInt16FromPacket(packet, ref offset);
+            short charCount = ReadShortFromPacket(packet, ref offset);
             byte[] stringbytes = ReadBytesFromPacket(packet, charCount, ref offset);
             return Encoding.ASCII.GetString(stringbytes);
         }
@@ -84,15 +84,7 @@ namespace RustedWarfareLib
 
         public static string ComputeSha256Hash(string rawData)
         {
-            // Create a SHA256   
-            using SHA256 sha256Hash = SHA256.Create();
-            // ComputeHash - returns byte array  
-            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-
-            // Convert byte array to a string   
-            StringBuilder builder = new();
-            for (int i = 0; i < bytes.Length; i++) builder.Append(bytes[i].ToString("X2"));
-            return builder.ToString();
+            return ComputeSha256Hash(Encoding.UTF8.GetBytes(rawData));
         }
 
         public static string ComputeSha256Hash(byte[] rawData)
