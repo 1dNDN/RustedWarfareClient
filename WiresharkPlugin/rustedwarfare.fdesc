@@ -60,6 +60,27 @@ struct T_packet_register_connection_msg_id
 struct T_packet_team_list_msg_id
 {
     T_my_msg_header header ;
+    int32 player_position ;
+    int8 is_game_started ;
+    int32 max_players ;
+    int16 length_gzip_head ;
+    string(length_gzip_head) gzip_head ;
+    int32 length_gzip_blob ;
+    raw(length_gzip_blob) gzip_blob ;
+    int32 fog_of_war ;
+    int32 credits ;
+    int8 unknown_flag ; #TODO
+    int32 ai_difficulty ;
+    int8 unknown_byte ;
+    int32 unit_limit ;
+    int32 another_unit_limit ;
+    int32 starting_units ;
+    float32 income ;
+    int8 is_no_nuke ;
+    int8 unknown_byte_2 ; #TODO
+    int8 unknown_byte_3 ; #TODO
+    int8 is_shared_control ;
+    int8 is_suspended ;
 }
 
 struct T_packet_heart_beat_msg_id
