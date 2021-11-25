@@ -182,6 +182,8 @@ struct T_packet_heart_beat_response_msg_id
 struct T_packet_disconnect_msg_id
 {
     T_my_msg_header header ;
+    int16 length_disconnected ;
+    string(length_disconnected) disconnected ;
 }
 
 switch T_my_msg_switch T_my_msg_id
