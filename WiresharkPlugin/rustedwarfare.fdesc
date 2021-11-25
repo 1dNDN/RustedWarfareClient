@@ -66,7 +66,7 @@ struct T_packet_team_list_msg_id
     int16 length_gzip_head ;
     string(length_gzip_head) gzip_head ;
     int32 length_gzip_blob ;
-    raw(length_gzip_blob) gzip_blob ;
+    raw(length_gzip_blob) gzip_blob ; #TODO
     int32 fog_of_war ;
     int32 credits ;
     int8 unknown_flag ; #TODO
@@ -116,7 +116,7 @@ struct T_packet_server_info_msg_id
         int16 length_gzip_head ;
         string(length_gzip_head) gzip_head ;
         int32 length_gzip_blob ;
-        raw(length_gzip_blob) gzip_blob ;
+        raw(length_gzip_blob) gzip_blob ; #TODO
     }
     int8 is_shared_control ; #TODO
     int8 unknown_flag_4 ; #TODO
