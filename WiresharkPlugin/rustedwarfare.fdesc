@@ -91,6 +91,38 @@ struct T_packet_heart_beat_msg_id
 struct T_packet_server_info_msg_id
 {    
     T_my_msg_header header ;
+    int16 length_package_name ;
+    string(length_package_name) package_name ;
+    int32 game_net_version ;
+    int32 map_type ;
+    int16 length_map_name ;
+    string(length_map_name) map_name ;
+    int32 credits ;
+    int32 fog_of_war ;
+    int8 unknown_flag ; #TODO
+    int32 unknown_int ; #TODO
+    int8 unknown_byte ; #TODO
+    int8 unknown_flag_2 ; #TODO
+    int8 is_admin ;
+    int32 unit_limit ;
+    int32 another_unit_limit ;
+    int32 starting_units ;
+    float32 income ;
+    int8 is_no_nuke ;
+    int8 unknown_flag_3 ; #TODO
+    int8 have_unit_data ;
+    if (have_unit_data == 1)
+    {
+        int16 length_gzip_head ;
+        string(length_gzip_head) gzip_head ;
+        int32 length_gzip_blob ;
+        raw(length_gzip_blob) gzip_blob ;
+    }
+    int8 is_shared_control ; #TODO
+    int8 unknown_flag_4 ; #TODO
+    int8 unknown_flag_5 ; #TODO
+    int8 unknown_flag_6 ; #allow audience TODO
+    int8 unknown_flag_7 ; #TODO
 }
 
 struct T_packet_preregister_connection_msg_id
