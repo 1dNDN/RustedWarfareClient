@@ -66,7 +66,7 @@ namespace RustedWarfareLib.Packets
 
         public string Nickname { get; set; } = "Unnamed";
 
-        public bool HavePassword => string.IsNullOrWhiteSpace(Password);
+        public bool HavePassword => !string.IsNullOrWhiteSpace(Password);
 
         public string Password { get; set; } = "";
 
