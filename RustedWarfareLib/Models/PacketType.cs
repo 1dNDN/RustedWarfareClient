@@ -2,6 +2,7 @@ namespace RustedWarfareLib.Models
 {
     public enum PacketType
     {
+        PACKET_UNKNOWN = 1,
         PACKET_SERVER_DEBUG = 2000,
 
         //Server Commands

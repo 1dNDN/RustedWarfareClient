@@ -6,4 +6,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Update="Read.cs">
+        <DependentUpon>Packet.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Write.cs">
+        <DependentUpon>Packet.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

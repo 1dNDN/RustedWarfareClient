@@ -21,22 +21,22 @@ namespace RustedWarfareLib
             byte[] randomBytes = new byte[64];
             new Random().NextBytes(randomBytes);
 
-            WriteStringToPacket(ref bytes, template.PackageName);
+            WriteString(ref bytes, template.PackageName);
             WriteIntToPacket(ref bytes, template.ProtocolVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
-            WriteStringToPacket(ref bytes, template.Nickname);
+            WriteString(ref bytes, template.Nickname);
 
             if (template.Password == "") { bytes.Add(0); } else
             {
                 bytes.Add(1);
-                WriteStringToPacket(ref bytes, ComputeSha256Hash(template.Password).ToUpper());
+                WriteString(ref bytes, ComputeSha256Hash(template.Password).ToUpper());
             }
 
-            WriteStringToPacket(ref bytes, template.AnotherPackageName);
-            WriteStringToPacket(ref bytes, ComputeUuidForPacket(template.ClientUuid, template.ServerUuid));
+            WriteString(ref bytes, template.AnotherPackageName);
+            WriteString(ref bytes, ComputeUuidForPacket(template.ClientUuid, template.ServerUuid));
             WriteIntToPacket(ref bytes, template.AnotherMagicValue);
-            WriteStringToPacket(ref bytes, template.Token);
+            WriteString(ref bytes, template.Token);
             Console.WriteLine(template.Token);
             socket.Send(CreatePacket(PacketType.PACKET_PLAYER_INFO, bytes));
         }
@@ -75,13 +75,13 @@ namespace RustedWarfareLib
         {
             List<byte> bytes = new();
 
-            WriteStringToPacket(ref bytes, template.PackageName);
+            WriteString(ref bytes, template.PackageName);
             WriteIntToPacket(ref bytes, template.ProtocolVersion);
             WriteIntToPacket(ref bytes, template.GameVersion);
             WriteIntToPacket(ref bytes, template.AnotherGameVersion);
 
-            if (template.ProtocolVersion >= 2) WriteIsStringToPacket(ref bytes, template.RelayID);
-            if (template.ProtocolVersion >= 3) WriteStringToPacket(ref bytes, template.Nickname);
+            if (template.ProtocolVersion >= 2) WriteIsString(ref bytes, template.RelayID);
+            if (template.ProtocolVersion >= 3) WriteString(ref bytes, template.Nickname);
 
             socket.Send(CreatePacket(PacketType.PACKET_PREREGISTER_CONNECTION, bytes));
         }

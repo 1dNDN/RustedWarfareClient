@@ -160,7 +160,7 @@ struct T_packet_player_info_msg_id
     int16 length_another_package_name ;
     string(length_another_package_name) another_package_name ;
     int16 length_uuid_sum ;
-    string(length_server_uuid) server_uuid ;
+    string(length_uuid_sum) uuid_sum ;
     int32 magic_value ;
     int16 length_token ;
     string(length_token) token ;
