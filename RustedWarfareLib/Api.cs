@@ -102,6 +102,8 @@ namespace RustedWarfareLib
                     default: throw new ArgumentOutOfRangeException();
                 }
             }
+            
+            SendDisconnect();
         }
     }
 }

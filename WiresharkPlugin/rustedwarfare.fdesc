@@ -8,7 +8,7 @@ enum32 T_my_msg_id
     packet_heart_beat_msg_id 108
 #    PACKET_SEND_CHAT 141
     packet_server_info_msg_id 106
-#    PACKET_KICK 150
+    packet_kick_msg_id 150
 #    PACKET_SYNCCHECKSUM_STATUS 31
 #    PACKET_A 30
 
@@ -166,6 +166,13 @@ struct T_packet_player_info_msg_id
     string(length_token) token ;
 }
 
+struct T_packet_kick_msg_id
+{
+    T_my_msg_header header ;
+    int16 length_message ;
+    string(length_message) message ;
+}
+
 struct T_packet_c_msg_id
 {
     T_my_msg_header header ;
@@ -182,8 +189,8 @@ struct T_packet_heart_beat_response_msg_id
 struct T_packet_disconnect_msg_id
 {
     T_my_msg_header header ;
-    int16 length_disconnected ;
-    string(length_disconnected) disconnected ;
+    int16 length_message ;
+    string(length_message) message ;
 }
 
 switch T_my_msg_switch T_my_msg_id
@@ -192,6 +199,7 @@ switch T_my_msg_switch T_my_msg_id
     case T_my_msg_id::packet_team_list_msg_id : T_packet_team_list_msg_id "" ;
     case T_my_msg_id::packet_heart_beat_msg_id : T_packet_heart_beat_msg_id "" ;
     case T_my_msg_id::packet_server_info_msg_id : T_packet_server_info_msg_id "" ;
+    case T_my_msg_id::packet_kick_msg_id : T_packet_kick_msg_id "" ;
     case T_my_msg_id::packet_preregister_connection_msg_id : T_packet_preregister_connection_msg_id "" ;
     case T_my_msg_id::packet_player_info_msg_id : T_packet_player_info_msg_id "" ;
     case T_my_msg_id::packet_disconnect_msg_id : T_packet_disconnect_msg_id "" ;

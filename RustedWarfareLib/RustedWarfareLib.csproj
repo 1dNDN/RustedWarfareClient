@@ -22,6 +22,9 @@
       <Compile Update="PlayerInfo.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
+      <Compile Update="Disconnect.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

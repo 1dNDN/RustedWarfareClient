@@ -10,7 +10,7 @@ namespace RustedWarfareLib
 
             if (!string.IsNullOrWhiteSpace(Nickname))
                 packet.Nickname = Nickname;
-            
+
             socket.Send(packet.ToBytesArray());
         }
     }

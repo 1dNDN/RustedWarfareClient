@@ -14,19 +14,19 @@ namespace RustedWarfareLib
 
         public void Write(bool value)
         {
-            Write(value ? (byte) 1 : (byte)0);
+            Write(value ? (byte)1 : (byte)0);
         }
-        
+
         public void Write(byte value)
         {
             Payload.Add(value);
         }
-        
+
         public void Write(short value)
         {
             Write(BitConverter.GetBytes(value).Reverse());
         }
-        
+
         public void Write(int value)
         {
             Write(BitConverter.GetBytes(value).Reverse());
@@ -36,13 +36,13 @@ namespace RustedWarfareLib
         {
             Write(BitConverter.GetBytes(value).Reverse());
         }
-        
+
         public void Write(string str)
         {
             if (string.IsNullOrWhiteSpace(str))
             {
                 Write(false);
-                return;  
+                return;
             }
 
             Write(BitConverter.GetBytes((short)str.Length).Reverse());
@@ -57,9 +57,10 @@ namespace RustedWarfareLib
                 Write(false);
                 return;
             }
+
             // Write Boolean True
             Write(true);
-            
+
             Write(BitConverter.GetBytes((short)str.Length).Reverse());
             Write(Encoding.ASCII.GetBytes(str));
         }

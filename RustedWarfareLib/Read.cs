@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -30,17 +29,17 @@ namespace RustedWarfareLib
         {
             return ReadBytes(1).FirstOrDefault();
         }
-        
+
         public short ReadShort()
         {
             return BitConverter.ToInt16(ReadNumber(2));
         }
-        
+
         public int ReadInt()
         {
             return BitConverter.ToInt32(ReadNumber(4));
         }
-        
+
         public long ReadLong()
         {
             return BitConverter.ToInt64(ReadNumber(8));
