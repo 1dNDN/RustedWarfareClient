@@ -7,7 +7,7 @@ namespace RustedWarfareLib.Packets
 {
     public class RegisterConnectionPacket : Packet
     {
-        public RegisterConnectionPacket(PacketType type) : base(type)
+        public RegisterConnectionPacket() : base(PacketType.PACKET_REGISTER_CONNECTION)
         {
         }
 

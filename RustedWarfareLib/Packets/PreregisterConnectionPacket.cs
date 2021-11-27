@@ -11,7 +11,7 @@ namespace RustedWarfareLib.Packets
      */
     public class PreregisterConnectionPacket : Packet
     {
-        public PreregisterConnectionPacket(PacketType type) : base(type)
+        public PreregisterConnectionPacket() : base(PacketType.PACKET_PREREGISTER_CONNECTION)
         {
         }
 

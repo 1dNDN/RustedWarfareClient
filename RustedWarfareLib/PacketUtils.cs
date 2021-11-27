@@ -40,8 +40,6 @@ namespace RustedWarfareLib
 
         public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
         {
-            if (string.IsNullOrWhiteSpace(clientUuid))
-                clientUuid = Guid.NewGuid().ToString();
             Guid clientGuid = Guid.Parse(clientUuid);
             Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
             Guid serverGuid = Guid.Parse(serverUuid);

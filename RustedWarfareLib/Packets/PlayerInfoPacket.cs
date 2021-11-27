@@ -11,7 +11,7 @@ namespace RustedWarfareLib.Packets
      */
     public class PlayerInfoPacket : Packet
     {
-        public PlayerInfoPacket(PacketType type, string serverUuid, int serverKey) : base(type)
+        public PlayerInfoPacket(string serverUuid, int serverKey) : base(PacketType.PACKET_PLAYER_INFO)
         {
             ServerUuid = serverUuid;
             ServerKey = serverKey;
@@ -24,8 +24,7 @@ namespace RustedWarfareLib.Packets
             GameVersion = ReadInt();
             AnotherGameVersion = ReadInt();
             Nickname = ReadString();
-            HavePassword = ReadBool();
-            if (HavePassword)
+            if (ReadBool()) //have password
                 Password = ReadString();
             AnotherPackageName = ReadString();
             ReadString(); //uuid sum
@@ -67,7 +66,7 @@ namespace RustedWarfareLib.Packets
 
         public string Nickname { get; set; } = "Unnamed";
 
-        public bool HavePassword { get; set; }
+        public bool HavePassword => string.IsNullOrWhiteSpace(Password);
 
         public string Password { get; set; } = "";
 

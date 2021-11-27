@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using RustedWarfareLib.Models;
 
@@ -26,6 +27,13 @@ namespace RustedWarfareLib
                 Type = PacketType.PACKET_UNKNOWN;
             else
                 Type = (PacketType)type;
+        }
+
+        public static PacketType GetType(byte[] bytes)
+        {
+            byte[] result = new byte[4];
+            for (int i = 0; i < 4; i++) result[i] = bytes[i + 4];
+            return (PacketType)BitConverter.ToInt32(result.Reverse().ToArray());
         }
 
         public abstract byte[] ToBytesArray();

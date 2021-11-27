@@ -13,6 +13,15 @@
       <Compile Update="Write.cs">
         <DependentUpon>Packet.cs</DependentUpon>
       </Compile>
+      <Compile Update="RegisterConnection.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
+      <Compile Update="PreregisterConnection.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
+      <Compile Update="PlayerInfo.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
