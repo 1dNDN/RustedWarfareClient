@@ -28,6 +28,9 @@
       <Compile Update="Receiver.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
+      <Compile Update="TeamList.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

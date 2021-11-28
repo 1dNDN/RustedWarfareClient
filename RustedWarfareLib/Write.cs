@@ -37,6 +37,11 @@ namespace RustedWarfareLib
             Write(BitConverter.GetBytes(value).Reverse());
         }
 
+        public void Write(float value)
+        {
+            Write(BitConverter.GetBytes(value).Reverse());
+        }
+
         public void Write(string str)
         {
             if (string.IsNullOrWhiteSpace(str))

@@ -45,6 +45,11 @@ namespace RustedWarfareLib
             return BitConverter.ToInt64(ReadNumber(8));
         }
 
+        public float ReadFloat()
+        {
+            return BitConverter.ToSingle(ReadNumber(4));
+        }
+
         public string ReadString()
         {
             short charCount = ReadShort();

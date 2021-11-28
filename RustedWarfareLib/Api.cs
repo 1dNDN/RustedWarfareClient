@@ -18,9 +18,35 @@ namespace RustedWarfareLib
 
         public string Password { get; set; } = "";
 
-        public string ServerUuid { get; set; } = "";
+        public string ServerUuid { get; private set; } = "";
 
         public string ClientUuid { get; set; } = "";
+        
+        public int PlayerPosition { get; private set; }
+
+        public bool IsGameStarted { get; private set; }
+
+        public int MaxPlayers { get; private set; }
+
+        public int FogOfWar { get; private set; }
+
+        public int Credits { get; private set; }
+
+        public int AiDifficulty { get; private set; }
+
+        public int UnitLimit { get; private set; }
+
+        public int AnotherUnitLimit { get; private set; }
+
+        public int StartingUnits { get; private set; }
+
+        public float Income { get; private set; }
+
+        public bool IsNoNuke { get; private set; }
+
+        public bool IsSharedControl { get; private set; }
+
+        public bool IsSuspended { get; private set; }
         
         public int ServerKey { get; set; }
 
