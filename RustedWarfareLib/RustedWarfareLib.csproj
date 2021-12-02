@@ -31,6 +31,9 @@
       <Compile Update="TeamList.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
+      <Compile Update="ServerInfo.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

@@ -27,10 +27,14 @@ namespace RustedWarfareLib
         public bool IsGameStarted { get; private set; }
 
         public int MaxPlayers { get; private set; }
+        
+        public int MapType { get; set; }
 
         public int FogOfWar { get; private set; }
 
         public int Credits { get; private set; }
+        
+        public bool IsAdmin { get; set; }
 
         public int AiDifficulty { get; private set; }
 
