@@ -15,9 +15,9 @@ namespace RustedWarfareLib.Packets
             PlayerPosition = ReadInt();
             IsGameStarted = ReadBool();
             MaxPlayers = ReadInt();
-            GzipHead = ReadString();
+            TeamGzipHead = ReadString();
             int lengthGzipBlob = ReadInt();
-            GzipBlob = ReadBytes(lengthGzipBlob);
+            TeamGzipBlob = ReadBytes(lengthGzipBlob);
             FogOfWar = ReadInt();
             Credits = ReadInt();
             unknownFlag = ReadBool();
@@ -39,9 +39,9 @@ namespace RustedWarfareLib.Packets
             Write(PlayerPosition);
             Write(IsGameStarted);
             Write(MaxPlayers);
-            Write(GzipHead);
-            Write(GzipBlob.Length);
-            Write(GzipBlob);
+            Write(TeamGzipHead);
+            Write(TeamGzipBlob.Length);
+            Write(TeamGzipBlob);
             Write(FogOfWar);
             Write(Credits);
             Write(unknownFlag);
@@ -66,9 +66,9 @@ namespace RustedWarfareLib.Packets
 
         public int MaxPlayers { get; set; } = 10;
 
-        private string GzipHead { get; set; } = "";
+        private string TeamGzipHead { get; set; } = "";
 
-        private byte[] GzipBlob { get; set; } = System.Array.Empty<byte>();
+        private byte[] TeamGzipBlob { get; set; } = System.Array.Empty<byte>();
 
         public int FogOfWar { get; set; } = 1;
 
