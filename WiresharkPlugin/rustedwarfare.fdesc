@@ -95,7 +95,7 @@ struct T_packet_server_info_msg_id
     T_my_msg_header header ;
     int16 length_package_name ;
     string(length_package_name) package_name ;
-    int32 game_net_version ;
+    int32 game_version ;
     int32 map_type ;
     int16 length_map_name ;
     string(length_map_name) map_name ;
