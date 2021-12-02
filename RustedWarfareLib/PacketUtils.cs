@@ -58,13 +58,13 @@ namespace RustedWarfareLib
         public static string ComputeKeyForPacket(int serverKey)
         {
             return $"c:{serverKey}" +
-                   $"m:{(serverKey * 87 + 24)}" +
+                   $"m:{serverKey * 87 + 24}" +
                    $"0:{44000 * serverKey}" +
                    $"1:{serverKey}" +
                    $"2:{13000 * serverKey}" +
-                   $"3:{(28000 + serverKey)}" +
+                   $"3:{28000 + serverKey}" +
                    $"4:{75000 * serverKey}" +
-                   $"5:{(160000 + serverKey)}" +
+                   $"5:{160000 + serverKey}" +
                    $"6:{850000 * serverKey}" +
                    $"t1:{44000 * serverKey}" +
                    $"d:{5 * serverKey}";

@@ -44,7 +44,7 @@ namespace RustedWarfareLib.Packets
 
         public string PkgName { get; set; } = "com.corrodinggames.rts.java";
 
-        public string ServerUuid { get; set; } = "";
+        public string ServerUuid { get; set; } = string.Empty;
 
         public int ServerKey { get; set; }
     }

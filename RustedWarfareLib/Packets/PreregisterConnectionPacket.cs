@@ -45,7 +45,7 @@ namespace RustedWarfareLib.Packets
 
         public int AnotherGameVersion { get; set; } = 1;
 
-        public string RelayId { get; set; } = "";
+        public string RelayId { get; set; } = string.Empty;
 
         public string Nickname { get; set; } = "Unnamed";
     }

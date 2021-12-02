@@ -50,9 +50,9 @@ namespace RustedWarfareLib.Packets
             return Payload.ToArray();
         }
 
-        public string ClientUuid { get; set; } = "";
+        public string ClientUuid { get; set; } = string.Empty;
 
-        public string ServerUuid { get; set; } = "";
+        public string ServerUuid { get; set; } = string.Empty;
 
         public int ServerKey { get; set; }
 
@@ -68,7 +68,7 @@ namespace RustedWarfareLib.Packets
 
         public bool HavePassword => !string.IsNullOrWhiteSpace(Password);
 
-        public string Password { get; set; } = "";
+        public string Password { get; set; } = string.Empty;
 
         public string AnotherPackageName { get; set; } = "com.corrodinggames.rts";
 

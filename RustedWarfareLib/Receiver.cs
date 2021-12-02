@@ -55,7 +55,7 @@ namespace RustedWarfareLib
                     break;
                 case PacketType.PACKET_HEART_BEAT: break;
                 case PacketType.PACKET_SEND_CHAT: break;
-                case PacketType.PACKET_SERVER_INFO: 
+                case PacketType.PACKET_SERVER_INFO:
                     ReceiveServerInfo(bytes);
                     break;
                 case PacketType.PACKET_KICK: break;
