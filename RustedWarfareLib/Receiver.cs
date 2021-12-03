@@ -53,7 +53,10 @@ namespace RustedWarfareLib
                 case PacketType.PACKET_TEAM_LIST:
                     ReceiveTeamList(bytes);
                     break;
-                case PacketType.PACKET_HEART_BEAT: break;
+                case PacketType.PACKET_HEART_BEAT:
+                    long pingNumber = ReceiveHeartBeat(bytes);
+                    SendHeartBeatResponse(pingNumber);
+                    break;
                 case PacketType.PACKET_SEND_CHAT: break;
                 case PacketType.PACKET_SERVER_INFO:
                     ReceiveServerInfo(bytes);
