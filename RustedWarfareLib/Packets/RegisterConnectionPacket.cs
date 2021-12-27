@@ -38,9 +38,9 @@ namespace RustedWarfareLib.Packets
 
         public int ProtocolVersion { get; set; } = 1;
 
-        public int GameVersion { get; set; } = 151;
+        public int GameVersion { get; set; } = 160;
 
-        public int AnotherGameVersion { get; set; } = 151;
+        public int AnotherGameVersion { get; set; } = 160;
 
         public string PkgName { get; set; } = "com.corrodinggames.rts.java";
 

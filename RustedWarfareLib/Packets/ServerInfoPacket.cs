@@ -81,7 +81,7 @@ namespace RustedWarfareLib.Packets
 
         public string PackageName { get; set; } = "com.corrodinggames.rts";
 
-        public int GameVersion { get; set; } = 151;
+        public int GameVersion { get; set; } = 160;
 
         public int MapType { get; set; }
 

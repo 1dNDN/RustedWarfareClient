@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -57,6 +58,21 @@ namespace RustedWarfareLib
 
         public static string ComputeKeyForPacket(int serverKey)
         {
+            BigInteger t1Ratio = new(44000);
+            NumberFormatInfo formatInfo = new() {
+                NumberDecimalSeparator = "."
+            };
+
+            string t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
+            if (t1.Contains("E+00"))
+            {
+                t1 = t1.Remove(t1.Length - 4, 3);
+            } else
+            {
+                t1 = (t1Ratio * serverKey).ToString("E7", formatInfo);
+                t1 = t1.Remove(t1.Length - 4, 2);
+            }
+
             return $"c:{serverKey}" +
                    $"m:{serverKey * 87 + 24}" +
                    $"0:{44000 * serverKey}" +
@@ -66,7 +82,7 @@ namespace RustedWarfareLib
                    $"4:{75000 * serverKey}" +
                    $"5:{160000 + serverKey}" +
                    $"6:{850000 * serverKey}" +
-                   $"t1:{44000 * serverKey}" +
+                   $"t1:{t1}" +
                    $"d:{5 * serverKey}";
         }
     }

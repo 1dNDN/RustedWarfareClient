@@ -41,7 +41,7 @@ namespace RustedWarfareLib.Packets
 
         public int ProtocolVersion { get; set; } = 3;
 
-        public int GameVersion { get; set; } = 151;
+        public int GameVersion { get; set; } = 160;
 
         public int AnotherGameVersion { get; set; } = 1;
 

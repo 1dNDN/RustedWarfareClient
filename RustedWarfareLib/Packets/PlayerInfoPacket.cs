@@ -60,9 +60,9 @@ namespace RustedWarfareLib.Packets
 
         public int ProtocolVersion { get; set; } = 4;
 
-        public int GameVersion { get; set; } = 151;
+        public int GameVersion { get; set; } = 160;
 
-        public int AnotherGameVersion { get; set; } = 151;
+        public int AnotherGameVersion { get; set; } = 160;
 
         public string Nickname { get; set; } = "Unnamed";
 
@@ -74,7 +74,7 @@ namespace RustedWarfareLib.Packets
 
         public string UuidSum => PacketUtils.ComputeUuidForPacket(ClientUuid, ServerUuid);
 
-        public int MagicValue { get; set; } = 1198432602;
+        public int MagicValue { get; set; } = 1008125362;
 
         public string Token => PacketUtils.ComputeKeyForPacket(ServerKey);
     }
