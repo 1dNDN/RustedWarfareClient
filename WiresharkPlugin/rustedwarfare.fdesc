@@ -1,32 +1,32 @@
-enum32 T_my_msg_id
+enum32 T_id
 {
-#    PACKET_SERVER_DEBUG 2000
+#    SERVER_DEBUG 2000
 
     #Server Commands
-    packet_register_connection_msg_id 161
-    packet_team_list_msg_id 115
-    packet_heart_beat_msg_id 108
-#    PACKET_SEND_CHAT 141
-    packet_server_info_msg_id 106
-    packet_kick_msg_id 150
-#    PACKET_SYNCCHECKSUM_STATUS 31
-#    PACKET_A 30
+    register_connection 161
+    team_list 115
+    heart_beat 108
+#    SEND_CHAT 141
+    server_info 106
+    kick 150
+#    SYNCCHECKSUM_STATUS 31
+#    A 30
 
     #Client Commands
-    packet_preregister_connection_msg_id 160
-    packet_heart_beat_response_msg_id 109
-#    PACKET_ADD_CHAT 140
-    packet_player_info_msg_id 110
-    packet_disconnect_msg_id 111
-#    PACKET_ACCEPT_START_GAME 112
-#    PACKET_ACCEPT_BUTTON_GAME 20
+    preregister_connection 160
+    heart_beat_response 109
+#    ADD_CHAT 140
+    player_info 110
+    disconnect 111
+#    ACCEPT_START_GAME 112
+#    ACCEPT_BUTTON_GAME 20
 
     #Game Commands
-#    PACKET_ADD_GAMECOMMAND 20
-#    PACKET_TICK 10
-#    PACKET_SYNC 35
-#    PACKET_START_GAME 120
-#    PACKET_PASSWD_ERROR 113
+#    ADD_GAMECOMMAND 20
+#    TICK 10
+#    SYNC 35
+    START_GAME 120
+#    PASSWD_ERROR 113
 #TODO: 163
 #TODO: 151
 #TODO: 152
@@ -35,173 +35,168 @@ enum32 T_my_msg_id
 #TODO: 170
 }
 
-struct T_my_msg_header
+struct T_header
 {
-    byte_order big_endian ;
-    uint32 size_after_header ;
-    T_my_msg_id msg_id ;
+    byte_order big_endian;
+    uint32 size_after_header;
+    T_id msg_id;
 }
 
-struct T_packet_register_connection_msg_id
+struct T_register_connection
 {
-    T_my_msg_header header ;
-    int16 length_server_id ;
-    string(length_server_id) server_id ;
-    int32 protocol_version ;
-    int32 game_version ;
-    int32 another_game_version ;
-    int16 length_pkg_name ;
-    string(length_pkg_name) pkg_name ;
-    int16 length_server_uuid ;
-    string(length_server_uuid) server_uuid ;
-    int32 server_key ;
+    T_header header;
+    int16 length_server_id;
+    string(length_server_id) server_id;
+    int32 protocol_version;
+    int32 game_version;
+    int32 another_game_version;
+    int16 length_pkg_name;
+    string(length_pkg_name) pkg_name;
+    int16 length_server_uuid;
+    string(length_server_uuid) server_uuid;
+    int32 server_key;
 }
 
-struct T_packet_team_list_msg_id
+struct T_team_list
 {
-    T_my_msg_header header ;
-    int32 player_position ;
-    int8 is_game_started ;
-    int32 max_players ;
-    int16 length_gzip_head ;
-    string(length_gzip_head) gzip_head ;
-    int32 length_gzip_blob ;
-    raw(length_gzip_blob) gzip_blob ; #TODO
-    int32 fog_of_war ;
-    int32 credits ;
-    int8 unknown_flag ; #TODO
-    int32 ai_difficulty ;
-    int8 unknown_byte ;
-    int32 unit_limit ;
-    int32 another_unit_limit ;
-    int32 starting_units ;
-    float32 income ;
-    int8 is_no_nuke ;
-    int8 unknown_byte_2 ; #TODO
-    int8 unknown_byte_3 ; #TODO
-    int8 is_shared_control ;
-    int8 is_suspended ;
+    T_header header;
+    int32 player_position;
+    int8 is_game_started;
+    int32 max_players;
+    int16 length_gzip_head;
+    string(length_gzip_head) gzip_head;
+    int32 length_gzip_blob;
+    raw(length_gzip_blob) gzip_blob; #TODO
+    int32 fog_of_war;
+    int32 credits;
+    int8 unknown_flag; #TODO
+    int32 ai_difficulty;
+    int8 unknown_byte;
+    int32 unit_limit;
+    int32 another_unit_limit;
+    int32 starting_units;
+    float32 income;
+    int8 is_no_nuke;
+    int8 unknown_byte_2; #TODO
+    int8 unknown_byte_3; #TODO
+    int8 is_shared_control;
+    int8 is_suspended;
 }
 
-struct T_packet_heart_beat_msg_id
+struct T_heart_beat
 {
-    T_my_msg_header header ;
-    int64 payload ;
-    int8 end_byte ;
+    T_header header;
+    int64 payload;
+    int8 end_byte;
 }
 
-struct T_packet_server_info_msg_id
+struct T_server_info
 {    
-    T_my_msg_header header ;
-    int16 length_package_name ;
-    string(length_package_name) package_name ;
-    int32 game_version ;
-    int32 map_type ;
-    int16 length_map_name ;
-    string(length_map_name) map_name ;
-    int32 credits ;
-    int32 fog_of_war ;
-    int8 unknown_flag ; #TODO
-    int32 unknown_int ; #TODO
-    int8 unknown_byte ; #TODO
-    int8 unknown_flag_2 ; #TODO
-    int8 is_admin ;
-    int32 unit_limit ;
-    int32 another_unit_limit ;
-    int32 starting_units ;
-    float32 income ;
-    int8 is_no_nuke ;
-    int8 unknown_flag_3 ; #TODO
-    int8 have_unit_data ;
+    T_header header;
+    int16 length_package_name;
+    string(length_package_name) package_name;
+    int32 game_version;
+    int32 map_type;
+    int16 length_map_name;
+    string(length_map_name) map_name;
+    int32 credits;
+    int32 fog_of_war;
+    int8 unknown_flag; #TODO
+    int32 unknown_int; #TODO
+    int8 unknown_byte; #TODO
+    int8 unknown_flag_2; #TODO
+    int8 is_admin;
+    int32 unit_limit;
+    int32 another_unit_limit;
+    int32 starting_units;
+    float32 income;
+    int8 is_no_nuke;
+    int8 unknown_flag_3; #TODO
+    int8 have_unit_data;
     if (have_unit_data == 1)
     {
-        int16 length_gzip_head ;
-        string(length_gzip_head) gzip_head ;
-        int32 length_gzip_blob ;
-        raw(length_gzip_blob) gzip_blob ; #TODO
+        int16 length_gzip_head;
+        string(length_gzip_head) gzip_head;
+        int32 length_gzip_blob;
+        raw(length_gzip_blob) gzip_blob; #TODO
     }
-    int8 is_shared_control ; #TODO
-    int8 unknown_flag_4 ; #TODO
-    int8 unknown_flag_5 ; #TODO
-    int8 unknown_flag_6 ; #allow audience TODO
-    int8 unknown_flag_7 ; #TODO
+    int8 is_shared_control; #TODO
+    int8 unknown_flag_4; #TODO
+    int8 unknown_flag_5; #TODO
+    int8 unknown_flag_6; #allow audience TODO
+    int8 unknown_flag_7; #TODO
 }
 
-struct T_packet_preregister_connection_msg_id
+struct T_preregister_connection
 {
-    T_my_msg_header header ;
-    int16 length_package_name ;
-    string(length_package_name) package_name ;
-    int32 protocol_version ;
-    int32 game_version ;
-    int32 another_game_version ;
-    int8 length_relay_id ; #TODO: maybe flag
-    string(length_relay_id) relay_id ;
-    int16 length_nickname ;
-    string(length_nickname) nickname ;
+    T_header header;
+    int16 length_package_name;
+    string(length_package_name) package_name;
+    int32 protocol_version;
+    int32 game_version;
+    int32 another_game_version;
+    int8 length_relay_id; #TODO: maybe flag
+    string(length_relay_id) relay_id;
+    int16 length_nickname;
+    string(length_nickname) nickname;
 }
 
-struct T_packet_player_info_msg_id
+struct T_player_info
 {
-    T_my_msg_header header ;
-    int16 length_package_name ;
-    string(length_package_name) package_name ;
-    int32 protocol_version ;
-    int32 game_version ;
-    int32 another_game_version ;
-    int16 length_nickname ;
-    string(length_nickname) nickname ;
-    int8 have_password ;
+    T_header header;
+    int16 length_package_name;
+    string(length_package_name) package_name;
+    int32 protocol_version;
+    int32 game_version;
+    int32 another_game_version;
+    int16 length_nickname;
+    string(length_nickname) nickname;
+    int8 have_password;
     if (have_password == 1)
     {
         int16 length_password;
         string(length_password) password;
     }
-    int16 length_another_package_name ;
-    string(length_another_package_name) another_package_name ;
-    int16 length_uuid_sum ;
-    string(length_uuid_sum) uuid_sum ;
-    int32 magic_value ;
-    int16 length_token ;
-    string(length_token) token ;
+    int16 length_another_package_name;
+    string(length_another_package_name) another_package_name;
+    int16 length_uuid_sum;
+    string(length_uuid_sum) uuid_sum;
+    int32 magic_value;
+    int16 length_token;
+    string(length_token) token;
 }
 
-struct T_packet_kick_msg_id
+struct T_kick
 {
-    T_my_msg_header header ;
-    int16 length_message ;
-    string(length_message) message ;
+    T_header header;
+    int16 length_message;
+    string(length_message) message;
 }
 
-struct T_packet_c_msg_id
+struct T_heart_beat_response
 {
-    T_my_msg_header header ;
+    T_header header;
+    int64 payload;
+    int8 unknown_byte;
+    int8 unknown_byte_2;
 }
 
-struct T_packet_heart_beat_response_msg_id
+struct T_disconnect
 {
-    T_my_msg_header header ;
-    int64 payload ;
-    int8 unknown_byte ;
-    int8 unknown_byte_2 ;
+    T_header header;
+    int16 length_message;
+    string(length_message) message;
 }
 
-struct T_packet_disconnect_msg_id
+switch T_id_switch T_id
 {
-    T_my_msg_header header ;
-    int16 length_message ;
-    string(length_message) message ;
-}
-
-switch T_my_msg_switch T_my_msg_id
-{
-    case T_my_msg_id::packet_register_connection_msg_id : T_packet_register_connection_msg_id "" ;
-    case T_my_msg_id::packet_team_list_msg_id : T_packet_team_list_msg_id "" ;
-    case T_my_msg_id::packet_heart_beat_msg_id : T_packet_heart_beat_msg_id "" ;
-    case T_my_msg_id::packet_server_info_msg_id : T_packet_server_info_msg_id "" ;
-    case T_my_msg_id::packet_kick_msg_id : T_packet_kick_msg_id "" ;
-    case T_my_msg_id::packet_preregister_connection_msg_id : T_packet_preregister_connection_msg_id "" ;
-    case T_my_msg_id::packet_player_info_msg_id : T_packet_player_info_msg_id "" ;
-    case T_my_msg_id::packet_disconnect_msg_id : T_packet_disconnect_msg_id "" ;
-    case T_my_msg_id::packet_heart_beat_response_msg_id : T_packet_heart_beat_response_msg_id "" ;
+    case T_id::register_connection : T_register_connection "";
+    case T_id::team_list : T_team_list "";
+    case T_id::heart_beat : T_heart_beat "";
+    case T_id::server_info : T_server_info "";
+    case T_id::kick : T_kick "";
+    case T_id::preregister_connection : T_preregister_connection "";
+    case T_id::player_info : T_player_info "";
+    case T_id::disconnect : T_disconnect "";
+    case T_id::heart_beat_response : T_heart_beat_response "";
 } 
