@@ -6,7 +6,7 @@ enum32 T_id
     register_connection 161
     team_list 115
     heart_beat 108
-#    SEND_CHAT 141
+    send_chat 141
     server_info 106
     kick 150
 #    SYNCCHECKSUM_STATUS 31
@@ -15,7 +15,7 @@ enum32 T_id
     #Client Commands
     preregister_connection 160
     heart_beat_response 109
-#    ADD_CHAT 140
+    add_chat 140
     player_info 110
     disconnect 111
 #    ACCEPT_START_GAME 112
@@ -181,6 +181,27 @@ struct T_heart_beat_response
     int8 unknown_byte_2;
 }
 
+struct T_add_chat
+{
+    T_header header;
+    int16 length_message;
+    string(length_message) message;    
+    int8 unknown_byte;
+}
+
+struct T_send_chat
+{
+    T_header header;
+    int16 length_message;
+    string(length_message) message;    
+    int8 protocol_version;
+    int8 unknown_flag;
+    int16 length_author;
+    string(length_author) author;   
+    int32 team_1;
+    int32 team_2;
+}
+
 struct T_disconnect
 {
     T_header header;
@@ -199,4 +220,6 @@ switch T_id_switch T_id
     case T_id::player_info : T_player_info "";
     case T_id::disconnect : T_disconnect "";
     case T_id::heart_beat_response : T_heart_beat_response "";
+    case T_id::add_chat : T_add_chat "";
+    case T_id::send_chat : T_send_chat "";
 } 

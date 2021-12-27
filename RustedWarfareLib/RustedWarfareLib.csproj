@@ -37,6 +37,9 @@
       <Compile Update="HeartBeat.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
+      <Compile Update="AddChat.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
