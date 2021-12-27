@@ -50,8 +50,10 @@ namespace RustedWarfareLib
                 return;
             }
 
-            Write(BitConverter.GetBytes((short)str.Length).Reverse());
-            Write(Encoding.ASCII.GetBytes(str));
+            byte[] bytes = Encoding.UTF8.GetBytes(str);
+
+            Write(BitConverter.GetBytes((short)bytes.Length).Reverse());
+            Write(bytes);
         }
 
         public void WriteIsString(string str) //TODO
