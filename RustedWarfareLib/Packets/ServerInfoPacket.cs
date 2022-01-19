@@ -7,7 +7,7 @@ namespace RustedWarfareLib.Packets
 {
     public class ServerInfoPacket : Packet
     {
-        public ServerInfoPacket(PacketType type) : base(type)
+        public ServerInfoPacket() : base(PacketType.PACKET_SERVER_INFO)
         {
         }
 
@@ -16,6 +16,7 @@ namespace RustedWarfareLib.Packets
             PackageName = ReadString();
             GameVersion = ReadInt();
             MapType = ReadInt();
+            MapName = ReadString();
             Credits = ReadInt();
             FogOfWar = ReadInt();
             unknownFlag = ReadBool();
@@ -49,6 +50,7 @@ namespace RustedWarfareLib.Packets
             Write(PackageName);
             Write(GameVersion);
             Write(MapType);
+            Write(MapName);
             Write(Credits);
             Write(FogOfWar);
             Write(unknownFlag);
@@ -85,6 +87,8 @@ namespace RustedWarfareLib.Packets
 
         public int MapType { get; set; }
 
+        public string MapName { get; set; } = "";
+        
         public int Credits { get; set; }
 
         public int FogOfWar { get; set; } = 2;

@@ -50,6 +50,8 @@ namespace RustedWarfareLib
         
         public int ServerKey { get; set; }
 
+        public string MapName { get; set; }
+
         private readonly CancellationTokenSource cancellationTokenSource;
 
         public Api(string host, int port) : this(host)

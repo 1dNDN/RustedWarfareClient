@@ -14,7 +14,7 @@ namespace RustedWarfareLib
 
             while (!token.IsCancellationRequested)
             {
-                Thread.Sleep(10);
+                Thread.Sleep(1);
 
                 List<byte> bytes = ReceiveBytes();
                 if (bytes.Count == 0)
@@ -73,7 +73,10 @@ namespace RustedWarfareLib
                 case PacketType.PACKET_ACCEPT_BUTTON_GAME: break;
                 case PacketType.PACKET_TICK: break;
                 case PacketType.PACKET_SYNC: break;
-                case PacketType.PACKET_START_GAME: break;
+                case PacketType.PACKET_START_GAME:
+                    ReceiveStartGame(bytes);
+                    SendAcceptStartGame();
+                    break;
                 case PacketType.PACKET_PASSWD_ERROR: break;
                 default: throw new ArgumentOutOfRangeException();
             }

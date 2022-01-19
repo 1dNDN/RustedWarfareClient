@@ -11,6 +11,7 @@ namespace RustedWarfareLib
             ServerInfoPacket packet = new(bytes);
 
             MapType = packet.MapType;
+            MapName = packet.MapName;
             Credits = packet.Credits;
             FogOfWar = packet.FogOfWar;
             IsAdmin = packet.IsAdmin;

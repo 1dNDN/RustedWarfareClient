@@ -31,13 +31,19 @@
       <Compile Update="TeamList.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
-      <Compile Update="ServerInfo.cs">
+      <Compile Update="AcceptServerInfo.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
       <Compile Update="HeartBeat.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
       <Compile Update="AddChat.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
+      <Compile Update="AcceptStartGame.cs">
+        <DependentUpon>Api.cs</DependentUpon>
+      </Compile>
+      <Compile Update="StartGame.cs">
         <DependentUpon>Api.cs</DependentUpon>
       </Compile>
     </ItemGroup>
