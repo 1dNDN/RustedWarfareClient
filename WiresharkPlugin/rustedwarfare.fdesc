@@ -9,8 +9,8 @@ enum32 T_id
     send_chat 141
     server_info 106
     kick 150
-#    SYNCCHECKSUM_STATUS 31
-#    A 30
+    syncchecksum_response 31
+    syncchecksum 30
 
     #Client Commands
     preregister_connection 160
@@ -18,15 +18,15 @@ enum32 T_id
     add_chat 140
     player_info 110
     disconnect 111
-#    ACCEPT_START_GAME 112
-#    ACCEPT_BUTTON_GAME 20
+    accept_start_game 112
+    accept_button_game 20
 
     #Game Commands
-#    ADD_GAMECOMMAND 20
-#    TICK 10
-#    SYNC 35
-    START_GAME 120
-#    PASSWD_ERROR 113
+    ADD_GAMECOMMAND 20
+    tick 10
+    SYNC 35
+    start_game 120
+    PASSWD_ERROR 113
 #TODO: 163
 #TODO: 151
 #TODO: 152
@@ -209,6 +209,58 @@ struct T_disconnect
     string(length_message) message;
 }
 
+struct T_accept_start_game
+{
+    T_header header;
+    int16 flag;
+}
+
+struct T_start_game
+{
+    T_header header;
+    int8 flag;
+    int32 map_type;
+    if (map_type == 0)
+    {
+        int16 length_vanilla_map_name;
+        string(length_vanilla_map_name) vanilla_map_name;
+    } 
+    else
+    {
+        int32 map_lenght;
+        string(map_lenght) map;
+        int16 length_custom_map_name;
+        string(length_custom_map_name) custom_map_name;
+    }
+    int8 flag_2;
+}
+
+struct T_tick
+{
+    T_header header;
+    int32 timestamp;
+    int32 flag;
+    raw(*) the_end;
+}
+
+struct T_syncchecksum_response
+{
+    T_header header;
+    raw(*) the_end;
+}
+
+struct T_syncchecksum
+{
+    T_header header;
+    raw(*) the_end;
+}
+
+struct T_accept_button_game
+{
+    T_header header;
+    raw(*) the_end;
+}
+
 switch T_id_switch T_id
 {
     case T_id::register_connection : T_register_connection "";
@@ -222,4 +274,10 @@ switch T_id_switch T_id
     case T_id::heart_beat_response : T_heart_beat_response "";
     case T_id::add_chat : T_add_chat "";
     case T_id::send_chat : T_send_chat "";
+    case T_id::accept_start_game : T_accept_start_game "";
+    case T_id::start_game : T_start_game "";
+    case T_id::tick : T_tick "";
+    case T_id::syncchecksum_response : T_syncchecksum_response "";
+    case T_id::syncchecksum : T_syncchecksum "";
+    case T_id::accept_button_game : T_accept_button_game "";
 } 
