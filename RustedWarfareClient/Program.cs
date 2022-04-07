@@ -10,11 +10,12 @@ namespace RustedWarfareClient
         public static void Main()
         {
             Api api = new("127.0.0.1") {
-                Nickname = "1dndn"
+                Nickname = "Бот ебучий"
             };
             api.Connect();
             Console.WriteLine("Connected");
-            Thread.Sleep(5000);
+
+            
             api.Disconnect();
             Console.WriteLine("Disconnected");
         }

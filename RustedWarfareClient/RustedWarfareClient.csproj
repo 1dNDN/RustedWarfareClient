@@ -15,4 +15,8 @@
       <ProjectReference Include="..\RustedWarfareLib\RustedWarfareLib.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="OpenTK" Version="4.7.1" />
+    </ItemGroup>
+
 </Project>
