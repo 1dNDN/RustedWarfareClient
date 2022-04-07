@@ -1,15 +1,14 @@
 using RustedWarfareLib.Packets;
 
-namespace RustedWarfareLib
+namespace RustedWarfareLib;
+
+public partial class Api
 {
-    public partial class Api
+    public void SendMessageToChat(string message)
     {
-        public void SendMessageToChat(string message)
-        {
-            AddChatPacket packet = new AddChatPacket {
-                Message = message
-            };
-            socket.Send(packet.ToBytesArray());
-        }
+        AddChatPacket packet = new() {
+            Message = message
+        };
+        socket.Send(packet.ToBytesArray());
     }
 }

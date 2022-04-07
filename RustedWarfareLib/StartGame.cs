@@ -1,17 +1,14 @@
-using System.Collections.Generic;
-
 using RustedWarfareLib.Packets;
 
-namespace RustedWarfareLib
-{
-    public partial class Api
-    {
-        public void ReceiveStartGame(List<byte> bytes)
-        {
-            StartGamePacket packet = new(bytes);
+namespace RustedWarfareLib;
 
-            MapType = packet.MapType;
-            MapName = packet.MapName;
-        }
+public partial class Api
+{
+    public void ReceiveStartGame(List<byte> bytes)
+    {
+        StartGamePacket packet = new(bytes);
+
+        MapType = packet.MapType;
+        MapName = packet.MapName;
     }
 }

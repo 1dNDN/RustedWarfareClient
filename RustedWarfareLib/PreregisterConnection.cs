@@ -1,17 +1,16 @@
 using RustedWarfareLib.Packets;
 
-namespace RustedWarfareLib
+namespace RustedWarfareLib;
+
+public partial class Api
 {
-    public partial class Api
+    private void SendPreregisterConnection()
     {
-        private void SendPreregisterConnection()
-        {
-            PreregisterConnectionPacket packet = new();
+        PreregisterConnectionPacket packet = new();
 
-            if (!string.IsNullOrWhiteSpace(Nickname))
-                packet.Nickname = Nickname;
+        if (!string.IsNullOrWhiteSpace(Nickname))
+            packet.Nickname = Nickname;
 
-            socket.Send(packet.ToBytesArray());
-        }
+        socket.Send(packet.ToBytesArray());
     }
 }

@@ -1,89 +1,84 @@
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 
 using RustedWarfareLib.Models;
 
-namespace RustedWarfareLib
+namespace RustedWarfareLib;
+
+public static class PacketUtils
 {
-    public static class PacketUtils
+    public static byte[] CreatePacket(PacketType type, List<byte> payload)
     {
-        public static byte[] CreatePacket(PacketType type, List<byte> payload)
+        payload.InsertRange(0, BitConverter.GetBytes((int)type).Reverse());
+        payload.InsertRange(0, BitConverter.GetBytes(payload.Count - 4).Reverse());
+        return payload.ToArray();
+    }
+
+    public static string ComputeSha256Hash(string rawData)
+    {
+        return ComputeSha256Hash(Encoding.UTF8.GetBytes(rawData));
+    }
+
+    public static string ComputeSha256Hash(byte[] rawData)
+    {
+        // Create a SHA256   
+        using SHA256 sha256Hash = SHA256.Create();
+        // ComputeHash - returns byte array  
+        byte[] bytes = sha256Hash.ComputeHash(rawData);
+
+        // Convert byte array to a string   
+        StringBuilder builder = new();
+        foreach (byte t in bytes)
+            builder.Append(t.ToString("X2"));
+
+        return builder.ToString();
+    }
+
+    public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
+    {
+        Guid clientGuid = Guid.Parse(clientUuid);
+        Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
+        Guid serverGuid = Guid.Parse(serverUuid);
+        Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
+        BigInteger clientNumGuid = new(clientGuid.ToByteArray());
+        Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
+        BigInteger serverNumGuid = new(serverGuid.ToByteArray());
+        Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
+        BigInteger sumGuid = clientNumGuid + serverNumGuid;
+        Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
+        string sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
+        Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
+        return sumGuidHash;
+    }
+
+    public static string ComputeKeyForPacket(int serverKey)
+    {
+        BigInteger t1Ratio = new(44000);
+        NumberFormatInfo formatInfo = new() {
+            NumberDecimalSeparator = "."
+        };
+
+        string t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
+        if (t1.Contains("E+00"))
+            t1 = t1.Remove(t1.Length - 4, 3);
+        else
         {
-            payload.InsertRange(0, BitConverter.GetBytes((int)type).Reverse());
-            payload.InsertRange(0, BitConverter.GetBytes(payload.Count - 4).Reverse());
-            return payload.ToArray();
+            t1 = (t1Ratio * serverKey).ToString("E7", formatInfo);
+            t1 = t1.Remove(t1.Length - 4, 2);
         }
 
-        public static string ComputeSha256Hash(string rawData)
-        {
-            return ComputeSha256Hash(Encoding.UTF8.GetBytes(rawData));
-        }
-
-        public static string ComputeSha256Hash(byte[] rawData)
-        {
-            // Create a SHA256   
-            using SHA256 sha256Hash = SHA256.Create();
-            // ComputeHash - returns byte array  
-            byte[] bytes = sha256Hash.ComputeHash(rawData);
-
-            // Convert byte array to a string   
-            StringBuilder builder = new();
-            foreach (byte t in bytes)
-                builder.Append(t.ToString("X2"));
-
-            return builder.ToString();
-        }
-
-        public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
-        {
-            Guid clientGuid = Guid.Parse(clientUuid);
-            Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
-            Guid serverGuid = Guid.Parse(serverUuid);
-            Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
-            BigInteger clientNumGuid = new(clientGuid.ToByteArray());
-            Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
-            BigInteger serverNumGuid = new(serverGuid.ToByteArray());
-            Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
-            BigInteger sumGuid = clientNumGuid + serverNumGuid;
-            Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
-            string sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
-            Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
-            return sumGuidHash;
-        }
-
-        public static string ComputeKeyForPacket(int serverKey)
-        {
-            BigInteger t1Ratio = new(44000);
-            NumberFormatInfo formatInfo = new() {
-                NumberDecimalSeparator = "."
-            };
-
-            string t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
-            if (t1.Contains("E+00"))
-            {
-                t1 = t1.Remove(t1.Length - 4, 3);
-            } else
-            {
-                t1 = (t1Ratio * serverKey).ToString("E7", formatInfo);
-                t1 = t1.Remove(t1.Length - 4, 2);
-            }
-
-            return $"c:{serverKey}" +
-                   $"m:{serverKey * 87 + 24}" +
-                   $"0:{44000 * serverKey}" +
-                   $"1:{serverKey}" +
-                   $"2:{13000 * serverKey}" +
-                   $"3:{28000 + serverKey}" +
-                   $"4:{75000 * serverKey}" +
-                   $"5:{160000 + serverKey}" +
-                   $"6:{850000 * serverKey}" +
-                   $"t1:{t1}" +
-                   $"d:{5 * serverKey}";
-        }
+        return $"c:{serverKey}" +
+               $"m:{serverKey * 87 + 24}" +
+               $"0:{44000 * serverKey}" +
+               $"1:{serverKey}" +
+               $"2:{13000 * serverKey}" +
+               $"3:{28000 + serverKey}" +
+               $"4:{75000 * serverKey}" +
+               $"5:{160000 + serverKey}" +
+               $"6:{850000 * serverKey}" +
+               $"t1:{t1}" +
+               $"d:{5 * serverKey}";
     }
 }

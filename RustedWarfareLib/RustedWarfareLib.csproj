@@ -7,45 +7,45 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Update="Read.cs">
-        <DependentUpon>Packet.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Write.cs">
-        <DependentUpon>Packet.cs</DependentUpon>
-      </Compile>
-      <Compile Update="RegisterConnection.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="PreregisterConnection.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="PlayerInfo.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Disconnect.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Receiver.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="TeamList.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="AcceptServerInfo.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="HeartBeat.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="AddChat.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="AcceptStartGame.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
-      <Compile Update="StartGame.cs">
-        <DependentUpon>Api.cs</DependentUpon>
-      </Compile>
+        <Compile Update="Read.cs">
+            <DependentUpon>Packet.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Write.cs">
+            <DependentUpon>Packet.cs</DependentUpon>
+        </Compile>
+        <Compile Update="RegisterConnection.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="PreregisterConnection.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="PlayerInfo.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Disconnect.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Receiver.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="TeamList.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="AcceptServerInfo.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="HeartBeat.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="AddChat.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="AcceptStartGame.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
+        <Compile Update="StartGame.cs">
+            <DependentUpon>Api.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
 
 </Project>

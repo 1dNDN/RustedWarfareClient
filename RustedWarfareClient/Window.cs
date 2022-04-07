@@ -9,13 +9,11 @@ public class Vent : GameWindow
     public Vent(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
     {
     }
-    
+
     protected override void OnUpdateFrame(FrameEventArgs args)
     {
         if (KeyboardState.IsKeyDown(Keys.Escape))
-        {
             Close();
-        }
 
         base.OnUpdateFrame(args);
     }

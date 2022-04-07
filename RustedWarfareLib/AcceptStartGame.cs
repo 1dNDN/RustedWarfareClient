@@ -1,15 +1,12 @@
-using System.Collections.Generic;
-
 using RustedWarfareLib.Packets;
 
-namespace RustedWarfareLib
+namespace RustedWarfareLib;
+
+public partial class Api
 {
-    public partial class Api
+    private void SendAcceptStartGame()
     {
-        private void SendAcceptStartGame()
-        {
-            AcceptStartGamePacket packet = new();
-            socket.Send(packet.ToBytesArray());
-        }
+        AcceptStartGamePacket packet = new();
+        socket.Send(packet.ToBytesArray());
     }
 }

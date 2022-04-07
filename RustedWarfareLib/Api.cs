@@ -1,83 +1,81 @@
 using System.Net.Sockets;
-using System.Threading;
 
-namespace RustedWarfareLib
+namespace RustedWarfareLib;
+
+public partial class Api
 {
-    public partial class Api
+    private readonly CancellationTokenSource cancellationTokenSource;
+    private readonly Socket socket;
+
+    public Api(string host, int port) : this(host)
     {
-        private readonly Socket socket; 
-        public string Host { get; set; }
+        Port = port;
+    }
 
-        public int Port { get; set; } = 5123;
+    public Api(string host)
+    {
+        Host = host;
+        socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
+        cancellationTokenSource = new CancellationTokenSource();
+    }
 
-        public string Nickname { get; set; } = "";
+    public string Host { get; set; }
 
-        public string Password { get; set; } = "";
+    public int Port { get; set; } = 5123;
 
-        public string ServerUuid { get; private set; } = "";
+    public string Nickname { get; set; } = "";
 
-        public string ClientUuid { get; set; } = "";
-        
-        public int PlayerPosition { get; private set; }
+    public string Password { get; set; } = "";
 
-        public bool IsGameStarted { get; private set; }
+    public string ServerUuid { get; private set; } = "";
 
-        public int MaxPlayers { get; private set; }
-        
-        public int MapType { get; set; }
+    public string ClientUuid { get; set; } = "";
 
-        public int FogOfWar { get; private set; }
+    public int PlayerPosition { get; private set; }
 
-        public int Credits { get; private set; }
-        
-        public bool IsAdmin { get; set; }
+    public bool IsGameStarted { get; private set; }
 
-        public int AiDifficulty { get; private set; }
+    public int MaxPlayers { get; private set; }
 
-        public int UnitLimit { get; private set; }
+    public int MapType { get; set; }
 
-        public int AnotherUnitLimit { get; private set; }
+    public int FogOfWar { get; private set; }
 
-        public int StartingUnits { get; private set; }
+    public int Credits { get; private set; }
 
-        public float Income { get; private set; }
+    public bool IsAdmin { get; set; }
 
-        public bool IsNoNuke { get; private set; }
+    public int AiDifficulty { get; private set; }
 
-        public bool IsSharedControl { get; private set; }
+    public int UnitLimit { get; private set; }
 
-        public bool IsSuspended { get; private set; }
-        
-        public int ServerKey { get; set; }
+    public int AnotherUnitLimit { get; private set; }
 
-        public string MapName { get; set; }
+    public int StartingUnits { get; private set; }
 
-        private readonly CancellationTokenSource cancellationTokenSource;
+    public float Income { get; private set; }
 
-        public Api(string host, int port) : this(host)
-        {
-            Port = port;
-        }
-        
-        public Api(string host)
-        {
-            Host = host;
-            socket = new Socket(SocketType.Stream, ProtocolType.Tcp);
-            cancellationTokenSource = new CancellationTokenSource();
-        }
+    public bool IsNoNuke { get; private set; }
 
-        public void Connect()
-        {
-            socket.Connect(Host, Port);
-            SendPreregisterConnection();
-            
-            ThreadPool.QueueUserWorkItem(ReceiveThread!, cancellationTokenSource.Token);
-        }
+    public bool IsSharedControl { get; private set; }
 
-        public void Disconnect()
-        {
-            cancellationTokenSource.Cancel();
-            socket.Disconnect(true);
-        }
+    public bool IsSuspended { get; private set; }
+
+    public int ServerKey { get; set; }
+
+    public string MapName { get; set; }
+
+    public void Connect()
+    {
+        socket.Connect(Host, Port);
+        SendPreregisterConnection();
+
+        ThreadPool.QueueUserWorkItem(ReceiveThread!, cancellationTokenSource.Token);
+    }
+
+    public void Disconnect()
+    {
+        cancellationTokenSource.Cancel();
+        socket.Disconnect(true);
     }
 }
