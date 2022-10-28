@@ -22,7 +22,7 @@ public class TeamListPacket : Packet
         IsGameStarted = ReadBool();
         MaxPlayers = ReadInt();
         TeamGzipHead = ReadString();
-        int lengthGzipBlob = ReadInt();
+        var lengthGzipBlob = ReadInt();
         TeamGzipBlob = ReadBytes(lengthGzipBlob);
         FogOfWar = ReadInt();
         Credits = ReadInt();

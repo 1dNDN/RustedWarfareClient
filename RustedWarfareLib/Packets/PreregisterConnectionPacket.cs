@@ -41,7 +41,7 @@ public class PreregisterConnectionPacket : Packet
     public string Locale { get; set; } = "ru";
 
     public byte UnknownByte { get; set; } = 0;
-    
+
     public byte UnknownByte1 { get; set; } = 0;
 
     public override byte[] ToBytesArray()

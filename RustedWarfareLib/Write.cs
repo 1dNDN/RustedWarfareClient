@@ -4,40 +4,26 @@ namespace RustedWarfareLib;
 
 public partial class Packet
 {
-    public void Write(IEnumerable<byte> bytes)
-    {
+    public void Write(IEnumerable<byte> bytes) =>
         Payload.AddRange(bytes);
-    }
 
-    public void Write(bool value)
-    {
+    public void Write(bool value) =>
         Write(value ? (byte)1 : (byte)0);
-    }
 
-    public void Write(byte value)
-    {
+    public void Write(byte value) =>
         Payload.Add(value);
-    }
 
-    public void Write(short value)
-    {
+    public void Write(short value) =>
         Write(BitConverter.GetBytes(value).Reverse());
-    }
 
-    public void Write(int value)
-    {
+    public void Write(int value) =>
         Write(BitConverter.GetBytes(value).Reverse());
-    }
 
-    public void Write(long value)
-    {
+    public void Write(long value) =>
         Write(BitConverter.GetBytes(value).Reverse());
-    }
 
-    public void Write(float value)
-    {
+    public void Write(float value) =>
         Write(BitConverter.GetBytes(value).Reverse());
-    }
 
     public void Write(string str)
     {
@@ -47,7 +33,7 @@ public partial class Packet
             return;
         }
 
-        byte[] bytes = Encoding.UTF8.GetBytes(str);
+        var bytes = Encoding.UTF8.GetBytes(str);
 
         Write(BitConverter.GetBytes((short)bytes.Length).Reverse());
         Write(bytes);
@@ -71,8 +57,8 @@ public partial class Packet
 
     public void WriteLength()
     {
-        byte[] length = BitConverter.GetBytes(Length).Reverse().ToArray();
-        for (int i = 0; i < 4; i++)
+        var length = BitConverter.GetBytes(Length).Reverse().ToArray();
+        for (var i = 0; i < 4; i++)
             Payload[i] = length[i];
     }
 }

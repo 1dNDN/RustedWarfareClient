@@ -20,7 +20,7 @@ public abstract partial class Packet
 
         ReadInt(); //length
 
-        int type = ReadInt();
+        var type = ReadInt();
         if (!Enum.IsDefined(typeof(PacketType), type))
             Type = PacketType.PACKET_UNKNOWN;
         else
@@ -35,8 +35,8 @@ public abstract partial class Packet
 
     public static PacketType GetType(byte[] bytes)
     {
-        byte[] result = new byte[4];
-        for (int i = 0; i < 4; i++) result[i] = bytes[i + 4];
+        var result = new byte[4];
+        for (var i = 0; i < 4; i++) result[i] = bytes[i + 4];
         return (PacketType)BitConverter.ToInt32(result.Reverse().ToArray());
     }
 

@@ -16,21 +16,19 @@ public static class PacketUtils
         return payload.ToArray();
     }
 
-    public static string ComputeSha256Hash(string rawData)
-    {
-        return ComputeSha256Hash(Encoding.UTF8.GetBytes(rawData));
-    }
+    public static string ComputeSha256Hash(string rawData) =>
+        ComputeSha256Hash(Encoding.UTF8.GetBytes(rawData));
 
     public static string ComputeSha256Hash(byte[] rawData)
     {
         // Create a SHA256   
-        using SHA256 sha256Hash = SHA256.Create();
+        using var sha256Hash = SHA256.Create();
         // ComputeHash - returns byte array  
-        byte[] bytes = sha256Hash.ComputeHash(rawData);
+        var bytes = sha256Hash.ComputeHash(rawData);
 
         // Convert byte array to a string   
         StringBuilder builder = new();
-        foreach (byte t in bytes)
+        foreach (var t in bytes)
             builder.Append(t.ToString("X2"));
 
         return builder.ToString();
@@ -38,17 +36,17 @@ public static class PacketUtils
 
     public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
     {
-        Guid clientGuid = Guid.Parse(clientUuid);
+        var clientGuid = Guid.Parse(clientUuid);
         Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
-        Guid serverGuid = Guid.Parse(serverUuid);
+        var serverGuid = Guid.Parse(serverUuid);
         Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
         BigInteger clientNumGuid = new(clientGuid.ToByteArray());
         Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
         BigInteger serverNumGuid = new(serverGuid.ToByteArray());
         Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
-        BigInteger sumGuid = clientNumGuid + serverNumGuid;
+        var sumGuid = clientNumGuid + serverNumGuid;
         Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
-        string sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
+        var sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
         Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
         return sumGuidHash;
     }
@@ -60,7 +58,7 @@ public static class PacketUtils
             NumberDecimalSeparator = "."
         };
 
-        string t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
+        var t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
         if (t1.Contains("E+00"))
             t1 = t1.Remove(t1.Length - 4, 3);
         else

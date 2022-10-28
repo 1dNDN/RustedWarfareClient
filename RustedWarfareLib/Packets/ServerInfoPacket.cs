@@ -48,7 +48,7 @@ public class ServerInfoPacket : Packet
         if (haveUnitFata)
         {
             UnitGzipHead = ReadString();
-            int lengthUnitGzipBlob = ReadInt();
+            var lengthUnitGzipBlob = ReadInt();
             UnitGzipBlob = ReadBytes(lengthUnitGzipBlob);
         }
 

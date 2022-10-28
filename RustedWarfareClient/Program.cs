@@ -1,13 +1,8 @@
-﻿using OpenTK.Mathematics;
-using OpenTK.Windowing.Common;
-using OpenTK.Windowing.Desktop;
+﻿namespace RustedWarfareClient;
 
-namespace RustedWarfareClient
+internal static class Program
 {
-    internal static class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-        }
     }
 }

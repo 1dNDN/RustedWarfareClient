@@ -8,15 +8,15 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <Optimize>true</Optimize>
+        <Optimize>true</Optimize>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RustedWarfareLib\RustedWarfareLib.csproj" />
+        <ProjectReference Include="..\RustedWarfareLib\RustedWarfareLib.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="OpenTK" Version="4.7.1" />
+        <PackageReference Include="OpenTK" Version="4.7.1"/>
     </ItemGroup>
 
 </Project>

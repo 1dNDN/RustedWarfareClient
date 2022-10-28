@@ -6,52 +6,39 @@ public partial class Packet
 {
     public byte[] ReadBytes(int count)
     {
-        byte[] result = new byte[count];
-        for (int i = 0; i < count; i++) result[i] = Payload[i + offset];
+        var result = new byte[count];
+        for (var i = 0; i < count; i++)
+            result[i] = Payload[i + offset];
 
         offset += count;
         return result;
     }
 
-    private byte[] ReadNumber(int countBytes)
-    {
-        return ReadBytes(countBytes).Reverse().ToArray();
-    }
+    private byte[] ReadNumber(int countBytes) =>
+        ReadBytes(countBytes).Reverse().ToArray();
 
-    public bool ReadBool()
-    {
-        return ReadByte() != 0;
-    }
+    public bool ReadBool() =>
+        ReadByte() != 0;
 
-    public byte ReadByte()
-    {
-        return ReadBytes(1).FirstOrDefault();
-    }
+    public byte ReadByte() =>
+        ReadBytes(1).FirstOrDefault();
 
-    public short ReadShort()
-    {
-        return BitConverter.ToInt16(ReadNumber(2));
-    }
+    public short ReadShort() =>
+        BitConverter.ToInt16(ReadNumber(2));
 
-    public int ReadInt()
-    {
-        return BitConverter.ToInt32(ReadNumber(4));
-    }
+    public int ReadInt() =>
+        BitConverter.ToInt32(ReadNumber(4));
 
-    public long ReadLong()
-    {
-        return BitConverter.ToInt64(ReadNumber(8));
-    }
+    public long ReadLong() =>
+        BitConverter.ToInt64(ReadNumber(8));
 
-    public float ReadFloat()
-    {
-        return BitConverter.ToSingle(ReadNumber(4));
-    }
+    public float ReadFloat() =>
+        BitConverter.ToSingle(ReadNumber(4));
 
     public string ReadString()
     {
-        short charCount = ReadShort();
-        byte[] stringbytes = ReadBytes(charCount);
+        var charCount = ReadShort();
+        var stringbytes = ReadBytes(charCount);
         return Encoding.ASCII.GetString(stringbytes);
     }
 }

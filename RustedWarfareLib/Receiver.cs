@@ -6,13 +6,13 @@ public partial class Api
 {
     private void ReceiveThread(object obj)
     {
-        CancellationToken token = (CancellationToken)obj;
+        var token = (CancellationToken)obj;
 
         while (!token.IsCancellationRequested)
         {
             Thread.Sleep(1);
 
-            List<byte> bytes = ReceiveBytes();
+            var bytes = ReceiveBytes();
             if (bytes.Count == 0)
                 continue;
             SwitchPackets(bytes);
@@ -24,7 +24,7 @@ public partial class Api
     private List<byte> ReceiveBytes()
     {
         List<byte> bytes = new();
-        byte[] buffer = new byte[1024];
+        var buffer = new byte[1024];
 
         while (socket.Available > 0)
         {
@@ -50,7 +50,7 @@ public partial class Api
                 ReceiveTeamList(bytes);
                 break;
             case PacketType.PACKET_HEART_BEAT:
-                long pingNumber = ReceiveHeartBeat(bytes);
+                var pingNumber = ReceiveHeartBeat(bytes);
                 SendHeartBeatResponse(pingNumber);
                 break;
             case PacketType.PACKET_SEND_CHAT: break;
