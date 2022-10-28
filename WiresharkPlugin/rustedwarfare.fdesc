@@ -141,6 +141,8 @@ struct T_preregister_connection
     string(length_nickname) nickname;
     int16 length_locale;
     string(length_locale) locale;
+    int8 unknown_byte; #TODO
+    int8 unknown_byte1; #TODO
 }
 
 struct T_player_info
