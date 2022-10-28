@@ -52,28 +52,37 @@ public static class PacketUtils
             NumberDecimalSeparator = "."
         };
 
-        var t1 = (t1Ratio * serverKey).ToString("E", formatInfo);
-        if (t1.Contains("E+00"))
-            t1 = t1.Remove(t1.Length - 4, 3);
-        else
-        {
-            t1 = (t1Ratio * serverKey).ToString("E7", formatInfo);
-            t1 = t1.Remove(t1.Length - 4, 2);
-        }
+        var t1 = (t1Ratio * serverKey).ToString("0.##############E0", formatInfo);
+    
+        int GetRatios(int num) =>
+            num switch {
+                0 => 4000,
+                1 => 0,
+                2 => 1000,
+                3 => 2000,
+                4 => 5000,
+                5 => 10000,
+                6 => 50000,
+                7 => 100000,
+                8 => 200000,
+                _ => 999
+            };
 
-        return $"c:{serverKey}" +
-               $"m:{serverKey * 87 + 24}" +
-               $"0:{44000 * serverKey}" +
-               $"1:{serverKey}" +
-               $"2:{13000 * serverKey}" +
-               $"3:{28000 + serverKey}" +
-               $"4:{75000 * serverKey}" +
-               $"5:{160000 + serverKey}" +
-               $"6:{850000 * serverKey}" +
-               $"t1:{t1}" +
-               $"d:{5 * serverKey}";
+        return "c:" + serverKey
+                    + "m:" + (serverKey * 87 + 24)
+                    + "0:" + GetRatios(0) * 11 * serverKey + 
+                    "1:" + (GetRatios(1) * 12 + serverKey) + 
+                    "2:" + GetRatios(2) * 13 * serverKey + 
+                    "3:" + (GetRatios(3) * 14 + serverKey) + 
+                    "4:" + GetRatios(4) * 15 * serverKey + 
+                    "5:" + (GetRatios(5) * 16 + serverKey) + 
+                    "6:" + GetRatios(6) * 17 * serverKey + 
+                    "7:" + GetRatios(7) * 18 * serverKey + 
+                    "8:" + GetRatios(8) * 19 * serverKey + 
+                    "t1:" + t1 +
+                    $"d:{5 * serverKey}";
     }
 
     public static string ComputeColorForPacket(int color) =>
-        $"#{(16777215&color):X6}";
+        $"#{16777215 & color:X6}";
 }
