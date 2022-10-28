@@ -27,7 +27,7 @@ public abstract partial class Packet
             Type = (PacketType)type;
     }
 
-    public List<byte> Payload { get; }
+    protected List<byte> Payload { get; }
 
     public int Length => Payload.Count - 8;
 
