@@ -9,29 +9,29 @@ import com.corrodinggames.rts.gameFramework.p041i.StreamWriter;
 /* loaded from: game-lib.jar:com/corrodinggames/rts/game/a/a/a.class */
 public abstract class AbstractC0150a {
     /* renamed from: a */
-    public abstract EnumC0152b mo4996a();
+    public abstract EnumC0152b mo5493a();
 
     /* renamed from: a */
-    public void m5002a(float f, C0136a c0136a) {
+    public void m5499a(float f, C0136a c0136a) {
     }
 
     /* renamed from: b */
-    public void mo4994b(float f, C0136a c0136a) {
+    public void mo5491b(float f, C0136a c0136a) {
     }
 
     /* renamed from: a */
-    public void mo4998a(Reader reader) {
+    public void mo5495a(Reader reader) {
     }
 
     /* renamed from: a */
-    public void mo4999a(StreamWriter streamWriter) {
+    public void mo5496a(StreamWriter streamWriter) {
     }
 
     /* renamed from: a */
-    public void mo5000a(C0136a c0136a, AbstractC0623y abstractC0623y) {
+    public void mo5497a(C0136a c0136a, AbstractC0623y abstractC0623y) {
     }
 
     /* renamed from: b */
-    public void mo4997b(C0136a c0136a, AbstractC0623y abstractC0623y) {
+    public void mo5494b(C0136a c0136a, AbstractC0623y abstractC0623y) {
     }
 }

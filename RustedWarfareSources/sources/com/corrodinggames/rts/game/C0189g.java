@@ -7,9 +7,9 @@ import com.corrodinggames.rts.game.units.custom.C0406bg;
 import com.corrodinggames.rts.game.units.custom.C0413bn;
 import com.corrodinggames.rts.game.units.custom.C0449h;
 import com.corrodinggames.rts.game.units.custom.C0467y;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
-import com.corrodinggames.rts.gameFramework.p041i.C0859ar;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p041i.Reader;
+import com.corrodinggames.rts.gameFramework.p041i.StreamWriter;
 import com.corrodinggames.rts.gameFramework.p044l.C0934e;
 import com.corrodinggames.rts.gameFramework.utility.C1101m;
 import java.io.IOException;
@@ -314,7 +314,7 @@ public class C0189g {
     public float f1196aC = 15.0f;
 
     /* renamed from: aE */
-    public int f1197aE = Color.m5538a(255, 255, 255, 255);
+    public int f1197aE = Color.m5948a(255, 255, 255, 255);
 
     /* renamed from: aF */
     public float f1198aF = 1.0f;
@@ -353,13 +353,13 @@ public class C0189g {
     public C1101m f1209bg = null;
 
     /* renamed from: a */
-    public C0467y m4808a(AbstractC0244am abstractC0244am) {
+    public C0467y m5189a(AbstractC0244am abstractC0244am) {
         C1101m c1101m = this.f1209bg;
         if (c1101m != null && c1101m.f6894a > 0) {
             Iterator it = c1101m.iterator();
             while (it.hasNext()) {
                 C0190h c0190h = (C0190h) it.next();
-                if (c0190h.m4805a(abstractC0244am) && c0190h.f1216g != null) {
+                if (c0190h.m5186a(abstractC0244am) && c0190h.f1216g != null) {
                     return c0190h.f1216g;
                 }
             }
@@ -369,7 +369,7 @@ public class C0189g {
     }
 
     /* renamed from: a */
-    public float m4807a(AbstractC0244am abstractC0244am, float f, boolean z) {
+    public float m5188a(AbstractC0244am abstractC0244am, float f, boolean z) {
         C1101m c1101m;
         float f2;
         if (!z) {
@@ -381,15 +381,15 @@ public class C0189g {
             Iterator it = c1101m.iterator();
             while (it.hasNext()) {
                 C0190h c0190h = (C0190h) it.next();
-                if (c0190h.m4805a(abstractC0244am)) {
+                if (c0190h.m5186a(abstractC0244am)) {
                     if (!z) {
                         if (c0190h.f1214e != null) {
-                            c0190h.f1214e.m3860h(abstractC0244am);
+                            c0190h.f1214e.m4084h(abstractC0244am);
                         }
                         f2 = c0190h.f1212c;
                     } else {
                         if (c0190h.f1215f != null) {
-                            c0190h.f1215f.m3860h(abstractC0244am);
+                            c0190h.f1215f.m4084h(abstractC0244am);
                         }
                         f2 = c0190h.f1213d;
                     }
@@ -401,31 +401,31 @@ public class C0189g {
     }
 
     /* renamed from: a */
-    public static void m4809a(C0189g c0189g, C0859ar c0859ar) {
+    public static void m5190a(C0189g c0189g, StreamWriter streamWriter) {
         if (c0189g == f1099a) {
-            c0859ar.mo1357c(0);
+            streamWriter.m1401c(0);
         } else if (c0189g instanceof C0405bf) {
-            c0859ar.mo1357c(1);
-            C0405bf.m3947a((C0405bf) c0189g, c0859ar);
+            streamWriter.m1401c(1);
+            C0405bf.m4171a((C0405bf) c0189g, streamWriter);
         } else {
-            LoggerMaybe.m965g("writeOutLink: Unhandled projectile type");
-            c0859ar.mo1357c(0);
+            Core.m973g("writeOutLink: Unhandled projectile type");
+            streamWriter.m1401c(0);
         }
     }
 
     /* renamed from: a */
-    public static C0189g m4806a(Reader reader) {
-        byte m1291d = reader.m1291d();
-        if (m1291d == 0) {
+    public static C0189g m5187a(Reader reader) {
+        byte m1304d = reader.m1304d();
+        if (m1304d == 0) {
             return f1099a;
         }
-        if (m1291d == 1) {
-            C0189g m3946b = C0405bf.m3946b(reader);
-            if (m3946b == null) {
+        if (m1304d == 1) {
+            C0189g m4170b = C0405bf.m4170b(reader);
+            if (m4170b == null) {
                 return f1099a;
             }
-            return m3946b;
+            return m4170b;
         }
-        throw new IOException("Unknown projectile type:" + ((int) m1291d));
+        throw new IOException("Unknown projectile type:" + ((int) m1304d));
     }
 }

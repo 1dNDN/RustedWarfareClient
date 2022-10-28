@@ -2,7 +2,7 @@ package com.corrodinggames.rts.gameFramework.p037f.p038a;
 
 import android.graphics.PointF;
 import android.graphics.RectF;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p044l.InterfaceC1027y;
 import com.corrodinggames.rts.gameFramework.utility.C1101m;
 import java.util.Iterator;
@@ -84,17 +84,17 @@ public abstract class AbstractC0773j {
     EnumC0774k f5048x = EnumC0774k.vertical;
 
     /* renamed from: a */
-    public String mo1959a() {
+    public String mo2007a() {
         return getClass().getSimpleName();
     }
 
     /* renamed from: d */
-    public InterfaceC1027y m1937d() {
-        return LoggerMaybe.m1079A().f6113bO;
+    public InterfaceC1027y m1985d() {
+        return Core.m1087A().f6113bO;
     }
 
     /* renamed from: a */
-    public RectF m1949a(RectF rectF, float f, float f2) {
+    public RectF m1997a(RectF rectF, float f, float f2) {
         rectF.f234a = 0.0f + f;
         rectF.f235b = 0.0f + f2;
         rectF.f236c = 0.0f + this.f5033i + f;
@@ -103,11 +103,11 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: a */
-    public RectF m1950a(RectF rectF) {
+    public RectF m1998a(RectF rectF) {
         f5051A.f227a = this.f5031g;
         f5051A.f228b = this.f5032h;
         if (this.f5046v != null) {
-            this.f5046v.m1951a(f5051A);
+            this.f5046v.m1999a(f5051A);
         }
         rectF.f234a = 0.0f + f5051A.f227a;
         rectF.f235b = 0.0f + f5051A.f228b;
@@ -117,10 +117,10 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: b */
-    public void mo1955b() {
+    public void mo2003b() {
         Iterator it = this.f5047w.iterator();
         while (it.hasNext()) {
-            ((AbstractC0773j) it.next()).mo1955b();
+            ((AbstractC0773j) it.next()).mo2003b();
         }
         this.f5049y = 0.0f;
         this.f5050z = 0.0f;
@@ -132,13 +132,13 @@ public abstract class AbstractC0773j {
                 while (it2.hasNext()) {
                     AbstractC0773j abstractC0773j = (AbstractC0773j) it2.next();
                     if (abstractC0773j.f5033i > f) {
-                        f = abstractC0773j.m1931g();
+                        f = abstractC0773j.m1979g();
                     }
-                    f2 += abstractC0773j.m1930h();
+                    f2 += abstractC0773j.m1978h();
                 }
                 this.f5049y = f2;
                 this.f5050z = f;
-                m1942b(this.f5050z * 0.5f, this.f5049y * 0.5f, this.f5047w);
+                m1990b(this.f5050z * 0.5f, this.f5049y * 0.5f, this.f5047w);
             } else if (this.f5048x == EnumC0774k.horizontal) {
                 float f3 = 0.0f;
                 float f4 = 0.0f;
@@ -146,13 +146,13 @@ public abstract class AbstractC0773j {
                 while (it3.hasNext()) {
                     AbstractC0773j abstractC0773j2 = (AbstractC0773j) it3.next();
                     if (abstractC0773j2.f5034j > f3) {
-                        f3 = abstractC0773j2.m1930h();
+                        f3 = abstractC0773j2.m1978h();
                     }
-                    f4 += abstractC0773j2.m1931g();
+                    f4 += abstractC0773j2.m1979g();
                 }
                 this.f5049y = f3;
                 this.f5050z = f4;
-                m1952a(this.f5050z * 0.5f, this.f5049y * 0.5f, this.f5047w);
+                m2000a(this.f5050z * 0.5f, this.f5049y * 0.5f, this.f5047w);
             } else {
                 throw new RuntimeException("Unknown layout style:" + this.f5048x);
             }
@@ -161,11 +161,11 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: a */
-    public static void m1952a(float f, float f2, C1101m c1101m) {
+    public static void m2000a(float f, float f2, C1101m c1101m) {
         float f3 = 0.0f;
         Iterator it = c1101m.iterator();
         while (it.hasNext()) {
-            f3 += ((AbstractC0773j) it.next()).m1931g();
+            f3 += ((AbstractC0773j) it.next()).m1979g();
         }
         float f4 = f - (f3 * 0.5f);
         Iterator it2 = c1101m.iterator();
@@ -174,16 +174,16 @@ public abstract class AbstractC0773j {
             float f5 = f4 + abstractC0773j.f5041q;
             abstractC0773j.f5031g = f5;
             f4 = f5 + abstractC0773j.f5033i + abstractC0773j.f5042r;
-            abstractC0773j.m1936d(f2);
+            abstractC0773j.m1984d(f2);
         }
     }
 
     /* renamed from: b */
-    public static void m1942b(float f, float f2, C1101m c1101m) {
+    public static void m1990b(float f, float f2, C1101m c1101m) {
         float f3 = 0.0f;
         Iterator it = c1101m.iterator();
         while (it.hasNext()) {
-            f3 += ((AbstractC0773j) it.next()).m1930h();
+            f3 += ((AbstractC0773j) it.next()).m1978h();
         }
         float f4 = f2 - (f3 * 0.5f);
         Iterator it2 = c1101m.iterator();
@@ -192,31 +192,31 @@ public abstract class AbstractC0773j {
             float f5 = f4 + abstractC0773j.f5039o;
             abstractC0773j.f5032h = f5;
             f4 = f5 + abstractC0773j.f5034j + abstractC0773j.f5040p;
-            abstractC0773j.m1939c(f);
+            abstractC0773j.m1987c(f);
         }
     }
 
     /* renamed from: a */
-    public void m1951a(PointF pointF) {
+    public void m1999a(PointF pointF) {
         if (this.f5046v != null) {
-            this.f5046v.m1951a(pointF);
+            this.f5046v.m1999a(pointF);
         }
         pointF.f227a += this.f5031g;
         pointF.f228b += this.f5032h;
     }
 
     /* renamed from: a */
-    public void m1946a(AbstractC0773j abstractC0773j) {
-        abstractC0773j.m1940b(this);
+    public void m1994a(AbstractC0773j abstractC0773j) {
+        abstractC0773j.m1988b(this);
     }
 
     /* renamed from: b */
-    public void m1940b(AbstractC0773j abstractC0773j) {
-        m1945a(abstractC0773j, false);
+    public void m1988b(AbstractC0773j abstractC0773j) {
+        m1993a(abstractC0773j, false);
     }
 
     /* renamed from: a */
-    public void m1945a(AbstractC0773j abstractC0773j, boolean z) {
+    public void m1993a(AbstractC0773j abstractC0773j, boolean z) {
         if (this.f5046v == abstractC0773j) {
             return;
         }
@@ -231,65 +231,65 @@ public abstract class AbstractC0773j {
                 abstractC0773j.f5047w.add(0, this);
             }
         }
-        m1935e();
+        m1983e();
     }
 
     /* renamed from: e */
-    public void m1935e() {
+    public void m1983e() {
         this.f5043s = true;
         if (this.f5046v != null) {
-            this.f5046v.m1935e();
+            this.f5046v.m1983e();
         }
     }
 
     /* renamed from: b */
-    public void m1943b(float f) {
+    public void m1991b(float f) {
         if (this.f5047w.size() > 0) {
             Iterator it = this.f5047w.iterator();
             while (it.hasNext()) {
-                ((AbstractC0773j) it.next()).m1943b(f);
+                ((AbstractC0773j) it.next()).m1991b(f);
             }
         }
     }
 
     /* renamed from: f */
-    public void m1933f() {
+    public void m1981f() {
         f5051A.f227a = this.f5031g;
         f5051A.f228b = this.f5032h;
         if (this.f5046v != null) {
-            this.f5046v.m1951a(f5051A);
+            this.f5046v.m1999a(f5051A);
         }
-        mo1928a(f5051A.f227a, f5051A.f228b);
+        mo1976a(f5051A.f227a, f5051A.f228b);
         if (this.f5047w.size() > 0) {
             Iterator it = this.f5047w.iterator();
             while (it.hasNext()) {
-                ((AbstractC0773j) it.next()).m1933f();
+                ((AbstractC0773j) it.next()).m1981f();
             }
         }
     }
 
     /* renamed from: a */
-    public void mo1928a(float f, float f2) {
+    public void mo1976a(float f, float f2) {
         if (this.f5044t) {
-            C0770g.f5020d.m1961a(m1937d(), m1949a(new RectF(), f, f2));
+            C0770g.f5020d.m2009a(m1985d(), m1997a(new RectF(), f, f2));
         }
     }
 
     /* renamed from: a */
-    public void m1947a(AbstractC0772i abstractC0772i) {
+    public void m1995a(AbstractC0772i abstractC0772i) {
         this.f5052B = abstractC0772i;
     }
 
     /* renamed from: a */
-    public boolean m1948a(C0765c c0765c) {
-        if (c0765c.m1971a() && m1938c(c0765c)) {
-            LoggerMaybe.LogDebug2("UI click " + mo1959a());
+    public boolean m1996a(C0765c c0765c) {
+        if (c0765c.m2019a() && m1986c(c0765c)) {
+            Core.LogDebug2("UI click " + mo2007a());
             if (this.f5052B != null) {
-                return this.f5052B.mo1414a(c0765c);
+                return this.f5052B.mo1454a(c0765c);
             }
             return false;
-        } else if (c0765c.m1969b()) {
-            if (m1938c(c0765c)) {
+        } else if (c0765c.m2017b()) {
+            if (m1986c(c0765c)) {
                 this.f5045u = true;
                 return false;
             }
@@ -301,39 +301,39 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: b */
-    public boolean m1941b(C0765c c0765c) {
+    public boolean m1989b(C0765c c0765c) {
         if (this.f5047w.size() > 0) {
             Iterator it = this.f5047w.iterator();
             while (it.hasNext()) {
-                if (((AbstractC0773j) it.next()).m1941b(c0765c)) {
+                if (((AbstractC0773j) it.next()).m1989b(c0765c)) {
                     return true;
                 }
             }
         }
-        if (m1948a(c0765c)) {
+        if (m1996a(c0765c)) {
             return true;
         }
         return false;
     }
 
     /* renamed from: c */
-    public boolean m1938c(C0765c c0765c) {
-        m1950a(f5030f);
-        return f5030f.m5448b(c0765c.f5006a, c0765c.f5007b);
+    public boolean m1986c(C0765c c0765c) {
+        m1998a(f5030f);
+        return f5030f.m5855b(c0765c.f5006a, c0765c.f5007b);
     }
 
     /* renamed from: c */
-    public void m1939c(float f) {
+    public void m1987c(float f) {
         this.f5031g = f - (this.f5033i * 0.5f);
     }
 
     /* renamed from: d */
-    public void m1936d(float f) {
+    public void m1984d(float f) {
         this.f5032h = f - (this.f5034j * 0.5f);
     }
 
     /* renamed from: e */
-    public void m1934e(float f) {
+    public void m1982e(float f) {
         this.f5039o = f;
         this.f5040p = f;
         this.f5041q = f;
@@ -341,7 +341,7 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: f */
-    public void m1932f(float f) {
+    public void m1980f(float f) {
         this.f5035k = f;
         this.f5036l = f;
         this.f5037m = f;
@@ -349,17 +349,17 @@ public abstract class AbstractC0773j {
     }
 
     /* renamed from: g */
-    public float m1931g() {
+    public float m1979g() {
         return this.f5041q + this.f5033i + this.f5042r;
     }
 
     /* renamed from: h */
-    public float m1930h() {
+    public float m1978h() {
         return this.f5039o + this.f5034j + this.f5040p;
     }
 
     /* renamed from: i */
-    public void m1929i() {
-        m1940b((AbstractC0773j) null);
+    public void m1977i() {
+        m1988b((AbstractC0773j) null);
     }
 }

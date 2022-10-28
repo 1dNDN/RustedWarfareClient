@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -21,17 +21,17 @@ public class C0860as {
     public String f5736c;
 
     /* renamed from: e */
-    public DataOutputStream f5737e;
+    public DataOutputStream f5738e;
 
     /* renamed from: f */
-    public boolean f5738f = false;
+    public boolean f5739f = false;
 
     /* renamed from: d */
-    public ByteArrayOutputStream f5739d = new ByteArrayOutputStream();
+    public ByteArrayOutputStream f5737d = new ByteArrayOutputStream();
 
     /* renamed from: a */
-    public void m1379a() {
-        this.f5737e.flush();
+    public void m1392a() {
+        this.f5738e.flush();
         if (this.f5735b != null) {
             this.f5735b.flush();
         }
@@ -41,23 +41,23 @@ public class C0860as {
     }
 
     /* renamed from: b */
-    public void m1378b() {
-        if (!this.f5738f) {
-            this.f5737e.close();
+    public void m1391b() {
+        if (!this.f5739f) {
+            this.f5738e.close();
         } else {
-            LoggerMaybe.m965g("TODO: Cannot yet close wrapped stream");
+            Core.m973g("TODO: Cannot yet close wrapped stream");
         }
     }
 
     public C0860as(boolean z) {
         OutputStream outputStream;
         if (z) {
-            this.f5734a = new GZIPOutputStream(this.f5739d);
+            this.f5734a = new GZIPOutputStream(this.f5737d);
             this.f5735b = new BufferedOutputStream(this.f5734a);
             outputStream = this.f5735b;
         } else {
-            outputStream = this.f5739d;
+            outputStream = this.f5737d;
         }
-        this.f5737e = new DataOutputStream(outputStream);
+        this.f5738e = new DataOutputStream(outputStream);
     }
 }

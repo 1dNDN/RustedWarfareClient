@@ -5,7 +5,7 @@ import com.corrodinggames.rts.game.units.p013a.C0208c;
 import com.corrodinggames.rts.gameFramework.AbstractC1120w;
 import com.corrodinggames.rts.gameFramework.C0637ab;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p041i.Reader;
 import com.corrodinggames.rts.gameFramework.p041i.StreamWriter;
 
@@ -26,283 +26,283 @@ public final class C0305au {
     int f1800d;
 
     /* renamed from: h */
-    AbstractC0244am f1801h;
+    AbstractC0244am f1804h;
 
     /* renamed from: i */
-    public C0637ab f1802i;
+    public C0637ab f1805i;
 
     /* renamed from: j */
-    public boolean f1803j;
+    public boolean f1806j;
 
     /* renamed from: m */
-    public boolean f1804m;
+    public boolean f1809m;
 
     /* renamed from: n */
-    public boolean f1805n;
+    public boolean f1810n;
 
     /* renamed from: e */
-    float f1806e = 1.0f;
+    float f1801e = 1.0f;
 
     /* renamed from: f */
-    float f1807f = 1.0f;
+    float f1802f = 1.0f;
 
     /* renamed from: g */
-    long f1808g = -1;
+    long f1803g = -1;
 
     /* renamed from: k */
-    public float f1809k = -1.0f;
+    public float f1807k = -1.0f;
 
     /* renamed from: l */
-    public float f1810l = -1.0f;
+    public float f1808l = -1.0f;
 
     /* renamed from: a */
-    public boolean m4233a(C0305au c0305au) {
-        if (C0758f.m2085c(this.f1806e - c0305au.f1806e) > 3.0f || C0758f.m2085c(this.f1807f - c0305au.f1807f) > 3.0f) {
+    public boolean m4455a(C0305au c0305au) {
+        if (C0758f.m2137c(this.f1801e - c0305au.f1801e) > 3.0f || C0758f.m2137c(this.f1802f - c0305au.f1802f) > 3.0f) {
             return false;
         }
         return true;
     }
 
     /* renamed from: b */
-    public boolean m4227b(C0305au c0305au) {
-        if (c0305au == null || this.f1797a != c0305au.f1797a || this.f1798b != c0305au.f1798b || C0758f.m2085c(this.f1806e - c0305au.f1806e) > 1.0f || C0758f.m2085c(this.f1807f - c0305au.f1807f) > 1.0f || this.f1800d != c0305au.f1800d || this.f1801h != c0305au.f1801h) {
+    public boolean m4449b(C0305au c0305au) {
+        if (c0305au == null || this.f1797a != c0305au.f1797a || this.f1798b != c0305au.f1798b || C0758f.m2137c(this.f1801e - c0305au.f1801e) > 1.0f || C0758f.m2137c(this.f1802f - c0305au.f1802f) > 1.0f || this.f1800d != c0305au.f1800d || this.f1804h != c0305au.f1804h) {
             return false;
         }
         return true;
     }
 
     /* renamed from: a */
-    public InterfaceC0303as m4237a() {
+    public InterfaceC0303as m4459a() {
         return this.f1798b;
     }
 
     /* renamed from: b */
-    public int m4230b() {
+    public int m4452b() {
         return this.f1800d;
     }
 
     /* renamed from: a */
-    public void m4232a(StreamWriter streamWriter) {
-        streamWriter.mo1363a(this.f1797a);
-        streamWriter.mo1370a(this.f1798b);
-        streamWriter.mo1320a(this.f1806e);
-        streamWriter.mo1320a(this.f1807f);
-        if (this.f1808g != -1) {
-            streamWriter.mo1373a(this.f1808g);
+    public void m4454a(StreamWriter streamWriter) {
+        streamWriter.m1411a(this.f1797a);
+        streamWriter.m1421a(this.f1798b);
+        streamWriter.mo1335a(this.f1801e);
+        streamWriter.mo1335a(this.f1802f);
+        if (this.f1803g != -1) {
+            streamWriter.m1424a(this.f1803g);
         } else {
-            streamWriter.mo1318a(this.f1801h);
+            streamWriter.mo1333a(this.f1804h);
         }
-        streamWriter.mo1355c(this.f1800d);
-        streamWriter.mo1320a(this.f1809k);
-        streamWriter.mo1320a(this.f1810l);
-        streamWriter.mo1314a(this.f1804m);
-        streamWriter.mo1314a(this.f1803j);
-        streamWriter.mo1314a(this.f1805n);
-        C0208c.m4535a(streamWriter, this.f1799c);
+        streamWriter.m1401c(this.f1800d);
+        streamWriter.mo1335a(this.f1807k);
+        streamWriter.mo1335a(this.f1808l);
+        streamWriter.mo1329a(this.f1809m);
+        streamWriter.mo1329a(this.f1806j);
+        streamWriter.mo1329a(this.f1810n);
+        C0208c.m4990a(streamWriter, this.f1799c);
     }
 
     /* renamed from: a */
-    public void m4231a(Reader reader) {
-        this.f1797a = (EnumC0306av) reader.m1293b(EnumC0306av.class);
-        this.f1798b = reader.m1275q();
-        this.f1806e = reader.m1285g();
-        this.f1807f = reader.m1285g();
-        this.f1808g = reader.m1278n();
-        this.f1801h = null;
-        if (reader.m1295b() >= 40) {
-            this.f1800d = reader.m1289d();
+    public void m4453a(Reader reader) {
+        this.f1797a = (EnumC0306av) reader.m1308b(EnumC0306av.class);
+        this.f1798b = reader.m1290q();
+        this.f1801e = reader.m1300g();
+        this.f1802f = reader.m1300g();
+        this.f1803g = reader.m1293n();
+        this.f1804h = null;
+        if (reader.m1310b() >= 40) {
+            this.f1800d = reader.m1304d();
         }
-        if (reader.m1295b() >= 46) {
-            this.f1809k = reader.m1285g();
-            this.f1810l = reader.m1285g();
+        if (reader.m1310b() >= 46) {
+            this.f1807k = reader.m1300g();
+            this.f1808l = reader.m1300g();
         }
-        if (reader.m1295b() >= 58) {
-            this.f1804m = reader.ReadBool();
+        if (reader.m1310b() >= 58) {
+            this.f1809m = reader.ReadBool();
         }
-        if (reader.m1295b() >= 65) {
-            this.f1803j = reader.ReadBool();
+        if (reader.m1310b() >= 65) {
+            this.f1806j = reader.ReadBool();
         }
-        if (reader.m1295b() >= 79) {
-            this.f1805n = reader.ReadBool();
+        if (reader.m1310b() >= 79) {
+            this.f1810n = reader.ReadBool();
         }
-        if (reader.m1295b() >= 82) {
-            this.f1799c = C0208c.m4534a(reader);
+        if (reader.m1310b() >= 82) {
+            this.f1799c = C0208c.m4989a(reader);
         }
     }
 
     /* renamed from: c */
-    public void m4226c() {
-        if (this.f1808g != -1) {
-            this.f1801h = AbstractC1120w.m442a(this.f1808g, true);
-            if (this.f1801h == null) {
-                LoggerMaybe.m983b("convertUnitIds failed");
+    public void m4448c() {
+        if (this.f1803g != -1) {
+            this.f1804h = AbstractC1120w.m442a(this.f1803g, true);
+            if (this.f1804h == null) {
+                Core.m998b("convertUnitIds failed");
                 if (this.f1797a != null) {
-                    LoggerMaybe.m983b("convertUnitIds: type:" + this.f1797a.toString());
+                    Core.m998b("convertUnitIds: type:" + this.f1797a.toString());
                 }
                 if (this.f1798b != null) {
-                    LoggerMaybe.m983b("convertUnitIds: build:" + this.f1798b.toString());
+                    Core.m998b("convertUnitIds: build:" + this.f1798b.toString());
                 }
-                LoggerMaybe.m983b("convertUnitIds: x:" + this.f1806e + ", y:" + this.f1807f);
+                Core.m998b("convertUnitIds: x:" + this.f1801e + ", y:" + this.f1802f);
             }
-            this.f1808g = -1L;
+            this.f1803g = -1L;
         }
     }
 
     /* renamed from: d */
-    public EnumC0306av m4222d() {
+    public EnumC0306av m4444d() {
         return this.f1797a;
     }
 
     /* renamed from: e */
-    public void m4220e() {
-        this.f1797a = EnumC0306av.move;
+    public void m4442e() {
+        this.f1797a = EnumC0306av.f1811a;
         this.f1798b = null;
         this.f1800d = 1;
-        this.f1806e = 2.0f;
-        this.f1807f = 2.0f;
-        this.f1808g = -1L;
-        this.f1801h = null;
-        this.f1802i = null;
-        this.f1809k = -1.0f;
-        this.f1810l = -1.0f;
-        this.f1804m = false;
-        this.f1803j = false;
-        this.f1805n = false;
+        this.f1801e = 2.0f;
+        this.f1802f = 2.0f;
+        this.f1803g = -1L;
+        this.f1804h = null;
+        this.f1805i = null;
+        this.f1807k = -1.0f;
+        this.f1808l = -1.0f;
+        this.f1809m = false;
+        this.f1806j = false;
+        this.f1810n = false;
         this.f1799c = null;
     }
 
     /* renamed from: f */
-    public boolean m4218f() {
-        return this.f1797a == EnumC0306av.attack || this.f1797a == EnumC0306av.repair || this.f1797a == EnumC0306av.reclaim || this.f1797a == EnumC0306av.loadInto || this.f1797a == EnumC0306av.loadUp || this.f1797a == EnumC0306av.guard || this.f1797a == EnumC0306av.touchTarget || this.f1797a == EnumC0306av.follow;
+    public boolean m4440f() {
+        return this.f1797a == EnumC0306av.f1812b || this.f1797a == EnumC0306av.f1814d || this.f1797a == EnumC0306av.f1817g || this.f1797a == EnumC0306av.f1815e || this.f1797a == EnumC0306av.f1819i || this.f1797a == EnumC0306av.f1821k || this.f1797a == EnumC0306av.f1823m || this.f1797a == EnumC0306av.f1824n;
     }
 
     /* renamed from: g */
-    public float m4216g() {
-        if (m4218f() && this.f1801h != null) {
-            return this.f1801h.f6957el;
+    public float m4438g() {
+        if (m4440f() && this.f1804h != null) {
+            return this.f1804h.f6958el;
         }
-        return this.f1806e;
+        return this.f1801e;
     }
 
     /* renamed from: h */
-    public float m4214h() {
-        if (m4218f() && this.f1801h != null) {
-            return this.f1801h.f6958em;
+    public float m4436h() {
+        if (m4440f() && this.f1804h != null) {
+            return this.f1804h.f6959em;
         }
-        return this.f1807f;
+        return this.f1802f;
     }
 
     /* renamed from: i */
-    public AbstractC0244am m4212i() {
-        return this.f1801h;
+    public AbstractC0244am m4434i() {
+        return this.f1804h;
     }
 
     /* renamed from: a */
-    public void m4236a(float f, float f2) {
-        m4220e();
-        this.f1797a = EnumC0306av.move;
-        this.f1806e = f;
-        this.f1807f = f2;
+    public void m4458a(float f, float f2) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1811a;
+        this.f1801e = f;
+        this.f1802f = f2;
     }
 
     /* renamed from: b */
-    public void m4229b(float f, float f2) {
-        m4220e();
-        this.f1797a = EnumC0306av.attackMove;
-        this.f1806e = f;
-        this.f1807f = f2;
+    public void m4451b(float f, float f2) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1818h;
+        this.f1801e = f;
+        this.f1802f = f2;
     }
 
     /* renamed from: a */
-    public void m4234a(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.attack;
-        this.f1801h = abstractC0244am;
+    public void m4456a(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1812b;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: a */
-    public void m4235a(float f, float f2, InterfaceC0303as interfaceC0303as, int i) {
-        m4220e();
-        this.f1797a = EnumC0306av.build;
-        this.f1806e = f;
-        this.f1807f = f2;
+    public void m4457a(float f, float f2, InterfaceC0303as interfaceC0303as, int i) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1813c;
+        this.f1801e = f;
+        this.f1802f = f2;
         this.f1798b = interfaceC0303as;
         this.f1800d = (byte) i;
     }
 
     /* renamed from: b */
-    public void m4228b(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.repair;
-        this.f1801h = abstractC0244am;
+    public void m4450b(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1814d;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: c */
-    public void m4224c(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.guard;
-        this.f1801h = abstractC0244am;
+    public void m4446c(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1821k;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: d */
-    public void m4221d(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.touchTarget;
-        this.f1801h = abstractC0244am;
+    public void m4443d(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1823m;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: e */
-    public void m4219e(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.follow;
-        this.f1801h = abstractC0244am;
+    public void m4441e(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1824n;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: c */
-    public void m4225c(float f, float f2) {
-        m4220e();
-        this.f1797a = EnumC0306av.patrol;
-        this.f1806e = f;
-        this.f1807f = f2;
+    public void m4447c(float f, float f2) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1820j;
+        this.f1801e = f;
+        this.f1802f = f2;
     }
 
     /* renamed from: f */
-    public void m4217f(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.reclaim;
-        this.f1801h = abstractC0244am;
+    public void m4439f(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1817g;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: g */
-    public void m4215g(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.loadInto;
-        this.f1801h = abstractC0244am;
+    public void m4437g(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1815e;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: h */
-    public void m4213h(AbstractC0244am abstractC0244am) {
-        m4220e();
-        this.f1797a = EnumC0306av.loadUp;
-        this.f1801h = abstractC0244am;
+    public void m4435h(AbstractC0244am abstractC0244am) {
+        m4442e();
+        this.f1797a = EnumC0306av.f1819i;
+        this.f1804h = abstractC0244am;
     }
 
     /* renamed from: c */
-    public void m4223c(C0305au c0305au) {
-        m4220e();
+    public void m4445c(C0305au c0305au) {
+        m4442e();
         this.f1797a = c0305au.f1797a;
         this.f1798b = c0305au.f1798b;
-        this.f1806e = c0305au.f1806e;
-        this.f1807f = c0305au.f1807f;
-        this.f1801h = c0305au.f1801h;
-        this.f1802i = c0305au.f1802i;
+        this.f1801e = c0305au.f1801e;
+        this.f1802f = c0305au.f1802f;
+        this.f1804h = c0305au.f1804h;
+        this.f1805i = c0305au.f1805i;
         this.f1800d = c0305au.f1800d;
-        this.f1803j = c0305au.f1803j;
+        this.f1806j = c0305au.f1806j;
         this.f1799c = c0305au.f1799c;
     }
 
     /* renamed from: j */
-    public long m4211j() {
+    public long m4433j() {
         long j = 0;
         if (this.f1797a != null) {
             j = 0 + this.f1797a.ordinal();
@@ -311,24 +311,24 @@ public final class C0305au {
     }
 
     /* renamed from: k */
-    public void m4210k() {
-        if (this.f1801h != null) {
-            this.f1808g = this.f1801h.f6951ee;
-            this.f1801h = null;
+    public void m4432k() {
+        if (this.f1804h != null) {
+            this.f1803g = this.f1804h.f6951ee;
+            this.f1804h = null;
         }
-        this.f1802i = null;
+        this.f1805i = null;
     }
 
     /* renamed from: l */
-    public AbstractC0244am m4209l() {
-        if (m4218f()) {
-            return m4212i();
+    public AbstractC0244am m4431l() {
+        if (m4440f()) {
+            return m4434i();
         }
         AbstractC0623y abstractC0623y = AbstractC0197n.f1371i.f1314s;
         abstractC0623y.f1618ce = 0.0f;
-        abstractC0623y.f6957el = this.f1806e;
-        abstractC0623y.f6958em = this.f1807f;
-        abstractC0623y.f6959en = 0.0f;
+        abstractC0623y.f6958el = this.f1801e;
+        abstractC0623y.f6959em = this.f1802f;
+        abstractC0623y.f6960en = 0.0f;
         return abstractC0623y;
     }
 }

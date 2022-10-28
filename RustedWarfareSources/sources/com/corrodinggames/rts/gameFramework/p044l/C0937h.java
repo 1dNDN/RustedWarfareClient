@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 import com.corrodinggames.rts.game.AbstractC0197n;
 import com.corrodinggames.rts.game.EnumC0198o;
 import com.corrodinggames.rts.gameFramework.C0727bl;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.EnumC1065u;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
 import java.io.IOException;
 
 /* renamed from: com.corrodinggames.rts.gameFramework.l.h */
@@ -49,22 +49,22 @@ public class C0937h extends C0934e {
     public static float f6442G;
 
     /* renamed from: C */
-    public static synchronized void m874C() {
+    public static synchronized void m882C() {
         if (f6434A) {
             return;
         }
         try {
-            LoggerMaybe.LogDebug2("Loading team shaders...");
+            Core.LogDebug2("Loading team shaders...");
             f6431x = new C0938i("assets/shaders/pureGreenTeamColor.frag", true);
-            f6431x.m916a("teamColor", -1);
-            f6431x.mo868c();
+            f6431x.m923a("teamColor", -1);
+            f6431x.mo876c();
             f6432y = new C0938i("assets/shaders/hueAddTeamColor.frag", false);
-            f6432y.m918a("teamColorAmount", 0.15f);
-            f6432y.m916a("teamColor", -1);
-            f6432y.mo868c();
+            f6432y.m925a("teamColorAmount", 0.15f);
+            f6432y.m923a("teamColor", -1);
+            f6432y.mo876c();
             f6433z = new C0938i("assets/shaders/hueShiftTeamColor.frag", false);
-            f6433z.m916a("teamColor", -1);
-            f6433z.mo868c();
+            f6433z.m923a("teamColor", -1);
+            f6433z.mo876c();
             f6434A = true;
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -72,18 +72,18 @@ public class C0937h extends C0934e {
     }
 
     /* renamed from: D */
-    public void m873D() {
+    public void m881D() {
         if (!f6434A) {
-            m874C();
+            m882C();
         }
     }
 
     /* renamed from: a */
-    public String mo70a() {
+    public String mo64a() {
         if (this.f6437H == null) {
             return "LazyColoring (error sourceBitmap==null)";
         }
-        return "LazyColoring(" + this.f6440E + "):" + this.f6437H.mo70a();
+        return "LazyColoring(" + this.f6440E + "):" + this.f6437H.mo64a();
     }
 
     public C0937h(C0934e c0934e, int i, EnumC0198o enumC0198o, int i2) {
@@ -94,94 +94,94 @@ public class C0937h extends C0934e {
         this.f6439D = i;
         this.f6441F = enumC0198o;
         this.f6440E = i2;
-        this.f6437H.mo397a(this);
+        this.f6437H.mo392a(this);
         this.f6399k = null;
     }
 
     /* renamed from: c */
-    public void m872c(boolean z) {
-        if (LoggerMaybe.m998ay()) {
+    public void m880c(boolean z) {
+        if (Core.m1006ay()) {
             if (z) {
             }
-            m873D();
+            m881D();
             if (this.f6441F == EnumC0198o.f1380b) {
-                mo889a(f6432y);
+                mo927a(f6432y);
             } else if (this.f6441F == EnumC0198o.f1382d) {
-                mo889a(f6433z);
+                mo927a(f6433z);
             } else {
-                mo889a(f6431x);
+                mo927a(f6431x);
             }
             this.f6438I = this.f6437H;
             this.f6436C = true;
-        } else if (this.f6437H.mo399A()) {
-            LoggerMaybe.LogDebug2("Lazy loaded bitmap using errored image: " + this.f6437H.mo70a());
+        } else if (this.f6437H.mo394A()) {
+            Core.LogDebug2("Lazy loaded bitmap using errored image: " + this.f6437H.mo64a());
             this.f6438I = this.f6437H;
         } else {
             if (z) {
                 try {
-                    LoggerMaybe.LogDebug2("Loading in lazy loaded bitmap:" + this.f6437H.mo70a() + " team:" + this.f6440E);
+                    Core.LogDebug2("Loading in lazy loaded bitmap:" + this.f6437H.mo64a() + " team:" + this.f6440E);
                 } catch (OutOfMemoryError e) {
-                    LoggerMaybe.LogDebug2("Colouring failed with OOM");
-                    LoggerMaybe.m1040a(EnumC1065u.f6747c, e);
-                    this.f6438I = LoggerMaybe.m1079A().f6113bO.mo134r();
+                    Core.LogDebug2("Colouring failed with OOM");
+                    Core.m1048a(EnumC1065u.f6747c, e);
+                    this.f6438I = Core.m1087A().f6113bO.mo128r();
                     return;
                 }
             }
-            long m2390a = C0727bl.m2390a();
-            this.f6437H.mo59i();
-            this.f6438I = this.f6437H.mo5758clone();
-            this.f6438I.mo58j();
+            long m2440a = C0727bl.m2440a();
+            this.f6437H.mo53i();
+            this.f6438I = this.f6437H.mo54h();
+            this.f6438I.mo52j();
             C0934e[] c0934eArr = {this.f6438I};
             int[] iArr = {this.f6439D};
             int[] iArr2 = {this.f6440E};
-            long m2390a2 = C0727bl.m2390a();
+            long m2440a2 = C0727bl.m2440a();
             if (this.f6441F == EnumC0198o.f1380b) {
-                AbstractC0197n.m4682b(this.f6437H, c0934eArr, iArr);
+                AbstractC0197n.m5061b(this.f6437H, c0934eArr, iArr);
             } else if (this.f6441F == EnumC0198o.f1382d) {
-                AbstractC0197n.m4699a(this.f6437H, c0934eArr, iArr, iArr2);
+                AbstractC0197n.m5078a(this.f6437H, c0934eArr, iArr, iArr2);
             } else {
-                AbstractC0197n.m4700a(this.f6437H, c0934eArr, iArr);
+                AbstractC0197n.m5079a(this.f6437H, c0934eArr, iArr);
             }
-            double m2388a = C0727bl.m2388a(m2390a2);
-            this.f6438I.mo54p();
-            this.f6438I.mo51s();
-            this.f6437H.mo53q();
+            double m2438a = C0727bl.m2438a(m2440a2);
+            this.f6438I.mo48p();
+            this.f6438I.mo45s();
+            this.f6437H.mo47q();
             this.f6437H = null;
-            double m2388a2 = C0727bl.m2388a(m2390a);
-            if (m2388a2 > 1.0d) {
-                LoggerMaybe.LogDebug2((this.f6441F == EnumC0198o.f1379a ? "Standard " : "Hue ") + "Colouring took:" + C0727bl.m2389a(m2388a2) + " (" + C0727bl.m2389a(m2388a) + ")");
+            double m2438a2 = C0727bl.m2438a(m2440a);
+            if (m2438a2 > 1.0d) {
+                Core.LogDebug2((this.f6441F == EnumC0198o.f1379a ? "Standard " : "Hue ") + "Colouring took:" + C0727bl.m2439a(m2438a2) + " (" + C0727bl.m2439a(m2438a) + ")");
             }
-            f6442G = (float) (f6442G + m2388a2);
+            f6442G = (float) (f6442G + m2438a2);
         }
     }
 
     /* renamed from: b */
-    public Bitmap mo395b() {
-        if (this.f6436C && !LoggerMaybe.m998ay()) {
-            LoggerMaybe.LogDebug2("Team shader coloring now disabled. Recoloring image: " + this.f6437H.mo70a());
+    public Bitmap mo390b() {
+        if (this.f6436C && !Core.m1006ay()) {
+            Core.LogDebug2("Team shader coloring now disabled. Recoloring image: " + this.f6437H.mo64a());
             this.f6435B = false;
             this.f6436C = false;
-            mo889a((C0928ae) null);
+            mo927a((C0928ae) null);
         }
         if (!this.f6435B) {
-            m872c(true);
+            m880c(true);
             this.f6435B = true;
         }
         return this.f6438I.f6399k;
     }
 
     /* renamed from: c */
-    public C0934e mo394c() {
-        if (this.f6436C && !LoggerMaybe.m998ay()) {
-            LoggerMaybe.LogDebug2("Team shader coloring now disabled. Recoloring image: " + this.f6437H.mo70a());
+    public C0934e mo389c() {
+        if (this.f6436C && !Core.m1006ay()) {
+            Core.LogDebug2("Team shader coloring now disabled. Recoloring image: " + this.f6437H.mo64a());
             this.f6435B = false;
             this.f6436C = false;
-            mo889a((C0928ae) null);
+            mo927a((C0928ae) null);
         }
         if (!this.f6435B) {
             if (f6442G > 60.0f) {
             }
-            m872c(true);
+            m880c(true);
             this.f6435B = true;
         }
         if (this.f6438I == null) {
@@ -191,18 +191,18 @@ public class C0937h extends C0934e {
     }
 
     /* renamed from: w */
-    public void mo387w() {
+    public void mo383w() {
         if (!this.f6435B) {
-            m872c(false);
+            m880c(false);
             this.f6435B = true;
         }
     }
 
     /* renamed from: u */
-    public int mo389u() {
+    public int mo385u() {
         if ((!this.f6435B) & (this.f6437H != null)) {
-            return this.f6437H.mo389u();
+            return this.f6437H.mo385u();
         }
-        return super.mo389u();
+        return super.mo385u();
     }
 }

@@ -34,32 +34,32 @@ public class C0740d {
     public EnumC0246ao f4645h;
 
     /* renamed from: a */
-    public void m2359a(StreamWriter streamWriter) {
-        streamWriter.mo1373a(this.f4639b);
-        streamWriter.mo1320a(this.f4640c);
-        streamWriter.mo1320a(this.f4641d);
-        streamWriter.mo1320a(this.f4642e);
-        streamWriter.mo1320a(this.f4643f);
+    public void m2411a(StreamWriter streamWriter) {
+        streamWriter.m1424a(this.f4639b);
+        streamWriter.mo1335a(this.f4640c);
+        streamWriter.mo1335a(this.f4641d);
+        streamWriter.mo1335a(this.f4642e);
+        streamWriter.mo1335a(this.f4643f);
         streamWriter.WriteInteger(this.f4644g);
-        streamWriter.mo1363a(this.f4645h);
-        streamWriter.mo1314a(this.f4638a != null);
+        streamWriter.m1411a(this.f4645h);
+        streamWriter.mo1329a(this.f4638a != null);
         if (this.f4638a != null) {
-            this.f4638a.m1167a(streamWriter);
+            this.f4638a.m1182a(streamWriter);
         }
     }
 
     /* renamed from: a */
-    public void m2358a(Reader reader) {
-        this.f4639b = reader.m1283i();
-        this.f4640c = reader.m1285g();
-        this.f4641d = reader.m1285g();
-        this.f4642e = reader.m1285g();
-        this.f4643f = reader.m1285g();
+    public void m2410a(Reader reader) {
+        this.f4639b = reader.m1298i();
+        this.f4640c = reader.m1300g();
+        this.f4641d = reader.m1300g();
+        this.f4642e = reader.m1300g();
+        this.f4643f = reader.m1300g();
         this.f4644g = reader.ReadInt();
-        this.f4645h = (EnumC0246ao) reader.m1293b(EnumC0246ao.class);
+        this.f4645h = (EnumC0246ao) reader.m1308b(EnumC0246ao.class);
         if (reader.ReadBool()) {
             this.f4638a = new C0906k(null, false);
-            this.f4638a.m1166a(reader);
+            this.f4638a.m1181a(reader);
         }
     }
 }

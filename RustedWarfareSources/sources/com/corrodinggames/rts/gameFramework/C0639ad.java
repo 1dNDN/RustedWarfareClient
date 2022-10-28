@@ -23,11 +23,11 @@ public class C0639ad {
     public ArrayList f4152d = new ArrayList();
 
     /* renamed from: a */
-    public boolean m2690a() {
+    public boolean m2738a() {
         Iterator it = this.f4151c.iterator();
         while (it.hasNext()) {
             AbstractC0641af abstractC0641af = (AbstractC0641af) it.next();
-            if (abstractC0641af.f4153a == -1 && abstractC0641af.mo2675a()) {
+            if (abstractC0641af.f4153a == -1 && abstractC0641af.mo2723a()) {
                 return true;
             }
         }
@@ -35,11 +35,11 @@ public class C0639ad {
     }
 
     /* renamed from: b */
-    public boolean m2684b() {
+    public boolean m2732b() {
         Iterator it = this.f4151c.iterator();
         while (it.hasNext()) {
             AbstractC0641af abstractC0641af = (AbstractC0641af) it.next();
-            if (abstractC0641af != null && abstractC0641af.f4153a == -1 && abstractC0641af.mo2673b()) {
+            if (abstractC0641af != null && abstractC0641af.f4153a == -1 && abstractC0641af.mo2721b()) {
                 return true;
             }
         }
@@ -47,19 +47,19 @@ public class C0639ad {
     }
 
     /* renamed from: c */
-    public String m2681c() {
+    public String m2729c() {
         Iterator it = this.f4151c.iterator();
         while (it.hasNext()) {
             AbstractC0641af abstractC0641af = (AbstractC0641af) it.next();
             if (abstractC0641af != null) {
-                return abstractC0641af.mo2672c().toUpperCase();
+                return abstractC0641af.mo2720c().toUpperCase();
             }
         }
         return VariableScope.nullOrMissingString;
     }
 
     /* renamed from: a */
-    public AbstractC0641af m2689a(int i) {
+    public AbstractC0641af m2737a(int i) {
         if (this.f4151c.size() > i) {
             return (AbstractC0641af) this.f4151c.get(i);
         }
@@ -67,24 +67,24 @@ public class C0639ad {
     }
 
     /* renamed from: b */
-    public String m2683b(int i) {
+    public String m2731b(int i) {
         if (this.f4151c.size() > i) {
             AbstractC0641af abstractC0641af = (AbstractC0641af) this.f4151c.get(i);
             if (abstractC0641af == null) {
                 return "<null>";
             }
-            return abstractC0641af.mo2672c().toUpperCase();
+            return abstractC0641af.mo2720c().toUpperCase();
         }
         return VariableScope.nullOrMissingString;
     }
 
     /* renamed from: c */
-    public C0639ad m2680c(int i) {
-        return m2688a(i, 0, 0, false);
+    public C0639ad m2728c(int i) {
+        return m2736a(i, 0, 0, false);
     }
 
     /* renamed from: a */
-    public C0639ad m2688a(int i, int i2, int i3, boolean z) {
+    public C0639ad m2736a(int i, int i2, int i3, boolean z) {
         C0642ag c0642ag = new C0642ag();
         c0642ag.f4157e = i;
         c0642ag.f4153a = -1;
@@ -103,20 +103,20 @@ public class C0639ad {
     }
 
     /* renamed from: a */
-    public C0639ad m2686a(String str) {
-        return m2685a(str, -1);
+    public C0639ad m2734a(String str) {
+        return m2733a(str, -1);
     }
 
     /* renamed from: a */
-    public C0639ad m2685a(String str, int i) {
+    public C0639ad m2733a(String str, int i) {
         if (str == null) {
             throw new RuntimeException("key==null");
         }
-        return m2687a(-1, str, i);
+        return m2735a(-1, str, i);
     }
 
     /* renamed from: a */
-    public C0639ad m2687a(int i, String str, int i2) {
+    public C0639ad m2735a(int i, String str, int i2) {
         if (str == null) {
             throw new RuntimeException("key==null");
         }
@@ -137,7 +137,7 @@ public class C0639ad {
             c0642ag.f4154b += 2;
         }
         try {
-            c0642ag.f4157e = C0638ac.m2691d(lowerCase);
+            c0642ag.f4157e = C0638ac.m2739d(lowerCase);
             if (i2 == -1) {
                 this.f4151c.add(c0642ag);
             } else {
@@ -151,38 +151,38 @@ public class C0639ad {
             }
         } catch (SlickToAndroidKeycodes.MissingKey e) {
             e.printStackTrace();
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
-            if (m1079A != null) {
-                m1079A.m1037a(e.getMessage(), 1);
+            Core m1087A = Core.m1087A();
+            if (m1087A != null) {
+                m1087A.m1045a(e.getMessage(), 1);
             }
         }
         return this;
     }
 
     /* renamed from: b */
-    public C0639ad m2682b(int i, int i2, int i3, boolean z) {
+    public C0639ad m2730b(int i, int i2, int i3, boolean z) {
         C0643ah c0643ah = new C0643ah();
         c0643ah.f4153a = i;
-        c0643ah.f4160e = i2;
-        c0643ah.f4161f = i3;
-        c0643ah.f4158g = z;
+        c0643ah.f4158e = i2;
+        c0643ah.f4159f = i3;
+        c0643ah.f4160g = z;
         try {
-            c0643ah.f4159i = c0643ah.m2677a(true);
+            c0643ah.f4162i = c0643ah.m2725a(true);
             this.f4151c.add(c0643ah);
             return this;
         } catch (IndexOutOfBoundsException e) {
-            LoggerMaybe.m990b("Failed to bind Axis:" + i3 + " on joystick:" + i2);
+            Core.m998b("Failed to bind Axis:" + i3 + " on joystick:" + i2);
             return this;
         }
     }
 
     /* renamed from: d */
-    public boolean mo2678d() {
+    public boolean mo2726d() {
         return false;
     }
 
     /* renamed from: e */
-    public String m2679e() {
+    public String m2727e() {
         return this.f4149a.replace("-", VariableScope.nullOrMissingString).replace("  ", " ").replace("  ", " ").replace(" ", "_").toLowerCase(Locale.ENGLISH);
     }
 }

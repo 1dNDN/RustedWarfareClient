@@ -9,9 +9,9 @@ public class C1060p {
     long f6734a = System.currentTimeMillis();
 
     /* renamed from: b */
-    final /* synthetic */ LoggerMaybe f6735b;
+    final /* synthetic */ Core f6735b;
 
-    public C1060p(LoggerMaybe loggerMaybe) {
-        this.f6735b = loggerMaybe;
+    public C1060p(Core core) {
+        this.f6735b = core;
     }
 }

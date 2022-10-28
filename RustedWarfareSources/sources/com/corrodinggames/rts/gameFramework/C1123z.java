@@ -16,7 +16,7 @@ public class C1123z extends Thread {
     long f6969c;
 
     /* renamed from: a */
-    public synchronized void m420a(boolean z) {
+    public synchronized void m415a(boolean z) {
         this.f6968b = z;
     }
 
@@ -28,23 +28,23 @@ public class C1123z extends Thread {
 
     public void run() {
         long j;
-        LoggerMaybe.m1007ap();
-        if (!LoggerMaybe.f6205aU) {
+        Core.m1015ap();
+        if (!Core.f6205aU) {
             Process.setThreadPriority(-4);
         }
-        m421a();
+        m416a();
         long j2 = this.f6969c;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         while (this.f6968b) {
             long nanoTime = System.nanoTime();
             long j3 = this.f6969c;
-            m421a();
-            m1079A.m1050a(((float) (this.f6969c - j3)) * 0.060000002f, (int) (this.f6969c - j3));
-            if (!m1079A.f6115bQ.batterySaving) {
+            m416a();
+            m1087A.m1058a(((float) (this.f6969c - j3)) * 0.060000002f, (int) (this.f6969c - j3));
+            if (!m1087A.settingEngine.batterySaving) {
             }
-            if (m1079A.f6115bQ.batterySaving) {
+            if (m1087A.settingEngine.batterySaving) {
                 j = 32258064;
-            } else if (m1079A.f6115bQ.highRefreshRate) {
+            } else if (m1087A.settingEngine.highRefreshRate) {
                 j = 3333333;
             } else {
                 j = 16393442;
@@ -69,7 +69,7 @@ public class C1123z extends Thread {
     }
 
     /* renamed from: a */
-    public void m421a() {
+    public void m416a() {
         this.f6969c = System.currentTimeMillis();
     }
 }

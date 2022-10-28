@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -76,9 +76,9 @@ public class RunnableC0854an implements Runnable {
     }
 
     /* renamed from: a */
-    public boolean m1398a(InetAddress inetAddress, boolean z) {
+    public boolean m1438a(InetAddress inetAddress, boolean z) {
         if (inetAddress == null) {
-            LoggerMaybe.LogDebug2("isIpAllowed: inetAddress==null");
+            Core.LogDebug2("isIpAllowed: inetAddress==null");
             return true;
         } else if (!f5694b) {
             return true;
@@ -115,11 +115,11 @@ public class RunnableC0854an implements Runnable {
                         if (c0856ao.f5713b > i) {
                             if (!c0856ao.f5714c) {
                                 c0856ao.f5714c = true;
-                                LoggerMaybe.LogDebug2("DOS: Too many attempts:" + c0856ao.f5713b + " ip:" + inetAddress.toString());
+                                Core.LogDebug2("DOS: Too many attempts:" + c0856ao.f5713b + " ip:" + inetAddress.toString());
                             }
                             if (c0856ao.f5713b > 300 && !c0856ao.f5715d) {
                                 c0856ao.f5715d = true;
-                                LoggerMaybe.LogDebug2("DOS: Excessive attempts:" + c0856ao.f5713b + " ip:" + inetAddress.toString());
+                                Core.LogDebug2("DOS: Excessive attempts:" + c0856ao.f5713b + " ip:" + inetAddress.toString());
                             }
                             return false;
                         }
@@ -150,7 +150,7 @@ public class RunnableC0854an implements Runnable {
                 if (this.f5706m > 500) {
                     if (!this.f5709p) {
                         this.f5709p = true;
-                        LoggerMaybe.LogDebug2("DOS: Too many unique attempts: " + this.f5706m + ". udp:" + this.f5699f);
+                        Core.LogDebug2("DOS: Too many unique attempts: " + this.f5706m + ". udp:" + this.f5699f);
                         return false;
                     }
                     return false;
@@ -175,14 +175,14 @@ public class RunnableC0854an implements Runnable {
                 if (i2 > i4) {
                     if (!this.f5710q) {
                         this.f5710q = true;
-                        LoggerMaybe.LogDebug2("DOS: Too open connections from same ip:" + inetAddress.toString() + " (count:" + i2 + ") max:" + i4);
+                        Core.LogDebug2("DOS: Too open connections from same ip:" + inetAddress.toString() + " (count:" + i2 + ") max:" + i4);
                         return false;
                     }
                     return false;
                 } else if (i3 > 300) {
                     if (!this.f5708o) {
                         this.f5708o = true;
-                        LoggerMaybe.LogDebug2("DOS: Too open connections locking down:" + inetAddress.toString() + " (count:" + i3 + ")");
+                        Core.LogDebug2("DOS: Too open connections locking down:" + inetAddress.toString() + " (count:" + i3 + ")");
                         return false;
                     }
                     return false;
@@ -195,7 +195,7 @@ public class RunnableC0854an implements Runnable {
     }
 
     /* renamed from: a */
-    public void m1399a() {
+    public void m1439a() {
         this.f5695r.LogError("Recreating server socket " + (this.f5699f ? "udp" : "tcp"));
         synchronized (this.f5703j) {
             if (this.f5697d != null) {
@@ -209,12 +209,12 @@ public class RunnableC0854an implements Runnable {
             if (!this.f5696c) {
                 throw new IOException("recreate on non-active socket");
             }
-            m1397a(this.f5699f);
+            m1437a(this.f5699f);
         }
     }
 
     /* renamed from: a */
-    public void m1397a(boolean z) {
+    public void m1437a(boolean z) {
         this.f5698e = this.f5695r.socketPort;
         this.f5695r.LogError("starting socket.. " + (z ? "udp" : "tcp") + " port: " + this.f5698e);
         this.f5699f = z;
@@ -223,7 +223,7 @@ public class RunnableC0854an implements Runnable {
             return;
         }
         C0010b c0010b = new C0010b(this.f5695r.socketPort, 0, null, true);
-        c0010b.m5717a(new C08551());
+        c0010b.m6127a(new C08551());
         this.f5697d = c0010b;
     }
 
@@ -235,17 +235,17 @@ public class RunnableC0854an implements Runnable {
         }
 
         /* renamed from: a */
-        public boolean mo5708a(SocketAddress socketAddress) {
+        public boolean mo6118a(SocketAddress socketAddress) {
             if (socketAddress instanceof InetSocketAddress) {
-                return RunnableC0854an.this.m1398a(((InetSocketAddress) socketAddress).getAddress(), false);
+                return RunnableC0854an.this.m1438a(((InetSocketAddress) socketAddress).getAddress(), false);
             }
-            LoggerMaybe.LogDebug2("AcceptFilter: Unhandled SocketAddress type:" + socketAddress.getClass().getName());
+            Core.LogDebug2("AcceptFilter: Unhandled SocketAddress type:" + socketAddress.getClass().getName());
             return true;
         }
     }
 
     public void run() {
-        LoggerMaybe.m1007ap();
+        Core.m1015ap();
         Thread.currentThread().setName("NewConnectionWorker-" + (this.f5699f ? "udp" : "tcp") + " - " + this.f5698e);
         int i = 0;
         int i2 = 0;
@@ -261,7 +261,7 @@ public class RunnableC0854an implements Runnable {
                     if (inetAddress != null) {
                         str = inetAddress.getHostAddress();
                     }
-                    if (!m1398a(inetAddress, true)) {
+                    if (!m1438a(inetAddress, true)) {
                         accept.close();
                     } else {
                         Steam steam = new Steam(this.f5695r, accept);
@@ -272,41 +272,41 @@ public class RunnableC0854an implements Runnable {
                         this.f5695r.LogError(str2);
                         steam.f5773h = this.f5699f;
                         steam.f5770e = inetAddress;
-                        steam.m1334d();
+                        steam.m1347d();
                         this.f5695r.f5606bc.add(steam);
                     }
                 } catch (IOException e) {
-                    LoggerMaybe.LogDebug2("Got IOException on new player connection");
+                    Core.LogDebug2("Got IOException on new player connection");
                     e.printStackTrace();
                 }
             } catch (IOException e2) {
                 if (this.f5696c) {
-                    LoggerMaybe m1079A = LoggerMaybe.m1079A();
+                    Core m1087A = Core.m1087A();
                     i++;
-                    LoggerMaybe.LogDebug2("ServerSocket-accept(" + (this.f5699f ? "udp" : "tcp") + ") failed: " + e2.getMessage() + " (closed:" + this.f5697d.isClosed() + ")");
+                    Core.LogDebug2("ServerSocket-accept(" + (this.f5699f ? "udp" : "tcp") + ") failed: " + e2.getMessage() + " (closed:" + this.f5697d.isClosed() + ")");
                     if (i > 100) {
-                        LoggerMaybe.LogDebug2("Too many server socket fails");
-                        m1396b();
+                        Core.LogDebug2("Too many server socket fails");
+                        m1436b();
                         return;
                     }
                     try {
-                        m1399a();
-                        if (i2 < 3 && m1079A.f6122bX.m1603C() > 0) {
+                        m1439a();
+                        if (i2 < 3 && m1087A.f6122bX.m1645C() > 0) {
                             String str3 = "Warning: server socket got closed and needed to be recreated, players were likely disconnected (but can rejoin).";
-                            if (LoggerMaybe.f6210aZ) {
+                            if (Core.f6210aZ) {
                                 str3 = str3 + "\n This likely due to iOS removing sockets of background apps. Avoid minimising the game when hosting.";
                             }
-                            LoggerMaybe.m1079A().m961i(str3);
+                            Core.m1087A().m969i(str3);
                             i2++;
                         }
                     } catch (IOException e3) {
                         e3.printStackTrace();
-                        LoggerMaybe.m1079A().m961i("Warning server socket got closed and could not be recreated");
-                        m1396b();
+                        Core.m1087A().m969i("Warning server socket got closed and could not be recreated");
+                        m1436b();
                         return;
                     }
                 } else {
-                    LoggerMaybe.LogDebug2("ServerSocket-accept(" + (this.f5699f ? "udp" : "tcp") + "): Got expected IOException after closed socket");
+                    Core.LogDebug2("ServerSocket-accept(" + (this.f5699f ? "udp" : "tcp") + "): Got expected IOException after closed socket");
                     return;
                 }
             }
@@ -314,7 +314,7 @@ public class RunnableC0854an implements Runnable {
     }
 
     /* renamed from: b */
-    public void m1396b() {
+    public void m1436b() {
         synchronized (this.f5703j) {
             this.f5696c = false;
             if (this.f5697d != null) {

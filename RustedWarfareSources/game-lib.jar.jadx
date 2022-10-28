@@ -11,6 +11,41 @@
     [
       "Source code",
       "game-lib.jar"
+    ],
+    [
+      "com",
+      "Source code",
+      "game-lib.jar"
+    ],
+    [
+      "corrodinggames",
+      "com",
+      "Source code",
+      "game-lib.jar"
+    ],
+    [
+      "rts",
+      "corrodinggames",
+      "com",
+      "Source code",
+      "game-lib.jar"
+    ],
+    [
+      "gameFramework",
+      "rts",
+      "corrodinggames",
+      "com",
+      "Source code",
+      "game-lib.jar"
+    ],
+    [
+      "com.corrodinggames.rts.gameFramework.l",
+      "gameFramework",
+      "rts",
+      "corrodinggames",
+      "com",
+      "Source code",
+      "game-lib.jar"
     ]
   ],
   "codeData": {
@@ -194,6 +229,18 @@
           "index": 46
         },
         "comment": "Pkg name"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.corrodinggames.rts.gameFramework.i.ad",
+          "shortId": "g(Lcom/corrodinggames/rts/gameFramework/i/c;)V"
+        },
+        "codeRef": {
+          "attachType": "INSN",
+          "index": 54
+        },
+        "comment": "ServerUUID"
       }
     ],
     "renames": [
@@ -230,7 +277,7 @@
           "refType": "CLASS",
           "declClass": "com.corrodinggames.rts.gameFramework.l"
         },
-        "newName": "LoggerMaybe"
+        "newName": "Core"
       },
       {
         "nodeRef": {
@@ -370,6 +417,22 @@
       },
       {
         "nodeRef": {
+          "refType": "FIELD",
+          "declClass": "com.corrodinggames.rts.gameFramework.l",
+          "shortId": "al:Lcom/corrodinggames/rts/gameFramework/l;"
+        },
+        "newName": "coreSingletone"
+      },
+      {
+        "nodeRef": {
+          "refType": "FIELD",
+          "declClass": "com.corrodinggames.rts.gameFramework.l",
+          "shortId": "bQ:Lcom/corrodinggames/rts/gameFramework/SettingsEngine;"
+        },
+        "newName": "settingEngine"
+      },
+      {
+        "nodeRef": {
           "refType": "METHOD",
           "declClass": "android.util.Log",
           "shortId": "a(Ljava/lang/String;Ljava/lang/String;)I"
@@ -391,6 +454,18 @@
           "shortId": "a(Lcom/corrodinggames/rts/gameFramework/i/c;Lcom/corrodinggames/rts/gameFramework/i/at;)V"
         },
         "newName": "SendPacket"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.corrodinggames.rts.gameFramework.i.ad",
+          "shortId": "aa()V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 0
+        },
+        "newName": "core"
       },
       {
         "nodeRef": {
@@ -480,6 +555,14 @@
         "nodeRef": {
           "refType": "METHOD",
           "declClass": "com.corrodinggames.rts.gameFramework.i.ad",
+          "shortId": "f(Lcom/corrodinggames/rts/gameFramework/i/c;)V"
+        },
+        "newName": "SendPreregisterConnection"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.corrodinggames.rts.gameFramework.i.ad",
           "shortId": "g(Lcom/corrodinggames/rts/gameFramework/i/c;)V"
         },
         "newName": "SendRegisterConnection"
@@ -564,6 +647,14 @@
         "nodeRef": {
           "refType": "METHOD",
           "declClass": "com.corrodinggames.rts.gameFramework.l",
+          "shortId": "A()Lcom/corrodinggames/rts/gameFramework/l;"
+        },
+        "newName": "getCoreSingletone"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.corrodinggames.rts.gameFramework.l",
           "shortId": "c(Ljava/lang/String;)V"
         },
         "newName": "LogDebug"
@@ -583,34 +674,24 @@
       "type": "class",
       "tabPath": "com.corrodinggames.rts.gameFramework.i.ad",
       "subPath": "java",
-      "caret": 153060,
+      "caret": 152491,
       "view": {
         "x": 0,
-        "y": 65551
+        "y": 66241
       }
     },
     {
       "type": "class",
       "tabPath": "com.corrodinggames.rts.gameFramework.i.ar",
       "subPath": "java",
-      "caret": 1595,
+      "caret": 4801,
       "view": {
         "x": 0,
-        "y": 384
-      }
-    },
-    {
-      "type": "class",
-      "tabPath": "com.corrodinggames.rts.gameFramework.i.c",
-      "subPath": "java",
-      "caret": 11840,
-      "view": {
-        "x": 0,
-        "y": 6460
+        "y": 2140
       }
     }
   ],
-  "activeTab": 1,
+  "activeTab": 0,
   "cacheDir": "Q:\\SteamLibrary\\steamapps\\common\\Rusted Warfare\\game-lib.jar.cache",
   "enableLiveReload": false,
   "searchHistory": [

@@ -58,13 +58,13 @@ public class C0845ah implements Cloneable {
     public boolean f5668p = false;
 
     /* renamed from: a */
-    public void m1407a() {
+    public void m1449a() {
         this.f5654a = EnumC0846ai.f5669a;
         this.f5655b = "[z;p10]Crossing Large (10p).tmx";
     }
 
     /* renamed from: b */
-    public String m1404b() {
+    public String m1446b() {
         return ((((((((((VariableScope.nullOrMissingString + "startingCredits: " + this.f5656c + "\n") + "fogMode: " + this.f5657d + "\n") + "revealedMap: " + this.f5658e + "\n") + "aiDifficulty: " + this.f5659f + "\n") + "startingUnits: " + this.f5660g + "\n") + "incomeMultiplier: " + this.f5661h + "\n") + "noNukes: " + this.f5662i + "\n") + "sharedControl: " + this.f5652l + "\n") + "allowSpectators: " + this.f5667o + "\n") + "lockedRoom: " + this.f5668p + "\n") + "randomSeed: " + this.f5653q + "\n";
     }
 
@@ -78,47 +78,47 @@ public class C0845ah implements Cloneable {
     }
 
     /* renamed from: a */
-    public void m1406a(StreamWriter streamWriter) {
-        streamWriter.mo1355c(4);
+    public void m1448a(StreamWriter streamWriter) {
+        streamWriter.m1401c(4);
         streamWriter.WriteInteger(this.f5657d);
         streamWriter.WriteInteger(this.f5656c);
-        streamWriter.mo1314a(this.f5658e);
+        streamWriter.mo1329a(this.f5658e);
         streamWriter.WriteInteger(this.f5659f);
         streamWriter.WriteInteger(this.f5660g);
-        streamWriter.mo1320a(this.f5661h);
-        streamWriter.mo1314a(this.f5662i);
-        streamWriter.mo1314a(this.f5663j);
-        streamWriter.mo1314a(this.f5652l);
-        streamWriter.mo1314a(this.f5665m);
-        streamWriter.mo1314a(this.f5666n);
-        streamWriter.mo1314a(this.f5667o);
-        streamWriter.mo1314a(this.f5668p);
+        streamWriter.mo1335a(this.f5661h);
+        streamWriter.mo1329a(this.f5662i);
+        streamWriter.mo1329a(this.f5663j);
+        streamWriter.mo1329a(this.f5652l);
+        streamWriter.mo1329a(this.f5665m);
+        streamWriter.mo1329a(this.f5666n);
+        streamWriter.mo1329a(this.f5667o);
+        streamWriter.mo1329a(this.f5668p);
         streamWriter.WriteInteger(this.f5653q);
     }
 
     /* renamed from: a */
-    public void m1405a(Reader reader) {
-        byte m1289d = reader.m1289d();
+    public void m1447a(Reader reader) {
+        byte m1304d = reader.m1304d();
         this.f5657d = reader.ReadInt();
         this.f5656c = reader.ReadInt();
         this.f5658e = reader.ReadBool();
         this.f5659f = reader.ReadInt();
         this.f5660g = reader.ReadInt();
-        this.f5661h = reader.m1285g();
+        this.f5661h = reader.m1300g();
         this.f5662i = reader.ReadBool();
         this.f5663j = reader.ReadBool();
         this.f5652l = reader.ReadBool();
-        if (m1289d >= 1) {
+        if (m1304d >= 1) {
             this.f5665m = reader.ReadBool();
         }
-        if (m1289d >= 2) {
+        if (m1304d >= 2) {
             this.f5666n = reader.ReadBool();
         }
-        if (m1289d >= 3) {
+        if (m1304d >= 3) {
             this.f5667o = reader.ReadBool();
             this.f5668p = reader.ReadBool();
         }
-        if (m1289d >= 4) {
+        if (m1304d >= 4) {
             this.f5653q = reader.ReadInt();
         }
     }

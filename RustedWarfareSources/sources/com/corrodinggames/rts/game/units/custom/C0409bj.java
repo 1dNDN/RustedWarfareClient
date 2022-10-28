@@ -1,7 +1,7 @@
 package com.corrodinggames.rts.game.units.custom;
 
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,7 +16,7 @@ public class C0409bj {
     int f2539b;
 
     /* renamed from: a */
-    public void m3774a(float f) {
+    public void m4162a(float f) {
         Iterator it = this.f2538a.iterator();
         while (it.hasNext()) {
             ((C0410bk) it.next()).f2541b = f;
@@ -24,17 +24,17 @@ public class C0409bj {
     }
 
     /* renamed from: a */
-    public boolean m3775a() {
-        return m3772a(0.0f, 0.0f, 1.0f, true);
+    public boolean m4163a() {
+        return m4160a(0.0f, 0.0f, 1.0f, true);
     }
 
     /* renamed from: a */
-    public boolean m3773a(float f, float f2, float f3) {
-        return m3772a(f, f2, f3, false);
+    public boolean m4161a(float f, float f2, float f3) {
+        return m4160a(f, f2, f3, false);
     }
 
     /* renamed from: a */
-    public boolean m3772a(float f, float f2, float f3, boolean z) {
+    public boolean m4160a(float f, float f2, float f3, boolean z) {
         if (this.f2538a.size() == 0) {
             return false;
         }
@@ -42,23 +42,23 @@ public class C0409bj {
             this.f2539b = 0;
         }
         C0410bk c0410bk = (C0410bk) this.f2538a.get(this.f2539b);
-        AbstractC0916l m1071A = AbstractC0916l.m1071A();
+        Core m1087A = Core.m1087A();
         if (z) {
-            m1071A.f6159bM.m2695c(c0410bk.f2540a, c0410bk.f2541b);
+            m1087A.f6111bM.m2768c(c0410bk.f2540a, c0410bk.f2541b);
         } else {
-            m1071A.f6159bM.m2703a(c0410bk.f2540a, c0410bk.f2541b, f, f2);
+            m1087A.f6111bM.m2776a(c0410bk.f2540a, c0410bk.f2541b, f, f2);
         }
         this.f2539b++;
         return true;
     }
 
     /* renamed from: a */
-    public static C0409bj m3771a(C0453l c0453l, String str) {
-        return m3770a(c0453l, str, (C0409bj) null);
+    public static C0409bj m4159a(C0453l c0453l, String str) {
+        return m4158a(c0453l, str, (C0409bj) null);
     }
 
     /* renamed from: a */
-    public static C0409bj m3770a(C0453l c0453l, String str, C0409bj c0409bj) {
+    public static C0409bj m4158a(C0453l c0453l, String str, C0409bj c0409bj) {
         if ((str == null || str.equals(VariableScope.nullOrMissingString)) && c0409bj != null) {
             return c0409bj;
         }
@@ -102,7 +102,7 @@ public class C0409bj {
                     throw new RuntimeException("Failed to parse volume float: '" + str4 + "' of sound: '" + trim + "'");
                 }
             }
-            c0410bk.f2540a = C0348af.m3901a(c0453l.f2933E, str3 + trim2, c0453l);
+            c0410bk.f2540a = C0348af.m4295a(c0453l.f2916E, str3 + trim2, c0453l);
             if (c0410bk.f2540a != null) {
                 this.f2538a.add(c0410bk);
             }

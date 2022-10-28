@@ -1,7 +1,7 @@
 package com.corrodinggames.rts.game.units.custom;
 
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
 import com.corrodinggames.rts.gameFramework.C0894j;
+import com.corrodinggames.rts.gameFramework.Core;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* renamed from: com.corrodinggames.rts.game.units.custom.z */
@@ -9,7 +9,7 @@ import com.corrodinggames.rts.gameFramework.C0894j;
 public class C0468z {
 
     /* renamed from: a */
-    public long f3360a = m3352a(true);
+    public long f3360a = m3633a(true);
 
     /* renamed from: b */
     public String f3361b;
@@ -19,14 +19,14 @@ public class C0468z {
     }
 
     /* renamed from: a */
-    public long m3352a(boolean z) {
-        if (AbstractC0916l.m995at()) {
+    public long m3633a(boolean z) {
+        if (Core.m1011at()) {
             return 0L;
         }
-        long m1229a = C0894j.m1229a(this.f3361b, z);
-        if (z && m1229a == 0) {
-            AbstractC0916l.m963e("Failed to watch: " + this.f3361b);
+        long m1250a = C0894j.m1250a(this.f3361b, z);
+        if (z && m1250a == 0) {
+            Core.LogDebug2("Failed to watch: " + this.f3361b);
         }
-        return m1229a;
+        return m1250a;
     }
 }

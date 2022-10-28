@@ -1,8 +1,8 @@
 package com.corrodinggames.rts.game.units.custom;
 
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
 import com.corrodinggames.rts.gameFramework.C0758f;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p040h.C0824b;
 
 /* renamed from: com.corrodinggames.rts.game.units.custom.aa */
@@ -28,14 +28,14 @@ public class C0343aa {
     C0453l f2157f;
 
     /* renamed from: a */
-    public String m3927a() {
+    public String m4321a() {
         String str = "from internal units";
         if (this.f2152a != null) {
             str = "from mod:'" + this.f2152a + "'";
         }
-        C0824b m1653e = AbstractC0916l.m1071A().f6172bZ.m1653e(this.f2152a);
-        if (m1653e != null) {
-            if (!m1653e.m1623m()) {
+        C0824b m1703e = Core.m1087A().f6124bZ.m1703e(this.f2152a);
+        if (m1703e != null) {
+            if (!m1703e.m1673m()) {
                 str = str + " (You seem to have this mod but it is not enabled)";
             } else {
                 str = str + " (You seem to have this mod but it might be a different version)";
@@ -43,18 +43,18 @@ public class C0343aa {
         }
         String str2 = VariableScope.nullOrMissingString;
         if (this.f2157f != null && this.f2156e != null) {
-            if (this.f2157f.f2936H == null) {
+            if (this.f2157f.f2918H == null) {
                 str2 = " (Extra debug not enabled)";
             } else {
                 String[] split = this.f2156e.split("\n");
-                String[] split2 = this.f2157f.f2936H.split("\n");
-                int m2070c = C0758f.m2070c(split.length, split2.length);
+                String[] split2 = this.f2157f.f2918H.split("\n");
+                int m2132c = C0758f.m2132c(split.length, split2.length);
                 if (split.length != split2.length) {
                     str2 = str2 + "Line length difference: " + split.length + " vs " + split2.length;
                 }
                 int i = 0;
                 while (true) {
-                    if (i >= m2070c) {
+                    if (i >= m2132c) {
                         break;
                     } else if (split[i].equals(split2[i])) {
                         i++;

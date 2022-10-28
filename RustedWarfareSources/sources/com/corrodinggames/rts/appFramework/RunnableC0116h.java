@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.appFramework;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* renamed from: com.corrodinggames.rts.appFramework.h */
@@ -19,12 +19,12 @@ public class RunnableC0116h implements Runnable {
     }
 
     public void run() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        m1079A.m1069K();
-        m1079A.f6125ca.m424b(this.f472a, false);
-        m1079A.m1071I();
+        Core m1087A = Core.m1087A();
+        m1087A.m1077K();
+        m1087A.f6125ca.m419b(this.f472a, false);
+        m1087A.m1079I();
         if (this.f473b.f441e != null && this.f473b.f441e.isShowing()) {
-            this.f473b.m5613b(0);
+            this.f473b.m6023b(0);
         }
     }
 }

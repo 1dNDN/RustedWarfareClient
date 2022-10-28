@@ -6,5 +6,5 @@ import android.content.Context;
 /* loaded from: game-lib.jar:com/corrodinggames/rts/gameFramework/o.class */
 public abstract class AbstractC1059o {
     /* renamed from: a */
-    public abstract LoggerMaybe mo453a(Context context);
+    public abstract Core m744a(Context context);
 }

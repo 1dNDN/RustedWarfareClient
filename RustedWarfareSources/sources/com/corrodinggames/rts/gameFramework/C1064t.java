@@ -9,12 +9,12 @@ public class C1064t extends C1060p {
     public int f6743c;
 
     /* renamed from: d */
-    final /* synthetic */ LoggerMaybe f6744d;
+    final /* synthetic */ Core f6744d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C1064t(LoggerMaybe loggerMaybe, int i) {
-        super(loggerMaybe);
-        this.f6744d = loggerMaybe;
+    public C1064t(Core core, int i) {
+        super(core);
+        this.f6744d = core;
         this.f6743c = i;
     }
 }

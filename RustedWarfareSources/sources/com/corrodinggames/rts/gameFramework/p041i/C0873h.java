@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
@@ -28,8 +28,8 @@ public class C0873h extends Socket {
     C0875j f5854e = new C0875j(this);
 
     /* renamed from: a */
-    public void m1308a(Packet packet) {
-        this.f5850a.m1345a(new C0865ax(this.f5851b, packet));
+    public void m1321a(Packet packet) {
+        this.f5850a.m1358a(new C0865ax(this.f5851b, packet));
     }
 
     public C0873h(Steam steam, int i) {
@@ -44,10 +44,10 @@ public class C0873h extends Socket {
     public synchronized void close() {
         if (!this.f5852c) {
             this.f5852c = true;
-            LoggerMaybe.LogDebug2("Closing steam socket");
+            Core.LogDebug2("Closing steam socket");
         }
         if (this.f5853d != null) {
-            this.f5853d.m1307a(new byte[0]);
+            this.f5853d.m1320a(new byte[0]);
         }
     }
 

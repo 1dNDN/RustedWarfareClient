@@ -2,7 +2,7 @@ package com.corrodinggames.rts.gameFramework.p044l;
 
 import android.graphics.Bitmap;
 import com.corrodinggames.rts.game.EnumC0198o;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 
 /* renamed from: com.corrodinggames.rts.gameFramework.l.e */
 /* loaded from: game-lib.jar:com/corrodinggames/rts/gameFramework/l/e.class */
@@ -88,7 +88,7 @@ public class C0934e {
     }
 
     /* renamed from: a */
-    public C0934e[] m891a(EnumC0198o enumC0198o) {
+    public C0934e[] m898a(EnumC0198o enumC0198o) {
         if (enumC0198o == EnumC0198o.f1379a) {
             return this.f6388a;
         }
@@ -98,12 +98,12 @@ public class C0934e {
         if (enumC0198o == EnumC0198o.f1382d) {
             return this.f6390c;
         }
-        LoggerMaybe.m990b("getTeamImageCache coloringMode:" + enumC0198o);
+        Core.m998b("getTeamImageCache coloringMode:" + enumC0198o);
         return this.f6388a;
     }
 
     /* renamed from: a */
-    public void m890a(EnumC0198o enumC0198o, C0934e[] c0934eArr) {
+    public void m897a(EnumC0198o enumC0198o, C0934e[] c0934eArr) {
         if (enumC0198o == EnumC0198o.f1379a) {
             this.f6388a = c0934eArr;
         } else if (enumC0198o == EnumC0198o.f1380b) {
@@ -111,66 +111,66 @@ public class C0934e {
         } else if (enumC0198o == EnumC0198o.f1382d) {
             this.f6390c = c0934eArr;
         } else {
-            LoggerMaybe.m990b("setTeamImageCache coloringMode:" + enumC0198o);
+            Core.m998b("setTeamImageCache coloringMode:" + enumC0198o);
             this.f6388a = c0934eArr;
         }
     }
 
     /* renamed from: a */
-    public void m888a(String str) {
+    public void m895a(String str) {
         this.f6395g = str;
     }
 
     /* renamed from: a */
-    public String mo70a() {
+    public String mo64a() {
         return this.f6395g;
     }
 
     /* renamed from: b */
-    public Bitmap mo395b() {
+    public Bitmap mo390b() {
         return this.f6399k;
     }
 
     /* renamed from: c */
-    public C0934e mo394c() {
+    public C0934e mo389c() {
         return this;
     }
 
     /* renamed from: a */
-    public void mo396a(boolean z) {
+    public void mo391a(boolean z) {
         this.f6410o = z;
-        mo61e();
+        mo55e();
     }
 
     /* renamed from: b */
-    public void m887b(boolean z) {
+    public void m894b(boolean z) {
         this.f6411w = z;
     }
 
     /* renamed from: d */
-    public boolean m886d() {
+    public boolean m893d() {
         return this.f6411w;
     }
 
     /* renamed from: e */
-    protected void mo61e() {
+    protected void mo55e() {
     }
 
     /* renamed from: f */
-    public boolean m885f() {
+    public boolean m892f() {
         return this.f6400m;
     }
 
     /* renamed from: a */
-    public void mo398a(Bitmap bitmap) {
+    public void mo393a(Bitmap bitmap) {
         this.f6399k = bitmap;
-        this.f6402p = this.f6399k.m5570b();
-        this.f6403q = this.f6399k.m5567c();
-        mo393g();
+        this.f6402p = this.f6399k.m5980b();
+        this.f6403q = this.f6399k.m5977c();
+        mo388g();
     }
 
     /* renamed from: g */
-    public void mo393g() {
+    public void mo388g() {
         this.f6404r = this.f6402p / 2;
         this.f6405s = this.f6403q / 2;
         this.f6406t = this.f6402p / 2.0f;
@@ -178,7 +178,7 @@ public class C0934e {
     }
 
     /* renamed from: a */
-    public void mo397a(C0934e c0934e) {
+    public void mo392a(C0934e c0934e) {
         c0934e.f6410o = this.f6410o;
         c0934e.f6402p = this.f6402p;
         c0934e.f6403q = this.f6403q;
@@ -189,30 +189,30 @@ public class C0934e {
     }
 
     /* renamed from: h */
-    public C0934e mo5758clone() {
+    public C0934e clone() {
         C0934e c0934e = new C0934e();
         c0934e.f6410o = this.f6410o;
         if (this.f6399k != null) {
-            Bitmap m5576a = this.f6399k.m5576a(this.f6399k.m5565d(), true);
-            if (m5576a == null) {
-                throw new OutOfMemoryError("Failed to copy bitmap: " + this.f6399k.m5565d());
+            Bitmap m5986a = this.f6399k.m5986a(this.f6399k.m5975d(), true);
+            if (m5986a == null) {
+                throw new OutOfMemoryError("Failed to copy bitmap: " + this.f6399k.m5975d());
             }
-            c0934e.mo398a(m5576a);
+            c0934e.mo393a(m5986a);
         }
         return c0934e;
     }
 
     /* renamed from: a */
-    public C0934e mo67a(int i, int i2, boolean z) {
+    public C0934e mo61a(int i, int i2, boolean z) {
         C0934e c0934e = new C0934e();
         c0934e.f6410o = this.f6410o;
         if (this.f6399k != null) {
-            Bitmap m5579a = Bitmap.m5579a(i, i2, this.f6399k.m5565d());
-            c0934e.mo398a(m5579a);
+            Bitmap m5989a = Bitmap.m5989a(i, i2, this.f6399k.m5975d());
+            c0934e.mo393a(m5989a);
             if (z) {
-                for (int i3 = 0; i3 < m5579a.m5570b(); i3++) {
-                    for (int i4 = 0; i4 < m5579a.m5567c(); i4++) {
-                        m5579a.m5581a(i3, i4, this.f6399k.m5582a(i3, i4));
+                for (int i3 = 0; i3 < m5989a.m5980b(); i3++) {
+                    for (int i4 = 0; i4 < m5989a.m5977c(); i4++) {
+                        m5989a.m5991a(i3, i4, this.f6399k.m5992a(i3, i4));
                     }
                 }
             }
@@ -221,106 +221,106 @@ public class C0934e {
     }
 
     /* renamed from: i */
-    public void mo59i() {
+    public void mo53i() {
         if (this.f6398j == null) {
-            mo58j();
+            mo52j();
         }
     }
 
     /* renamed from: j */
-    public void mo58j() {
-        if (this.f6399k == null && LoggerMaybe.f6205aU && !LoggerMaybe.f6208aX) {
+    public void mo52j() {
+        if (this.f6399k == null && Core.f6205aU && !Core.f6208aX) {
             return;
         }
         if (this.f6398j == null) {
             this.f6398j = new int[this.f6402p * this.f6403q];
         }
-        this.f6399k.m5571a(this.f6398j, 0, this.f6402p, 0, 0, this.f6402p, this.f6403q);
+        this.f6399k.m5981a(this.f6398j, 0, this.f6402p, 0, 0, this.f6402p, this.f6403q);
     }
 
     /* renamed from: k */
-    public boolean mo57k() {
+    public boolean mo51k() {
         return true;
     }
 
     /* renamed from: a */
-    public int mo69a(int i, int i2) {
+    public int mo63a(int i, int i2) {
         if (this.f6398j != null) {
             return this.f6398j[i + (i2 * this.f6402p)];
         }
-        return this.f6399k.m5582a(i, i2);
+        return this.f6399k.m5992a(i, i2);
     }
 
     /* renamed from: a */
-    public void mo68a(int i, int i2, int i3) {
+    public void mo62a(int i, int i2, int i3) {
         if (this.f6398j != null) {
             this.f6398j[i + (i2 * this.f6402p)] = i3;
         } else {
-            this.f6399k.m5581a(i, i2, i3);
+            this.f6399k.m5991a(i, i2, i3);
         }
     }
 
     /* renamed from: l */
-    public int mo391l() {
+    public int mo387l() {
         return this.f6403q;
     }
 
     /* renamed from: m */
-    public int mo390m() {
+    public int mo386m() {
         return this.f6402p;
     }
 
     /* renamed from: n */
-    public void mo56n() {
+    public void mo50n() {
     }
 
     /* renamed from: o */
-    public void mo55o() {
+    public void mo49o() {
         if (this.f6399k != null) {
             this.f6399k = null;
         }
         if (this.f6411w) {
-            LoggerMaybe.m990b("remove with keepInGPUMemory=true");
+            Core.m998b("remove with keepInGPUMemory=true");
         }
     }
 
     /* renamed from: p */
-    public void mo54p() {
-        if (this.f6399k == null && LoggerMaybe.f6205aU && !LoggerMaybe.f6207aW) {
+    public void mo48p() {
+        if (this.f6399k == null && Core.f6205aU && !Core.f6207aW) {
             return;
         }
         if (this.f6398j != null) {
-            this.f6399k.m5568b(this.f6398j, 0, this.f6402p, 0, 0, this.f6402p, this.f6403q);
+            this.f6399k.m5978b(this.f6398j, 0, this.f6402p, 0, 0, this.f6402p, this.f6403q);
             this.f6398j = null;
         }
         this.f6393e++;
     }
 
     /* renamed from: q */
-    public void mo53q() {
+    public void mo47q() {
     }
 
     /* renamed from: r */
-    public void mo52r() {
+    public void mo46r() {
         this.f6398j = null;
     }
 
     /* renamed from: s */
-    public void mo51s() {
-        mo52r();
+    public void mo45s() {
+        mo46r();
     }
 
     /* renamed from: t */
-    public void mo50t() {
+    public void mo44t() {
     }
 
     /* renamed from: u */
-    public int mo389u() {
+    public int mo385u() {
         return this.f6402p * this.f6403q * 8;
     }
 
     /* renamed from: v */
-    public void mo388v() {
+    public void mo384v() {
         this.f6388a = null;
         this.f6389b = null;
         this.f6390c = null;
@@ -328,33 +328,33 @@ public class C0934e {
     }
 
     /* renamed from: w */
-    public void mo387w() {
+    public void mo383w() {
     }
 
     /* renamed from: x */
-    public void mo49x() {
+    public void mo43x() {
     }
 
     /* renamed from: y */
-    public void mo48y() {
+    public void mo42y() {
     }
 
     /* renamed from: z */
-    public void m883z() {
+    public void m891z() {
     }
 
     /* renamed from: A */
-    public boolean mo399A() {
+    public boolean mo394A() {
         return false;
     }
 
     /* renamed from: B */
-    public C0928ae mo892B() {
+    public C0928ae mo928B() {
         return this.f6397i;
     }
 
     /* renamed from: a */
-    public void mo889a(C0928ae c0928ae) {
+    public void mo927a(C0928ae c0928ae) {
         this.f6397i = c0928ae;
     }
 }

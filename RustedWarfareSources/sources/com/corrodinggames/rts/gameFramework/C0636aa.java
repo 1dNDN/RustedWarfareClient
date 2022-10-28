@@ -18,28 +18,28 @@ public class C0636aa extends AbstractC0726bk {
     PointF f4073b = new PointF();
 
     /* renamed from: a */
-    public void m2711a() {
+    public void m2765a() {
         this.f4072a = 1;
     }
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
+    public void mo2441a(StreamWriter streamWriter) {
         streamWriter.WriteInteger(0);
         streamWriter.WriteInteger(this.f4072a);
     }
 
     /* renamed from: a */
-    public void m2708a(Reader reader) {
+    public void m2762a(Reader reader) {
         reader.ReadInt();
         this.f4072a = reader.ReadInt();
     }
 
     /* renamed from: a */
-    public void m2710a(float f) {
+    public void m2764a(float f) {
     }
 
     /* renamed from: b */
-    public C0637ab m2705b() {
+    public C0637ab m2759b() {
         C0637ab c0637ab = new C0637ab(this);
         c0637ab.f4078e = this.f4072a;
         this.f4072a++;
@@ -47,7 +47,7 @@ public class C0636aa extends AbstractC0726bk {
     }
 
     /* renamed from: c */
-    public C0637ab m2704c() {
+    public C0637ab m2758c() {
         C0637ab c0637ab = new C0637ab(this);
         c0637ab.f4078e = -1;
         c0637ab.f4075b = true;
@@ -55,7 +55,7 @@ public class C0636aa extends AbstractC0726bk {
     }
 
     /* renamed from: a */
-    public void m2706a(C1101m c1101m, AbstractC0623y abstractC0623y, C1101m c1101m2, float f, int i) {
+    public void m2760a(C1101m c1101m, AbstractC0623y abstractC0623y, C1101m c1101m2, float f, int i) {
         int i2 = 0;
         while (!c1101m2.isEmpty()) {
             AbstractC0623y abstractC0623y2 = null;
@@ -73,9 +73,9 @@ public class C0636aa extends AbstractC0726bk {
                     int i5 = -1;
                     for (int i6 = 0; i6 < c1101m2.f6894a; i6++) {
                         PointF pointF3 = (PointF) m534a[i6];
-                        float m2157a = C0758f.m2157a(abstractC0623y3.f6957el, abstractC0623y3.f6958em, abstractC0623y.f6957el + pointF3.f227a, abstractC0623y.f6958em + pointF3.f228b);
-                        if (f3 == -1.0f || m2157a < f3) {
-                            f3 = m2157a;
+                        float m2209a = C0758f.m2209a(abstractC0623y3.f6958el, abstractC0623y3.f6959em, abstractC0623y.f6958el + pointF3.f227a, abstractC0623y.f6959em + pointF3.f228b);
+                        if (f3 == -1.0f || m2209a < f3) {
+                            f3 = m2209a;
                             pointF2 = pointF3;
                             i5 = i6;
                         }
@@ -104,7 +104,7 @@ public class C0636aa extends AbstractC0726bk {
     }
 
     /* renamed from: a */
-    public void m2707a(C1101m c1101m, AbstractC0623y abstractC0623y) {
+    public void m2761a(C1101m c1101m, AbstractC0623y abstractC0623y) {
         while (true) {
             AbstractC0623y abstractC0623y2 = null;
             Iterator it = c1101m.iterator();
@@ -121,14 +121,14 @@ public class C0636aa extends AbstractC0726bk {
                 AbstractC0623y abstractC0623y4 = null;
                 float f = 0.0f;
                 AbstractC0623y abstractC0623y5 = abstractC0623y2;
-                int m2152a = C0758f.m2152a((int) abstractC0623y5.f3932an);
+                int m2204a = C0758f.m2204a((int) abstractC0623y5.f3932an);
                 Iterator it2 = c1101m.iterator();
                 while (it2.hasNext()) {
                     AbstractC0623y abstractC0623y6 = (AbstractC0623y) it2.next();
                     if (abstractC0623y6.f3921ac == abstractC0623y && abstractC0623y6.f3932an > 0.0f && abstractC0623y6 != abstractC0623y5) {
-                        float m2082c = ((0 + C0758f.m2082c(abstractC0623y5.f6957el, abstractC0623y5.f6958em, abstractC0623y.f6957el + abstractC0623y6.f3928aj, abstractC0623y.f6958em + abstractC0623y6.f3929ak)) + C0758f.m2082c(abstractC0623y6.f6957el, abstractC0623y6.f6958em, abstractC0623y.f6957el + abstractC0623y5.f3928aj, abstractC0623y.f6958em + abstractC0623y5.f3929ak)) - (C0758f.m2152a((int) abstractC0623y6.f3932an) + m2152a);
-                        if (m2082c < f) {
-                            f = m2082c;
+                        float m2134c = ((0 + C0758f.m2134c(abstractC0623y5.f6958el, abstractC0623y5.f6959em, abstractC0623y.f6958el + abstractC0623y6.f3928aj, abstractC0623y.f6959em + abstractC0623y6.f3929ak)) + C0758f.m2134c(abstractC0623y6.f6958el, abstractC0623y6.f6959em, abstractC0623y.f6958el + abstractC0623y5.f3928aj, abstractC0623y.f6959em + abstractC0623y5.f3929ak)) - (C0758f.m2204a((int) abstractC0623y6.f3932an) + m2204a);
+                        if (m2134c < f) {
+                            f = m2134c;
                             abstractC0623y4 = abstractC0623y6;
                         }
                     }
@@ -138,10 +138,10 @@ public class C0636aa extends AbstractC0726bk {
                     float f3 = abstractC0623y5.f3929ak;
                     abstractC0623y5.f3928aj = abstractC0623y4.f3928aj;
                     abstractC0623y5.f3929ak = abstractC0623y4.f3929ak;
-                    abstractC0623y5.f3932an = C0758f.m2157a(abstractC0623y5.f6957el, abstractC0623y5.f6958em, abstractC0623y.f6957el + abstractC0623y5.f3928aj, abstractC0623y.f6958em + abstractC0623y5.f3929ak);
+                    abstractC0623y5.f3932an = C0758f.m2209a(abstractC0623y5.f6958el, abstractC0623y5.f6959em, abstractC0623y.f6958el + abstractC0623y5.f3928aj, abstractC0623y.f6959em + abstractC0623y5.f3929ak);
                     abstractC0623y4.f3928aj = f2;
                     abstractC0623y4.f3929ak = f3;
-                    abstractC0623y4.f3932an = C0758f.m2157a(abstractC0623y4.f6957el, abstractC0623y4.f6958em, abstractC0623y.f6957el + abstractC0623y4.f3928aj, abstractC0623y.f6958em + abstractC0623y4.f3929ak);
+                    abstractC0623y4.f3932an = C0758f.m2209a(abstractC0623y4.f6958el, abstractC0623y4.f6959em, abstractC0623y.f6958el + abstractC0623y4.f3928aj, abstractC0623y.f6959em + abstractC0623y4.f3929ak);
                 }
             } else {
                 return;
@@ -150,7 +150,7 @@ public class C0636aa extends AbstractC0726bk {
     }
 
     /* renamed from: a */
-    public C1101m m2709a(int i, float f, float f2) {
+    public C1101m m2763a(int i, float f, float f2) {
         int i2;
         int i3 = 1;
         int i4 = 0;
@@ -161,8 +161,8 @@ public class C0636aa extends AbstractC0726bk {
         if (i6 % 2 != 0) {
             i6++;
         }
-        float m2040i = C0758f.m2040i(f2);
-        float m2045h = C0758f.m2045h(f2);
+        float m2092i = C0758f.m2092i(f2);
+        float m2097h = C0758f.m2097h(f2);
         for (int i7 = 0; i7 < i6; i7++) {
             if (i3 % 2 == 0) {
                 i2 = i5 + (i3 / 2);
@@ -171,7 +171,7 @@ public class C0636aa extends AbstractC0726bk {
             }
             float f4 = (i2 - i5) * f3;
             float f5 = (-i4) * f3;
-            c1101m.add(new PointF((f5 * m2040i) - (f4 * m2045h), (f4 * m2040i) + (f5 * m2045h)));
+            c1101m.add(new PointF((f5 * m2092i) - (f4 * m2097h), (f4 * m2092i) + (f5 * m2097h)));
             i3++;
             if (i3 > 6) {
                 i3 = 0;

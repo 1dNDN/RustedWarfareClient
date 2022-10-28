@@ -6,7 +6,7 @@ import com.corrodinggames.rts.game.units.custom.C0412bm;
 import com.corrodinggames.rts.game.units.custom.C0453l;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p036e.C0750a;
 import com.corrodinggames.rts.gameFramework.p037f.C0797f;
 import com.corrodinggames.rts.gameFramework.p047n.C1058a;
@@ -40,113 +40,113 @@ public class C0823a {
 
     public C0823a() {
         try {
-            m1677a(LoggerMaybe.m1079A().m944t());
+            m1719a(Core.m1087A().m952t());
         } catch (C0412bm e) {
             throw new RuntimeException(e);
         }
     }
 
     /* renamed from: a */
-    private static int m1676a(String str, int i) {
-        String[] m2081c = C0758f.m2081c(str, '.');
-        if (m2081c == null) {
+    private static int m1718a(String str, int i) {
+        String[] m2130c = C0758f.m2130c(str, '.');
+        if (m2130c == null) {
             throw new C0412bm("Unexpected version format (Missing " + i + ")");
         }
-        if (m2081c.length > 3) {
+        if (m2130c.length > 3) {
             throw new C0412bm("Unexpected version format (" + str + ")");
         }
-        if (m2081c.length <= i) {
+        if (m2130c.length <= i) {
             return 0;
         }
         try {
-            return Integer.valueOf(m2081c[i]).intValue();
+            return Integer.valueOf(m2130c[i]).intValue();
         } catch (NumberFormatException e) {
             throw new C0412bm("Unexpected version format (Bad " + i + ")", e);
         }
     }
 
     /* renamed from: a */
-    public static void m1677a(String str) {
-        m1674a(str, LoggerMaybe.m1079A().m944t());
+    public static void m1719a(String str) {
+        m1716a(str, Core.m1087A().m952t());
     }
 
     /* renamed from: b */
-    public static String m1667b(String str) {
-        return C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(C0758f.m2123a(str, "v", VariableScope.nullOrMissingString).trim(), "a", VariableScope.nullOrMissingString), "b", VariableScope.nullOrMissingString), "c", VariableScope.nullOrMissingString), "d", VariableScope.nullOrMissingString), "e", VariableScope.nullOrMissingString), "f", VariableScope.nullOrMissingString), "g", VariableScope.nullOrMissingString), "h1", VariableScope.nullOrMissingString), "h2", VariableScope.nullOrMissingString), "h3", VariableScope.nullOrMissingString), "h4", VariableScope.nullOrMissingString);
+    public static String m1709b(String str) {
+        return C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(C0758f.m2172a(str, "v", VariableScope.nullOrMissingString).trim(), "a", VariableScope.nullOrMissingString), "b", VariableScope.nullOrMissingString), "c", VariableScope.nullOrMissingString), "d", VariableScope.nullOrMissingString), "e", VariableScope.nullOrMissingString), "f", VariableScope.nullOrMissingString), "g", VariableScope.nullOrMissingString), "h1", VariableScope.nullOrMissingString), "h2", VariableScope.nullOrMissingString), "h3", VariableScope.nullOrMissingString), "h4", VariableScope.nullOrMissingString);
     }
 
     /* renamed from: a */
-    public static void m1674a(String str, String str2) {
-        String m1667b = m1667b(str2);
-        String m1667b2 = m1667b(str);
+    public static void m1716a(String str, String str2) {
+        String m1709b = m1709b(str2);
+        String m1709b2 = m1709b(str);
         try {
             int i = 1000;
             int i2 = 1000;
-            if (m1667b.contains("p")) {
-                String[] m2054f = C0758f.m2054f(m1667b, "p");
+            if (m1709b.contains("p")) {
+                String[] m2103f = C0758f.m2103f(m1709b, "p");
                 try {
-                    i = Integer.valueOf(m2054f[1]).intValue();
-                    m1667b = m2054f[0];
+                    i = Integer.valueOf(m2103f[1]).intValue();
+                    m1709b = m2103f[0];
                 } catch (NumberFormatException e) {
-                    throw new C0412bm("Unexpected min version:" + m1667b2 + " (Bad build number)", e);
+                    throw new C0412bm("Unexpected min version:" + m1709b2 + " (Bad build number)", e);
                 }
             }
-            if (m1667b2.contains("p")) {
-                String[] m2054f2 = C0758f.m2054f(m1667b2, "p");
+            if (m1709b2.contains("p")) {
+                String[] m2103f2 = C0758f.m2103f(m1709b2, "p");
                 try {
-                    i2 = Integer.valueOf(m2054f2[1]).intValue();
-                    m1667b2 = m2054f2[0];
+                    i2 = Integer.valueOf(m2103f2[1]).intValue();
+                    m1709b2 = m2103f2[0];
                 } catch (NumberFormatException e2) {
-                    throw new C0412bm("Unexpected min version:" + m1667b2 + "(Bad build number)", e2);
+                    throw new C0412bm("Unexpected min version:" + m1709b2 + "(Bad build number)", e2);
                 }
             }
             try {
-                int m1676a = m1676a(m1667b, 0);
-                int m1676a2 = m1676a(m1667b2, 0);
-                int m1676a3 = m1676a(m1667b, 1);
-                int m1676a4 = m1676a(m1667b2, 1);
-                int m1676a5 = m1676a(m1667b, 2);
-                int m1676a6 = m1676a(m1667b2, 2);
-                if (m1676a2 < 1) {
+                int m1718a = m1718a(m1709b, 0);
+                int m1718a2 = m1718a(m1709b2, 0);
+                int m1718a3 = m1718a(m1709b, 1);
+                int m1718a4 = m1718a(m1709b2, 1);
+                int m1718a5 = m1718a(m1709b, 2);
+                int m1718a6 = m1718a(m1709b2, 2);
+                if (m1718a2 < 1) {
                     throw new C0412bm("Min version cannot be less than v1.10");
                 }
-                if (m1676a2 > m1676a) {
-                    throw new C0412bm("Requires version: " + m1667b2 + " or higher. (You have: " + m1667b + ")");
+                if (m1718a2 > m1718a) {
+                    throw new C0412bm("Requires version: " + m1709b2 + " or higher. (You have: " + m1709b + ")");
                 }
-                if (m1676a > m1676a2) {
+                if (m1718a > m1718a2) {
                     return;
                 }
-                if (m1676a4 < 10 && m1676a2 == 1) {
+                if (m1718a4 < 10 && m1718a2 == 1) {
                     throw new C0412bm("Min version cannot be less than v1.10");
                 }
-                if (m1676a4 > m1676a3) {
-                    throw new C0412bm("Requires version: " + m1667b2 + " or higher. (You have: " + m1667b + ")");
+                if (m1718a4 > m1718a3) {
+                    throw new C0412bm("Requires version: " + m1709b2 + " or higher. (You have: " + m1709b + ")");
                 }
-                if (m1676a3 > m1676a4) {
+                if (m1718a3 > m1718a4) {
                     return;
                 }
-                if (m1676a6 > m1676a5) {
-                    throw new C0412bm("Requires version: " + m1667b2 + " or higher. (You have: " + m1667b + ")");
+                if (m1718a6 > m1718a5) {
+                    throw new C0412bm("Requires version: " + m1709b2 + " or higher. (You have: " + m1709b + ")");
                 }
-                if (m1676a5 <= m1676a6 && i2 > i) {
-                    throw new C0412bm("Requires newer build: " + m1667b2 + " or higher. (You have: " + m1667b + ")");
+                if (m1718a5 <= m1718a6 && i2 > i) {
+                    throw new C0412bm("Requires newer build: " + m1709b2 + " or higher. (You have: " + m1709b + ")");
                 }
             } catch (C0412bm e3) {
-                throw new C0412bm("Requires version: " + m1667b2 + " or higher. " + e3.getMessage(), e3);
+                throw new C0412bm("Requires version: " + m1709b2 + " or higher. " + e3.getMessage(), e3);
             }
         } catch (RuntimeException e4) {
-            throw new C0412bm("Requires version: " + m1667b2 + " or higher." + e4.getMessage(), e4);
+            throw new C0412bm("Requires version: " + m1709b2 + " or higher." + e4.getMessage(), e4);
         }
     }
 
     /* renamed from: a */
-    public void m1680a() {
-        m1653k();
-        m1660f();
+    public void m1722a() {
+        m1695k();
+        m1702f();
     }
 
     /* renamed from: a */
-    public int m1671a(boolean z) {
+    public int m1713a(boolean z) {
         int i = 0;
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
@@ -159,7 +159,7 @@ public class C0823a {
     }
 
     /* renamed from: b */
-    public int m1668b() {
+    public int m1710b() {
         int i = 0;
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
@@ -172,7 +172,7 @@ public class C0823a {
     }
 
     /* renamed from: c */
-    public int m1666c() {
+    public int m1708c() {
         int i = 0;
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
@@ -184,7 +184,7 @@ public class C0823a {
     }
 
     /* renamed from: d */
-    public void m1664d() {
+    public void m1706d() {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
@@ -194,8 +194,8 @@ public class C0823a {
     }
 
     /* renamed from: e */
-    public void m1662e() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public void m1704e() {
+        Core m1087A = Core.m1087A();
         String str = VariableScope.nullOrMissingString;
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
@@ -209,19 +209,19 @@ public class C0823a {
             }
             str = str + replace + "|" + c0824b.f5421e + "|" + (c0824b.f5422f ? "disabled" : "enabled");
         }
-        m1079A.f6115bQ.modSettingsVersion = 1;
-        m1079A.f6115bQ.modSettings = str;
+        m1087A.settingEngine.modSettingsVersion = 1;
+        m1087A.settingEngine.modSettings = str;
     }
 
     /* renamed from: f */
-    public void m1660f() {
+    public void m1702f() {
         String[] split;
         boolean z;
-        LoggerMaybe.LogDebug2("Loading mod selection");
-        for (String str : LoggerMaybe.m1079A().f6115bQ.modSettings.split(",")) {
+        Core.LogDebug2("Loading mod selection");
+        for (String str : Core.m1087A().settingEngine.modSettings.split(",")) {
             String[] split2 = str.split("\\|");
             if (split2.length != 3) {
-                LoggerMaybe.LogDebug2("loadSelection: wrong count (" + split2.length + "):" + str);
+                Core.LogDebug2("loadSelection: wrong count (" + split2.length + "):" + str);
             } else {
                 String str2 = split2[0];
                 String str3 = split2[1];
@@ -231,21 +231,21 @@ public class C0823a {
                 } else if (str4.equals("disabled")) {
                     z = true;
                 } else {
-                    LoggerMaybe.LogDebug2("loadSelection: Unknown option:" + str);
+                    Core.LogDebug2("loadSelection: Unknown option:" + str);
                 }
-                C0824b m1665c = m1665c(str3);
-                if (m1665c == null) {
-                    LoggerMaybe.LogDebug2("loadSelection: Did not find mod in settings:" + str2);
+                C0824b m1707c = m1707c(str3);
+                if (m1707c == null) {
+                    Core.LogDebug2("loadSelection: Did not find mod in settings:" + str2);
                 } else {
-                    m1665c.f5422f = z;
-                    m1665c.f5425i = true;
+                    m1707c.f5422f = z;
+                    m1707c.f5425i = true;
                 }
             }
         }
     }
 
     /* renamed from: c */
-    public C0824b m1665c(String str) {
+    public C0824b m1707c(String str) {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
@@ -257,7 +257,7 @@ public class C0823a {
     }
 
     /* renamed from: a */
-    public C0824b m1679a(int i) {
+    public C0824b m1721a(int i) {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
@@ -269,7 +269,7 @@ public class C0823a {
     }
 
     /* renamed from: g */
-    public void m1658g() {
+    public void m1700g() {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             ((C0824b) it.next()).f5422f = true;
@@ -277,12 +277,12 @@ public class C0823a {
     }
 
     /* renamed from: h */
-    public int m1656h() {
+    public int m1698h() {
         return this.f5415e.size();
     }
 
     /* renamed from: d */
-    public C0824b m1663d(String str) {
+    public C0824b m1705d(String str) {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
@@ -294,11 +294,11 @@ public class C0823a {
     }
 
     /* renamed from: e */
-    public C0824b m1661e(String str) {
+    public C0824b m1703e(String str) {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
-            if (c0824b.m1649a().equals(str)) {
+            if (c0824b.m1691a().equals(str)) {
                 return c0824b;
             }
         }
@@ -306,45 +306,45 @@ public class C0823a {
     }
 
     /* renamed from: a */
-    public C0824b m1673a(String str, String str2, String str3, String str4, boolean z, boolean z2, boolean z3, int i) {
-        C0824b m1665c = m1665c(str4);
-        if (m1665c == null) {
-            m1665c = new C0824b();
-            m1665c.f5419c = str;
-            m1665c.f5420d = str2;
-            m1665c.f5421e = str4;
-            m1665c.f5422f = !z;
+    public C0824b m1715a(String str, String str2, String str3, String str4, boolean z, boolean z2, boolean z3, int i) {
+        C0824b m1707c = m1707c(str4);
+        if (m1707c == null) {
+            m1707c = new C0824b();
+            m1707c.f5419c = str;
+            m1707c.f5420d = str2;
+            m1707c.f5421e = str4;
+            m1707c.f5422f = !z;
         }
-        if (m1665c.f5433q == null && str3 != null) {
-            m1665c.f5433q = str3;
-            m1665c.f5432p = m1665c.f5433q;
-            m1665c.m1630n();
-            if (m1665c.f5433q != null && m1665c.f5433q.toLowerCase(Locale.ROOT).contains("rwmod")) {
-                m1665c.f5426j = true;
+        if (m1707c.f5433q == null && str3 != null) {
+            m1707c.f5433q = str3;
+            m1707c.f5432p = m1707c.f5433q;
+            m1707c.m1672n();
+            if (m1707c.f5433q != null && m1707c.f5433q.toLowerCase(Locale.ROOT).contains("rwmod")) {
+                m1707c.f5426j = true;
             }
         }
-        m1665c.f5440x = i;
-        m1665c.f5428l = true;
-        m1665c.f5441y = z2;
-        m1665c.f5442z = z3;
-        if (!m1665c.f5442z) {
-            m1665c.f5431o = "Storage: " + C0750a.m2228d(m1665c.f5433q);
+        m1707c.f5440x = i;
+        m1707c.f5428l = true;
+        m1707c.f5441y = z2;
+        m1707c.f5442z = z3;
+        if (!m1707c.f5442z) {
+            m1707c.f5431o = "Storage: " + C0750a.m2277d(m1707c.f5433q);
         }
-        m1665c.m1626r();
+        m1707c.m1668r();
         synchronized (this.f5414d) {
-            if (!this.f5415e.contains(m1665c)) {
+            if (!this.f5415e.contains(m1707c)) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.addAll(this.f5415e);
-                arrayList.add(m1665c);
+                arrayList.add(m1707c);
                 Collections.sort(arrayList);
                 this.f5415e = arrayList;
             }
         }
-        return m1665c;
+        return m1707c;
     }
 
     /* renamed from: a */
-    public void m1678a(C0824b c0824b) {
+    public void m1720a(C0824b c0824b) {
         synchronized (this.f5414d) {
             ArrayList arrayList = new ArrayList();
             arrayList.addAll(this.f5415e);
@@ -354,47 +354,47 @@ public class C0823a {
     }
 
     /* renamed from: a */
-    public void m1672a(String str, boolean z, boolean z2) {
-        LoggerMaybe.LogDebug2("loading mod custom units at:" + str);
-        String[] m2223g = C0750a.m2223g(str);
-        if (m2223g == null) {
-            LoggerMaybe.m990b("getAllModList: ERROR");
-            LoggerMaybe.m990b("getAllModList: Failed to load:" + str);
+    public void m1714a(String str, boolean z, boolean z2) {
+        Core.LogDebug2("loading mod custom units at:" + str);
+        String[] m2272g = C0750a.m2272g(str);
+        if (m2272g == null) {
+            Core.m998b("getAllModList: ERROR");
+            Core.m998b("getAllModList: Failed to load:" + str);
             return;
         }
-        for (String str2 : m2223g) {
+        for (String str2 : m2272g) {
             String str3 = str + "/" + str2;
-            if (C0750a.m2224f(str3) || str2.endsWith(".ini")) {
-                String m2064e = C0758f.m2064e(str2);
+            if (C0750a.m2273f(str3) || str2.endsWith(".ini")) {
+                String m2113e = C0758f.m2113e(str2);
                 String str4 = str2;
                 if (str4.contains("/")) {
                     str4 = str4.substring(str2.lastIndexOf("/") + 1);
                 }
-                m1673a(str4, str2, str3, m2064e, z, false, z2, 0);
+                m1715a(str4, str2, str3, m2113e, z, false, z2, 0);
             }
         }
     }
 
     /* renamed from: i */
-    public ArrayList m1655i() {
+    public ArrayList m1697i() {
         ArrayList arrayList = new ArrayList();
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
-            if (c0824b.m1631m()) {
-                arrayList.addAll(c0824b.m1627q());
+            if (c0824b.m1673m()) {
+                arrayList.addAll(c0824b.m1669q());
             }
         }
         return arrayList;
     }
 
     /* renamed from: j */
-    public ArrayList m1654j() {
+    public ArrayList m1696j() {
         ArrayList arrayList = new ArrayList();
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
-            if (c0824b.m1631m()) {
+            if (c0824b.m1673m()) {
                 arrayList.add(c0824b);
             }
         }
@@ -402,7 +402,7 @@ public class C0823a {
     }
 
     /* renamed from: k */
-    public ArrayList m1653k() {
+    public ArrayList m1695k() {
         Iterator it = this.f5415e.iterator();
         while (it.hasNext()) {
             C0824b c0824b = (C0824b) it.next();
@@ -411,57 +411,57 @@ public class C0823a {
                 c0824b.f5428l = true;
             }
         }
-        C1058a m739a = C1058a.m739a();
-        if (m739a != null) {
-            m739a.mo281l();
+        C1058a m747a = C1058a.m747a();
+        if (m747a != null) {
+            m747a.mo277l();
         } else {
-            LoggerMaybe.LogDebug2("getAllModList: SteamEngine==null");
+            Core.LogDebug2("getAllModList: SteamEngine==null");
         }
-        String m4037m = C0348af.m4037m();
-        if (!C0750a.m2224f(m4037m)) {
-            LoggerMaybe.LogDebug2("Modded Custom '" + m4037m + "' directory not found");
+        String m4267m = C0348af.m4267m();
+        if (!C0750a.m2273f(m4267m)) {
+            Core.LogDebug2("Modded Custom '" + m4267m + "' directory not found");
         } else {
-            m1672a(m4037m, true, false);
+            m1714a(m4267m, true, false);
         }
-        String m4039k = C0348af.m4039k();
-        if (!C0750a.m2224f(m4039k)) {
-            LoggerMaybe.LogDebug2("Modded Custom '" + m4039k + "' directory not found");
+        String m4269k = C0348af.m4269k();
+        if (!C0750a.m2273f(m4269k)) {
+            Core.LogDebug2("Modded Custom '" + m4269k + "' directory not found");
         } else {
-            m1672a(m4039k, false, true);
+            m1714a(m4269k, false, true);
         }
-        String m4038l = C0348af.m4038l();
-        if (!C0750a.m2224f(m4038l)) {
-            LoggerMaybe.LogDebug2("Modded Custom '" + m4038l + "' directory not found");
+        String m4268l = C0348af.m4268l();
+        if (!C0750a.m2273f(m4268l)) {
+            Core.LogDebug2("Modded Custom '" + m4268l + "' directory not found");
         } else {
-            m1672a(m4038l, true, true);
+            m1714a(m4268l, true, true);
         }
         Iterator it2 = this.f5415e.iterator();
         while (it2.hasNext()) {
             C0824b c0824b2 = (C0824b) it2.next();
             if (!c0824b2.f5428l) {
-                LoggerMaybe.LogDebug2("Removing mod no longer found on system: " + c0824b2.m1649a());
-                m1678a(c0824b2);
+                Core.LogDebug2("Removing mod no longer found on system: " + c0824b2.m1691a());
+                m1720a(c0824b2);
             }
         }
-        LoggerMaybe.LogDebug2("========= Mods ===========");
-        LoggerMaybe.LogDebug2("Number of mods:" + this.f5415e.size());
+        Core.LogDebug2("========= Mods ===========");
+        Core.LogDebug2("Number of mods:" + this.f5415e.size());
         Iterator it3 = this.f5415e.iterator();
         while (it3.hasNext()) {
-            LoggerMaybe.LogDebug2("Mod: '" + ((C0824b) it3.next()).m1649a());
+            Core.LogDebug2("Mod: '" + ((C0824b) it3.next()).m1691a());
         }
-        LoggerMaybe.LogDebug2("================================");
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        if (m1079A.f6115bQ.lastModCount == -1 || m1079A.f6115bQ.modSettingsVersion < 1) {
-            LoggerMaybe.LogDebug2("Disabling all new mods for first/new load");
+        Core.LogDebug2("================================");
+        Core m1087A = Core.m1087A();
+        if (m1087A.settingEngine.lastModCount == -1 || m1087A.settingEngine.modSettingsVersion < 1) {
+            Core.LogDebug2("Disabling all new mods for first/new load");
             Iterator it4 = this.f5415e.iterator();
             while (it4.hasNext()) {
                 ((C0824b) it4.next()).f5422f = true;
             }
-            m1662e();
-            m1079A.f6115bQ.save();
-        } else if (this.f5415e.size() > m1079A.f6115bQ.lastModCount + 4) {
-            LoggerMaybe.LogDebug2("Too many new mods found, not enabling new mods");
-            LoggerMaybe.LogDebug2("Number of mods:" + this.f5415e.size() + " vs " + m1079A.f6115bQ.lastModCount);
+            m1704e();
+            m1087A.settingEngine.save();
+        } else if (this.f5415e.size() > m1087A.settingEngine.lastModCount + 4) {
+            Core.LogDebug2("Too many new mods found, not enabling new mods");
+            Core.LogDebug2("Number of mods:" + this.f5415e.size() + " vs " + m1087A.settingEngine.lastModCount);
             Iterator it5 = this.f5415e.iterator();
             while (it5.hasNext()) {
                 C0824b c0824b3 = (C0824b) it5.next();
@@ -469,30 +469,30 @@ public class C0823a {
                     c0824b3.f5422f = true;
                 }
             }
-            m1662e();
-            m1079A.f6115bQ.save();
+            m1704e();
+            m1087A.settingEngine.save();
         }
-        m1079A.f6115bQ.lastModCount = this.f5415e.size();
+        m1087A.settingEngine.lastModCount = this.f5415e.size();
         return this.f5415e;
     }
 
     /* renamed from: l */
-    public void m1652l() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public void m1694l() {
+        Core m1087A = Core.m1087A();
         try {
-            m1079A.f6236br = true;
-            m1079A.m974e();
-            m1670a(false, false);
-            m1079A.m942w();
+            m1087A.f6236br = true;
+            m1087A.m982e();
+            m1712a(false, false);
+            m1087A.m950w();
         } finally {
-            m1079A.f6236br = false;
+            m1087A.f6236br = false;
         }
     }
 
     /* renamed from: a */
-    public void m1670a(boolean z, boolean z2) {
-        LoggerMaybe.m1079A();
-        C1075ae.m612b();
+    public void m1712a(boolean z, boolean z2) {
+        Core.m1087A();
+        C1075ae.m619b();
         if (!z2) {
             Iterator it = this.f5415e.iterator();
             while (it.hasNext()) {
@@ -511,60 +511,60 @@ public class C0823a {
                 c0824b.f5452J = 0;
             }
         }
-        m1653k();
-        ArrayList arrayList = new ArrayList(C0453l.f2906d);
+        m1695k();
+        ArrayList arrayList = new ArrayList(C0453l.f3188d);
         if (!z2) {
-            C0348af.m4042h();
+            C0348af.m4272h();
         } else {
-            C0348af.m4057b();
+            C0348af.m4287b();
         }
         if (z) {
             int i = 0;
             Iterator it2 = arrayList.iterator();
             while (it2.hasNext()) {
                 C0453l c0453l = (C0453l) it2.next();
-                if (c0453l.f2937I != null && !c0453l.f2937I.f5422f && c0453l.f2937I.f5460R != null && C0453l.m3548a(c0453l) == null) {
-                    LoggerMaybe.LogDebug2("Was missing: " + c0453l.f2940L);
-                    C0453l.f2906d.add(c0453l);
+                if (c0453l.f2919I != null && !c0453l.f2919I.f5422f && c0453l.f2919I.f5460R != null && C0453l.m3724a(c0453l) == null) {
+                    Core.LogDebug2("Was missing: " + c0453l.f2922L);
+                    C0453l.f3188d.add(c0453l);
                     i++;
                 }
             }
             if (i > 0) {
-                C0348af.m4045e();
+                C0348af.m4275e();
             }
         }
-        C0453l.m3563A();
-        AbstractC0197n.m4728M();
-        C0797f.m1870J();
+        C0453l.m3739A();
+        AbstractC0197n.m5107M();
+        C0797f.m1912J();
     }
 
     /* renamed from: m */
-    public void m1651m() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        if (m1079A.f6279dG != null) {
-            m1079A.f6279dG.mo109d();
+    public void m1693m() {
+        Core m1087A = Core.m1087A();
+        if (m1087A.f6279dG != null) {
+            m1087A.f6279dG.mo103d();
         } else {
-            LoggerMaybe.LogDebug2("No active callbacks");
+            Core.LogDebug2("No active callbacks");
         }
     }
 
     /* renamed from: a */
-    public String[] m1669a(String[] strArr, String str) {
-        String[] m2239a;
-        LoggerMaybe.LogDebug2("addExtraMapsForPath: " + str);
+    public String[] m1711a(String[] strArr, String str) {
+        String[] m2288a;
+        Core.LogDebug2("addExtraMapsForPath: " + str);
         ArrayList arrayList = new ArrayList();
         if (strArr != null) {
             for (String str2 : strArr) {
                 arrayList.add(str2);
             }
         }
-        if (LoggerMaybe.m1004as() && "/SD/rusted_warfare_maps".equals(str) && (m2239a = C0750a.m2239a("/SD/rustedWarfare/maps", true)) != null) {
-            int length = m2239a.length;
+        if (Core.m1012as() && "/SD/rusted_warfare_maps".equals(str) && (m2288a = C0750a.m2288a("/SD/rustedWarfare/maps", true)) != null) {
+            int length = m2288a.length;
             for (int i = 0; i < length; i++) {
-                arrayList.add("NEW_PATH|maps2/" + m2239a[i]);
+                arrayList.add("NEW_PATH|maps2/" + m2288a[i]);
             }
         }
-        Iterator it = m1659f(str).iterator();
+        Iterator it = m1701f(str).iterator();
         while (it.hasNext()) {
             C0825c c0825c = (C0825c) it.next();
             arrayList.add("MOD|" + c0825c.f5467c.f5421e + "/" + c0825c.f5466b);
@@ -576,7 +576,7 @@ public class C0823a {
     }
 
     /* renamed from: f */
-    public ArrayList m1659f(String str) {
+    public ArrayList m1701f(String str) {
         ArrayList arrayList = new ArrayList();
         Iterator it = this.f5416f.iterator();
         while (it.hasNext()) {
@@ -589,7 +589,7 @@ public class C0823a {
                 z = true;
             }
             if (z) {
-                LoggerMaybe.LogDebug2("Adding extra map:" + c0825c.f5465a);
+                Core.LogDebug2("Adding extra map:" + c0825c.f5465a);
                 arrayList.add(c0825c);
             }
         }
@@ -597,17 +597,17 @@ public class C0823a {
     }
 
     /* renamed from: n */
-    public void m1650n() {
+    public void m1692n() {
         this.f5416f.clear();
     }
 
     /* renamed from: a */
-    public void m1675a(String str, C0824b c0824b) {
+    public void m1717a(String str, C0824b c0824b) {
         C0825c c0825c = new C0825c(this);
         c0825c.f5465a = str;
         c0825c.f5467c = c0824b;
         if (c0824b.f5433q == null) {
-            LoggerMaybe.m1038a("Skipping:" + str + " as mod sourceFolder is null");
+            Core.m1046a("Skipping:" + str + " as mod sourceFolder is null");
             return;
         }
         String str2 = str;
@@ -615,12 +615,12 @@ public class C0823a {
         if (str2.startsWith(str3)) {
             str2 = str2.substring(str3.length());
         } else {
-            String m2216n = C0750a.m2216n(str2);
-            if (m2216n.startsWith(str3)) {
-                str2 = m2216n.substring(str3.length());
-                LoggerMaybe.LogDebug2("Mod path:" + c0824b.f5433q + " in map path without tag:" + str2);
+            String m2265n = C0750a.m2265n(str2);
+            if (m2265n.startsWith(str3)) {
+                str2 = m2265n.substring(str3.length());
+                Core.LogDebug2("Mod path:" + c0824b.f5433q + " in map path without tag:" + str2);
             } else {
-                LoggerMaybe.m1038a("Mod path:" + c0824b.f5433q + " not in map path:" + str2);
+                Core.m1046a("Mod path:" + c0824b.f5433q + " not in map path:" + str2);
             }
         }
         c0825c.f5466b = str2;
@@ -630,7 +630,7 @@ public class C0823a {
     }
 
     /* renamed from: g */
-    public C0824b m1657g(String str) {
+    public C0824b m1699g(String str) {
         if (str.contains("MOD|")) {
             String[] split = str.split("/");
             if (split.length >= 2) {
@@ -638,12 +638,12 @@ public class C0823a {
                     String str2 = split[length];
                     if (str2.startsWith("MOD|")) {
                         String substring = str2.substring("MOD|".length());
-                        C0824b m1665c = m1665c(substring);
-                        if (m1665c == null) {
-                            LoggerMaybe.LogDebug2("getLinkedModForFile: Failed to find mod with hash:" + substring);
+                        C0824b m1707c = m1707c(substring);
+                        if (m1707c == null) {
+                            Core.LogDebug2("getLinkedModForFile: Failed to find mod with hash:" + substring);
                             return null;
                         }
-                        return m1665c;
+                        return m1707c;
                     }
                 }
                 return null;

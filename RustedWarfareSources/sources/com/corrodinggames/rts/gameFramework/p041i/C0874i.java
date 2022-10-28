@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -27,7 +27,7 @@ public class C0874i extends InputStream {
     }
 
     /* renamed from: a */
-    public void m1307a(byte[] bArr) {
+    public void m1320a(byte[] bArr) {
         this.f5855a.add(ByteBuffer.wrap(bArr));
     }
 
@@ -55,7 +55,7 @@ public class C0874i extends InputStream {
                 if (byteBuffer != null) {
                     if (this.f5856b) {
                         this.f5856b = false;
-                        LoggerMaybe.LogDebug2("First packet from forwarded:" + this.f5858d.f5851b);
+                        Core.LogDebug2("First packet from forwarded:" + this.f5858d.f5851b);
                     }
                     if (byteBuffer.remaining() <= i5) {
                         i3 = byteBuffer.remaining();

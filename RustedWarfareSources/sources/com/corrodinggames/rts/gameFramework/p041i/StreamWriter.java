@@ -10,7 +10,7 @@ import com.corrodinggames.rts.game.units.custom.C0448g;
 import com.corrodinggames.rts.game.units.custom.C0453l;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.AbstractC1120w;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p036e.C0750a;
 import com.corrodinggames.rts.gameFramework.utility.C1098j;
 import com.corrodinggames.rts.gameFramework.utility.C1101m;
@@ -276,23 +276,23 @@ public class StreamWriter {
 
     /* renamed from: a */
     public void mo1371a(AbstractC0197n abstractC0197n) {
-        this.f5731a.writeByte(abstractC0197n.f1306k);
+        this.f5731a.writeByte(abstractC0197n.f1317k);
     }
 
     /* renamed from: a */
     public void mo1365a(File file) {
-        C1098j m2244a = C0750a.m2244a(file);
-        if (m2244a == null) {
+        C1098j m2242a = C0750a.m2242a(file);
+        if (m2242a == null) {
             throw new IOException("Failed to read save file data");
         }
         try {
-            mo1364a(m2244a, (int) file.length());
-            if (m2244a != null) {
-                m2244a.close();
+            mo1364a(m2242a, (int) file.length());
+            if (m2242a != null) {
+                m2242a.close();
             }
         } catch (Throwable th) {
-            if (m2244a != null) {
-                m2244a.close();
+            if (m2242a != null) {
+                m2242a.close();
             }
             throw th;
         }
@@ -320,7 +320,7 @@ public class StreamWriter {
                 if (i2 + read > i) {
                     int i3 = i - i2;
                     if (i3 < 0) {
-                        C0831ad.m1451g("writeStream: bytesTillFull is " + i3);
+                        C0831ad.m1449g("writeStream: bytesTillFull is " + i3);
                         return;
                     } else {
                         this.f5731a.write(bArr, 0, i3);
@@ -388,7 +388,7 @@ public class StreamWriter {
     public void mo1317a(String str) {
         C0860as c0860as = (C0860as) this.list.removeLast();
         if (!c0860as.f5736c.equals(str)) {
-            LoggerMaybe.m982b("OutputNetStream:endBlock", "Name does not match: expected" + str + " , got:" + c0860as.f5736c);
+            Core.m982b("OutputNetStream:endBlock", "Name does not match: expected" + str + " , got:" + c0860as.f5736c);
         }
         c0860as.m1377a();
         if (this.list.isEmpty()) {
@@ -402,13 +402,13 @@ public class StreamWriter {
             c0860as.m1376b();
         } catch (Exception e) {
             if (e instanceof DataFormatException) {
-                if (!LoggerMaybe.f6210aZ) {
-                    LoggerMaybe.m983b("DataFormatException error calling streamBlock.close() (this is expected on android 4.4)");
+                if (!Core.f6210aZ) {
+                    Core.m983b("DataFormatException error calling streamBlock.close() (this is expected on android 4.4)");
                     return;
                 }
                 return;
             }
-            LoggerMaybe.m983b("Error calling streamBlock.close() to clean up memory");
+            Core.m983b("Error calling streamBlock.close() to clean up memory");
             e.printStackTrace();
         }
     }

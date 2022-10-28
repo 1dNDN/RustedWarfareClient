@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -39,7 +39,7 @@ public class RunnableC0853am implements Runnable {
     }
 
     /* renamed from: a */
-    public boolean m1401a() {
+    public boolean m1441a() {
         if (!this.f5687c) {
             return false;
         }
@@ -48,7 +48,7 @@ public class RunnableC0853am implements Runnable {
     }
 
     /* renamed from: b */
-    public void m1400b() {
+    public void m1440b() {
         this.f5687c = true;
         this.f5688d = new Thread(this);
         this.f5688d.start();
@@ -57,7 +57,7 @@ public class RunnableC0853am implements Runnable {
     public void run() {
         try {
             try {
-                this.f5691g = C0831ad.m1491b(this.f5685a, this.f5686b);
+                this.f5691g = C0831ad.m1533b(this.f5685a, this.f5686b);
                 this.f5687c = false;
                 if (!this.f5692h) {
                     this.f5690f.run();
@@ -71,7 +71,7 @@ public class RunnableC0853am implements Runnable {
                     }
                 }
             } catch (C0844ag e2) {
-                LoggerMaybe.LogDebug2("Cancelled connectSocketToServer");
+                Core.LogDebug2("Cancelled connectSocketToServer");
                 this.f5689e = "CANCELLED";
                 this.f5687c = false;
                 if (!this.f5692h) {

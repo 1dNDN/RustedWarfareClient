@@ -2,7 +2,7 @@ package com.corrodinggames.rts.gameFramework.p044l;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 
 /* renamed from: com.corrodinggames.rts.gameFramework.l.ag */
 /* loaded from: game-lib.jar:com/corrodinggames/rts/gameFramework/l/ag.class */
@@ -12,71 +12,71 @@ public class C0930ag extends Paint {
     public static final C0930ag f6372r = new C0930ag();
 
     /* renamed from: t */
-    C0928ae f6373t;
+    C0928ae f6374t;
 
     /* renamed from: s */
-    boolean f6374s = false;
+    boolean f6373s = false;
 
     /* renamed from: u */
     boolean f6375u = false;
 
     static {
-        f6372r.m5501b(-1);
-        f6372r.m896o();
+        f6372r.m5908b(-1);
+        f6372r.m903o();
     }
 
     /* renamed from: o */
-    public void m896o() {
+    public void m903o() {
         this.f6375u = true;
     }
 
     /* renamed from: c */
-    public void m897c(float f) {
-        super.mo899b(f);
+    public void m904c(float f) {
+        super.mo5909b(f);
     }
 
     /* renamed from: b */
-    public void mo899b(float f) {
+    public void mo5909b(float f) {
         if (this.f6375u) {
-            LoggerMaybe.m990b("UniquePaint changed when locked down:");
-            LoggerMaybe.m990b("from:" + m5481k() + " to: " + f);
-            LoggerMaybe.m1061S();
+            Core.m998b("UniquePaint changed when locked down:");
+            Core.m998b("from:" + m5888k() + " to: " + f);
+            Core.m1069S();
         }
-        super.mo899b(f);
+        super.mo5909b(f);
     }
 
     /* renamed from: a */
-    public Typeface mo902a(Typeface typeface) {
+    public Typeface mo5924a(Typeface typeface) {
         if (this.f6375u) {
-            LoggerMaybe.m990b("UniquePaint changed when locked down:");
-            LoggerMaybe.m1061S();
+            Core.m998b("UniquePaint changed when locked down:");
+            Core.m1069S();
         }
-        return super.mo902a(typeface);
+        return super.mo5924a(typeface);
     }
 
     /* renamed from: b */
-    public static void m898b(Paint paint) {
-        ((C0930ag) paint).m896o();
+    public static void m905b(Paint paint) {
+        ((C0930ag) paint).m903o();
     }
 
     /* renamed from: p */
-    public boolean m895p() {
-        return this.f6374s;
+    public boolean m902p() {
+        return this.f6373s;
     }
 
     /* renamed from: a */
-    public void mo900a(boolean z) {
-        this.f6374s = z;
-        super.mo900a(z);
+    public void mo5914a(boolean z) {
+        this.f6373s = z;
+        super.mo5914a(z);
     }
 
     /* renamed from: q */
-    public C0928ae m894q() {
-        return this.f6373t;
+    public C0928ae m901q() {
+        return this.f6374t;
     }
 
     /* renamed from: a */
-    public void m901a(C0928ae c0928ae) {
-        this.f6373t = c0928ae;
+    public void m908a(C0928ae c0928ae) {
+        this.f6374t = c0928ae;
     }
 }

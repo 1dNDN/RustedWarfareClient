@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import com.corrodinggames.rts.game.units.custom.C0382aw;
 import com.corrodinggames.rts.gameFramework.AbstractC1120w;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p044l.C0928ae;
 import com.corrodinggames.rts.gameFramework.p044l.C0930ag;
 import com.corrodinggames.rts.gameFramework.p044l.InterfaceC1027y;
@@ -253,7 +253,7 @@ public final class C0745e {
     public boolean f4789at = false;
 
     /* renamed from: au */
-    public C0930ag f4790au = m2306a();
+    public C0930ag f4790au = m2356a();
 
     /* JADX INFO: Access modifiers changed from: protected */
     public C0745e(C0743c c0743c) {
@@ -262,18 +262,18 @@ public final class C0745e {
 
     static {
         for (int i = 0; i < f4794ay.length; i++) {
-            f4794ay[i] = m2306a();
-            f4794ay[i].m5496c((int) ((i / (f4794ay.length - 1)) * 255.0f));
+            f4794ay[i] = m2356a();
+            f4794ay[i].m5903c((int) ((i / (f4794ay.length - 1)) * 255.0f));
         }
     }
 
     /* renamed from: a */
-    public static C0930ag m2306a() {
-        return C1117y.m463b();
+    public static C0930ag m2356a() {
+        return C1117y.m458b();
     }
 
     /* renamed from: a */
-    public C0930ag m2305a(float f) {
+    public C0930ag m2355a(float f) {
         int length = (int) (f * (f4794ay.length - 1));
         if (length < 0) {
             length = 0;
@@ -285,27 +285,27 @@ public final class C0745e {
     }
 
     /* renamed from: b */
-    public void m2301b() {
+    public void m2351b() {
         if (this.f4733p) {
             this.f4733p = false;
-            this.f4717az.f4697a--;
-            C0743c.f4683h = true;
+            this.f4717az.f4683a--;
+            C0743c.f4690h = true;
             if (this.f4718a.alsoEmitEffectsOnDeath != null && this.f4745B < 20) {
                 float f = this.f4753J;
                 float f2 = this.f4754K;
                 float f3 = this.f4755L;
                 if (this.f4719b != null) {
-                    f += this.f4719b.f6957el;
-                    f2 += this.f4719b.f6958em;
-                    f3 += this.f4719b.f6959en;
+                    f += this.f4719b.f6958el;
+                    f2 += this.f4719b.f6959em;
+                    f3 += this.f4719b.f6960en;
                 }
-                this.f4718a.alsoEmitEffectsOnDeath.m3461a(f, f2, f3, this.f4769Z, this.f4719b, 0, this.f4745B);
+                this.f4718a.alsoEmitEffectsOnDeath.m3636a(f, f2, f3, this.f4769Z, this.f4719b, 0, this.f4745B);
             }
         }
     }
 
     /* renamed from: c */
-    public void m2299c() {
+    public void m2349c() {
         this.f4718a = C0382aw.defaultEffectTemplate;
         this.f4735r = EnumC0748h.f4832a;
         this.f4719b = null;
@@ -366,14 +366,14 @@ public final class C0745e {
         this.f4746C = null;
         this.f4743z = -1;
         this.f4744A = -1.0f;
-        this.f4790au.m5520a((ColorFilter) null);
+        this.f4790au.m5930a((ColorFilter) null);
         this.f4793ax = false;
-        this.f4790au.m901a((C0928ae) null);
+        this.f4790au.m908a((C0928ae) null);
         this.f4789at = false;
     }
 
     /* renamed from: a */
-    public void m2303a(C0745e c0745e) {
+    public void m2353a(C0745e c0745e) {
         this.f4718a = c0745e.f4718a;
         this.f4735r = c0745e.f4735r;
         this.f4724g = c0745e.f4724g;
@@ -437,17 +437,17 @@ public final class C0745e {
     }
 
     /* renamed from: b */
-    public void m2300b(float f) {
-        this.f4765V = C0758f.m2162a(this.f4765V, f);
+    public void m2350b(float f) {
+        this.f4765V = C0758f.m2211a(this.f4765V, f);
         if (this.f4765V > 0.0f) {
             return;
         }
         this.f4766W -= f;
-        if (this.f4719b != null && this.f4719b.f6952eg && !this.f4718a.liveAfterAttachedDies) {
+        if (this.f4719b != null && this.f4719b.f6953eg && !this.f4718a.liveAfterAttachedDies) {
             this.f4766W = -1.0f;
         }
         if (this.f4766W < 0.0f) {
-            m2301b();
+            m2351b();
             return;
         }
         if (this.f4775af) {
@@ -464,7 +464,7 @@ public final class C0745e {
                     }
                 } else if (this.f4781al < this.f4776ag) {
                     if (!this.f4779aj) {
-                        m2301b();
+                        m2351b();
                         return;
                     } else {
                         this.f4782am = false;
@@ -473,7 +473,7 @@ public final class C0745e {
                 }
             } else if (this.f4781al >= this.f4777ah + 1) {
                 if (!this.f4779aj) {
-                    m2301b();
+                    m2351b();
                     return;
                 }
                 this.f4781al = this.f4776ag;
@@ -491,7 +491,7 @@ public final class C0745e {
                 if (this.f4762S < 0.0f) {
                     this.f4762S = -this.f4762S;
                     this.f4762S *= 0.5f;
-                    this.f4762S = C0758f.m2162a(this.f4762S, 1.3f);
+                    this.f4762S = C0758f.m2211a(this.f4762S, 1.3f);
                 }
                 if (this.f4755L < 0.0f) {
                     this.f4755L = 0.0f;
@@ -499,9 +499,9 @@ public final class C0745e {
                 if (this.f4762S < 0.2d) {
                     this.f4788as = (short) 1;
                 }
-                this.f4760Q = C0758f.m2162a(this.f4760Q, 0.15f * f);
-                this.f4761R = C0758f.m2162a(this.f4761R, 0.15f * f);
-                this.f4770aa = C0758f.m2162a(this.f4770aa, 1.0f * f);
+                this.f4760Q = C0758f.m2211a(this.f4760Q, 0.15f * f);
+                this.f4761R = C0758f.m2211a(this.f4761R, 0.15f * f);
+                this.f4770aa = C0758f.m2211a(this.f4770aa, 1.0f * f);
             }
         }
         this.f4753J += this.f4760Q * f;
@@ -517,18 +517,18 @@ public final class C0745e {
                     float f3 = this.f4754K;
                     float f4 = this.f4755L;
                     if (this.f4719b != null) {
-                        f2 += this.f4719b.f6957el;
-                        f3 += this.f4719b.f6958em;
-                        f4 += this.f4719b.f6959en;
+                        f2 += this.f4719b.f6958el;
+                        f3 += this.f4719b.f6959em;
+                        f4 += this.f4719b.f6960en;
                     }
-                    this.f4718a.trailEffect.m3461a(f2, f3, f4, this.f4769Z, this.f4719b, 0, this.f4745B);
+                    this.f4718a.trailEffect.m3636a(f2, f3, f4, this.f4769Z, this.f4719b, 0, this.f4745B);
                 }
             }
         }
     }
 
     /* renamed from: a */
-    public static void m2304a(int i, C0747g c0747g, Rect rect) {
+    public static void m2354a(int i, C0747g c0747g, Rect rect) {
         int i2 = 0;
         if (i >= c0747g.f4826h) {
             i2 = 0 + (i / c0747g.f4826h);
@@ -545,13 +545,13 @@ public final class C0745e {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v152, types: [android.graphics.Paint] */
     /* renamed from: a */
-    public boolean m2302a(LoggerMaybe loggerMaybe, boolean z) {
+    public boolean m2352a(Core core, boolean z) {
         C0747g c0747g;
-        PointF m2075d;
+        PointF m2124d;
         float f;
         C0930ag c0930ag;
-        Rect rect = C0743c.f4693o;
-        RectF rectF = C0743c.f4692n;
+        Rect rect = C0743c.f4697o;
+        RectF rectF = C0743c.f4696n;
         if (this.f4765V > 0.0f) {
             return false;
         }
@@ -561,57 +561,57 @@ public final class C0745e {
         if (this.f4718a.imageStrip != null) {
             c0747g = this.f4718a.imageStrip;
         } else {
-            c0747g = C0743c.f4689s[this.f4787ar];
+            c0747g = C0743c.f4701s[this.f4787ar];
         }
         if (!c0747g.f4829k) {
-            m2304a(this.f4786aq, c0747g, rect);
+            m2354a(this.f4786aq, c0747g, rect);
         } else {
-            rect.m5467a(0, 0, c0747g.f4827i.mo390m(), c0747g.f4827i.mo391l());
+            rect.m5874a(0, 0, c0747g.f4827i.mo386m(), c0747g.f4827i.mo387l());
         }
         if (!z) {
-            m2075d = C0758f.m2075d(this.f4753J, this.f4754K, this.f4755L);
+            m2124d = C0758f.m2124d(this.f4753J, this.f4754K, this.f4755L);
         } else {
-            m2075d = C0758f.m2075d(this.f4753J, this.f4754K, 0.0f);
+            m2124d = C0758f.m2124d(this.f4753J, this.f4754K, 0.0f);
         }
         float f2 = 1.0f;
         if (this.f4751H != 1.0f || this.f4750G != 1.0f || this.f4752I) {
-            f2 = C0758f.m2058f(this.f4751H, this.f4750G, 1.0f - (this.f4766W / this.f4767X));
+            f2 = C0758f.m2107f(this.f4751H, this.f4750G, 1.0f - (this.f4766W / this.f4767X));
             if (this.f4752I && !this.f4732o) {
-                f2 = f2 * (1.0f / loggerMaybe.f6256cW) * loggerMaybe.f6132ci;
+                f2 = f2 * (1.0f / core.f6256cW) * core.f6132ci;
             }
         }
-        rectF.m5454a(m2075d.f227a, m2075d.f228b, m2075d.f227a + rect.m5465b(), m2075d.f228b + rect.m5461c());
+        rectF.m5861a(m2124d.f227a, m2124d.f228b, m2124d.f227a + rect.m5872b(), m2124d.f228b + rect.m5868c());
         if (this.f4784ao) {
-            rectF.m5455a((-rectF.m5449b()) / 2.0f, (-rectF.m5445c()) / 2.0f);
+            rectF.m5862a((-rectF.m5856b()) / 2.0f, (-rectF.m5852c()) / 2.0f);
         }
         if (this.f4785ap != 0.0f) {
-            rectF.m5455a(0.0f, rectF.m5445c() * this.f4785ap * f2);
+            rectF.m5862a(0.0f, rectF.m5852c() * this.f4785ap * f2);
         }
         if (this.f4719b != null) {
             if (!z) {
                 if (!this.f4720c) {
-                    rectF.m5455a(this.f4719b.f6957el, this.f4719b.f6958em - this.f4719b.f6959en);
+                    rectF.m5862a(this.f4719b.f6958el, this.f4719b.f6959em - this.f4719b.f6960en);
                 } else {
-                    rectF.m5455a(this.f4719b.f6957el, this.f4719b.f6958em);
+                    rectF.m5862a(this.f4719b.f6958el, this.f4719b.f6959em);
                 }
             } else {
-                rectF.m5455a(this.f4719b.f6957el, this.f4719b.f6958em);
+                rectF.m5862a(this.f4719b.f6958el, this.f4719b.f6959em);
             }
         }
-        if ((!this.f4732o || this.f4756M) && !C0758f.m2145a(loggerMaybe.f6250cM, rectF)) {
+        if ((!this.f4732o || this.f4756M) && !C0758f.m2194a(core.f6250cM, rectF)) {
             return false;
         }
         if (!this.f4722e && !this.f4732o && !this.f4723f) {
-            if (!loggerMaybe.f6110bL.m4959a(rectF.m5443d(), rectF.m5442e(), loggerMaybe.f6099bs)) {
+            if (!core.f6110bL.m5342a(rectF.m5850d(), rectF.m5849e(), core.f6099bs)) {
                 return false;
             }
             this.f4723f = true;
         }
         if (!this.f4732o) {
-            rectF.m5455a(-loggerMaybe.f6144cv, -loggerMaybe.f6145cw);
+            rectF.m5862a(-core.f6144cv, -core.f6145cw);
         }
         if (this.f4763T != 0.0f) {
-            rectF.m5455a(0.0f, C0758f.m2048h(((this.f4767X - this.f4766W) / this.f4764U) * 360.0f) * this.f4763T);
+            rectF.m5862a(0.0f, C0758f.m2097h(((this.f4767X - this.f4766W) / this.f4764U) * 360.0f) * this.f4763T);
         }
         float f3 = this.f4767X - this.f4766W;
         float f4 = 1.0f;
@@ -620,36 +620,36 @@ public final class C0745e {
         float f7 = 1.0f;
         boolean z2 = false;
         if (this.f4742y != -1) {
-            f4 = Color.m5540a(this.f4742y) * 0.003921569f;
-            int m5536b = Color.m5536b(this.f4742y);
-            int m5535c = Color.m5535c(this.f4742y);
-            int m5534d = Color.m5534d(this.f4742y);
-            if (m5536b != 255 || m5535c != 255 || m5534d != 255) {
+            f4 = Color.m5950a(this.f4742y) * 0.003921569f;
+            int m5946b = Color.m5946b(this.f4742y);
+            int m5945c = Color.m5945c(this.f4742y);
+            int m5944d = Color.m5944d(this.f4742y);
+            if (m5946b != 255 || m5945c != 255 || m5944d != 255) {
                 z2 = true;
-                f5 = m5536b * 0.003921569f;
-                f6 = m5535c * 0.003921569f;
-                f7 = m5534d * 0.003921569f;
+                f5 = m5946b * 0.003921569f;
+                f6 = m5945c * 0.003921569f;
+                f7 = m5944d * 0.003921569f;
             }
         }
         if (this.f4744A >= 0.0f) {
-            float m5540a = Color.m5540a(this.f4743z) * 0.003921569f;
-            float m5536b2 = Color.m5536b(this.f4743z) * 0.003921569f;
-            float m5535c2 = Color.m5535c(this.f4743z) * 0.003921569f;
-            float m5534d2 = Color.m5534d(this.f4743z) * 0.003921569f;
+            float m5950a = Color.m5950a(this.f4743z) * 0.003921569f;
+            float m5946b2 = Color.m5946b(this.f4743z) * 0.003921569f;
+            float m5945c2 = Color.m5945c(this.f4743z) * 0.003921569f;
+            float m5944d2 = Color.m5944d(this.f4743z) * 0.003921569f;
             if (this.f4744A <= f3) {
-                f4 = m5540a;
+                f4 = m5950a;
                 z2 = true;
-                f5 = m5536b2;
-                f6 = m5535c2;
-                f7 = m5534d2;
+                f5 = m5946b2;
+                f6 = m5945c2;
+                f7 = m5944d2;
             } else {
                 float f8 = f3 / this.f4744A;
                 float f9 = 1.0f - f8;
-                f4 = (f4 * f9) + (m5540a * f8);
+                f4 = (f4 * f9) + (m5950a * f8);
                 z2 = true;
-                f5 = (f5 * f9) + (m5536b2 * f8);
-                f6 = (f6 * f9) + (m5535c2 * f8);
-                f7 = (f7 * f9) + (m5534d2 * f8);
+                f5 = (f5 * f9) + (m5946b2 * f8);
+                f6 = (f6 * f9) + (m5945c2 * f8);
+                f7 = (f7 * f9) + (m5944d2 * f8);
             }
         }
         if (this.f4736s && f3 >= this.f4738u) {
@@ -666,78 +666,78 @@ public final class C0745e {
             f = 0.0f;
         }
         boolean z3 = false;
-        InterfaceC1027y interfaceC1027y = loggerMaybe.f6113bO;
+        InterfaceC1027y interfaceC1027y = core.f6113bO;
         if (this.f4769Z != 0.0f) {
             if (0 == 0) {
                 z3 = true;
-                interfaceC1027y.mo141k();
+                interfaceC1027y.mo135k();
             }
-            interfaceC1027y.mo231a(this.f4769Z + 90.0f, rectF.m5443d(), rectF.m5442e());
+            interfaceC1027y.mo227a(this.f4769Z + 90.0f, rectF.m5850d(), rectF.m5849e());
         }
         if (f2 != 1.0f) {
             if (!z3) {
                 z3 = true;
-                interfaceC1027y.mo141k();
+                interfaceC1027y.mo135k();
             }
-            interfaceC1027y.mo230a(f2, f2, rectF.m5443d(), rectF.m5442e());
+            interfaceC1027y.mo226a(f2, f2, rectF.m5850d(), rectF.m5849e());
         }
         if (z) {
-            f = C0758f.m2109b(f / 3.0f, 0.0f, 1.0f);
+            f = C0758f.m2158b(f / 3.0f, 0.0f, 1.0f);
             f5 = 0.0f;
             f6 = 0.0f;
             f7 = 0.0f;
             z2 = true;
         }
-        if (z2 && LoggerMaybe.m1004as() && !z && this.f4746C == null) {
-            int m2103b = C0758f.m2103b(255, (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f));
-            if (f4747D != null && f4748E == m2103b) {
+        if (z2 && Core.m1012as() && !z && this.f4746C == null) {
+            int m2152b = C0758f.m2152b(255, (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f));
+            if (f4747D != null && f4748E == m2152b) {
                 this.f4746C = f4747D;
             } else {
-                f4747D = new LightingColorFilter(m2103b, 0);
-                f4748E = m2103b;
+                f4747D = new LightingColorFilter(m2152b, 0);
+                f4748E = m2152b;
                 this.f4746C = f4747D;
             }
         }
         LightingColorFilter lightingColorFilter = this.f4746C;
         if (lightingColorFilter != null) {
             if (!this.f4793ax) {
-                this.f4790au.m5520a(lightingColorFilter);
+                this.f4790au.m5930a(lightingColorFilter);
                 this.f4793ax = true;
             }
             z2 = true;
         } else if (this.f4793ax) {
-            this.f4790au.m5520a((ColorFilter) null);
+            this.f4790au.m5930a((ColorFilter) null);
             this.f4793ax = false;
         }
         if (this.f4788as == 101) {
-            if (C0743c.f4686k == null) {
-                LoggerMaybe.LogDebug2("Loading displacement shader");
+            if (C0743c.f4693k == null) {
+                Core.LogDebug2("Loading displacement shader");
                 try {
-                    C0743c.f4686k = new C0928ae("assets/shaders/post_displacement.frag");
+                    C0743c.f4693k = new C0928ae("assets/shaders/post_displacement.frag");
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if (this.f4717az.f4687l != null) {
-                C0928ae c0928ae = C0743c.f4686k;
-                c0928ae.m915a("screenBase", this.f4717az.f4687l);
-                c0928ae.m912b("screenBaseSize", this.f4717az.f4687l);
-                c0928ae.m917a("u_resolution", loggerMaybe.f6134ck, loggerMaybe.f6135cl);
-                c0928ae.m918a("u_offsetBy", 0.12f * loggerMaybe.f6256cW);
-                this.f4790au.m901a(c0928ae);
+            if (this.f4717az.f4694l != null) {
+                C0928ae c0928ae = C0743c.f4693k;
+                c0928ae.m922a("screenBase", this.f4717az.f4694l);
+                c0928ae.m919b("screenBaseSize", this.f4717az.f4694l);
+                c0928ae.m924a("u_resolution", core.f6134ck, core.f6135cl);
+                c0928ae.m925a("u_offsetBy", 0.12f * core.f6256cW);
+                this.f4790au.m908a(c0928ae);
                 z2 = true;
             }
         }
         if (!z2) {
-            c0930ag = m2305a(f);
+            c0930ag = m2355a(f);
         } else {
             c0930ag = this.f4790au;
-            int m2103b2 = C0758f.m2103b(255, (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f));
+            int m2152b2 = C0758f.m2152b(255, (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f));
             float f10 = this.f4791av - f;
-            if (f10 < -0.01f || f10 > 0.01f || this.f4792aw != m2103b2) {
+            if (f10 < -0.01f || f10 > 0.01f || this.f4792aw != m2152b2) {
                 this.f4791av = f;
-                this.f4792aw = m2103b2;
-                this.f4790au.m5501b(C0758f.m2103b((int) (f * 255.0f), (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f)));
+                this.f4792aw = m2152b2;
+                this.f4790au.m5908b(C0758f.m2152b((int) (f * 255.0f), (int) (f5 * 255.0f), (int) (f6 * 255.0f), (int) (f7 * 255.0f)));
             }
         }
         if (this.f4771ab != null) {
@@ -745,20 +745,20 @@ public final class C0745e {
             if (this.f4772ac != null) {
                 c0930ag2 = this.f4772ac;
             }
-            interfaceC1027y.mo186a(this.f4771ab, rectF.m5443d() + this.f4773ad, rectF.m5442e() + this.f4774ae, c0930ag2);
+            interfaceC1027y.mo181a(this.f4771ab, rectF.m5850d() + this.f4773ad, rectF.m5849e() + this.f4774ae, c0930ag2);
         }
         if (this.f4756M) {
-            PointF m2075d2 = C0758f.m2075d(this.f4757N, this.f4758O, this.f4759P);
-            interfaceC1027y.mo229a(rectF.f234a, rectF.f235b, m2075d2.f227a - loggerMaybe.f6144cv, m2075d2.f228b - loggerMaybe.f6145cw, this.f4717az.f4705w);
+            PointF m2124d2 = C0758f.m2124d(this.f4757N, this.f4758O, this.f4759P);
+            interfaceC1027y.mo225a(rectF.f234a, rectF.f235b, m2124d2.f227a - core.f6144cv, m2124d2.f228b - core.f6145cw, this.f4717az.f4705w);
         } else if (z) {
             if (c0747g.f4828j != null) {
-                interfaceC1027y.mo197a(c0747g.f4828j, rect, rectF, c0930ag);
+                interfaceC1027y.mo192a(c0747g.f4828j, rect, rectF, c0930ag);
             }
         } else {
-            interfaceC1027y.mo197a(c0747g.f4827i, rect, rectF, c0930ag);
+            interfaceC1027y.mo192a(c0747g.f4827i, rect, rectF, c0930ag);
         }
         if (z3) {
-            interfaceC1027y.mo140l();
+            interfaceC1027y.mo134l();
             return true;
         }
         return true;

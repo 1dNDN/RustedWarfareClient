@@ -11,7 +11,7 @@ import com.corrodinggames.rts.game.units.p013a.AbstractC0224s;
 import com.corrodinggames.rts.game.units.p013a.AbstractC0229x;
 import com.corrodinggames.rts.game.units.p013a.C0208c;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p039g.C0820a;
 import com.corrodinggames.rts.gameFramework.p041i.Reader;
 import com.corrodinggames.rts.gameFramework.p041i.StreamWriter;
@@ -26,28 +26,28 @@ import java.util.Iterator;
 public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
 
     /* renamed from: e */
-    float f3636e;
+    float f3640e;
 
     /* renamed from: f */
-    float f3637f;
+    float f3641f;
 
     /* renamed from: g */
-    boolean f3638g;
+    boolean f3642g;
 
     /* renamed from: h */
-    C1101m f3639h;
+    C1101m f3643h;
 
     /* renamed from: a */
-    static C0934e f3640a = null;
+    static C0934e f3636a = null;
 
     /* renamed from: b */
-    static C0934e f3641b = null;
+    static C0934e f3637b = null;
 
     /* renamed from: c */
-    static C0934e f3642c = null;
+    static C0934e f3638c = null;
 
     /* renamed from: d */
-    static C0934e[] f3643d = new C0934e[10];
+    static C0934e[] f3639d = new C0934e[10];
 
     /* renamed from: i */
     public static final AbstractC0224s f3644i = new C05271(109);
@@ -64,178 +64,178 @@ public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
     }
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
-        streamWriter.mo1320a(this.f3636e);
-        streamWriter.mo1320a(this.f3637f);
-        streamWriter.mo1314a(this.f3638g);
-        streamWriter.WriteInteger(this.f3639h.size());
-        Iterator it = this.f3639h.iterator();
+    public void mo2441a(StreamWriter streamWriter) {
+        streamWriter.mo1335a(this.f3640e);
+        streamWriter.mo1335a(this.f3641f);
+        streamWriter.mo1329a(this.f3642g);
+        streamWriter.WriteInteger(this.f3643h.size());
+        Iterator it = this.f3643h.iterator();
         while (it.hasNext()) {
-            streamWriter.mo1318a((AbstractC0244am) it.next());
+            streamWriter.mo1333a((AbstractC0244am) it.next());
         }
-        super.mo2292a(streamWriter);
+        super.mo2441a(streamWriter);
     }
 
     /* renamed from: a */
-    public void mo2291a(Reader reader) {
-        this.f3636e = reader.m1285g();
-        this.f3637f = reader.m1285g();
-        this.f3638g = reader.ReadBool();
-        this.f3639h.clear();
+    public void m3309a(Reader reader) {
+        this.f3640e = reader.m1300g();
+        this.f3641f = reader.m1300g();
+        this.f3642g = reader.ReadBool();
+        this.f3643h.clear();
         int ReadInt = reader.ReadInt();
         for (int i = 0; i < ReadInt; i++) {
-            AbstractC0244am m1277o = reader.m1277o();
-            if (m1277o != null) {
-                this.f3639h.add(m1277o);
+            AbstractC0244am m1292o = reader.m1292o();
+            if (m1292o != null) {
+                this.f3643h.add(m1292o);
             }
         }
-        super.mo2291a(reader);
+        super.m2961a(reader);
     }
 
     /* renamed from: b */
-    public EnumC0249ar mo5649r() {
+    public EnumC0249ar mo1758r() {
         return EnumC0249ar.f1753s;
     }
 
     /* renamed from: c */
-    public static void m3200c() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        f3640a = m1072A.f6113bO.mo221a(C0067R.drawable.hovercraft);
-        f3642c = m1072A.f6113bO.mo221a(C0067R.drawable.hovercraft_shadow);
-        f3641b = m1072A.f6113bO.mo221a(C0067R.drawable.hovercraft_dead);
-        f3643d = AbstractC0197n.m4627a(f3640a);
+    public static void m3300c() {
+        Core m1087A = Core.m1087A();
+        f3636a = m1087A.f6113bO.mo221a(C0067R.drawable.hovercraft);
+        f3638c = m1087A.f6113bO.mo221a(C0067R.drawable.hovercraft_shadow);
+        f3637b = m1087A.f6113bO.mo221a(C0067R.drawable.hovercraft_dead);
+        f3639d = AbstractC0197n.m5082a(f3636a);
     }
 
     /* renamed from: d */
-    public C0934e mo2989d() {
+    public C0934e mo3046d() {
         if (this.f1607bT) {
-            return f3641b;
+            return f3637b;
         }
-        return f3643d[this.f1609bV.m4650O()];
+        return f3639d[this.f1609bV.m5105O()];
     }
 
     /* renamed from: k */
-    public C0934e mo2980k() {
-        return f3642c;
+    public C0934e mo3037k() {
+        return f3638c;
     }
 
     /* renamed from: d */
-    public C0934e mo2988d(int i) {
+    public C0934e mo3045d(int i) {
         return null;
     }
 
     /* renamed from: e */
-    public boolean mo2986e() {
-        this.f3885L = f3641b;
+    public boolean mo3043e() {
+        this.f3885L = f3637b;
         m447S(0);
         this.f1606bS = false;
-        m3193f(true);
-        m2924a(EnumC0233ab.f1503b);
+        m3293f(true);
+        m2981a(EnumC0233ab.f1503b);
         return true;
     }
 
     /* renamed from: a */
-    public void mo2635a() {
-        m3193f(true);
-        super.mo2635a();
+    public void mo2689a() {
+        m3293f(true);
+        super.mo2689a();
     }
 
     /* renamed from: f */
-    public void m3193f(boolean z) {
-        Iterator it = this.f3639h.iterator();
+    public void m3293f(boolean z) {
+        Iterator it = this.f3643h.iterator();
         while (it.hasNext()) {
             AbstractC0244am abstractC0244am = (AbstractC0244am) it.next();
             abstractC0244am.f1651cL = null;
-            abstractC0244am.f6957el = this.f6957el + (C0758f.m2040i(this.f1618ce) * (-9.0f));
-            abstractC0244am.f6958em = this.f6958em + (C0758f.m2045h(this.f1618ce) * (-9.0f));
+            abstractC0244am.f6958el = this.f6958el + (C0758f.m2092i(this.f1618ce) * (-9.0f));
+            abstractC0244am.f6959em = this.f6959em + (C0758f.m2097h(this.f1618ce) * (-9.0f));
             if (z) {
-                abstractC0244am.m4350ci();
+                abstractC0244am.m4699ci();
             }
         }
-        this.f3639h.clear();
+        this.f3643h.clear();
     }
 
     public C0526i(boolean z) {
         super(z);
-        this.f3636e = 0.0f;
-        this.f3639h = new C1101m();
-        m2639T(20);
-        m2638U(32);
+        this.f3640e = 0.0f;
+        this.f3643h = new C1101m();
+        m2693T(20);
+        m2692U(32);
         this.f1621ch = 15.0f;
         this.f1622ci = this.f1621ch;
         this.f1633ct = 450.0f;
         this.f1632cs = this.f1633ct;
-        this.f3885L = f3640a;
-        this.f3886M = f3642c;
+        this.f3885L = f3636a;
+        this.f3886M = f3638c;
     }
 
     /* renamed from: a */
-    public static int m3208a(C1101m c1101m) {
+    public static int m3308a(C1101m c1101m) {
         int i = 0;
         Iterator it = c1101m.iterator();
         while (it.hasNext()) {
-            i += ((AbstractC0244am) it.next()).mo3227cu();
+            i += ((AbstractC0244am) it.next()).mo3328cu();
         }
         return i;
     }
 
     /* renamed from: a */
-    public static boolean m3207a(C1101m c1101m, int i, AbstractC0244am abstractC0244am) {
-        if (m3208a(c1101m) + abstractC0244am.mo3227cu() <= i) {
+    public static boolean m3307a(C1101m c1101m, int i, AbstractC0244am abstractC0244am) {
+        if (m3308a(c1101m) + abstractC0244am.mo3328cu() <= i) {
             return true;
         }
         return false;
     }
 
     /* renamed from: bX */
-    public int m3203bX() {
-        return m3208a(this.f3639h);
+    public int m3303bX() {
+        return m3308a(this.f3643h);
     }
 
     /* renamed from: bY */
-    public int m3202bY() {
+    public int m3302bY() {
         return 4;
     }
 
     /* renamed from: a */
-    public static boolean m3210a(AbstractC0244am abstractC0244am, AbstractC0244am abstractC0244am2, boolean z) {
-        return m3209a(abstractC0244am, abstractC0244am2, z, 9.0f, -180.0f, 70.0f, 0.0f, 7.0f);
+    public static boolean m3311a(AbstractC0244am abstractC0244am, AbstractC0244am abstractC0244am2, boolean z) {
+        return m3310a(abstractC0244am, abstractC0244am2, z, 9.0f, -180.0f, 70.0f, 0.0f, 7.0f);
     }
 
     /* renamed from: a */
-    public static boolean m3209a(AbstractC0244am abstractC0244am, AbstractC0244am abstractC0244am2, boolean z, float f, float f2, float f3, float f4, float f5) {
-        float m2040i = (abstractC0244am.f6957el + (C0758f.m2040i(abstractC0244am.f1618ce + f2) * f5)) - (C0758f.m2045h(abstractC0244am.f1618ce + f2) * f4);
-        float m2045h = abstractC0244am.f6958em + (C0758f.m2045h(abstractC0244am.f1618ce + f2) * f5) + (C0758f.m2040i(abstractC0244am.f1618ce + f2) * f4);
-        float m2040i2 = m2040i + (C0758f.m2040i(abstractC0244am.f1618ce + 90.0f) * (z ? -f : f));
-        float m2045h2 = m2045h + (C0758f.m2045h(abstractC0244am.f1618ce + 90.0f) * (z ? -f : f));
-        if (!C1117y.m469a(abstractC0244am2, m2040i2, m2045h2)) {
-            m2040i2 += 10.0f;
+    public static boolean m3310a(AbstractC0244am abstractC0244am, AbstractC0244am abstractC0244am2, boolean z, float f, float f2, float f3, float f4, float f5) {
+        float m2092i = (abstractC0244am.f6958el + (C0758f.m2092i(abstractC0244am.f1618ce + f2) * f5)) - (C0758f.m2097h(abstractC0244am.f1618ce + f2) * f4);
+        float m2097h = abstractC0244am.f6959em + (C0758f.m2097h(abstractC0244am.f1618ce + f2) * f5) + (C0758f.m2092i(abstractC0244am.f1618ce + f2) * f4);
+        float m2092i2 = m2092i + (C0758f.m2092i(abstractC0244am.f1618ce + 90.0f) * (z ? -f : f));
+        float m2097h2 = m2097h + (C0758f.m2097h(abstractC0244am.f1618ce + 90.0f) * (z ? -f : f));
+        if (!C1117y.m469a(abstractC0244am2, m2092i2, m2097h2)) {
+            m2092i2 += 10.0f;
         }
-        if (!C1117y.m469a(abstractC0244am2, m2040i2, m2045h2)) {
-            m2040i2 -= 20.0f;
+        if (!C1117y.m469a(abstractC0244am2, m2092i2, m2097h2)) {
+            m2092i2 -= 20.0f;
         }
-        if (!C1117y.m469a(abstractC0244am2, m2040i2, m2045h2)) {
-            m2040i2 -= 10.0f;
-            m2045h2 += 10.0f;
+        if (!C1117y.m469a(abstractC0244am2, m2092i2, m2097h2)) {
+            m2092i2 -= 10.0f;
+            m2097h2 += 10.0f;
         }
-        if (!C1117y.m469a(abstractC0244am2, m2040i2, m2045h2)) {
-            m2045h2 -= 20.0f;
+        if (!C1117y.m469a(abstractC0244am2, m2092i2, m2097h2)) {
+            m2097h2 -= 20.0f;
         }
-        if (!C1117y.m469a(abstractC0244am2, m2040i2, m2045h2)) {
+        if (!C1117y.m469a(abstractC0244am2, m2092i2, m2097h2)) {
             return false;
         }
         abstractC0244am2.f1651cL = null;
-        abstractC0244am2.f6957el = m2040i2;
-        abstractC0244am2.f6958em = m2045h2;
+        abstractC0244am2.f6958el = m2092i2;
+        abstractC0244am2.f6959em = m2097h2;
         abstractC0244am2.f1611bX += 0.1f;
         abstractC0244am2.f1618ce = abstractC0244am.f1618ce + f2;
         abstractC0244am2.f1604bQ = abstractC0244am;
         abstractC0244am2.f1605bR = 45.0f;
         if (abstractC0244am2 instanceof AbstractC0623y) {
             AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am2;
-            abstractC0623y.m2767j(abstractC0244am2.f1618ce);
-            abstractC0623y.m2845az();
-            abstractC0623y.m2789d(abstractC0244am2.f6957el + (C0758f.m2040i(abstractC0244am2.f1618ce + (z ? -f : f)) * f3), abstractC0244am2.f6958em + (C0758f.m2045h(abstractC0244am2.f1618ce + (z ? -f : f)) * f3));
+            abstractC0623y.m2821j(abstractC0244am2.f1618ce);
+            abstractC0623y.m2901az();
+            abstractC0623y.m2843d(abstractC0244am2.f6958el + (C0758f.m2092i(abstractC0244am2.f1618ce + (z ? -f : f)) * f3), abstractC0244am2.f6959em + (C0758f.m2097h(abstractC0244am2.f1618ce + (z ? -f : f)) * f3));
             abstractC0623y.f3920ab = 0;
             return true;
         }
@@ -243,101 +243,101 @@ public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
     }
 
     /* renamed from: a */
-    public void mo1718a(float f) {
-        super.mo1718a(f);
-        if (this.f1607bT || !m4396bS()) {
+    public void mo1762a(float f) {
+        super.mo1762a(f);
+        if (this.f1607bT || !m4751bS()) {
             return;
         }
-        if (this.f1623cj == 0.0f && this.f6955ej != 3) {
+        if (this.f1623cj == 0.0f && this.f6956ej != 3) {
             m447S(3);
         }
-        if (this.f3638g && !m4372cJ() && !this.f1648cI) {
-            this.f3637f = C0758f.m2159a(this.f3637f, f);
-            if (this.f3637f == 0.0f) {
-                this.f3637f = 30.0f;
-                if (this.f3639h.size() == 0) {
-                    this.f3638g = false;
+        if (this.f3642g && !m4724cJ() && !this.f1648cI) {
+            this.f3641f = C0758f.m2211a(this.f3641f, f);
+            if (this.f3641f == 0.0f) {
+                this.f3641f = 30.0f;
+                if (this.f3643h.size() == 0) {
+                    this.f3642g = false;
                 } else {
-                    boolean z = this.f3639h.size() % 2 == 0;
-                    AbstractC0244am abstractC0244am = (AbstractC0244am) this.f3639h.remove(this.f3639h.size() - 1);
-                    if (!m3210a(this, abstractC0244am, z)) {
-                        this.f3639h.add(abstractC0244am);
+                    boolean z = this.f3643h.size() % 2 == 0;
+                    AbstractC0244am abstractC0244am = (AbstractC0244am) this.f3643h.remove(this.f3643h.size() - 1);
+                    if (!m3311a(this, abstractC0244am, z)) {
+                        this.f3643h.add(abstractC0244am);
                     }
-                    if (this.f3639h.size() == 0) {
-                        this.f3638g = false;
+                    if (this.f3643h.size() == 0) {
+                        this.f3642g = false;
                     }
                 }
             }
         }
-        this.f3636e += 4.0f * f;
-        if (this.f3636e > 360.0f) {
-            this.f3636e -= 360.0f;
+        this.f3640e += 4.0f * f;
+        if (this.f3640e > 360.0f) {
+            this.f3640e -= 360.0f;
         }
-        if (!this.f3638g) {
-            this.f6959en = C0758f.m2158a(this.f6959en, 3.0f + (C0758f.m2045h(this.f3636e) * 1.5f), 0.1f * f);
+        if (!this.f3642g) {
+            this.f6960en = C0758f.m2210a(this.f6960en, 3.0f + (C0758f.m2097h(this.f3640e) * 1.5f), 0.1f * f);
         } else {
-            this.f6959en = C0758f.m2158a(this.f6959en, 0.0f, 0.1f * f);
+            this.f6960en = C0758f.m2210a(this.f6960en, 0.0f, 0.1f * f);
         }
     }
 
     /* renamed from: a */
-    public void mo2993a(AbstractC0244am abstractC0244am, int i) {
+    public void mo3051a(AbstractC0244am abstractC0244am, int i) {
     }
 
     /* renamed from: m */
-    public float mo2978m() {
+    public float mo3035m() {
         return 30.0f;
     }
 
     /* renamed from: b */
-    public float mo2992b(int i) {
+    public float mo3050b(int i) {
         return 100.0f;
     }
 
     /* renamed from: z */
-    public float mo2976z() {
-        if (m4372cJ()) {
+    public float mo3033z() {
+        if (m4724cJ()) {
             return 1.2f;
         }
         return 0.9f;
     }
 
     /* renamed from: A */
-    public float mo3006A() {
-        if (m4372cJ()) {
+    public float mo3065A() {
+        if (m4724cJ()) {
             return 1.8f;
         }
         return 1.4f;
     }
 
     /* renamed from: B */
-    public float mo3005B() {
+    public float mo3064B() {
         return 0.1f;
     }
 
     /* renamed from: C */
-    public float mo3004C() {
+    public float mo3063C() {
         return 0.03f;
     }
 
     /* renamed from: D */
-    public float mo3003D() {
+    public float mo3062D() {
         return 0.05f;
     }
 
     /* renamed from: c */
-    public float mo2991c(int i) {
+    public float mo3048c(int i) {
         return 99.0f;
     }
 
     /* renamed from: l */
-    public boolean mo2979l() {
+    public boolean mo3036l() {
         return false;
     }
 
     /* renamed from: d */
-    public boolean m3197d(AbstractC0244am abstractC0244am, boolean z) {
-        if (this.f3638g || !m3207a(this.f3639h, 4, abstractC0244am) || abstractC0244am == this) {
+    public boolean m3297d(AbstractC0244am abstractC0244am, boolean z) {
+        if (this.f3642g || !m3307a(this.f3643h, 4, abstractC0244am) || abstractC0244am == this) {
             return false;
         }
         if (this.f1609bV != abstractC0244am.f1609bV && !z) {
@@ -347,75 +347,75 @@ public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
     }
 
     /* renamed from: e */
-    public boolean m3195e(AbstractC0244am abstractC0244am, boolean z) {
-        if (!m3197d(abstractC0244am, z)) {
+    public boolean m3295e(AbstractC0244am abstractC0244am, boolean z) {
+        if (!m3297d(abstractC0244am, z)) {
             return false;
         }
-        m3213C(abstractC0244am);
+        m3314C(abstractC0244am);
         return true;
     }
 
     /* renamed from: C */
-    public void m3213C(AbstractC0244am abstractC0244am) {
+    public void m3314C(AbstractC0244am abstractC0244am) {
         abstractC0244am.f1651cL = this;
-        this.f3639h.add(abstractC0244am);
-        LoggerMaybe.m1072A().f6117bS.m1774l(abstractC0244am);
+        this.f3643h.add(abstractC0244am);
+        Core.m1087A().f6117bS.m1818l(abstractC0244am);
     }
 
     /* renamed from: e */
-    public void mo4452e(AbstractC0244am abstractC0244am) {
+    public void mo4817e(AbstractC0244am abstractC0244am) {
         if (abstractC0244am.f1651cL == this) {
-            this.f3639h.remove(abstractC0244am);
+            this.f3643h.remove(abstractC0244am);
             abstractC0244am.f1651cL = null;
             return;
         }
-        LoggerMaybe.m958g("Unit is not being transported");
+        Core.m973g("Unit is not being transported");
     }
 
     /* renamed from: bN */
-    public float mo3075bN() {
+    public float mo3158bN() {
         return 12000.0f;
     }
 
     /* renamed from: bA */
-    public boolean mo4454bA() {
-        return this.f3638g;
+    public boolean mo4819bA() {
+        return this.f3642g;
     }
 
     /* renamed from: L */
-    public void m3212L() {
-        this.f3638g = true;
-        this.f3637f = 30.0f;
+    public void m3313L() {
+        this.f3642g = true;
+        this.f3641f = 30.0f;
     }
 
     /* renamed from: M */
-    public void m3211M() {
-        this.f3638g = false;
+    public void m3312M() {
+        this.f3642g = false;
     }
 
     /* renamed from: a */
-    public void mo3067a(AbstractC0224s abstractC0224s, boolean z) {
+    public void mo3173a(AbstractC0224s abstractC0224s, boolean z) {
         if (abstractC0224s == f3644i) {
-            m3212L();
+            m3313L();
         }
         if (abstractC0224s == f3645j) {
-            m3211M();
+            m3312M();
         }
     }
 
     /* renamed from: cq */
-    public boolean m3198cq() {
+    public boolean m3298cq() {
         return true;
     }
 
     /* renamed from: bB */
-    public int mo4453bB() {
-        return this.f3639h.size();
+    public int mo4818bB() {
+        return this.f3643h.size();
     }
 
     /* renamed from: co */
-    public C0208c m3199co() {
-        return f3644i.m4507N();
+    public C0208c m3299co() {
+        return f3644i.m4910N();
     }
 
     /* renamed from: com.corrodinggames.rts.game.units.e.i$1 */
@@ -426,28 +426,28 @@ public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Will unload all units when stopped";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.unload", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.unload", new Object[0]);
         }
 
         /* renamed from: b */
-        public int mo3024b(AbstractC0244am abstractC0244am, boolean z) {
-            return ((InterfaceC0242ak) abstractC0244am).mo4453bB();
+        public int mo3083b(AbstractC0244am abstractC0244am, boolean z) {
+            return ((InterfaceC0242ak) abstractC0244am).mo4818bB();
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
-            return !((InterfaceC0242ak) abstractC0244am).mo4454bA() && ((InterfaceC0242ak) abstractC0244am).mo4451f() && ((InterfaceC0242ak) abstractC0244am).mo4453bB() > 0;
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
+            return !((InterfaceC0242ak) abstractC0244am).mo4819bA() && ((InterfaceC0242ak) abstractC0244am).mo4816f() && ((InterfaceC0242ak) abstractC0244am).mo4818bB() > 0;
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            return ((InterfaceC0242ak) abstractC0244am).mo4450j();
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            return ((InterfaceC0242ak) abstractC0244am).mo4815j();
         }
     }
 
@@ -459,43 +459,43 @@ public class C0526i extends AbstractC0525h implements InterfaceC0242ak {
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Stop unloading";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.cancel", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.cancel", new Object[0]);
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
-            return ((InterfaceC0242ak) abstractC0244am).mo4454bA();
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
+            return ((InterfaceC0242ak) abstractC0244am).mo4819bA();
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            return mo3027a(abstractC0244am, false);
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            return mo3086a(abstractC0244am, false);
         }
     }
 
     /* renamed from: N */
-    public ArrayList mo3068N() {
+    public ArrayList mo3174N() {
         return f3646k;
     }
 
     /* renamed from: f */
-    public boolean mo4451f() {
-        return !m4372cJ();
+    public boolean mo4816f() {
+        return !m4724cJ();
     }
 
     /* renamed from: j */
-    public boolean mo4450j() {
+    public boolean mo4815j() {
         return true;
     }
 
     /* renamed from: bz */
-    public C1101m m3201bz() {
-        return this.f3639h;
+    public C1101m m3301bz() {
+        return this.f3643h;
     }
 }

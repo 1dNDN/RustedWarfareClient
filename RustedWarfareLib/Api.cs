@@ -27,7 +27,7 @@ public partial class Api
 
     public string Password { get; set; } = "";
 
-    public string ServerUuid { get; private set; } = "";
+    public string NetworkServerId { get; private set; } = "";
 
     public string ClientUuid { get; set; } = "";
 

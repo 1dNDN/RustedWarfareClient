@@ -4,7 +4,7 @@ import com.corrodinggames.rts.appFramework.ActivityC0122n;
 import com.corrodinggames.rts.game.C0187e;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -18,192 +18,203 @@ public class Steam {
     private final C0831ad f5765W;
 
     /* renamed from: c */
-    public int f5766c;
+    public int f5768c;
 
     /* renamed from: d */
-    public Socket f5767d;
+    public Socket f5769d;
 
     /* renamed from: e */
-    InetAddress f5768e;
+    InetAddress f5770e;
 
     /* renamed from: g */
-    public long f5769g;
+    public long f5772g;
 
     /* renamed from: h */
-    public boolean f5770h;
+    public boolean f5773h;
 
     /* renamed from: i */
     public boolean Connected;
 
     /* renamed from: j */
-    public Steam f5772j;
+    public Steam f5775j;
 
     /* renamed from: l */
-    Packet f5773l;
+    Packet f5777l;
 
     /* renamed from: m */
-    public String f5774m;
+    public String f5778m;
 
     /* renamed from: n */
-    public String f5775n;
+    public String f5779n;
 
     /* renamed from: o */
     public String RelayId;
 
     /* renamed from: p */
-    public boolean f5777p;
+    public boolean f5781p;
 
     /* renamed from: q */
-    public boolean f5778q;
+    public boolean f5782q;
 
     /* renamed from: r */
-    public boolean f5779r;
+    public boolean f5783r;
 
     /* renamed from: s */
-    public boolean f5780s;
+    public boolean f5784s;
 
     /* renamed from: t */
-    public boolean f5781t;
+    public boolean f5785t;
 
     /* renamed from: u */
-    public boolean f5782u;
+    public boolean f5786u;
 
     /* renamed from: v */
-    public boolean f5783v;
+    public boolean f5787v;
 
     /* renamed from: w */
-    public boolean f5784w;
+    public boolean f5788w;
 
     /* renamed from: x */
-    public int f5785x;
+    public int f5789x;
 
     /* renamed from: y */
-    public int f5786y;
+    public int f5790y;
 
     /* renamed from: z */
-    public C0187e f5787z;
+    public C0187e f5791z;
 
     /* renamed from: F */
-    RunnableC0869d f5788F;
+    RunnableC0869d f5797F;
 
     /* renamed from: G */
-    RunnableC0870e f5789G;
+    RunnableC0870e f5798G;
 
     /* renamed from: H */
-    Thread f5790H;
+    Thread f5799H;
 
     /* renamed from: I */
-    Thread f5791I;
+    Thread f5800I;
 
     /* renamed from: L */
-    public String f5792L;
+    public String f5803L;
 
     /* renamed from: M */
-    public int f5793M;
+    public int f5804M;
 
     /* renamed from: N */
-    public boolean f5794N;
+    public boolean f5805N;
 
     /* renamed from: O */
-    public boolean f5795O;
+    public boolean f5806O;
 
     /* renamed from: P */
-    public int f5796P;
+    public int f5807P;
 
     /* renamed from: Q */
-    public boolean f5797Q;
+    public boolean f5808Q;
 
     /* renamed from: R */
-    public int f5798R;
+    public int f5809R;
 
     /* renamed from: S */
-    public long f5799S;
+    public long f5810S;
 
     /* renamed from: T */
-    public boolean f5800T;
+    public boolean f5811T;
 
     /* renamed from: U */
-    volatile int f5801U;
+    volatile int f5812U;
 
     /* renamed from: V */
-    volatile int f5802V;
+    volatile int f5813V;
 
     /* renamed from: a */
-    volatile boolean f5803a = false;
+    volatile boolean f5766a = false;
 
     /* renamed from: b */
-    volatile boolean f5804b = false;
+    volatile boolean f5767b = false;
 
     /* renamed from: f */
-    ConcurrentLinkedQueue f5805f = new ConcurrentLinkedQueue();
+    ConcurrentLinkedQueue f5771f = new ConcurrentLinkedQueue();
 
     /* renamed from: k */
-    public int f5806k = -1;
+    public int f5776k = -1;
 
     /* renamed from: A */
-    int f5807A = -1;
+    int f5792A = -1;
 
     /* renamed from: B */
-    long f5808B = -1;
+    long f5793B = -1;
 
     /* renamed from: C */
-    boolean f5809C = false;
+    boolean f5794C = false;
 
     /* renamed from: D */
-    boolean f5810D = false;
+    boolean f5795D = false;
 
     /* renamed from: E */
     public int GameVersion = 999999;
 
     /* renamed from: J */
-    boolean f5812J = false;
+    boolean f5801J = false;
 
     /* renamed from: K */
-    boolean f5813K = false;
+    boolean f5802K = false;
 
-    public Steam(C0831ad c0831ad, Socket socket) {
-        this.f5765W = c0831ad;
-        this.f5767d = socket;
-        synchronized (this.f5765W.f5609bg) {
-            this.f5766c = this.f5765W.f5608bf;
-            this.f5765W.f5608bf++;
-        }
-        this.f5793M = C0758f.m2153a(1, 1000000);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: a */
+    public static /* synthetic */ void m1356a(Steam steam, boolean z, boolean z2) {
+        steam.m1353a(z, z2);
     }
 
     /* renamed from: a */
-    public boolean m1344a() {
-        if (this.f5799S < System.currentTimeMillis() - 10000) {
-            this.f5799S = System.currentTimeMillis();
-            this.f5798R = 0;
+    static /* synthetic */ C0831ad m1357a(Steam steam) {
+        return steam.f5765W;
+    }
+
+    public Steam(C0831ad c0831ad, Socket socket) {
+        this.f5765W = c0831ad;
+        this.f5769d = socket;
+        synchronized (this.f5765W.f5609bg) {
+            this.f5768c = this.f5765W.f5608bf;
+            this.f5765W.f5608bf++;
         }
-        if (this.f5798R > 100) {
-            if (!this.f5800T) {
-                this.f5800T = true;
+        this.f5804M = C0758f.m2203a(1, 1000000);
+    }
+
+    /* renamed from: a */
+    public boolean m1359a() {
+        if (this.f5810S < System.currentTimeMillis() - 10000) {
+            this.f5810S = System.currentTimeMillis();
+            this.f5809R = 0;
+        }
+        if (this.f5809R > 100) {
+            if (!this.f5811T) {
+                this.f5811T = true;
                 LogDebug("Command limit was reached");
                 return true;
             }
             return true;
         }
-        this.f5798R++;
+        this.f5809R++;
         return false;
     }
 
     /* renamed from: b */
-    public int m1336b() {
-        if (this.f5808B == -1) {
+    public int m1351b() {
+        if (this.f5793B == -1) {
             return -2;
         }
-        if (this.f5808B < System.currentTimeMillis() - 5000) {
+        if (this.f5793B < System.currentTimeMillis() - 5000) {
             return -1;
         }
-        return this.f5807A;
+        return this.f5792A;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: c */
-    public int m1334c() {
-        C0187e c0187e = this.f5787z;
+    public int m1349c() {
+        C0187e c0187e = this.f5791z;
         if (c0187e != null) {
             return c0187e.f1306k;
         }
@@ -211,64 +222,64 @@ public class Steam {
     }
 
     /* renamed from: d */
-    public synchronized void m1332d() {
-        this.f5789G = new RunnableC0870e(this);
-        this.f5791I = new Thread(this.f5789G);
-        this.f5791I.setDaemon(true);
-        this.f5791I.start();
-        this.f5788F = new RunnableC0869d(this);
-        this.f5790H = new Thread(this.f5788F);
-        this.f5790H.setDaemon(true);
-        this.f5790H.start();
+    public synchronized void m1347d() {
+        this.f5798G = new RunnableC0870e(this);
+        this.f5800I = new Thread(this.f5798G);
+        this.f5800I.setDaemon(true);
+        this.f5800I.start();
+        this.f5797F = new RunnableC0869d(this, null);
+        this.f5799H = new Thread(this.f5797F);
+        this.f5799H.setDaemon(true);
+        this.f5799H.start();
     }
 
     /* renamed from: i */
-    private void m1326i() {
+    private void m1341i() {
         C0187e c0187e;
-        this.f5803a = true;
-        if (this.f5765W.IsServer && !this.f5765W.m1430n() && (c0187e = this.f5787z) != null) {
-            this.f5787z = null;
-            if (this.f5765W.m1475d(c0187e) == null) {
-                c0187e.m4658G();
-                this.f5765W.m1590P();
-                ActivityC0122n.m5091o();
+        this.f5766a = true;
+        if (this.f5765W.IsServer && !this.f5765W.m1472n() && (c0187e = this.f5791z) != null) {
+            this.f5791z = null;
+            if (this.f5765W.m1517d(c0187e) == null) {
+                c0187e.m5113G();
+                this.f5765W.m1632P();
+                ActivityC0122n.m5601o();
             }
         }
-        if (this.f5790H != null) {
-            this.f5790H.interrupt();
+        if (this.f5799H != null) {
+            this.f5799H.interrupt();
         }
-        this.f5765W.m1497b(this);
-        this.f5777p = false;
-        if (this.f5778q) {
-            this.f5765W.m1482c(this, "Closing");
+        this.f5765W.m1539b(this);
+        this.f5781p = false;
+        if (this.f5782q) {
+            this.f5765W.m1524c(this, "Closing");
         }
     }
 
     /* renamed from: j */
-    private synchronized void m1325j() {
-        if (this.f5803a) {
+    private synchronized void m1340j() {
+        if (this.f5766a) {
             return;
         }
-        this.f5804b = true;
-        if (this.f5789G != null) {
-            this.f5789G.m1323a();
+        this.f5767b = true;
+        if (this.f5798G != null) {
+            this.f5798G.m1338a();
         }
-        if (this.f5790H != null) {
-            this.f5790H.interrupt();
+        if (this.f5799H != null) {
+            this.f5799H.interrupt();
         }
-        this.f5765W.m1497b(this);
+        this.f5765W.m1539b(this);
     }
 
     /* renamed from: a */
-    public void m1340a(String str) {
+    public void m1355a(String str) {
         StreamWriter streamWriter = new StreamWriter();
         if (str == null) {
             str = "NULL";
         }
         try {
             streamWriter.WriteUTF(str);
-            m1343a(streamWriter.mo1360b(111));
-            m1325j();
+            m1358a(streamWriter.m1407b(111));
+            m1340j();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -276,27 +287,27 @@ public class Steam {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
-    public synchronized void m1338a(boolean z, boolean z2) {
-        m1337a(z, z2, "Time out");
+    public synchronized void m1353a(boolean z, boolean z2) {
+        m1352a(z, z2, "Time out");
     }
 
     /* renamed from: e */
-    public String m1330e() {
+    public String m1345e() {
         String str = "<null>";
-        if (this.f5787z != null) {
-            str = this.f5787z.f1316u;
+        if (this.f5791z != null) {
+            str = this.f5791z.f1316u;
         }
         return str;
     }
 
     /* renamed from: f */
-    public String m1329f() {
+    public String m1344f() {
         InetAddress inetAddress;
-        if (this.f5772j != null) {
-            return this.f5775n;
+        if (this.f5775j != null) {
+            return this.f5779n;
         }
         try {
-            Socket socket = this.f5767d;
+            Socket socket = this.f5769d;
             if (socket != null && (inetAddress = socket.getInetAddress()) != null) {
                 return inetAddress.getHostAddress();
             }
@@ -308,13 +319,13 @@ public class Steam {
     }
 
     /* renamed from: g */
-    public String m1328g() {
-        if (this.f5772j != null) {
-            return this.f5775n == null ? "<forwarded unknown>" : this.f5775n;
+    public String m1343g() {
+        if (this.f5775j != null) {
+            return this.f5779n == null ? "<forwarded unknown>" : this.f5779n;
         }
         String str = "<no socket>";
         try {
-            Socket socket = this.f5767d;
+            Socket socket = this.f5769d;
             if (socket != null) {
                 str = "<no bond socket>";
                 InetAddress inetAddress = socket.getInetAddress();
@@ -330,25 +341,25 @@ public class Steam {
     }
 
     /* renamed from: a */
-    public synchronized void m1337a(boolean z, boolean z2, String str) {
-        if (!this.f5803a) {
+    public synchronized void m1352a(boolean z, boolean z2, String str) {
+        if (!this.f5766a) {
             LogDebug("handleRemoteDisconnect");
             String str2 = null;
-            if (this.f5787z != null) {
-                str2 = this.f5787z.f1316u;
+            if (this.f5791z != null) {
+                str2 = this.f5791z.f1316u;
             }
             String str3 = null;
-            if (this.f5787z != null) {
+            if (this.f5791z != null) {
                 String str4 = "player";
                 String str5 = VariableScope.nullOrMissingString;
-                if (this.f5787z.m4619b()) {
+                if (this.f5791z.m5074b()) {
                     str4 = "spectator";
                 } else if (this.f5765W.f5539bm) {
-                    str5 = this.f5787z.m4620a(false, false) == 0 ? " (Had no units)" : " (Team " + this.f5787z.m4570h() + ")";
+                    str5 = this.f5791z.m5075a(false, false) == 0 ? " (Had no units)" : " (Team " + this.f5791z.m5025h() + ")";
                 }
-                str3 = str4 + " '" + this.f5787z.f1316u + "' disconnected" + str5;
-            } else if (this.f5777p) {
-                if (this.f5780s && this.f5778q) {
+                str3 = str4 + " '" + this.f5791z.f1316u + "' disconnected" + str5;
+            } else if (this.f5781p) {
+                if (this.f5784s && this.f5782q) {
                     str3 = "relay server disconnected";
                 } else {
                     str3 = "a player disconnected";
@@ -358,19 +369,19 @@ public class Steam {
                 str3 = "The server disconnected";
             }
             if (str3 != null && str != null) {
-                str3 = str3 + "  (" + C0831ad.m1439i(str) + ")";
+                str3 = str3 + "  (" + C0831ad.m1481i(str) + ")";
             }
-            m1326i();
+            m1341i();
             if (str3 != null) {
                 boolean z3 = false;
-                if (this.f5787z != null && this.f5765W.IsServer && this.f5765W.m1475d(this.f5787z) != null) {
+                if (this.f5791z != null && this.f5765W.IsServer && this.f5765W.m1517d(this.f5791z) != null) {
                     z3 = true;
                 }
                 if (!z3) {
                     if (!this.f5765W.IsServer) {
-                        this.f5765W.m1457f(str3);
+                        this.f5765W.m1499f(str3);
                     } else {
-                        this.f5765W.m1437j(str3);
+                        this.f5765W.m1479j(str3);
                     }
                 } else {
                     LogDebug("Not sending: '" + str3 + "' still another active connection");
@@ -380,80 +391,80 @@ public class Steam {
         } else {
             LogDebug("handleRemoteDisconnect: connection is already disconnecting");
         }
-        if (!z2 && this.f5789G != null) {
-            this.f5789G.m1323a();
+        if (!z2 && this.f5798G != null) {
+            this.f5798G.m1338a();
         }
         if (z2) {
-            this.f5812J = true;
+            this.f5801J = true;
         }
         if (z) {
-            this.f5813K = true;
+            this.f5802K = true;
         }
-        if (this.f5812J && this.f5813K) {
+        if (this.f5801J && this.f5802K) {
             try {
-                this.f5767d.close();
+                this.f5769d.close();
             } catch (IOException e) {
-                LoggerMaybe.m1026a("Error while closing network socket", (Throwable) e);
+                Core.m1041a("Error while closing network socket", (Throwable) e);
             }
-            this.f5791I = null;
-            this.f5790H = null;
-            this.f5789G = null;
-            this.f5788F = null;
-            if (this.f5805f != null) {
-                this.f5805f.clear();
+            this.f5800I = null;
+            this.f5799H = null;
+            this.f5798G = null;
+            this.f5797F = null;
+            if (this.f5771f != null) {
+                this.f5771f.clear();
             }
         }
     }
 
     /* renamed from: a */
-    public void m1339a(String str, Throwable th) {
-        LoggerMaybe.m1026a(m1331d(str), th);
+    public void m1354a(String str, Throwable th) {
+        Core.m1041a(m1346d(str), th);
     }
 
     /* renamed from: b */
-    public void m1335b(String str) {
-        LoggerMaybe.m983b(m1331d(str));
+    public void m1350b(String str) {
+        Core.m998b(m1346d(str));
     }
 
     /* renamed from: c */
     public void LogDebug(String str) {
-        LoggerMaybe.LogDebug2(m1331d(str));
+        Core.LogDebug2(m1346d(str));
     }
 
     /* renamed from: d */
-    public String m1331d(String str) {
+    public String m1346d(String str) {
         C0187e c0187e;
-        String str2 = "id:" + this.f5766c + ": " + str;
-        if (this.f5787z != null) {
+        String str2 = "id:" + this.f5768c + ": " + str;
+        if (this.f5791z != null) {
             str2 = str2 + " (Player:" + c0187e.f1316u + ")";
         }
         return str2;
     }
 
     /* renamed from: a */
-    public void m1343a(Packet packet) {
-        if (this.f5789G == null && this.f5803a) {
+    public void m1358a(Packet packet) {
+        if (this.f5798G == null && this.f5766a) {
             return;
         }
-        this.f5789G.m1322a(packet);
+        this.f5798G.m1337a(packet);
     }
 
     /* renamed from: h */
-    public boolean m1327h() {
-        return !this.f5803a;
+    public boolean m1342h() {
+        return !this.f5766a;
     }
 
     public void finalize() {
         try {
-            if (this.f5767d == null || this.f5767d.isClosed()) {
+            if (this.f5769d == null || this.f5769d.isClosed()) {
                 return;
             }
-            LoggerMaybe.LogDebug2("Connection::finalize called on unclosed socket (index:" + this.f5766c + ")");
-            if (this.f5767d.getInetAddress() == null) {
-                LoggerMaybe.LogDebug2("Skipping possible steam socket");
+            Core.LogDebug2("Connection::finalize called on unclosed socket (index:" + this.f5768c + ")");
+            if (this.f5769d.getInetAddress() == null) {
+                Core.LogDebug2("Skipping possible steam socket");
             }
             try {
-                this.f5767d.close();
+                this.f5769d.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

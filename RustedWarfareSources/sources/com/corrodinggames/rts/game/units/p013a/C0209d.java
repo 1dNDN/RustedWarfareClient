@@ -4,8 +4,8 @@ import com.corrodinggames.rts.game.units.AbstractC0244am;
 import com.corrodinggames.rts.game.units.AbstractC0623y;
 import com.corrodinggames.rts.game.units.EnumC0205a;
 import com.corrodinggames.rts.game.units.EnumC0249ar;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
 import com.corrodinggames.rts.gameFramework.C0749e;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.util.Iterator;
 
 /* renamed from: com.corrodinggames.rts.game.units.a.d */
@@ -22,108 +22,98 @@ public class C0209d extends AbstractC0224s {
         super("c_7");
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public int mo2984b(AbstractC0244am abstractC0244am, boolean z) {
+    public int mo3083b(AbstractC0244am abstractC0244am, boolean z) {
         return -1;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: c */
-    public int mo2983c() {
+    public int mo3082c() {
         return 0;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: n */
-    public EnumC0249ar mo2977i() {
+    public EnumC0249ar mo6163i() {
         return null;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: e */
-    public EnumC0226u mo2982e() {
-        return EnumC0226u.directToAction;
+    public EnumC0226u mo3081e() {
+        return EnumC0226u.f1485k;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: f */
-    public EnumC0225t mo2980f() {
-        return EnumC0225t.none;
+    public EnumC0225t mo3079f() {
+        return EnumC0225t.f1465a;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: g */
-    public boolean mo2979g() {
+    public boolean mo3078g() {
         return false;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public String mo2989a() {
+    public String mo3088a() {
         return "Attack Mode";
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public String mo2986b() {
-        EnumC0205a m4207q = m4207q();
-        if (m4207q != null) {
-            return m4207q.name();
+    public String mo3085b() {
+        EnumC0205a m4984q = m4984q();
+        if (m4984q != null) {
+            return m4984q.name();
         }
         return "NA";
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: e_ */
-    public boolean mo2981e_() {
+    public boolean mo3080e_() {
         return false;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: c */
-    public void mo4175c(AbstractC0244am abstractC0244am) {
-        AbstractC0916l m1071A = AbstractC0916l.m1071A();
-        EnumC0205a m4209a = m4209a(m4206r());
-        C0749e m2349b = m1071A.f6178cf.m2349b(abstractC0244am.f1609bV);
+    public void m4986c(AbstractC0244am abstractC0244am) {
+        Core m1087A = Core.m1087A();
+        EnumC0205a m4987a = m4987a(m4983r());
+        C0749e m2419b = m1087A.f6130cf.m2419b(abstractC0244am.f1609bV);
         Iterator it = AbstractC0244am.f1590bD.iterator();
         while (it.hasNext()) {
             AbstractC0244am abstractC0244am2 = (AbstractC0244am) it.next();
             if (abstractC0244am2 instanceof AbstractC0623y) {
                 AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am2;
                 if (abstractC0623y.f1644cE) {
-                    m2349b.m2257a(abstractC0623y);
+                    m2419b.m2319a(abstractC0623y);
                 }
             }
         }
-        m2349b.m2260a(m4209a);
-        this.f1430a = m1071A.f6165bS.f5155S;
-        this.f1431b = m4209a;
+        m2419b.m2322a(m4987a);
+        this.f1430a = m1087A.f6117bS.f5155S;
+        this.f1431b = m4987a;
     }
 
     /* renamed from: a */
-    public EnumC0205a m4209a(EnumC0205a enumC0205a) {
-        if (enumC0205a == EnumC0205a.onlyInRange) {
-            return EnumC0205a.guardArea;
+    public EnumC0205a m4987a(EnumC0205a enumC0205a) {
+        if (enumC0205a == EnumC0205a.f1419b) {
+            return EnumC0205a.f1422e;
         }
-        if (enumC0205a == EnumC0205a.onlyInRange) {
-            return EnumC0205a.aggressive;
+        if (enumC0205a == EnumC0205a.f1419b) {
+            return EnumC0205a.f1423f;
         }
-        return EnumC0205a.onlyInRange;
+        return EnumC0205a.f1419b;
     }
 
     /* renamed from: q */
-    public EnumC0205a m4207q() {
-        AbstractC0916l m1071A = AbstractC0916l.m1071A();
-        EnumC0205a m4206r = m4206r();
-        this.f1430a = m1071A.f6165bS.f5155S;
-        this.f1431b = m4206r;
-        return m4206r;
+    public EnumC0205a m4984q() {
+        Core m1087A = Core.m1087A();
+        EnumC0205a m4983r = m4983r();
+        this.f1430a = m1087A.f6117bS.f5155S;
+        this.f1431b = m4983r;
+        return m4983r;
     }
 
     /* renamed from: r */
-    public EnumC0205a m4206r() {
-        if (this.f1430a == AbstractC0916l.m1071A().f6165bS.f5155S && this.f1431b != null) {
+    public EnumC0205a m4983r() {
+        if (this.f1430a == Core.m1087A().f6117bS.f5155S && this.f1431b != null) {
             return this.f1431b;
         }
         EnumC0205a enumC0205a = null;
@@ -133,10 +123,10 @@ public class C0209d extends AbstractC0224s {
             if (abstractC0244am instanceof AbstractC0623y) {
                 AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am;
                 if (abstractC0623y.f1644cE) {
-                    if (enumC0205a == null || enumC0205a == abstractC0623y.f3896O) {
-                        enumC0205a = abstractC0623y.f3896O;
+                    if (enumC0205a == null || enumC0205a == abstractC0623y.f3894O) {
+                        enumC0205a = abstractC0623y.f3894O;
                     } else {
-                        enumC0205a = EnumC0205a.mixed;
+                        enumC0205a = EnumC0205a.f1424g;
                     }
                 }
             }
@@ -144,21 +134,18 @@ public class C0209d extends AbstractC0224s {
         return enumC0205a;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public boolean mo2985b(AbstractC0244am abstractC0244am) {
+    public boolean mo3084b(AbstractC0244am abstractC0244am) {
         return true;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: d */
-    public String mo3014d() {
-        return mo2986b();
+    public String mo3129d() {
+        return mo3085b();
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: s */
-    public boolean mo4154s() {
+    public boolean mo4924s() {
         return true;
     }
 }

@@ -14,14 +14,14 @@ public class C0237af {
     public float f1529b;
 
     /* renamed from: a */
-    public void m4470a(StreamWriter streamWriter) {
-        streamWriter.mo1320a(this.f1528a);
-        streamWriter.mo1320a(this.f1529b);
+    public void m4836a(StreamWriter streamWriter) {
+        streamWriter.mo1335a(this.f1528a);
+        streamWriter.mo1335a(this.f1529b);
     }
 
     /* renamed from: a */
-    public void m4469a(Reader reader) {
-        this.f1528a = reader.m1285g();
-        this.f1529b = reader.m1285g();
+    public void m4835a(Reader reader) {
+        this.f1528a = reader.m1300g();
+        this.f1529b = reader.m1300g();
     }
 }

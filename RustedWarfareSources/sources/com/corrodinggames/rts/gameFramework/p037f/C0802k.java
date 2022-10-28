@@ -11,7 +11,7 @@ import com.corrodinggames.rts.game.p012b.C0173b;
 import com.corrodinggames.rts.game.units.AbstractC0244am;
 import com.corrodinggames.rts.gameFramework.C0727bl;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p035d.C0741a;
 import com.corrodinggames.rts.gameFramework.p044l.AbstractC0942m;
 import com.corrodinggames.rts.gameFramework.p044l.C0930ag;
@@ -203,12 +203,12 @@ public class C0802k {
     ArrayList f5338af = new ArrayList();
 
     /* renamed from: a */
-    public void m1743a(int i, int i2, float f, AbstractC0244am abstractC0244am) {
-        boolean z = abstractC0244am != null && abstractC0244am.m4485bI();
+    public void m1785a(int i, int i2, float f, AbstractC0244am abstractC0244am) {
+        boolean z = abstractC0244am != null && abstractC0244am.m4758bI();
         Iterator it = this.f5331Z.iterator();
         while (it.hasNext()) {
             C0805m c0805m = (C0805m) it.next();
-            if (c0805m.f5346a == z && C0758f.m2073d(i - c0805m.f5347b) < 40 && C0758f.m2073d(i2 - c0805m.f5348c) < 40) {
+            if (c0805m.f5346a == z && C0758f.m2122d(i - c0805m.f5347b) < 40 && C0758f.m2122d(i2 - c0805m.f5348c) < 40) {
                 c0805m.f5349d += f;
                 return;
             }
@@ -217,64 +217,64 @@ public class C0802k {
     }
 
     /* renamed from: a */
-    public void m1740a(Context context) {
-        this.f5294o.m5516a(Paint.Style.f220b);
-        this.f5294o.m5526a(1.0f);
-        this.f5298s.m5523a(255, 255, 255, 255);
-        this.f5298s.m5516a(Paint.Style.f220b);
-        this.f5298s.m5526a(1.0f);
+    public void m1782a(Context context) {
+        this.f5294o.m5926a(Paint.Style.f220b);
+        this.f5294o.m5936a(1.0f);
+        this.f5298s.m5933a(255, 255, 255, 255);
+        this.f5298s.m5926a(Paint.Style.f220b);
+        this.f5298s.m5936a(1.0f);
         this.f5328W = new C0930ag[11];
         for (int i = 0; i <= 10; i++) {
             this.f5328W[i] = new C0930ag();
-            this.f5328W[i].m5501b(-16777216);
-            this.f5328W[i].m5516a(Paint.Style.f219a);
-            this.f5328W[i].m5496c(i * 25);
+            this.f5328W[i].m5908b(-16777216);
+            this.f5328W[i].m5926a(Paint.Style.f219a);
+            this.f5328W[i].m5903c(i * 25);
         }
         this.f5329X = new C0930ag();
-        this.f5329X.m5501b(-16777216);
-        this.f5329X.m5516a(Paint.Style.f219a);
-        this.f5299t.m5523a(255, 255, 0, 0);
-        this.f5299t.m5516a(Paint.Style.f220b);
-        this.f5299t.m5526a(2.0f);
-        this.f5300u.m5523a(155, 255, 0, 0);
-        this.f5300u.m5516a(Paint.Style.f220b);
-        this.f5300u.m5526a(2.0f);
-        this.f5301v.m5523a(200, 12, SlickToAndroidKeycodes.AndroidCodes.KEYCODE_11, 219);
-        this.f5301v.m5516a(Paint.Style.f220b);
-        this.f5301v.m5526a(2.0f);
-        this.f5303x.m5501b(-16711936);
-        this.f5304y.m5501b(-256);
-        this.f5305z.m5501b(-65536);
-        this.f5306A.m5501b(m1744a(this.f5303x.m5489e()));
-        this.f5307B.m5501b(m1744a(this.f5304y.m5489e()));
-        this.f5308C.m5501b(m1744a(this.f5305z.m5489e()));
-        this.f5309D.m5523a(210, 255, 255, 255);
+        this.f5329X.m5908b(-16777216);
+        this.f5329X.m5926a(Paint.Style.f219a);
+        this.f5299t.m5933a(255, 255, 0, 0);
+        this.f5299t.m5926a(Paint.Style.f220b);
+        this.f5299t.m5936a(2.0f);
+        this.f5300u.m5933a(155, 255, 0, 0);
+        this.f5300u.m5926a(Paint.Style.f220b);
+        this.f5300u.m5936a(2.0f);
+        this.f5301v.m5933a(200, 12, SlickToAndroidKeycodes.AndroidCodes.KEYCODE_11, 219);
+        this.f5301v.m5926a(Paint.Style.f220b);
+        this.f5301v.m5936a(2.0f);
+        this.f5303x.m5908b(-16711936);
+        this.f5304y.m5908b(-256);
+        this.f5305z.m5908b(-65536);
+        this.f5306A.m5908b(m1786a(this.f5303x.m5896e()));
+        this.f5307B.m5908b(m1786a(this.f5304y.m5896e()));
+        this.f5308C.m5908b(m1786a(this.f5305z.m5896e()));
+        this.f5309D.m5933a(210, 255, 255, 255);
     }
 
     /* renamed from: a */
-    public static int m1744a(int i) {
-        return Color.m5538a(Color.m5540a(i), (int) (Color.m5536b(i) * 0.5f), (int) (Color.m5535c(i) * 0.5f), (int) (Color.m5534d(i) * 0.5f));
+    public static int m1786a(int i) {
+        return Color.m5948a(Color.m5950a(i), (int) (Color.m5946b(i) * 0.5f), (int) (Color.m5945c(i) * 0.5f), (int) (Color.m5944d(i) * 0.5f));
     }
 
     /* renamed from: a */
-    public void m1747a() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public void m1789a() {
+        Core m1087A = Core.m1087A();
         if (!C0797f.f5250bD) {
-            this.f5280a = (int) (m1079A.f6134ck - (this.f5282c + 0.0f));
+            this.f5280a = (int) (m1087A.f6134ck - (this.f5282c + 0.0f));
             this.f5281b = 0.0f;
             return;
         }
         this.f5280a = 0.0f;
-        this.f5281b = (int) (m1079A.f6135cl - (this.f5283d + 0.0f));
+        this.f5281b = (int) (m1087A.f6135cl - (this.f5283d + 0.0f));
     }
 
     /* renamed from: b */
-    public int m1735b() {
+    public int m1777b() {
         return (int) (this.f5281b + this.f5283d);
     }
 
     /* renamed from: a */
-    public void m1739a(C0173b c0173b, boolean z) {
+    public void m1781a(C0173b c0173b, boolean z) {
         this.f5338af.clear();
         if (z) {
             this.f5292m = true;
@@ -289,29 +289,29 @@ public class C0802k {
     }
 
     /* renamed from: c */
-    public void m1732c() {
+    public void m1774c() {
         if (this.f5315J != null) {
-            this.f5315J.mo55o();
+            this.f5315J.mo49o();
             this.f5315J = null;
         }
         if (this.f5311F != null) {
-            this.f5311F.mo55o();
+            this.f5311F.mo49o();
             this.f5311F = null;
         }
         if (this.f5325T != null) {
-            this.f5325T.mo55o();
+            this.f5325T.mo49o();
             this.f5325T = null;
         }
         if (this.f5326U != null) {
-            this.f5326U.mo55o();
+            this.f5326U.mo49o();
             this.f5326U = null;
         }
         if (this.f5314I != null) {
-            this.f5314I.mo135q();
+            this.f5314I.mo129q();
             this.f5314I = null;
         }
         if (this.f5313H != null) {
-            this.f5313H.mo55o();
+            this.f5313H.mo49o();
             this.f5313H = null;
         }
         this.f5316K = null;
@@ -319,44 +319,44 @@ public class C0802k {
     }
 
     /* renamed from: d */
-    public float m1729d() {
-        return LoggerMaybe.m1079A().f6138cp;
+    public float m1771d() {
+        return Core.m1087A().f6138cp;
     }
 
     /* renamed from: e */
-    public void m1727e() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        m1725f();
-        LoggerMaybe.LogDebug2("Creating minimap image buffers..");
+    public void m1769e() {
+        Core m1087A = Core.m1087A();
+        m1767f();
+        Core.LogDebug2("Creating minimap image buffers..");
         if (this.f5311F == null) {
-            this.f5311F = m1079A.f6113bO.mo222a((int) this.f5282c, (int) this.f5283d, false);
-            this.f5312G = m1079A.f6113bO.mo5760b(this.f5311F);
+            this.f5311F = m1087A.f6113bO.mo218a((int) this.f5282c, (int) this.f5283d, false);
+            this.f5312G = m1087A.f6113bO.mo160b(this.f5311F);
         }
         if (this.f5315J == null) {
-            this.f5315J = m1079A.f6113bO.mo222a((int) this.f5282c, (int) this.f5283d, false);
-            this.f5316K = m1079A.f6113bO.mo5760b(this.f5315J);
+            this.f5315J = m1087A.f6113bO.mo218a((int) this.f5282c, (int) this.f5283d, false);
+            this.f5316K = m1087A.f6113bO.mo160b(this.f5315J);
         }
         if (this.f5313H == null) {
-            this.f5313H = m1079A.f6113bO.mo222a((int) this.f5282c, (int) this.f5283d, false);
-            this.f5314I = m1079A.f6113bO.mo5760b(this.f5313H);
+            this.f5313H = m1087A.f6113bO.mo218a((int) this.f5282c, (int) this.f5283d, false);
+            this.f5314I = m1087A.f6113bO.mo160b(this.f5313H);
         }
     }
 
     /* renamed from: f */
-    public void m1725f() {
-        this.f5282c = m1729d();
+    public void m1767f() {
+        this.f5282c = m1771d();
         this.f5283d = this.f5282c;
-        m1747a();
+        m1789a();
     }
 
     /* renamed from: g */
-    public void m1724g() {
-        long m2390a = C0727bl.m2390a();
-        LoggerMaybe.LogDebug2("--setting up minimap--");
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        m1725f();
-        this.f5286g = m1079A.f6110bL.f792C * m1079A.f6110bL.f785n;
-        this.f5287h = m1079A.f6110bL.f793D * m1079A.f6110bL.f786o;
+    public void m1766g() {
+        long m2440a = C0727bl.m2440a();
+        Core.LogDebug2("--setting up minimap--");
+        Core m1087A = Core.m1087A();
+        m1767f();
+        this.f5286g = m1087A.f6110bL.f792C * m1087A.f6110bL.f785n;
+        this.f5287h = m1087A.f6110bL.f793D * m1087A.f6110bL.f786o;
         if (this.f5286g <= 0) {
             this.f5286g = 1;
         }
@@ -366,73 +366,73 @@ public class C0802k {
         this.f5288i = 1.0f / this.f5286g;
         this.f5289j = 1.0f / this.f5287h;
         this.f5285f = true;
-        m1727e();
+        m1769e();
         this.f5331Z.clear();
         this.f5332aa.clear();
         this.f5333ag.clear();
-        Iterator it = m1079A.f6110bL.f838A.iterator();
+        Iterator it = m1087A.f6110bL.f838A.iterator();
         while (it.hasNext()) {
             Point point = (Point) it.next();
             this.f5333ag.add(new C0808p(this, point.f224a, point.f225b));
         }
-        this.f5312G.mo171b(-16777216);
-        this.f5316K.mo171b(-16777216);
+        this.f5312G.mo166b(-16777216);
+        this.f5316K.mo166b(-16777216);
         if (1 == 0) {
             Rect rect = new Rect(0, 0, (int) this.f5282c, (int) this.f5283d);
-            m1079A.f6110bL.f833u.m4867a(this.f5312G, 0.0f, 0.0f, 0.0f, 0.0f, this.f5286g, this.f5287h, this.f5282c / this.f5286g, this.f5283d / this.f5287h, false, false, false);
+            m1087A.f6110bL.f833u.m5250a(this.f5312G, 0.0f, 0.0f, 0.0f, 0.0f, this.f5286g, this.f5287h, this.f5282c / this.f5286g, this.f5283d / this.f5287h, false, false, false);
             Paint paint = new Paint();
-            paint.m5523a(50, 0, 0, 0);
-            this.f5312G.mo167b(rect, paint);
+            paint.m5933a(50, 0, 0, 0);
+            this.f5312G.mo162b(rect, paint);
         } else {
             for (int i = 0; i < 2; i++) {
                 for (int i2 = 0; i2 < 2; i2++) {
-                    this.f5314I.mo171b(-16777216);
+                    this.f5314I.mo166b(-16777216);
                     int i3 = ((int) this.f5282c) / 2;
                     int i4 = ((int) this.f5283d) / 2;
                     int i5 = this.f5286g / 2;
                     int i6 = this.f5287h / 2;
-                    m1079A.f6110bL.f833u.m4867a(this.f5314I, i5 * i, i6 * i2, i5 * i, i6 * i2, i5, i6, this.f5282c / i5, this.f5283d / i6, false, false, false);
+                    m1087A.f6110bL.f833u.m5250a(this.f5314I, i5 * i, i6 * i2, i5 * i, i6 * i2, i5, i6, this.f5282c / i5, this.f5283d / i6, false, false, false);
                     Rect rect2 = new Rect(0, 0, (int) this.f5282c, (int) this.f5283d);
                     Rect rect3 = new Rect(i3 * i, i4 * i2, i3 * (i + 1), i4 * (i2 + 1));
                     Paint paint2 = new Paint();
-                    paint2.mo900a(true);
-                    paint2.m5490d(true);
-                    paint2.m5498b(true);
-                    this.f5316K.mo198a(this.f5313H, rect2, rect3, paint2);
+                    paint2.mo5914a(true);
+                    paint2.m5897d(true);
+                    paint2.m5905b(true);
+                    this.f5316K.mo193a(this.f5313H, rect2, rect3, paint2);
                 }
             }
             Rect rect4 = new Rect(0, 0, (int) this.f5282c, (int) this.f5283d);
-            this.f5312G.mo171b(-16777216);
+            this.f5312G.mo166b(-16777216);
             Paint paint3 = new Paint();
-            paint3.mo900a(true);
-            paint3.m5490d(true);
-            paint3.m5498b(true);
-            paint3.m5523a(200, 255, 255, 255);
-            this.f5312G.mo198a(this.f5315J, rect4, rect4, paint3);
+            paint3.mo5914a(true);
+            paint3.m5897d(true);
+            paint3.m5905b(true);
+            paint3.m5933a(200, 255, 255, 255);
+            this.f5312G.mo193a(this.f5315J, rect4, rect4, paint3);
         }
-        this.f5314I.mo171b(-16777216);
-        this.f5316K.mo171b(-16777216);
+        this.f5314I.mo166b(-16777216);
+        this.f5316K.mo166b(-16777216);
         this.f5318M = 50.0f;
-        m1745a(0.0f, 1.0f);
+        m1787a(0.0f, 1.0f);
         this.f5284e = true;
-        LoggerMaybe.LogDebug2("Minimap map render took:" + C0727bl.m2389a(C0727bl.m2388a(m2390a)));
+        Core.LogDebug2("Minimap map render took:" + C0727bl.m2439a(C0727bl.m2438a(m2440a)));
     }
 
     /* renamed from: a */
-    void m1745a(float f, float f2) {
+    void m1787a(float f, float f2) {
         C0930ag c0930ag;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        this.f5334ab.m5467a(0, (int) (f * this.f5283d), (int) this.f5282c, (int) (f2 * this.f5283d));
-        this.f5314I.mo198a(this.f5311F, this.f5334ab, this.f5334ab, (Paint) null);
-        C0173b c0173b = m1079A.f6110bL;
+        Core m1087A = Core.m1087A();
+        this.f5334ab.m5874a(0, (int) (f * this.f5283d), (int) this.f5282c, (int) (f2 * this.f5283d));
+        this.f5314I.mo193a(this.f5311F, this.f5334ab, this.f5334ab, (Paint) null);
+        C0173b c0173b = m1087A.f6110bL;
         if (c0173b.f841E) {
             boolean z = c0173b.f843G;
             C0930ag c0930ag2 = this.f5328W[5];
             C0930ag c0930ag3 = this.f5328W[10];
             C0930ag c0930ag4 = this.f5329X;
-            c0930ag4.m5496c(255);
+            c0930ag4.m5903c(255);
             if (z) {
-                c0930ag4.m5496c((int) ((1.0f - ((1.0f - (c0930ag2.m5487f() / 255.0f)) * (1.0f - (this.f5328W[7].m5487f() / 255.0f)))) * 255.0f));
+                c0930ag4.m5903c((int) ((1.0f - ((1.0f - (c0930ag2.m5894f() / 255.0f)) * (1.0f - (this.f5328W[7].m5894f() / 255.0f)))) * 255.0f));
             }
             float f3 = this.f5282c / c0173b.f792C;
             float f4 = this.f5283d / c0173b.f793D;
@@ -444,14 +444,14 @@ public class C0802k {
             if (i2 < 0) {
                 i2 = 0;
             }
-            if (i > m1079A.f6110bL.f793D) {
+            if (i > m1087A.f6110bL.f793D) {
                 i = c0173b.f793D;
             }
-            if (i2 > m1079A.f6110bL.f793D) {
+            if (i2 > m1087A.f6110bL.f793D) {
                 i2 = c0173b.f793D;
             }
             int i3 = 0;
-            byte[][] bArr = m1079A.f6099bs.f1337M;
+            byte[][] bArr = m1087A.f6099bs.f1337M;
             if (bArr != null) {
                 int i4 = c0173b.f792C;
                 Rect rect = this.f5327V;
@@ -466,13 +466,13 @@ public class C0802k {
                                 i8++;
                             }
                             i6 = i8;
-                            rect.m5467a(0 + ((int) (i7 * f3)), 0 + ((int) (i5 * f4)), 0 + ((int) ((i8 + 1) * f3)), 0 + ((int) ((i5 + 1) * f4)));
+                            rect.m5874a(0 + ((int) (i7 * f3)), 0 + ((int) (i5 * f4)), 0 + ((int) ((i8 + 1) * f3)), 0 + ((int) ((i5 + 1) * f4)));
                             if (b == 10) {
                                 c0930ag = c0930ag4;
                             } else {
                                 c0930ag = c0930ag2;
                             }
-                            this.f5314I.mo167b(rect, c0930ag);
+                            this.f5314I.mo162b(rect, c0930ag);
                             i3++;
                             if (i3 > 2) {
                                 i3 = 0;
@@ -483,14 +483,14 @@ public class C0802k {
                 }
             }
         }
-        this.f5316K.mo198a(this.f5313H, this.f5334ab, this.f5334ab, (Paint) null);
-        this.f5315J.mo54p();
-        if (LoggerMaybe.f6209aY) {
+        this.f5316K.mo193a(this.f5313H, this.f5334ab, this.f5334ab, (Paint) null);
+        this.f5315J.mo48p();
+        if (Core.f6209aY) {
         }
     }
 
     /* renamed from: a */
-    static C0807o m1741a(int i, Paint paint) {
+    static C0807o m1783a(int i, Paint paint) {
         synchronized (f5335ac) {
             C0807o c0807o = null;
             Iterator it = f5335ac.iterator();
@@ -511,7 +511,7 @@ public class C0802k {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a */
-    public static void m1737a(C0807o c0807o) {
+    public static void m1779a(C0807o c0807o) {
         c0807o.f5359c = null;
         c0807o.f5358b = 0;
         synchronized (f5335ac) {
@@ -531,13 +531,13 @@ public class C0802k {
     }
 
     /* renamed from: a */
-    void m1736a(InterfaceC1027y interfaceC1027y, int i, int i2, float f, float f2) {
+    void m1778a(InterfaceC1027y interfaceC1027y, int i, int i2, float f, float f2) {
         int i3;
         int i4;
         int i5;
         int i6;
         int i7;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         if (this.f5282c < 50.0f) {
             i3 = 0;
             i4 = 0;
@@ -562,84 +562,84 @@ public class C0802k {
         int i10 = i6 + i2;
         int i11 = i3 + i2;
         boolean z = false;
-        z = (m1079A.f6099bs.m4695b() || m1079A.f6126cb.m2413h()) ? true : true;
+        z = (m1087A.f6099bs.m5074b() || m1087A.f6126cb.m2464h()) ? true : true;
         for (int i12 = -1; i12 < AbstractC0197n.f1365c; i12++) {
-            AbstractC0197n m4638k = AbstractC0197n.m4638k(i12);
-            if (m4638k != null) {
-                Paint paint = m4638k.f1354ad;
-                if (m1079A.f6115bQ.useMinimapAllyColors) {
+            AbstractC0197n m5017k = AbstractC0197n.m5017k(i12);
+            if (m5017k != null) {
+                Paint paint = m5017k.f1354ad;
+                if (m1087A.settingEngine.useMinimapAllyColors) {
                     if (z) {
-                        this.f5295p.m5501b(AbstractC0197n.m4642i(m4638k.f1312q));
+                        this.f5295p.m5908b(AbstractC0197n.m5021i(m5017k.f1312q));
                         paint = this.f5295p;
-                    } else if (m1079A.f6099bs == m4638k) {
+                    } else if (m1087A.f6099bs == m5017k) {
                         paint = this.f5303x;
-                    } else if (m1079A.f6099bs.m4663d(m4638k)) {
+                    } else if (m1087A.f6099bs.m5042d(m5017k)) {
                         paint = this.f5304y;
-                    } else if (m1079A.f6099bs.m4675c(m4638k)) {
+                    } else if (m1087A.f6099bs.m5054c(m5017k)) {
                         paint = this.f5305z;
                     }
                 }
                 int i13 = 0;
-                if (m4638k.m4696a(true, false) > 0) {
-                    AbstractC0244am[] m503a = AbstractC0244am.f1590bD.m503a();
+                if (m5017k.m5075a(true, false) > 0) {
+                    AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
                     int size = AbstractC0244am.f1590bD.size();
                     for (int i14 = 0; i14 < size; i14++) {
-                        AbstractC0244am abstractC0244am = m503a[i14];
-                        if (abstractC0244am.f1609bV == m4638k && abstractC0244am.f1655cP) {
+                        AbstractC0244am abstractC0244am = m498a[i14];
+                        if (abstractC0244am.f1609bV == m5017k && abstractC0244am.f1655cP) {
                             i13++;
                         }
                     }
                 }
                 if (i13 > 0) {
-                    paint.m5526a(i7);
-                    C0807o m1741a = m1741a(i13, paint);
-                    AbstractC0244am[] m503a2 = AbstractC0244am.f1590bD.m503a();
+                    paint.m5936a(i7);
+                    C0807o m1783a = m1783a(i13, paint);
+                    AbstractC0244am[] m498a2 = AbstractC0244am.f1590bD.m498a();
                     int size2 = AbstractC0244am.f1590bD.size();
                     for (int i15 = 0; i15 < size2; i15++) {
-                        AbstractC0244am abstractC0244am2 = m503a2[i15];
-                        if (abstractC0244am2.f1609bV == m4638k && abstractC0244am2.f1655cP) {
-                            m1741a.m1722a(abstractC0244am2.f1656cQ, abstractC0244am2.f1657cR);
+                        AbstractC0244am abstractC0244am2 = m498a2[i15];
+                        if (abstractC0244am2.f1609bV == m5017k && abstractC0244am2.f1655cP) {
+                            m1783a.m1764a(abstractC0244am2.f1656cQ, abstractC0244am2.f1657cR);
                         }
                     }
-                    if (m1741a.f5358b != 0) {
-                        m1079A.f6113bO.mo193a(m1741a);
+                    if (m1783a.f5358b != 0) {
+                        m1087A.f6113bO.mo188a(m1783a);
                     }
                 }
-                Paint paint2 = m4638k.f1355ae;
-                if (m1079A.f6115bQ.useMinimapAllyColors) {
+                Paint paint2 = m5017k.f1355ae;
+                if (m1087A.settingEngine.useMinimapAllyColors) {
                     if (z) {
-                        this.f5295p.m5501b(AbstractC0197n.m4642i(m4638k.f1312q));
+                        this.f5295p.m5908b(AbstractC0197n.m5021i(m5017k.f1312q));
                         Paint paint3 = this.f5295p;
-                    } else if (m1079A.f6099bs == m4638k) {
+                    } else if (m1087A.f6099bs == m5017k) {
                         paint2 = this.f5306A;
-                    } else if (m1079A.f6099bs.m4663d(m4638k)) {
+                    } else if (m1087A.f6099bs.m5042d(m5017k)) {
                         paint2 = this.f5307B;
-                    } else if (m1079A.f6099bs.m4675c(m4638k)) {
+                    } else if (m1087A.f6099bs.m5054c(m5017k)) {
                         paint2 = this.f5308C;
                     }
                 }
                 int i16 = 0;
-                Object[] m524b = C0741a.f4668w.m524b();
+                Object[] m519b = C0741a.f4668w.m519b();
                 int size3 = C0741a.f4668w.size();
                 for (int i17 = 0; i17 < size3; i17++) {
-                    C0741a c0741a = (C0741a) m524b[i17];
-                    if (c0741a.f4650e == m4638k && c0741a.f4656k) {
+                    C0741a c0741a = (C0741a) m519b[i17];
+                    if (c0741a.f4650e == m5017k && c0741a.f4656k) {
                         i16++;
                     }
                 }
                 if (i16 > 0) {
-                    paint2.m5526a(i7);
-                    C0807o m1741a2 = m1741a(i16, paint2);
-                    Object[] m524b2 = C0741a.f4668w.m524b();
+                    paint2.m5936a(i7);
+                    C0807o m1783a2 = m1783a(i16, paint2);
+                    Object[] m519b2 = C0741a.f4668w.m519b();
                     int size4 = C0741a.f4668w.size();
                     for (int i18 = 0; i18 < size4; i18++) {
-                        C0741a c0741a2 = (C0741a) m524b2[i18];
-                        if (c0741a2.f4650e == m4638k && c0741a2.f4656k) {
-                            m1741a2.m1722a(c0741a2.f4657l, c0741a2.f4658m);
+                        C0741a c0741a2 = (C0741a) m519b2[i18];
+                        if (c0741a2.f4650e == m5017k && c0741a2.f4656k) {
+                            m1783a2.m1764a(c0741a2.f4657l, c0741a2.f4658m);
                         }
                     }
-                    if (m1741a2.f5358b != 0) {
-                        m1079A.f6113bO.mo193a(m1741a2);
+                    if (m1783a2.f5358b != 0) {
+                        m1087A.f6113bO.mo188a(m1783a2);
                     }
                 }
             }
@@ -647,7 +647,7 @@ public class C0802k {
     }
 
     /* renamed from: a */
-    public void m1742a(int i, int i2, EnumC0806n enumC0806n) {
+    public void m1784a(int i, int i2, EnumC0806n enumC0806n) {
         C0804l c0804l = new C0804l(this);
         c0804l.f5340a = i;
         c0804l.f5341b = i2;
@@ -658,59 +658,59 @@ public class C0802k {
     }
 
     /* renamed from: h */
-    public void m1723h() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public void m1765h() {
+        Core m1087A = Core.m1087A();
         this.f5292m = false;
         this.f5290k = (int) this.f5280a;
         this.f5291l = (int) this.f5281b;
-        AbstractC0244am[] m503a = AbstractC0244am.f1590bD.m503a();
+        AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
-            AbstractC0244am abstractC0244am = m503a[i];
-            if (!abstractC0244am.f1607bT && abstractC0244am.f1651cL == null && abstractC0244am.m4442ce() && abstractC0244am.mo4535b_() && !abstractC0244am.mo1714u()) {
-                Point m1733b = m1733b(abstractC0244am.f6957el, abstractC0244am.f6958em);
-                abstractC0244am.f1656cQ = m1733b.f224a;
-                abstractC0244am.f1657cR = m1733b.f225b;
+            AbstractC0244am abstractC0244am = m498a[i];
+            if (!abstractC0244am.f1607bT && abstractC0244am.f1651cL == null && abstractC0244am.m4703ce() && abstractC0244am.m4745b_() && !abstractC0244am.mo1756u()) {
+                Point m1775b = m1775b(abstractC0244am.f6958el, abstractC0244am.f6959em);
+                abstractC0244am.f1656cQ = m1775b.f224a;
+                abstractC0244am.f1657cR = m1775b.f225b;
                 abstractC0244am.f1655cP = true;
             } else {
                 abstractC0244am.f1655cP = false;
             }
         }
-        Object[] m524b = C0741a.f4668w.m524b();
+        Object[] m519b = C0741a.f4668w.m519b();
         int size2 = C0741a.f4668w.size();
         for (int i2 = 0; i2 < size2; i2++) {
-            C0741a c0741a = (C0741a) m524b[i2];
+            C0741a c0741a = (C0741a) m519b[i2];
             if (!c0741a.f4659n && c0741a.f4666u) {
-                Point m1733b2 = m1733b(c0741a.f4652g, c0741a.f4653h);
-                c0741a.f4657l = m1733b2.f224a;
-                c0741a.f4658m = m1733b2.f225b;
+                Point m1775b2 = m1775b(c0741a.f4652g, c0741a.f4653h);
+                c0741a.f4657l = m1775b2.f224a;
+                c0741a.f4658m = m1775b2.f225b;
                 c0741a.f4656k = true;
             }
         }
-        AbstractC0197n abstractC0197n = m1079A.f6099bs;
+        AbstractC0197n abstractC0197n = m1087A.f6099bs;
         Iterator it = this.f5333ag.iterator();
         while (it.hasNext()) {
             C0808p c0808p = (C0808p) it.next();
             c0808p.f5365e = false;
-            if (m1079A.f6110bL.m4946a(abstractC0197n, c0808p.f5361a, c0808p.f5362b)) {
+            if (m1087A.f6110bL.m5329a(abstractC0197n, c0808p.f5361a, c0808p.f5362b)) {
                 c0808p.f5365e = true;
-                Point m1733b3 = m1733b(c0808p.f5361a * m1079A.f6110bL.f785n, c0808p.f5362b * m1079A.f6110bL.f786o);
-                c0808p.f5363c = m1733b3.f224a;
-                c0808p.f5364d = m1733b3.f225b;
+                Point m1775b3 = m1775b(c0808p.f5361a * m1087A.f6110bL.f785n, c0808p.f5362b * m1087A.f6110bL.f786o);
+                c0808p.f5363c = m1775b3.f224a;
+                c0808p.f5364d = m1775b3.f225b;
             }
         }
     }
 
     /* renamed from: a */
-    public void m1746a(float f) {
-        if (LoggerMaybe.f6205aU && !LoggerMaybe.f6207aW) {
+    public void m1788a(float f) {
+        if (Core.f6205aU && !Core.f6207aW) {
             return;
         }
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        this.f5317L = C0758f.m2162a(this.f5317L, f);
+        Core m1087A = Core.m1087A();
+        this.f5317L = C0758f.m2211a(this.f5317L, f);
         if (this.f5317L == 0.0f) {
             this.f5317L = 15.0f;
-            m1723h();
+            m1765h();
         }
         this.f5330Y += f;
         if (this.f5330Y > 15.0f) {
@@ -735,8 +735,8 @@ public class C0802k {
                     }
                     this.f5332aa.add(c0804l);
                 }
-                c0805m2.f5349d = C0758f.m2162a(c0805m2.f5349d, 2.0f * this.f5330Y);
-                c0805m2.f5350e = C0758f.m2162a(c0805m2.f5350e, this.f5330Y);
+                c0805m2.f5349d = C0758f.m2211a(c0805m2.f5349d, 2.0f * this.f5330Y);
+                c0805m2.f5350e = C0758f.m2211a(c0805m2.f5350e, this.f5330Y);
                 if (c0805m2.f5349d == 0.0f && c0805m2.f5350e == 0.0f) {
                     c0805m = c0805m2;
                 }
@@ -747,7 +747,7 @@ public class C0802k {
             Iterator it2 = this.f5332aa.iterator();
             while (it2.hasNext()) {
                 C0804l c0804l2 = (C0804l) it2.next();
-                if (c0804l2.f5344e != EnumC0806n.message && m1079A.f6253cP.m5464b(c0804l2.f5340a, c0804l2.f5341b)) {
+                if (c0804l2.f5344e != EnumC0806n.message && m1087A.f6253cP.m5871b(c0804l2.f5340a, c0804l2.f5341b)) {
                     c0804l2.f5342c = 0.0f;
                     c0804l2.f5343d = 0.0f;
                 }
@@ -757,36 +757,36 @@ public class C0802k {
     }
 
     /* renamed from: b */
-    public float m1734b(float f) {
+    public float m1776b(float f) {
         return f * this.f5288i * this.f5282c;
     }
 
     /* renamed from: b */
-    public Point m1733b(float f, float f2) {
+    public Point m1775b(float f, float f2) {
         if (!this.f5285f) {
-            this.f5336ad.m5476a(-1, -1);
+            this.f5336ad.m5883a(-1, -1);
             return this.f5336ad;
         }
-        this.f5336ad.m5476a((int) ((f * this.f5288i * this.f5282c) + this.f5280a), (int) ((f2 * this.f5289j * this.f5283d) + this.f5281b));
+        this.f5336ad.m5883a((int) ((f * this.f5288i * this.f5282c) + this.f5280a), (int) ((f2 * this.f5289j * this.f5283d) + this.f5281b));
         return this.f5336ad;
     }
 
     /* renamed from: c */
-    public Point m1730c(float f, float f2) {
+    public Point m1772c(float f, float f2) {
         if (f < this.f5280a || f2 < this.f5281b || f > this.f5280a + this.f5282c || f2 > this.f5281b + this.f5283d) {
             return null;
         }
-        this.f5336ad.m5476a((int) (((f - this.f5280a) / this.f5282c) * this.f5286g), (int) (((f2 - this.f5281b) / this.f5283d) * this.f5287h));
+        this.f5336ad.m5883a((int) (((f - this.f5280a) / this.f5282c) * this.f5286g), (int) (((f2 - this.f5281b) / this.f5283d) * this.f5287h));
         return this.f5336ad;
     }
 
     /* renamed from: c */
-    public float m1731c(float f) {
+    public float m1773c(float f) {
         return f < this.f5280a ? this.f5280a : f > this.f5280a + this.f5282c ? this.f5280a + this.f5282c : f;
     }
 
     /* renamed from: d */
-    public float m1728d(float f) {
+    public float m1770d(float f) {
         return f < this.f5281b ? this.f5281b : f > this.f5281b + this.f5283d ? this.f5281b + this.f5283d : f;
     }
 
@@ -798,30 +798,30 @@ public class C0802k {
         }
 
         /* renamed from: a */
-        public void mo860a(InterfaceC1027y interfaceC1027y) {
-            C0802k.this.m1736a(interfaceC1027y, 0, 0, 0.0f, 1.0f);
+        public void mo868a(InterfaceC1027y interfaceC1027y) {
+            C0802k.this.m1778a(interfaceC1027y, 0, 0, 0.0f, 1.0f);
         }
     }
 
     /* renamed from: e */
-    public void m1726e(float f) {
+    public void m1768e(float f) {
         Paint paint;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        InterfaceC1027y interfaceC1027y = m1079A.f6113bO;
-        m1747a();
-        if (this.f5315J != null && !C0758f.m2066e(this.f5282c, m1729d(), 5.0f)) {
-            LoggerMaybe.m989b("minimap", "minimap size has changed, reseting");
-            m1732c();
+        Core m1087A = Core.m1087A();
+        InterfaceC1027y interfaceC1027y = m1087A.f6113bO;
+        m1789a();
+        if (this.f5315J != null && !C0758f.m2115e(this.f5282c, m1771d(), 5.0f)) {
+            Core.m997b("minimap", "minimap size has changed, reseting");
+            m1774c();
         }
         if (!this.f5284e || this.f5315J == null) {
-            m1724g();
+            m1766g();
         }
         if (this.f5290k != ((int) this.f5280a) || this.f5291l != ((int) this.f5281b) || this.f5292m) {
-            m1723h();
+            m1765h();
         }
-        if (m1079A.f6110bL.f841E) {
+        if (m1087A.f6110bL.f841E) {
             if (this.f5320O && !this.f5321P) {
-                this.f5318M = C0758f.m2162a(this.f5318M, 1.0f);
+                this.f5318M = C0758f.m2211a(this.f5318M, 1.0f);
                 if (this.f5318M == 0.0f) {
                     this.f5318M = 40.0f;
                     this.f5320O = false;
@@ -830,7 +830,7 @@ public class C0802k {
                 }
             }
             if (this.f5321P) {
-                this.f5319N = C0758f.m2162a(this.f5319N, 1.0f);
+                this.f5319N = C0758f.m2211a(this.f5319N, 1.0f);
                 if (this.f5319N == 0.0f) {
                     this.f5319N = 3.0f;
                     if (this.f5315J != null) {
@@ -843,20 +843,20 @@ public class C0802k {
                             this.f5322Q = 1.0f;
                             this.f5321P = false;
                         }
-                        m1745a(f2, this.f5322Q);
+                        m1787a(f2, this.f5322Q);
                     }
                 }
             }
         }
-        interfaceC1027y.mo165b(this.f5315J, this.f5280a, this.f5281b, this.f5293n);
-        this.f5302w.m5467a((int) this.f5280a, (int) this.f5281b, (int) (this.f5280a + this.f5282c), (int) ((this.f5281b + this.f5283d) - 0.4d));
+        interfaceC1027y.mo159b(this.f5315J, this.f5280a, this.f5281b, this.f5293n);
+        this.f5302w.m5874a((int) this.f5280a, (int) this.f5281b, (int) (this.f5280a + this.f5282c), (int) ((this.f5281b + this.f5283d) - 0.4d));
         boolean z = false;
         boolean z2 = false;
         boolean z3 = false;
-        Object[] m539a = C0188f.f1083a.m539a();
+        Object[] m534a = C0188f.f1083a.m534a();
         int i = C0188f.f1083a.f6894a;
         for (int i2 = 0; i2 < i; i2++) {
-            if (((C0188f) m539a[i2]).f1004D) {
+            if (((C0188f) m534a[i2]).f1004D) {
                 z3 = true;
                 z2 = true;
             }
@@ -872,37 +872,37 @@ public class C0802k {
             }
         }
         if (!z && !z3) {
-            this.f5294o.m5523a(255, 100, 100, 100);
-            this.f5294o.m5526a(1.0f);
+            this.f5294o.m5933a(255, 100, 100, 100);
+            this.f5294o.m5936a(1.0f);
             if (C0797f.f5247bA) {
-                this.f5294o.m5523a(115, 0, 0, 0);
-                this.f5294o.m5526a(2.0f);
+                this.f5294o.m5933a(115, 0, 0, 0);
+                this.f5294o.m5936a(2.0f);
             }
         } else {
             this.f5296q += 5.0f * f;
             if (this.f5296q > 180.0f) {
                 this.f5296q -= 180.0f;
             }
-            float m2048h = C0758f.m2048h(this.f5296q);
+            float m2097h = C0758f.m2097h(this.f5296q);
             if (z3) {
-                this.f5294o.m5523a(255, 0, (int) (0.0f + (m2048h * 230.0f)), 0);
+                this.f5294o.m5933a(255, 0, (int) (0.0f + (m2097h * 230.0f)), 0);
             } else if (!z2) {
-                this.f5294o.m5523a(255, 12, (int) (0.0f + (m2048h * 220.0f)), (int) (0.0f + (m2048h * 220.0f)));
+                this.f5294o.m5933a(255, 12, (int) (0.0f + (m2097h * 220.0f)), (int) (0.0f + (m2097h * 220.0f)));
             } else {
-                this.f5294o.m5523a(255, (int) (0.0f + (m2048h * 230.0f)), 0, 0);
+                this.f5294o.m5933a(255, (int) (0.0f + (m2097h * 230.0f)), 0, 0);
             }
-            this.f5294o.m5526a(2.0f);
+            this.f5294o.m5936a(2.0f);
         }
-        interfaceC1027y.mo167b(this.f5302w, this.f5294o);
+        interfaceC1027y.mo162b(this.f5302w, this.f5294o);
         Iterator it2 = this.f5333ag.iterator();
         while (it2.hasNext()) {
             C0808p c0808p = (C0808p) it2.next();
             if (c0808p.f5365e) {
-                this.f5327V.m5467a(c0808p.f5363c, c0808p.f5364d, c0808p.f5363c + 2, c0808p.f5364d + 2);
-                interfaceC1027y.mo167b(this.f5327V, this.f5309D);
+                this.f5327V.m5874a(c0808p.f5363c, c0808p.f5364d, c0808p.f5363c + 2, c0808p.f5364d + 2);
+                interfaceC1027y.mo162b(this.f5327V, this.f5309D);
             }
         }
-        m1736a(interfaceC1027y, 0, 0, 0.0f, 1.0f);
+        m1778a(interfaceC1027y, 0, 0, 0.0f, 1.0f);
         if (this.f5338af.size() != 0) {
             Iterator it3 = this.f5338af.iterator();
             while (it3.hasNext()) {
@@ -911,31 +911,31 @@ public class C0802k {
                     it3.remove();
                 } else {
                     AbstractC0244am abstractC0244am = c0809q.f5367a;
-                    Point m1733b = m1733b(abstractC0244am.f6957el, abstractC0244am.f6958em);
-                    if (!abstractC0244am.mo3184a(m1733b.f224a, m1733b.f225b)) {
-                        interfaceC1027y.mo227a(m1733b.f224a, m1733b.f225b, 4.0f, abstractC0244am.f1609bV.f1354ad);
+                    Point m1775b = m1775b(abstractC0244am.f6958el, abstractC0244am.f6959em);
+                    if (!abstractC0244am.m4794a(m1775b.f224a, m1775b.f225b)) {
+                        interfaceC1027y.mo223a(m1775b.f224a, m1775b.f225b, 4.0f, abstractC0244am.f1609bV.f1354ad);
                     }
                 }
             }
         }
         int i3 = C0188f.f1083a.f6894a;
         for (int i4 = 0; i4 < i3; i4++) {
-            C0188f c0188f = (C0188f) m539a[i4];
+            C0188f c0188f = (C0188f) m534a[i4];
             if ((c0188f.f1004D || (c0188f.f991q != null && c0188f.f991q.f1004D)) && c0188f.f984j != null) {
-                Point m1733b2 = m1733b(c0188f.f6957el, c0188f.f6958em);
+                Point m1775b2 = m1775b(c0188f.f6958el, c0188f.f6959em);
                 float f3 = 2.0f;
                 if (c0188f.f1004D) {
                     f3 = 4.0f;
                 }
-                interfaceC1027y.mo227a(m1733b2.f224a, m1733b2.f225b, f3, c0188f.f984j.f1609bV.f1354ad);
+                interfaceC1027y.mo223a(m1775b2.f224a, m1775b2.f225b, f3, c0188f.f984j.f1609bV.f1354ad);
             }
         }
-        Point m1733b3 = m1733b(m1079A.f6144cv, m1079A.f6145cw);
-        this.f5310E.f230a = m1733b3.f224a;
-        this.f5310E.f231b = m1733b3.f225b;
-        Point m1733b4 = m1733b(m1079A.f6144cv + m1079A.f6148cz, m1079A.f6145cw + m1079A.f6149cA);
-        this.f5310E.f232c = m1733b4.f224a;
-        this.f5310E.f233d = m1733b4.f225b;
+        Point m1775b3 = m1775b(m1087A.f6144cv, m1087A.f6145cw);
+        this.f5310E.f230a = m1775b3.f224a;
+        this.f5310E.f231b = m1775b3.f225b;
+        Point m1775b4 = m1775b(m1087A.f6144cv + m1087A.f6148cz, m1087A.f6145cw + m1087A.f6149cA);
+        this.f5310E.f232c = m1775b4.f224a;
+        this.f5310E.f233d = m1775b4.f225b;
         if (this.f5310E.f230a < this.f5302w.f230a) {
             this.f5310E.f230a = this.f5302w.f230a;
         }
@@ -948,7 +948,7 @@ public class C0802k {
         if (this.f5310E.f233d > this.f5302w.f233d) {
             this.f5310E.f233d = this.f5302w.f233d;
         }
-        interfaceC1027y.mo167b(this.f5310E, this.f5298s);
+        interfaceC1027y.mo162b(this.f5310E, this.f5298s);
         this.f5297r += 6.0f * f;
         if (this.f5297r > 180.0f) {
             this.f5297r -= 180.0f;
@@ -956,34 +956,34 @@ public class C0802k {
         Iterator it4 = this.f5332aa.iterator();
         while (it4.hasNext()) {
             C0804l c0804l2 = (C0804l) it4.next();
-            Point m1733b5 = m1733b(c0804l2.f5340a, c0804l2.f5341b);
+            Point m1775b5 = m1775b(c0804l2.f5340a, c0804l2.f5341b);
             float f4 = c0804l2.f5342c;
             float f5 = 0.05f;
             if (c0804l2.f5344e == EnumC0806n.unit) {
                 paint = this.f5300u;
                 f5 = 0.03f;
-                float m2048h2 = C0758f.m2048h(this.f5297r);
-                paint.m5523a((int) (50.0f + (m2048h2 * 190.0f)), (int) (50.0f + (m2048h2 * 190.0f)), 0, 0);
+                float m2097h2 = C0758f.m2097h(this.f5297r);
+                paint.m5933a((int) (50.0f + (m2097h2 * 190.0f)), (int) (50.0f + (m2097h2 * 190.0f)), 0, 0);
             } else if (c0804l2.f5344e == EnumC0806n.message) {
                 paint = this.f5301v;
             } else {
                 paint = this.f5299t;
-                float m2048h3 = C0758f.m2048h(this.f5297r);
-                paint.m5523a((int) (50.0f + (m2048h3 * 190.0f)), (int) (50.0f + (m2048h3 * 190.0f)), 0, 0);
+                float m2097h3 = C0758f.m2097h(this.f5297r);
+                paint.m5933a((int) (50.0f + (m2097h3 * 190.0f)), (int) (50.0f + (m2097h3 * 190.0f)), 0, 0);
             }
-            float m2109b = C0758f.m2109b(f4, f5, 1.0f);
+            float m2158b = C0758f.m2158b(f4, f5, 1.0f);
             if (c0804l2.f5344e == EnumC0806n.unit) {
-                float f6 = this.f5282c * m2109b;
-                float f7 = this.f5283d * m2109b;
-                interfaceC1027y.mo229a(m1731c(m1733b5.f224a - f6), m1728d(m1733b5.f225b - f7), m1731c(m1733b5.f224a + f6), m1728d(m1733b5.f225b + f7), paint);
-                interfaceC1027y.mo229a(m1731c(m1733b5.f224a + f6), m1728d(m1733b5.f225b - f7), m1731c(m1733b5.f224a - f6), m1728d(m1733b5.f225b + f7), paint);
+                float f6 = this.f5282c * m2158b;
+                float f7 = this.f5283d * m2158b;
+                interfaceC1027y.mo225a(m1773c(m1775b5.f224a - f6), m1770d(m1775b5.f225b - f7), m1773c(m1775b5.f224a + f6), m1770d(m1775b5.f225b + f7), paint);
+                interfaceC1027y.mo225a(m1773c(m1775b5.f224a + f6), m1770d(m1775b5.f225b - f7), m1773c(m1775b5.f224a - f6), m1770d(m1775b5.f225b + f7), paint);
             } else {
-                interfaceC1027y.mo229a(m1731c(m1733b5.f224a - (this.f5282c * m2109b)), m1728d(m1733b5.f225b), m1731c(m1733b5.f224a + (this.f5282c * m2109b)), m1728d(m1733b5.f225b), paint);
-                interfaceC1027y.mo229a(m1731c(m1733b5.f224a), m1728d(m1733b5.f225b - (this.f5283d * m2109b)), m1731c(m1733b5.f224a), m1728d(m1733b5.f225b + (this.f5283d * m2109b)), paint);
+                interfaceC1027y.mo225a(m1773c(m1775b5.f224a - (this.f5282c * m2158b)), m1770d(m1775b5.f225b), m1773c(m1775b5.f224a + (this.f5282c * m2158b)), m1770d(m1775b5.f225b), paint);
+                interfaceC1027y.mo225a(m1773c(m1775b5.f224a), m1770d(m1775b5.f225b - (this.f5283d * m2158b)), m1773c(m1775b5.f224a), m1770d(m1775b5.f225b + (this.f5283d * m2158b)), paint);
             }
-            c0804l2.f5342c = C0758f.m2162a(c0804l2.f5342c, 0.04f * f);
+            c0804l2.f5342c = C0758f.m2211a(c0804l2.f5342c, 0.04f * f);
             if (c0804l2.f5342c == 0.0f) {
-                c0804l2.f5343d = C0758f.m2162a(c0804l2.f5343d, 0.005f * f);
+                c0804l2.f5343d = C0758f.m2211a(c0804l2.f5343d, 0.005f * f);
                 if (c0804l2.f5343d == 0.0f) {
                     it4.remove();
                 }
@@ -992,7 +992,7 @@ public class C0802k {
     }
 
     /* renamed from: a */
-    public void m1738a(AbstractC0244am abstractC0244am) {
+    public void m1780a(AbstractC0244am abstractC0244am) {
         if (this.f5338af.contains(abstractC0244am)) {
             return;
         }

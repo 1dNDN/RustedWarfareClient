@@ -48,9 +48,9 @@ public class C0725bj {
     }
 
     /* renamed from: a */
-    public void m2390a(StreamWriter streamWriter) {
-        streamWriter.mo1355c(0);
-        streamWriter.mo1351e();
+    public void m2443a(StreamWriter streamWriter) {
+        streamWriter.m1401c(0);
+        streamWriter.m1397e();
         streamWriter.WriteInteger(this.f4557a);
         streamWriter.WriteInteger(this.f4558b);
         streamWriter.WriteInteger(this.f4559c);
@@ -61,13 +61,13 @@ public class C0725bj {
         streamWriter.WriteInteger(this.f4564h);
         streamWriter.WriteInteger(this.f4565i);
         streamWriter.WriteInteger(this.f4566j);
-        streamWriter.mo1373a(this.f4567k);
+        streamWriter.m1424a(this.f4567k);
     }
 
     /* renamed from: a */
-    public void m2389a(Reader reader) {
-        reader.m1289d();
-        reader.m1299a("stats start");
+    public void m2442a(Reader reader) {
+        reader.m1304d();
+        reader.m1314a("stats start");
         this.f4557a = reader.ReadInt();
         this.f4558b = reader.ReadInt();
         this.f4559c = reader.ReadInt();
@@ -78,6 +78,6 @@ public class C0725bj {
         this.f4564h = reader.ReadInt();
         this.f4565i = reader.ReadInt();
         this.f4566j = reader.ReadInt();
-        this.f4567k = reader.m1283i();
+        this.f4567k = reader.m1298i();
     }
 }

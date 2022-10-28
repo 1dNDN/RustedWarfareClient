@@ -7,7 +7,7 @@ import com.corrodinggames.rts.game.C0191i;
 /* loaded from: game-lib.jar:com/corrodinggames/rts/gameFramework/v.class */
 public class C1119v extends AbstractC1059o {
     /* renamed from: a */
-    public LoggerMaybe mo453a(Context context) {
+    public Core m448a(Context context) {
         return new C0191i(context);
     }
 }

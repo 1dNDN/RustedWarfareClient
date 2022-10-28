@@ -1,8 +1,8 @@
 package com.corrodinggames.rts.game.units.p013a;
 
 import com.corrodinggames.rts.game.units.AbstractC0244am;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
 import com.corrodinggames.rts.gameFramework.C0639ad;
+import com.corrodinggames.rts.gameFramework.Core;
 
 /* renamed from: com.corrodinggames.rts.game.units.a.r */
 /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/a/r.class */
@@ -11,28 +11,24 @@ public class C0223r extends AbstractC0221p {
         super("c__cut_ping");
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public String mo2986b() {
+    public String mo3085b() {
         return "Map Ping";
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public String mo2989a() {
+    public String mo3088a() {
         return "Send a map ping to your allies";
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: c */
-    public boolean mo3042c(AbstractC0244am abstractC0244am, boolean z) {
-        AbstractC0916l.m1071A().f6165bS.m1862H();
+    public boolean mo4952c(AbstractC0244am abstractC0244am, boolean z) {
+        Core.m1087A().f6117bS.m1914H();
         return true;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: M */
-    public C0639ad mo4186M() {
-        return AbstractC0916l.m1071A().f6166bT.f4103v;
+    public C0639ad m4921M() {
+        return Core.m1087A().f6118bT.f4103v;
     }
 }

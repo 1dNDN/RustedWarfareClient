@@ -1,6 +1,6 @@
 package com.corrodinggames.rts.gameFramework.p041i;
 
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.IOException;
 
 /* renamed from: com.corrodinggames.rts.gameFramework.i.ae */
@@ -26,30 +26,30 @@ public class C0841ae {
     public String f5646g;
 
     /* renamed from: a */
-    public void mo3096a(String str) {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
+    public void mo1455a(String str) {
+        Core m1087A = Core.m1087A();
         if (this.f5643d) {
             try {
                 StreamWriter streamWriter = new StreamWriter();
-                streamWriter.mo1355c(1);
+                streamWriter.m1401c(1);
                 streamWriter.WriteInteger(this.f5642c);
                 streamWriter.WriteUTF(str);
-                m1072A.f6122bX.m1472d(streamWriter.mo1360b(118));
+                m1087A.f6122bX.m1516d(streamWriter.m1407b(118));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else if (m1072A.f6122bX.IsServer) {
-            LoggerMaybe.m1031a("Cannot enter a password when we are a server");
+        } else if (m1087A.f6122bX.IsServer) {
+            Core.m1046a("Cannot enter a password when we are a server");
         } else {
-            m1072A.f6122bX.f5481n = str;
-            m1072A.f6122bX.m1580X();
+            m1087A.f6122bX.f5481n = str;
+            m1087A.f6122bX.m1624X();
         }
     }
 
     /* renamed from: a */
-    public void mo3097a() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        m1072A.f6122bX.m1491b("exited password");
-        m1072A.f6122bX.m1593K();
+    public void mo1456a() {
+        Core m1087A = Core.m1087A();
+        m1087A.f6122bX.m1535b("exited password");
+        m1087A.f6122bX.m1637K();
     }
 }

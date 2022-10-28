@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.Log;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p044l.C0930ag;
 import com.corrodinggames.rts.gameFramework.p044l.C0934e;
 import com.corrodinggames.rts.gameFramework.p044l.InterfaceC1027y;
@@ -118,48 +118,48 @@ public class C0178e {
         f890x[43] = 62;
         f890x[47] = 63;
         f891a = new C0930ag();
-        f891a.m5501b(-16777216);
-        f891a.m5516a(Paint.Style.f219a);
+        f891a.m5908b(-16777216);
+        f891a.m5926a(Paint.Style.f219a);
         f892b = new C0930ag[11];
         for (int i5 = 0; i5 <= 10; i5++) {
             f892b[i5] = new C0930ag();
-            f892b[i5].m5501b(-16777216);
-            f892b[i5].m5516a(Paint.Style.f219a);
-            f892b[i5].m5496c(i5 * 25);
+            f892b[i5].m5908b(-16777216);
+            f892b[i5].m5926a(Paint.Style.f219a);
+            f892b[i5].m5903c(i5 * 25);
         }
         f893c = new C0930ag();
-        f893c.m5501b(-16777216);
-        f893c.m5516a(Paint.Style.f219a);
+        f893c.m5908b(-16777216);
+        f893c.m5926a(Paint.Style.f219a);
         f894d = new C0930ag();
-        f894d.mo900a(false);
-        f894d.m5490d(false);
-        f894d.m5498b(false);
+        f894d.mo5914a(false);
+        f894d.m5897d(false);
+        f894d.m5905b(false);
         f895e = new C0930ag();
-        f895e.mo900a(true);
+        f895e.mo5914a(true);
         f896f = new C0930ag();
-        f896f.mo900a(false);
-        f896f.m5490d(false);
-        f896f.m5498b(false);
+        f896f.mo5914a(false);
+        f896f.m5897d(false);
+        f896f.m5905b(false);
         f897g = new C0930ag();
-        f897g.mo900a(true);
+        f897g.mo5914a(true);
         f898h = new C0930ag[11];
         for (int i6 = 0; i6 <= 10; i6++) {
             C0930ag c0930ag = new C0930ag();
-            c0930ag.m5520a(new LightingColorFilter(Color.m5539a(255 - (i6 * 25), 255 - (i6 * 25), 255 - (i6 * 25)), 0));
+            c0930ag.m5930a(new LightingColorFilter(Color.m5949a(255 - (i6 * 25), 255 - (i6 * 25), 255 - (i6 * 25)), 0));
             f898h[i6] = c0930ag;
         }
     }
 
     /* renamed from: a */
-    public final C0180g m4869a(int i, int i2) {
+    public final C0180g m5252a(int i, int i2) {
         if (this.f907q == null) {
             this.f907q = new short[this.f904n * this.f905o];
         }
-        return this.f899i.m4932a(this.f907q[(i * this.f905o) + i2]);
+        return this.f899i.m5315a(this.f907q[(i * this.f905o) + i2]);
     }
 
     /* renamed from: a */
-    public short[] m4870a() {
+    public short[] m5253a() {
         if (this.f907q == null) {
             this.f907q = new short[this.f904n * this.f905o];
         }
@@ -167,7 +167,7 @@ public class C0178e {
     }
 
     /* renamed from: a */
-    public void m4868a(int i, int i2, C0180g c0180g, boolean z) {
+    public void m5251a(int i, int i2, C0180g c0180g, boolean z) {
         if (this.f907q == null) {
             this.f907q = new short[this.f904n * this.f905o];
         }
@@ -176,7 +176,7 @@ public class C0178e {
             return;
         }
         if (z) {
-            c0180g = this.f899i.m4948a(c0180g, i, i2);
+            c0180g = this.f899i.m5331a(c0180g, i, i2);
         }
         if (c0180g.f922i) {
             boolean z2 = false;
@@ -184,7 +184,7 @@ public class C0178e {
             while (it.hasNext()) {
                 Point point = (Point) it.next();
                 if (point.f224a == i && point.f225b == i2) {
-                    LoggerMaybe.LogDebug2("resPools point:" + i + ", " + i2 + " already exists");
+                    Core.LogDebug2("resPools point:" + i + ", " + i2 + " already exists");
                     z2 = true;
                 }
             }
@@ -193,17 +193,17 @@ public class C0178e {
             }
         }
         if (c0180g.f917d == -1) {
-            c0180g.f917d = this.f899i.m4949a(c0180g);
+            c0180g.f917d = this.f899i.m5332a(c0180g);
         }
         this.f907q[(i * this.f905o) + i2] = c0180g.f917d;
     }
 
     /* renamed from: a */
-    public void m4867a(InterfaceC1027y interfaceC1027y, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, boolean z, boolean z2, boolean z3) {
+    public void m5250a(InterfaceC1027y interfaceC1027y, float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, boolean z, boolean z2, boolean z3) {
         C0930ag c0930ag;
         C0181h c0181h;
         C0930ag c0930ag2;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         C0173b c0173b = this.f899i;
         int i = (int) (f3 * c0173b.f789r);
         if (i < 0) {
@@ -221,7 +221,7 @@ public class C0178e {
         if (i4 > this.f905o - 1) {
             i4 = this.f905o - 1;
         }
-        byte[][] bArr = m1079A.f6099bs.f1337M;
+        byte[][] bArr = m1087A.f6099bs.f1337M;
         float f9 = f * f7;
         float f10 = f2 * f8;
         float f11 = c0173b.f785n * f7;
@@ -240,13 +240,13 @@ public class C0178e {
         C0930ag c0930ag3 = f892b[5];
         C0930ag c0930ag4 = f891a;
         C0930ag c0930ag5 = f893c;
-        c0930ag5.m5496c(255);
+        c0930ag5.m5903c(255);
         if (z4) {
             c0930ag4 = f892b[7];
-            c0930ag5.m5496c((int) ((1.0f - ((1.0f - (c0930ag3.m5487f() / 255.0f)) * (1.0f - (c0930ag4.m5487f() / 255.0f)))) * 255.0f));
+            c0930ag5.m5903c((int) ((1.0f - ((1.0f - (c0930ag3.m5894f() / 255.0f)) * (1.0f - (c0930ag4.m5894f() / 255.0f)))) * 255.0f));
         }
         boolean z5 = false;
-        if (LoggerMaybe.m1002au() && f7 < 1.0f && f8 < 1.0f) {
+        if (Core.m1010au() && f7 < 1.0f && f8 < 1.0f) {
             z5 = true;
         }
         if (z3) {
@@ -265,7 +265,7 @@ public class C0178e {
         C0930ag c0930ag6 = c0930ag;
         float f13 = 0.0f;
         boolean z6 = false;
-        if (!LoggerMaybe.m1002au()) {
+        if (!Core.m1010au()) {
             z6 = true;
         } else if (!z3) {
             if (f7 < 1.0f || f8 < 1.0f) {
@@ -278,21 +278,21 @@ public class C0178e {
         } else {
             c0181h = C0173b.f783l;
         }
-        short[] m4870a = m4870a();
+        short[] m5253a = m5253a();
         C0180g[] c0180gArr = c0173b.f840B;
         RectF rectF = this.f912v;
         Rect rect = this.f911u;
         int i5 = this.f905o;
         boolean z7 = this.f908r;
         Rect rect2 = this.f910t;
-        c0173b.m4895l();
+        c0173b.m5278l();
         byte[][] bArr2 = c0173b.f796M;
         byte[][] bArr3 = c0173b.f797N;
         C0934e c0934e = C0173b.f794K;
         for (int i6 = i; i6 < i3 + 1; i6++) {
             int i7 = i2;
             while (i7 < i4 + 1) {
-                C0180g c0180g = c0180gArr[m4870a[(i6 * i5) + i7]];
+                C0180g c0180g = c0180gArr[m5253a[(i6 * i5) + i7]];
                 if (c0180g != null) {
                     byte b2 = 0;
                     if (z) {
@@ -303,7 +303,7 @@ public class C0178e {
                         float f15 = (i7 * f12) + 0.0f;
                         float f16 = ((i6 + 1) * f11) + f13;
                         float f17 = ((i7 + 1) * f12) + f13;
-                        rectF.m5454a(f14 - f9, f15 - f10, f16 - f9, f17 - f10);
+                        rectF.m5861a(f14 - f9, f15 - f10, f16 - f9, f17 - f10);
                         if (z5 && !z3) {
                             rectF.f235b = (int) rectF.f235b;
                             rectF.f234a = (int) rectF.f234a;
@@ -312,16 +312,16 @@ public class C0178e {
                             C0183j c0183j = c0180g.f914a;
                             if (!z6) {
                                 if (c0180g.f916c >= 0) {
-                                    interfaceC1027y.mo197a(c0181h.m4855a(c0180g.f916c), c0181h.m4846b(c0180g.f916c), rectF, c0930ag6);
+                                    interfaceC1027y.mo192a(c0181h.m5238a(c0180g.f916c), c0181h.m5229b(c0180g.f916c), rectF, c0930ag6);
                                 } else {
-                                    c0180g.m4858a(interfaceC1027y, rectF, f7, c0930ag6);
+                                    c0180g.m5241a(interfaceC1027y, rectF, f7, c0930ag6);
                                 }
                             } else {
-                                rect.m5467a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
+                                rect.m5874a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
                                 if (c0180g.f916c >= 0) {
-                                    interfaceC1027y.mo164b(c0181h.m4855a(c0180g.f916c), c0181h.m4846b(c0180g.f916c), rect, c0930ag6);
+                                    interfaceC1027y.mo158b(c0181h.m5238a(c0180g.f916c), c0181h.m5229b(c0180g.f916c), rect, c0930ag6);
                                 } else {
-                                    interfaceC1027y.mo198a(c0183j.f951b, c0183j.m4833b(c0180g.f915b), rect, c0930ag6);
+                                    interfaceC1027y.mo193a(c0183j.f951b, c0183j.m5216b(c0180g.f915b), rect, c0930ag6);
                                 }
                             }
                         }
@@ -350,21 +350,21 @@ public class C0178e {
                                 rect.f232c = (int) rectF.f236c;
                                 rect.f231b = (int) rectF.f235b;
                                 rect.f233d = (int) rectF.f237d;
-                                interfaceC1027y.mo211a(rect, c0930ag2);
+                                interfaceC1027y.mo207a(rect, c0930ag2);
                             } else {
                                 byte b3 = bArr3[i6][i7];
                                 if (b3 == Byte.MAX_VALUE) {
-                                    b3 = c0173b.m4955a(i6, i7, bArr, (byte) 5);
+                                    b3 = c0173b.m5338a(i6, i7, bArr, (byte) 5);
                                     bArr3[i6][i7] = b3;
                                 }
                                 if (b3 != 0) {
                                     int i10 = b3 + 128;
                                     if (c0934e != null) {
-                                        C0173b.m4954a(i10, rect2);
-                                        rect.m5467a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
-                                        interfaceC1027y.mo164b(c0934e, rect2, rect, c0930ag3);
+                                        C0173b.m5337a(i10, rect2);
+                                        rect.m5874a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
+                                        interfaceC1027y.mo158b(c0934e, rect2, rect, c0930ag3);
                                     } else if (!c0173b.f831k[b3 + 128]) {
-                                        LoggerMaybe.LogDebug2("SmoothFog, missing: " + ((int) b3));
+                                        Core.LogDebug2("SmoothFog, missing: " + ((int) b3));
                                         c0173b.f831k[b3 + 128] = true;
                                     }
                                 }
@@ -372,17 +372,17 @@ public class C0178e {
                             if (b2 != 10) {
                                 byte b4 = bArr2[i6][i7];
                                 if (b4 == Byte.MAX_VALUE) {
-                                    b4 = c0173b.m4955a(i6, i7, bArr, (byte) 10);
+                                    b4 = c0173b.m5338a(i6, i7, bArr, (byte) 10);
                                     bArr2[i6][i7] = b4;
                                 }
                                 if (b4 != 0) {
                                     int i11 = b4 + 128;
                                     if (c0934e != null) {
-                                        C0173b.m4954a(i11, rect2);
-                                        rect.m5467a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
-                                        interfaceC1027y.mo164b(c0934e, rect2, rect, c0930ag4);
+                                        C0173b.m5337a(i11, rect2);
+                                        rect.m5874a((int) (f14 - f9), (int) (f15 - f10), (int) (f16 - f9), (int) (f17 - f10));
+                                        interfaceC1027y.mo158b(c0934e, rect2, rect, c0930ag4);
                                     } else if (!c0173b.f831k[b4 + 128]) {
-                                        LoggerMaybe.LogDebug2("SmoothFog, missing: " + ((int) b4));
+                                        Core.LogDebug2("SmoothFog, missing: " + ((int) b4));
                                         c0173b.f831k[b4 + 128] = true;
                                     }
                                 }
@@ -396,7 +396,7 @@ public class C0178e {
     }
 
     /* renamed from: b */
-    public void m4862b() {
+    public void m5245b() {
         this.f907q = null;
         this.f906p = null;
         this.f899i = null;
@@ -404,16 +404,16 @@ public class C0178e {
 
     public C0178e(C0173b c0173b, String str, int i, int i2) {
         this.f899i = c0173b;
-        m4865a(str);
+        m5248a(str);
         this.f904n = i;
         this.f905o = i2;
-        m4870a();
+        m5253a();
     }
 
     /* renamed from: a */
-    void m4865a(String str) {
+    void m5248a(String str) {
         this.f901k = str;
-        Log.m5365d("RustedWarfare", "MapLayer create: " + str);
+        Log.m5772d("RustedWarfare", "MapLayer create: " + str);
         if (str != null) {
             this.f902l = str.toLowerCase(Locale.ENGLISH);
         }
@@ -430,7 +430,7 @@ public class C0178e {
     public C0178e(C0173b c0173b, Element element) {
         NodeList elementsByTagName;
         this.f899i = c0173b;
-        m4865a(element.getAttribute("name"));
+        m5248a(element.getAttribute("name"));
         this.f904n = Short.parseShort(element.getAttribute("width"));
         this.f905o = Short.parseShort(element.getAttribute("height"));
         Element element2 = (Element) element.getElementsByTagName("properties").item(0);
@@ -446,14 +446,14 @@ public class C0178e {
             throw new C0179f("Map is missing <data> element");
         }
         try {
-            InputStream m4864a = m4864a(element4.getFirstChild().getNodeValue(), element4.getAttribute("encoding"), element4.getAttribute("compression"));
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(m4864a);
-            m4866a(bufferedInputStream);
+            InputStream m5247a = m5247a(element4.getFirstChild().getNodeValue(), element4.getAttribute("encoding"), element4.getAttribute("compression"));
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(m5247a);
+            m5249a(bufferedInputStream);
             if (bufferedInputStream != null) {
                 bufferedInputStream.close();
             }
-            if (m4864a != null) {
-                m4864a.close();
+            if (m5247a != null) {
+                m5247a.close();
             }
         } catch (IOException e) {
             throw new C0179f("Unable to decompress base64 block", e);
@@ -461,7 +461,7 @@ public class C0178e {
     }
 
     /* renamed from: a */
-    void m4866a(InputStream inputStream) {
+    void m5249a(InputStream inputStream) {
         C0173b c0173b = this.f899i;
         C0180g c0180g = null;
         int i = -1;
@@ -484,19 +484,19 @@ public class C0178e {
                         }
                         if (i2 != 0) {
                             if (i == i2 && c0180g != null) {
-                                m4868a(s4, s2, c0180g, true);
+                                m5251a(s4, s2, c0180g, true);
                             } else {
                                 C0180g c0180g2 = (C0180g) hashMap.get(Integer.valueOf(i2));
                                 if (c0180g2 != null) {
                                     c0180g = c0180g2;
                                     i = i2;
-                                    m4868a(s4, s2, c0180g, true);
+                                    m5251a(s4, s2, c0180g, true);
                                 } else {
-                                    C0183j m4958a = c0173b.m4958a(i2);
-                                    if (m4958a != null) {
-                                        c0180g = C0180g.m4860a(c0173b, this, m4958a, i2 - m4958a.f959l, s4, s2, z);
+                                    C0183j m5341a = c0173b.m5341a(i2);
+                                    if (m5341a != null) {
+                                        c0180g = C0180g.m5243a(c0173b, this, m5341a, i2 - m5341a.f961l, s4, s2, z);
                                         if (c0180g != null) {
-                                            m4868a(s4, s2, c0180g, true);
+                                            m5251a(s4, s2, c0180g, true);
                                             hashMap.put(Integer.valueOf(i2), c0180g);
                                         }
                                         i = i2;
@@ -517,20 +517,20 @@ public class C0178e {
     }
 
     /* renamed from: a */
-    public static InputStream m4864a(String str, String str2, String str3) {
+    public static InputStream m5247a(String str, String str2, String str3) {
         InputStream gZIPInputStream;
         if (str2.equals("base64")) {
-            byte[] m4863a = m4863a(str.toCharArray());
+            byte[] m5246a = m5246a(str.toCharArray());
             if ("gzip".equals(str3)) {
                 try {
-                    gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(m4863a));
+                    gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(m5246a));
                 } catch (IOException e) {
                     throw new C0179f("Unable to decode block in map", e);
                 }
             } else if (VariableScope.nullOrMissingString.equals(str3)) {
-                gZIPInputStream = new ByteArrayInputStream(m4863a);
+                gZIPInputStream = new ByteArrayInputStream(m5246a);
             } else if ("zlib".equals(str3)) {
-                gZIPInputStream = new InflaterInputStream(new ByteArrayInputStream(m4863a));
+                gZIPInputStream = new InflaterInputStream(new ByteArrayInputStream(m5246a));
             } else {
                 throw new C0179f("Unsupport tiled map compression: " + str2 + "," + str3 + " (only gzip base64 is supported, this can be set in Tiled's Preferences)");
             }
@@ -540,7 +540,7 @@ public class C0178e {
     }
 
     /* renamed from: a */
-    public static byte[] m4863a(char[] cArr) {
+    public static byte[] m5246a(char[] cArr) {
         int length = cArr.length;
         byte[] bArr = f890x;
         for (int i = 0; i < cArr.length; i++) {

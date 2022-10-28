@@ -20,7 +20,7 @@ import com.corrodinggames.rts.game.units.p024d.InterfaceC0501l;
 import com.corrodinggames.rts.game.units.p027f.C0541f;
 import com.corrodinggames.rts.gameFramework.C0749e;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p041i.Reader;
 import com.corrodinggames.rts.gameFramework.p041i.StreamWriter;
 import com.corrodinggames.rts.gameFramework.utility.C1101m;
@@ -161,53 +161,53 @@ public class C0164i extends AbstractC0170o {
     C0424b f730P;
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
-        streamWriter.mo1363a(this.f690b);
-        streamWriter.mo1363a(this.f691c);
-        streamWriter.mo1320a(this.f692d);
-        streamWriter.mo1320a(this.f693e);
-        streamWriter.mo1320a(this.f694f);
-        streamWriter.mo1320a(this.f695g);
-        streamWriter.mo1320a(this.f697i);
-        streamWriter.mo1320a(this.f698j);
-        streamWriter.mo1320a(this.f699k);
-        streamWriter.mo1320a(this.f700l);
-        streamWriter.mo1355c(4);
-        streamWriter.mo1320a(this.f710v);
-        streamWriter.mo1320a(this.f701m);
-        streamWriter.mo1314a(this.f702n);
-        streamWriter.mo1314a(this.f703o);
+    public void mo2441a(StreamWriter streamWriter) {
+        streamWriter.m1411a(this.f690b);
+        streamWriter.m1411a(this.f691c);
+        streamWriter.mo1335a(this.f692d);
+        streamWriter.mo1335a(this.f693e);
+        streamWriter.mo1335a(this.f694f);
+        streamWriter.mo1335a(this.f695g);
+        streamWriter.mo1335a(this.f697i);
+        streamWriter.mo1335a(this.f698j);
+        streamWriter.mo1335a(this.f699k);
+        streamWriter.mo1335a(this.f700l);
+        streamWriter.m1401c(4);
+        streamWriter.mo1335a(this.f710v);
+        streamWriter.mo1335a(this.f701m);
+        streamWriter.mo1329a(this.f702n);
+        streamWriter.mo1329a(this.f703o);
         streamWriter.WriteInteger(this.f696h);
-        super.mo2292a(streamWriter);
+        super.mo2441a(streamWriter);
     }
 
     /* renamed from: a */
-    public void mo4877a(Reader reader) {
-        this.f690b = (EnumC0165j) reader.m1293b(EnumC0165j.class);
-        this.f691c = (EnumC0166k) reader.m1293b(EnumC0166k.class);
-        this.f692d = reader.m1285g();
-        this.f693e = reader.m1285g();
-        this.f694f = reader.m1285g();
-        this.f695g = reader.m1285g();
-        this.f697i = reader.m1285g();
-        this.f698j = reader.m1285g();
-        this.f699k = reader.m1285g();
-        this.f700l = reader.m1285g();
-        byte m1289d = reader.m1289d();
-        if (m1289d >= 1) {
-            this.f710v = reader.m1285g();
+    public void m5411a(Reader reader) {
+        this.f690b = (EnumC0165j) reader.m1308b(EnumC0165j.class);
+        this.f691c = (EnumC0166k) reader.m1308b(EnumC0166k.class);
+        this.f692d = reader.m1300g();
+        this.f693e = reader.m1300g();
+        this.f694f = reader.m1300g();
+        this.f695g = reader.m1300g();
+        this.f697i = reader.m1300g();
+        this.f698j = reader.m1300g();
+        this.f699k = reader.m1300g();
+        this.f700l = reader.m1300g();
+        byte m1304d = reader.m1304d();
+        if (m1304d >= 1) {
+            this.f710v = reader.m1300g();
         }
-        if (m1289d >= 2) {
-            this.f701m = reader.m1285g();
+        if (m1304d >= 2) {
+            this.f701m = reader.m1300g();
         }
-        if (m1289d >= 3) {
+        if (m1304d >= 3) {
             this.f702n = reader.ReadBool();
             this.f703o = reader.ReadBool();
         }
-        if (m1289d >= 4) {
+        if (m1304d >= 4) {
             this.f696h = reader.ReadInt();
         }
-        super.mo4877a(reader);
+        super.m5364a(reader);
     }
 
     public C0164i(C0136a c0136a, float f, float f2) {
@@ -227,29 +227,29 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public PointF m4938a() {
-        C0180g m4803e;
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
+    public PointF m5428a() {
+        C0180g m5290e;
+        Core m1087A = Core.m1087A();
         PointF pointF = null;
-        int i = (int) (this.f763U * m1072A.f6110bL.f789r);
-        m1072A.f6110bL.m4857a(this.f761S, this.f762T);
-        int i2 = m1072A.f6110bL.f801T;
-        int i3 = m1072A.f6110bL.f802U;
+        int i = (int) (this.f763U * m1087A.f6110bL.f789r);
+        m1087A.f6110bL.m5344a(this.f761S, this.f762T);
+        int i2 = m1087A.f6110bL.f801T;
+        int i3 = m1087A.f6110bL.f802U;
         for (int i4 = i2 - i; i4 <= i2 + i; i4++) {
             for (int i5 = i3 - i; i5 <= i3 + i; i5++) {
-                if (m1072A.f6110bL.m4813c(i4, i5) && (m4803e = m1072A.f6110bL.m4803e(i4, i5)) != null && m4803e.f922i) {
-                    AbstractC0244am m3379b = AbstractC0488d.m3379b(i4, i5);
+                if (m1087A.f6110bL.m5300c(i4, i5) && (m5290e = m1087A.f6110bL.m5290e(i4, i5)) != null && m5290e.f922i) {
+                    AbstractC0244am m3534b = AbstractC0488d.m3534b(i4, i5);
                     boolean z = false;
-                    if (m3379b == null) {
+                    if (m3534b == null) {
                         z = true;
                     }
-                    if (m3379b != null && (m3379b instanceof AbstractC0623y) && !((AbstractC0623y) m3379b).mo5649r().mo4245p()) {
+                    if (m3534b != null && (m3534b instanceof AbstractC0623y) && !((AbstractC0623y) m3534b).mo1758r().mo4467p()) {
                         z = true;
                     }
                     if (z) {
-                        m1072A.f6110bL.m4853a(i4, i5);
-                        if (pointF == null || C0758f.m2151a(0, 100) < 50) {
-                            this.f711w.m5369a(m1072A.f6110bL.f801T + m1072A.f6110bL.f787p, m1072A.f6110bL.f802U + m1072A.f6110bL.f788q);
+                        m1087A.f6110bL.m5340a(i4, i5);
+                        if (pointF == null || C0758f.m2203a(0, 100) < 50) {
+                            this.f711w.m5879a(m1087A.f6110bL.f801T + m1087A.f6110bL.f787p, m1087A.f6110bL.f802U + m1087A.f6110bL.f788q);
                             pointF = this.f711w;
                         }
                     }
@@ -260,19 +260,19 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public void m4925a(AbstractC0623y abstractC0623y) {
+    public void m5415a(AbstractC0623y abstractC0623y) {
         this.f705q.remove(abstractC0623y);
     }
 
     /* renamed from: b */
-    public void m4920b() {
+    public void m5409b() {
         this.f704p.clear();
         this.f705q.clear();
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && !abstractC0244am.f1607bT && !abstractC0244am.mo1712u() && m4934a(abstractC0244am)) {
+            if (abstractC0244am.f1609bV == this.f760R && !abstractC0244am.f1607bT && !abstractC0244am.mo1756u() && m5424a(abstractC0244am)) {
                 this.f705q.mo494a(abstractC0244am);
                 InterfaceC0303as interfaceC0303as = abstractC0244am.f1689dx;
                 if (!this.f704p.contains(interfaceC0303as)) {
@@ -283,16 +283,16 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public boolean m4931a(InterfaceC0303as interfaceC0303as) {
-        if (m4927a(interfaceC0303as, false, true) != null) {
+    public boolean m5421a(InterfaceC0303as interfaceC0303as) {
+        if (m5417a(interfaceC0303as, false, true) != null) {
             return true;
         }
         return false;
     }
 
     /* renamed from: b */
-    public boolean m4918b(InterfaceC0303as interfaceC0303as) {
-        if ((LoggerMaybe.m1072A().f6228ar && !interfaceC0303as.mo4265C()) || interfaceC0303as.mo4241w()) {
+    public boolean m5407b(InterfaceC0303as interfaceC0303as) {
+        if ((Core.m1087A().f6228ar && !interfaceC0303as.mo4487C()) || interfaceC0303as.mo4463w()) {
             return false;
         }
         Object[] m534a = this.f704p.m534a();
@@ -305,9 +305,9 @@ public class C0164i extends AbstractC0170o {
             while (true) {
                 if (i2 < size2) {
                     AbstractC0244am abstractC0244am = m498a[i2];
-                    if (abstractC0244am.mo5649r() != interfaceC0303as2 || !(abstractC0244am instanceof AbstractC0623y)) {
+                    if (abstractC0244am.mo1758r() != interfaceC0303as2 || !(abstractC0244am instanceof AbstractC0623y)) {
                         i2++;
-                    } else if (((AbstractC0623y) abstractC0244am).m2834b(interfaceC0303as, true)) {
+                    } else if (((AbstractC0623y) abstractC0244am).m2890b(interfaceC0303as, true)) {
                         return true;
                     }
                 }
@@ -317,20 +317,20 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: c */
-    public InterfaceC0303as m4917c() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
+    public InterfaceC0303as m5406c() {
+        Core m1087A = Core.m1087A();
         if (this.f760R.f585aX) {
             return null;
         }
-        int m4936a = m4936a(this.f760R.f615bB);
+        int m5426a = m5426a(this.f760R.f615bB);
         InterfaceC0303as interfaceC0303as = null;
         float f = -1.0f;
         Iterator it = EnumC0249ar.f1791ae.iterator();
         while (it.hasNext()) {
             InterfaceC0303as interfaceC0303as2 = (InterfaceC0303as) it.next();
-            if (interfaceC0303as2.mo4251j() && m4918b(interfaceC0303as2)) {
-                int m5056a = this.f760R.m5056a(interfaceC0303as2, EnumC0157b.include);
-                int m4915c = m4915c(interfaceC0303as2);
+            if (interfaceC0303as2.mo4473j() && m5407b(interfaceC0303as2)) {
+                int m5566a = this.f760R.m5566a(interfaceC0303as2, EnumC0157b.f643a);
+                int m5404c = m5404c(interfaceC0303as2);
                 boolean z = false;
                 if (interfaceC0303as2 instanceof C0453l) {
                     z = true;
@@ -339,15 +339,15 @@ public class C0164i extends AbstractC0170o {
                         Iterator it2 = c0453l.f3268fJ.iterator();
                         while (it2.hasNext()) {
                             InterfaceC0303as interfaceC0303as3 = (InterfaceC0303as) it2.next();
-                            m5056a += this.f760R.m5056a(interfaceC0303as3, EnumC0157b.include);
-                            m4915c += m4915c(interfaceC0303as3);
+                            m5566a += this.f760R.m5566a(interfaceC0303as3, EnumC0157b.f643a);
+                            m5404c += m5404c(interfaceC0303as3);
                         }
                     }
                 }
                 float f2 = -2.0f;
-                if (interfaceC0303as2.mo4245p() && !z) {
-                    int i = m4915c;
-                    if (m4938a() != null && C0758f.m2151a(0, 100) < 90) {
+                if (interfaceC0303as2.mo4467p() && !z) {
+                    int i = m5404c;
+                    if (m5428a() != null && C0758f.m2203a(0, 100) < 90) {
                         if (i == 0) {
                             if (this.f760R.f1310o < 5000.0d) {
                                 f2 = 0.98f;
@@ -364,101 +364,101 @@ public class C0164i extends AbstractC0170o {
                         if (i >= 3) {
                             f2 = 0.25f / i;
                         }
-                        if (m5056a >= 3) {
+                        if (m5566a >= 3) {
                             f2 = (float) (f2 * 0.6d);
                         }
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1736b && (m5056a < 5 || m4936a == 0)) {
-                    if (m5056a == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1736b && (m5566a < 5 || m5426a == 0)) {
+                    if (m5566a == 0) {
                         f2 = 0.8f;
-                    } else if (m4915c < 2) {
-                        f2 = 0.46f / (m5056a + (m4915c * 2));
+                    } else if (m5404c < 2) {
+                        f2 = 0.46f / (m5566a + (m5404c * 2));
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1738d && this.f760R.m5044ad() && (m5056a < 5 || m4936a == 0)) {
-                    if (m5056a == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1738d && this.f760R.m5554ad() && (m5566a < 5 || m5426a == 0)) {
+                    if (m5566a == 0) {
                         f2 = 0.3f;
-                    } else if (m4915c < 1) {
-                        f2 = 0.1f / (m5056a + (m4915c * 2));
+                    } else if (m5404c < 1) {
+                        f2 = 0.1f / (m5566a + (m5404c * 2));
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1737c && (m5056a < 5 || m4936a == 0)) {
-                    if (m5056a == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1737c && (m5566a < 5 || m5426a == 0)) {
+                    if (m5566a == 0) {
                         f2 = 0.48f;
-                    } else if (m4915c < 2) {
-                        f2 = 0.29f / (m5056a + m4915c);
+                    } else if (m5404c < 2) {
+                        f2 = 0.29f / (m5566a + m5404c);
                     }
                 }
                 if (interfaceC0303as2 == EnumC0249ar.f1740f) {
-                    if (m4915c == 0) {
+                    if (m5404c == 0) {
                         f2 = 0.47f;
-                    } else if (m4915c < 3) {
-                        f2 = 0.35f / m4915c;
-                    } else if (m4915c < 4) {
-                        f2 = 0.025f / m4915c;
+                    } else if (m5404c < 3) {
+                        f2 = 0.35f / m5404c;
+                    } else if (m5404c < 4) {
+                        f2 = 0.025f / m5404c;
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1759y && m4915c == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1759y && m5404c == 0) {
                     f2 = 0.018f;
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1762B && m4915c == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1762B && m5404c == 0) {
                     f2 = 0.02f;
                 }
                 if (interfaceC0303as2 == EnumC0249ar.f1741g) {
-                    if (m4915c == 0) {
+                    if (m5404c == 0) {
                         f2 = 0.42f;
-                    } else if (this.f760R.m5075Y()) {
-                        if (m4915c < 4) {
-                            f2 = 0.3f / m4915c;
+                    } else if (this.f760R.m5585Y()) {
+                        if (m5404c < 4) {
+                            f2 = 0.3f / m5404c;
                         }
-                    } else if (m4915c < 3) {
-                        f2 = 0.3f / m4915c;
-                    } else if (m4915c < 4) {
-                        f2 = 0.02f / m4915c;
+                    } else if (m5404c < 3) {
+                        f2 = 0.3f / m5404c;
+                    } else if (m5404c < 4) {
+                        f2 = 0.02f / m5404c;
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1770J && this.f760R.f1310o > 2000.0d && m4915c < 5) {
-                    if (m5056a == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1770J && this.f760R.f1310o > 2000.0d && m5404c < 5) {
+                    if (m5566a == 0) {
                         f2 = 0.11f;
                     } else {
-                        f2 = 0.07f / ((0.2f * m5056a) + m4915c);
+                        f2 = 0.07f / ((0.2f * m5566a) + m5404c);
                     }
                 }
-                if (interfaceC0303as2 == EnumC0249ar.f1764D && ((!m1072A.m1059N() || !m1072A.f6122bX.f5603aO.f5662i) && this.f760R.f1310o > 2200.0d && m5056a < 4)) {
-                    if (m5056a == 0) {
+                if (interfaceC0303as2 == EnumC0249ar.f1764D && ((!m1087A.m1074N() || !m1087A.f6122bX.f5603aO.f5662i) && this.f760R.f1310o > 2200.0d && m5566a < 4)) {
+                    if (m5566a == 0) {
                         f2 = 0.06f;
-                    } else if (m4915c < 1) {
-                        f2 = 0.05f / (m5056a + (m4915c * 2));
+                    } else if (m5404c < 1) {
+                        f2 = 0.05f / (m5566a + (m5404c * 2));
                     }
                 }
                 if (z) {
                     C0453l c0453l2 = (C0453l) interfaceC0303as2;
-                    if (!c0453l2.f3156fu && ((m5056a < c0453l2.f3157fv || c0453l2.f3157fv == -1) && (m4915c < c0453l2.f3158fw || c0453l2.f3158fw == -1))) {
+                    if (!c0453l2.f3156fu && ((m5566a < c0453l2.f3157fv || c0453l2.f3157fv == -1) && (m5404c < c0453l2.f3158fw || c0453l2.f3158fw == -1))) {
                         f2 = c0453l2.f3159fx;
-                        if (m4915c < c0453l2.f3160fy) {
+                        if (m5404c < c0453l2.f3160fy) {
                             f2 = c0453l2.f3161fz;
                         }
-                        if (m4915c == 0) {
+                        if (m5404c == 0) {
                             f2 += c0453l2.f3162fA;
                         }
-                        if (m5056a == 0) {
+                        if (m5566a == 0) {
                             f2 += c0453l2.f3163fB;
                         }
-                        if (interfaceC0303as2.mo4245p() && m4938a() == null) {
+                        if (interfaceC0303as2.mo4467p() && m5428a() == null) {
                             f2 = -2.0f;
                         }
                     }
                 }
-                if (this.f760R.m5074Z() && interfaceC0303as2 == EnumC0249ar.f1767G && this.f760R.f1310o > 15000.0d) {
-                    if (m5056a == 0) {
+                if (this.f760R.m5584Z() && interfaceC0303as2 == EnumC0249ar.f1767G && this.f760R.f1310o > 15000.0d) {
+                    if (m5566a == 0) {
                         f2 = 0.04f;
                     }
-                    if (this.f760R.f1310o > 55000.0d && m5056a == 1) {
+                    if (this.f760R.f1310o > 55000.0d && m5566a == 1) {
                         f2 = 0.03f;
                     }
                 }
-                if (f2 >= 0.0f && (f2 > f || C0758f.m2084c(0.0f, 1.0f) < 0.01d)) {
+                if (f2 >= 0.0f && (f2 > f || C0758f.m2136c(0.0f, 1.0f) < 0.01d)) {
                     f = f2;
                     interfaceC0303as = interfaceC0303as2;
                 }
@@ -469,24 +469,24 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public int m4936a(AbstractC0159d abstractC0159d) {
+    public int m5426a(AbstractC0159d abstractC0159d) {
         int i = 0;
         Iterator it = abstractC0159d.f650c.iterator();
         while (it.hasNext()) {
-            i += m4915c(((C0160e) it.next()).f653a);
+            i += m5404c(((C0160e) it.next()).f653a);
         }
         return i;
     }
 
     /* renamed from: c */
-    public int m4915c(InterfaceC0303as interfaceC0303as) {
+    public int m5404c(InterfaceC0303as interfaceC0303as) {
         int i = 0;
         C1112u c1112u = this.f705q;
         AbstractC0244am[] m498a = c1112u.m498a();
         int size = c1112u.size();
         for (int i2 = 0; i2 < size; i2++) {
             AbstractC0244am abstractC0244am = m498a[i2];
-            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.f1689dx == interfaceC0303as && m4934a(abstractC0244am)) {
+            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.f1689dx == interfaceC0303as && m5424a(abstractC0244am)) {
                 i++;
             }
         }
@@ -494,7 +494,7 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: d */
-    public int m4914d() {
+    public int m5403d() {
         int i = 0;
         C1112u c1112u = this.f705q;
         AbstractC0244am[] m498a = c1112u.m498a();
@@ -503,7 +503,7 @@ public class C0164i extends AbstractC0170o {
             AbstractC0244am abstractC0244am = m498a[i2];
             if (abstractC0244am.f1609bV == this.f760R && (abstractC0244am instanceof AbstractC0623y)) {
                 AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am;
-                if (m4922a(abstractC0623y, false) && !abstractC0623y.f1599bL && abstractC0623y.f3947aA == null && this.f760R.m5013h(abstractC0623y) && this.f760R.m5011i(abstractC0623y)) {
+                if (m5412a(abstractC0623y, false) && !abstractC0623y.f1599bL && abstractC0623y.f3947aA == null && this.f760R.m5523h(abstractC0623y) && this.f760R.m5521i(abstractC0623y)) {
                     i++;
                 }
             }
@@ -512,23 +512,23 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: e */
-    public int m4911e() {
+    public int m5400e() {
         return this.f725K;
     }
 
     /* renamed from: f */
-    public boolean m4910f() {
-        return m4906h() != 0;
+    public boolean m5399f() {
+        return m5395h() != 0;
     }
 
     /* renamed from: g */
-    public AbstractC0244am m4908g() {
+    public AbstractC0244am m5397g() {
         float f = this.f763U + 120.0f;
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f6957el + f > this.f761S && abstractC0244am.f6957el - f < this.f761S && abstractC0244am.f6958em + f > this.f762T && abstractC0244am.f6958em - f < this.f762T && abstractC0244am.f1609bV != this.f760R && m4878a(abstractC0244am, 120.0f) && abstractC0244am.f1609bV.m4599c(this.f760R) && this.f760R.m5009j(abstractC0244am)) {
+            if (abstractC0244am.f6958el + f > this.f761S && abstractC0244am.f6958el - f < this.f761S && abstractC0244am.f6959em + f > this.f762T && abstractC0244am.f6959em - f < this.f762T && abstractC0244am.f1609bV != this.f760R && m5365a(abstractC0244am, 120.0f) && abstractC0244am.f1609bV.m5054c(this.f760R) && this.f760R.m5519j(abstractC0244am)) {
                 return abstractC0244am;
             }
         }
@@ -536,19 +536,19 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: h */
-    public int m4906h() {
-        return m4937a(60.0f);
+    public int m5395h() {
+        return m5427a(60.0f);
     }
 
     /* renamed from: a */
-    public int m4937a(float f) {
+    public int m5427a(float f) {
         int i = 0;
         float f2 = this.f763U + f;
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i2 = 0; i2 < size; i2++) {
             AbstractC0244am abstractC0244am = m498a[i2];
-            if (abstractC0244am.f6957el + f2 > this.f761S && abstractC0244am.f6957el - f2 < this.f761S && abstractC0244am.f6958em + f2 > this.f762T && abstractC0244am.f6958em - f2 < this.f762T && abstractC0244am.f1609bV != this.f760R && m4878a(abstractC0244am, f) && abstractC0244am.f1609bV.m4599c(this.f760R) && abstractC0244am.mo2979l() && this.f760R.m5009j(abstractC0244am)) {
+            if (abstractC0244am.f6958el + f2 > this.f761S && abstractC0244am.f6958el - f2 < this.f761S && abstractC0244am.f6959em + f2 > this.f762T && abstractC0244am.f6959em - f2 < this.f762T && abstractC0244am.f1609bV != this.f760R && m5365a(abstractC0244am, f) && abstractC0244am.f1609bV.m5054c(this.f760R) && abstractC0244am.mo3036l() && this.f760R.m5519j(abstractC0244am)) {
                 i++;
             }
         }
@@ -556,41 +556,41 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: i */
-    public void m4905i() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        AbstractC0244am m4908g = m4908g();
-        if (m4908g != null) {
-            C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
+    public void m5394i() {
+        Core m1087A = Core.m1087A();
+        AbstractC0244am m5397g = m5397g();
+        if (m5397g != null) {
+            C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
             AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
             int size = AbstractC0244am.f1590bD.size();
             for (int i = 0; i < size; i++) {
                 AbstractC0244am abstractC0244am = m498a[i];
                 if (abstractC0244am instanceof AbstractC0623y) {
                     AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am;
-                    if (abstractC0244am.f1609bV == this.f760R && this.f760R.m5025b(abstractC0244am, m4908g) && this.f760R.m5011i(abstractC0623y) && abstractC0623y.m2854aq()) {
+                    if (abstractC0244am.f1609bV == this.f760R && this.f760R.m5535b(abstractC0244am, m5397g) && this.f760R.m5521i(abstractC0623y) && abstractC0623y.m2910aq()) {
                         if (!abstractC0244am.f1599bL) {
-                            if (C0136a.m5061a(abstractC0244am, this.f761S, this.f762T, 800.0f)) {
-                                m2370a.m2267a(abstractC0623y);
+                            if (C0136a.m5571a(abstractC0244am, this.f761S, this.f762T, 800.0f)) {
+                                m2422a.m2319a(abstractC0623y);
                             }
-                        } else if (C0136a.m5061a(abstractC0244am, this.f761S, this.f762T, 540.0f)) {
-                            m2370a.m2267a(abstractC0623y);
+                        } else if (C0136a.m5571a(abstractC0244am, this.f761S, this.f762T, 540.0f)) {
+                            m2422a.m2319a(abstractC0623y);
                         }
                     }
                 }
             }
-            m2370a.m2269a(m4908g);
+            m2422a.m2321a(m5397g);
         }
     }
 
     /* renamed from: a */
-    public boolean m4934a(AbstractC0244am abstractC0244am) {
-        return m4932a(abstractC0244am, false);
+    public boolean m5424a(AbstractC0244am abstractC0244am) {
+        return m5422a(abstractC0244am, false);
     }
 
     /* renamed from: a */
-    public boolean m4932a(AbstractC0244am abstractC0244am, boolean z) {
+    public boolean m5422a(AbstractC0244am abstractC0244am, boolean z) {
         if ((abstractC0244am instanceof AbstractC0623y) && ((AbstractC0623y) abstractC0244am).f3948aB == this) {
-            if (!z || m4876b(abstractC0244am)) {
+            if (!z || m5363b(abstractC0244am)) {
                 return true;
             }
             return false;
@@ -599,9 +599,9 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public boolean m4922a(AbstractC0623y abstractC0623y, boolean z) {
+    public boolean m5412a(AbstractC0623y abstractC0623y, boolean z) {
         if (abstractC0623y.f3948aB == this) {
-            if (!z || m4876b(abstractC0623y)) {
+            if (!z || m5363b(abstractC0623y)) {
                 return true;
             }
             return false;
@@ -610,12 +610,12 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: j */
-    public int m4904j() {
+    public int m5393j() {
         int i = 0;
-        Iterator it = m4903k().iterator();
+        Iterator it = m5392k().iterator();
         while (it.hasNext()) {
             AbstractC0244am abstractC0244am = (AbstractC0244am) it.next();
-            if (this.f760R != abstractC0244am.f1609bV && abstractC0244am.f1609bV.m4599c(this.f760R) && (abstractC0244am instanceof AbstractC0623y) && m4876b(abstractC0244am)) {
+            if (this.f760R != abstractC0244am.f1609bV && abstractC0244am.f1609bV.m5054c(this.f760R) && (abstractC0244am instanceof AbstractC0623y) && m5363b(abstractC0244am)) {
                 i++;
             }
         }
@@ -623,50 +623,50 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: k */
-    public C0541f m4903k() {
-        return LoggerMaybe.m1072A().f6127cc.m3152b(this.f761S, this.f762T, this.f763U);
+    public C0541f m5392k() {
+        return Core.m1087A().f6127cc.m3250b(this.f761S, this.f762T, this.f763U);
     }
 
     /* renamed from: x */
-    private AbstractC0623y m4892x() {
-        return m4930a((InterfaceC0303as) null, (PointF) null, true);
+    private AbstractC0623y m5381x() {
+        return m5420a((InterfaceC0303as) null, (PointF) null, true);
     }
 
     /* renamed from: y */
-    private AbstractC0623y m4891y() {
-        return m4909f(null);
+    private AbstractC0623y m5380y() {
+        return m5398f(null);
     }
 
     /* renamed from: f */
-    private AbstractC0623y m4909f(InterfaceC0303as interfaceC0303as) {
-        return m4930a(interfaceC0303as, (PointF) null, false);
+    private AbstractC0623y m5398f(InterfaceC0303as interfaceC0303as) {
+        return m5420a(interfaceC0303as, (PointF) null, false);
     }
 
     /* renamed from: a */
-    private AbstractC0623y m4930a(InterfaceC0303as interfaceC0303as, PointF pointF, boolean z) {
+    private AbstractC0623y m5420a(InterfaceC0303as interfaceC0303as, PointF pointF, boolean z) {
         if (this.f725K == 0) {
             return null;
         }
         this.f713y = 0;
         float f = Float.MAX_VALUE;
         AbstractC0623y abstractC0623y = null;
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        if (interfaceC0303as != null && ((m1072A.f6228ar && !interfaceC0303as.mo4265C()) || interfaceC0303as.mo4241w())) {
+        Core m1087A = Core.m1087A();
+        if (interfaceC0303as != null && ((m1087A.f6228ar && !interfaceC0303as.mo4487C()) || interfaceC0303as.mo4463w())) {
             return null;
         }
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && m4934a(abstractC0244am) && abstractC0244am.f1651cL == null && abstractC0244am.m4413aj() && (abstractC0244am instanceof AbstractC0623y) && this.f760R.m5011i(abstractC0244am)) {
+            if (abstractC0244am.f1609bV == this.f760R && m5424a(abstractC0244am) && abstractC0244am.f1651cL == null && abstractC0244am.m4770aj() && (abstractC0244am instanceof AbstractC0623y) && this.f760R.m5521i(abstractC0244am)) {
                 AbstractC0623y abstractC0623y2 = (AbstractC0623y) abstractC0244am;
-                if (C0161f.m4973a(abstractC0623y2) && (!z || abstractC0623y2.mo2998I())) {
+                if (C0161f.m5470a(abstractC0623y2) && (!z || abstractC0623y2.mo3057I())) {
                     this.f713y++;
-                    if (interfaceC0303as == null || abstractC0623y2.m2834b(interfaceC0303as, true)) {
+                    if (interfaceC0303as == null || abstractC0623y2.m2890b(interfaceC0303as, true)) {
                         boolean z2 = false;
                         float f2 = -1.0f;
                         if (pointF != null) {
-                            f2 = C0758f.m2157a(pointF.f227a, pointF.f228b, abstractC0244am.f6957el, abstractC0244am.f6958em);
+                            f2 = C0758f.m2209a(pointF.f227a, pointF.f228b, abstractC0244am.f6958el, abstractC0244am.f6959em);
                         }
                         if (abstractC0623y == null) {
                             z2 = true;
@@ -674,7 +674,7 @@ public class C0164i extends AbstractC0170o {
                             if (pointF != null && f2 < f) {
                                 z2 = true;
                             }
-                            if (C0758f.m2084c(0.0f, 1.0f) < 0.2d) {
+                            if (C0758f.m2136c(0.0f, 1.0f) < 0.2d) {
                                 z2 = true;
                             }
                         }
@@ -692,31 +692,31 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    private AbstractC0623y m4933a(AbstractC0244am abstractC0244am, PointF pointF, boolean z) {
+    private AbstractC0623y m5423a(AbstractC0244am abstractC0244am, PointF pointF, boolean z) {
         if (this.f726L == 0) {
             return null;
         }
         float f = Float.MAX_VALUE;
         AbstractC0623y abstractC0623y = null;
-        LoggerMaybe.m1072A();
+        Core.m1087A();
         AbstractC0244am[] m498a = this.f705q.m498a();
         int size = this.f705q.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am2 = m498a[i];
-            if (abstractC0244am2.f1609bV == this.f760R && m4934a(abstractC0244am2) && abstractC0244am2.f1651cL == null) {
-                InterfaceC0303as mo5649r = abstractC0244am2.mo5649r();
-                if (mo5649r.mo4247n() && (abstractC0244am2 instanceof AbstractC0623y) && this.f760R.m5011i(abstractC0244am2)) {
+            if (abstractC0244am2.f1609bV == this.f760R && m5424a(abstractC0244am2) && abstractC0244am2.f1651cL == null) {
+                InterfaceC0303as mo1758r = abstractC0244am2.mo1758r();
+                if (mo1758r.mo4469n() && (abstractC0244am2 instanceof AbstractC0623y) && this.f760R.m5521i(abstractC0244am2)) {
                     AbstractC0623y abstractC0623y2 = (AbstractC0623y) abstractC0244am2;
-                    if (C0161f.m4970b(abstractC0623y2) && ((!z || abstractC0623y2.mo2998I()) && (abstractC0244am == null || abstractC0623y2.m4308h(abstractC0244am, true)))) {
+                    if (C0161f.m5467b(abstractC0623y2) && ((!z || abstractC0623y2.mo3057I()) && (abstractC0244am == null || abstractC0623y2.m4652h(abstractC0244am, true)))) {
                         boolean z2 = false;
-                        if (mo5649r instanceof C0453l) {
-                            C0453l c0453l = (C0453l) mo5649r;
-                            if (c0453l.f3167fF != null && !m4926a(c0453l.f3167fF)) {
+                        if (mo1758r instanceof C0453l) {
+                            C0453l c0453l = (C0453l) mo1758r;
+                            if (c0453l.f3167fF != null && !m5416a(c0453l.f3167fF)) {
                             }
                         }
                         float f2 = -1.0f;
                         if (pointF != null) {
-                            f2 = C0758f.m2157a(pointF.f227a, pointF.f228b, abstractC0244am2.f6957el, abstractC0244am2.f6958em);
+                            f2 = C0758f.m2209a(pointF.f227a, pointF.f228b, abstractC0244am2.f6958el, abstractC0244am2.f6959em);
                         }
                         if (abstractC0623y == null) {
                             z2 = true;
@@ -724,7 +724,7 @@ public class C0164i extends AbstractC0170o {
                             if (pointF != null && f2 < f) {
                                 z2 = true;
                             }
-                            if (C0758f.m2084c(0.0f, 1.0f) < 0.2d) {
+                            if (C0758f.m2136c(0.0f, 1.0f) < 0.2d) {
                                 z2 = true;
                             }
                         }
@@ -742,19 +742,19 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: g */
-    private boolean m4907g(InterfaceC0303as interfaceC0303as) {
+    private boolean m5396g(InterfaceC0303as interfaceC0303as) {
         PointF e;
-        AbstractC0623y m4930a;
+        AbstractC0623y m5420a;
         this.f714z = interfaceC0303as;
         this.f715A = null;
         this.f716B = null;
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        if (interfaceC0303as.mo4245p()) {
-            e = m4938a();
+        Core m1087A = Core.m1087A();
+        if (interfaceC0303as.mo4467p()) {
+            e = m5428a();
         } else {
-            e = m4872e(interfaceC0303as);
+            e = m5359e(interfaceC0303as);
         }
-        if (e == null || (m4930a = m4930a(interfaceC0303as, e, false)) == null) {
+        if (e == null || (m5420a = m5420a(interfaceC0303as, e, false)) == null) {
             return false;
         }
         if (interfaceC0303as == EnumC0249ar.f1738d) {
@@ -765,39 +765,39 @@ public class C0164i extends AbstractC0170o {
             }
         }
         int i = 1;
-        AbstractC0224s m2913a = m4930a.m2913a(interfaceC0303as, true);
-        if (m2913a != null) {
-            i = m2913a.mo4485t();
+        AbstractC0224s m2970a = m5420a.m2970a(interfaceC0303as, true);
+        if (m2970a != null) {
+            i = m2970a.mo4860t();
         } else {
-            LoggerMaybe.m983b("buildBuilding: could not find getBuildUnitAction for builder this shouldn't happen:" + interfaceC0303as.mo4252i());
+            Core.m998b("buildBuilding: could not find getBuildUnitAction for builder this shouldn't happen:" + interfaceC0303as.mo4474i());
         }
-        if (!m2913a.mo3025b(m4930a) || !m2913a.mo3027a((AbstractC0244am) m4930a, false)) {
-            if (!this.f760R.m5054a(m2913a.mo4138B(), m4930a)) {
-                this.f715A = m2913a.mo4138B();
-                this.f716B = this.f715A.m3876i(m4930a);
+        if (!m2970a.mo3084b(m5420a) || !m2970a.mo3086a((AbstractC0244am) m5420a, false)) {
+            if (!this.f760R.m5564a(m2970a.mo4866B(), m5420a)) {
+                this.f715A = m2970a.mo4866B();
+                this.f716B = this.f715A.m4083i(m5420a);
                 return true;
             }
             return true;
-        } else if (m2913a.mo4139A()) {
-            C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
-            m2370a.m2267a(m4930a);
-            m2370a.m2271a(m2913a.m4507N(), e, (AbstractC0244am) null);
+        } else if (m2970a.m4919A()) {
+            C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
+            m2422a.m2319a(m5420a);
+            m2422a.m2323a(m2970a.m4910N(), e, (AbstractC0244am) null);
             return true;
         } else {
-            C0749e m2370a2 = m1072A.f6130cf.m2370a(this.f760R);
-            m2370a2.m2267a(m4930a);
-            m2370a2.m2276a(e.f227a, e.f228b, interfaceC0303as, i);
+            C0749e m2422a2 = m1087A.f6130cf.m2422a(this.f760R);
+            m2422a2.m2319a(m5420a);
+            m2422a2.m2328a(e.f227a, e.f228b, interfaceC0303as, i);
             return true;
         }
     }
 
     /* renamed from: z */
-    private boolean m4890z() {
+    private boolean m5379z() {
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && m4934a(abstractC0244am) && abstractC0244am.m4396bS() && !abstractC0244am.mo1712u() && (abstractC0244am instanceof AbstractC0623y) && ((AbstractC0623y) abstractC0244am).m2862ai()) {
+            if (abstractC0244am.f1609bV == this.f760R && m5424a(abstractC0244am) && abstractC0244am.m4751bS() && !abstractC0244am.mo1756u() && (abstractC0244am instanceof AbstractC0623y) && ((AbstractC0623y) abstractC0244am).m2918ai()) {
                 return true;
             }
         }
@@ -805,13 +805,13 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public boolean m4926a(C0449h c0449h) {
-        C0449h m4331dc;
+    public boolean m5416a(C0449h c0449h) {
+        C0449h m4676dc;
         AbstractC0244am[] m498a = this.f705q.m498a();
         int size = this.f705q.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.m4396bS() && (m4331dc = abstractC0244am.m4331dc()) != null && C0448g.m3753a(c0449h, m4331dc)) {
+            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.m4751bS() && (m4676dc = abstractC0244am.m4676dc()) != null && C0448g.m3960a(c0449h, m4676dc)) {
                 return true;
             }
         }
@@ -819,16 +819,16 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    private AbstractC0623y m4927a(InterfaceC0303as interfaceC0303as, boolean z, boolean z2) {
+    private AbstractC0623y m5417a(InterfaceC0303as interfaceC0303as, boolean z, boolean z2) {
         AbstractC0244am[] m498a = this.f705q.m498a();
         int size = this.f705q.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.m4396bS() && this.f760R.m5011i(abstractC0244am) && (abstractC0244am instanceof InterfaceC0501l) && (abstractC0244am instanceof AbstractC0623y)) {
+            if (abstractC0244am.f1609bV == this.f760R && abstractC0244am.m4751bS() && this.f760R.m5521i(abstractC0244am) && (abstractC0244am instanceof InterfaceC0501l) && (abstractC0244am instanceof AbstractC0623y)) {
                 AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am;
                 InterfaceC0501l interfaceC0501l = (InterfaceC0501l) abstractC0244am;
-                AbstractC0224s m4316e = abstractC0244am.m4316e(interfaceC0303as);
-                if (m4316e != null && ((interfaceC0501l.mo3308dv() || !z) && !m4316e.mo4117m(abstractC0244am) && m4316e.mo3025b(abstractC0623y) && m4316e.mo3027a((AbstractC0244am) abstractC0623y, false) && ((!(abstractC0244am instanceof C0489e) || interfaceC0303as.mo4248m() || m4894u() <= 2 || this.f707s || !z) && (!z2 || abstractC0623y.f3949aC)))) {
+                AbstractC0224s m4661e = abstractC0244am.m4661e(interfaceC0303as);
+                if (m4661e != null && ((interfaceC0501l.mo3432dv() || !z) && !m4661e.m4879m(abstractC0244am) && m4661e.mo3084b(abstractC0623y) && m4661e.mo3086a((AbstractC0244am) abstractC0623y, false) && ((!(abstractC0244am instanceof C0489e) || interfaceC0303as.mo4470m() || m5383u() <= 2 || this.f707s || !z) && (!z2 || abstractC0623y.f3949aC)))) {
                     return abstractC0623y;
                 }
             }
@@ -837,10 +837,10 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    private boolean m4935a(AbstractC0159d abstractC0159d, boolean z) {
-        Iterator it = abstractC0159d.m4983a().iterator();
+    private boolean m5425a(AbstractC0159d abstractC0159d, boolean z) {
+        Iterator it = abstractC0159d.m5480a().iterator();
         while (it.hasNext()) {
-            if (m4929a(((C0160e) it.next()).f653a, z)) {
+            if (m5419a(((C0160e) it.next()).f653a, z)) {
                 return true;
             }
         }
@@ -848,58 +848,58 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    private boolean m4929a(InterfaceC0303as interfaceC0303as, boolean z) {
-        return m4928a(interfaceC0303as, z, 1);
+    private boolean m5419a(InterfaceC0303as interfaceC0303as, boolean z) {
+        return m5418a(interfaceC0303as, z, 1);
     }
 
     /* renamed from: a */
-    private boolean m4928a(InterfaceC0303as interfaceC0303as, boolean z, int i) {
+    private boolean m5418a(InterfaceC0303as interfaceC0303as, boolean z, int i) {
         if (i < 1) {
-            LoggerMaybe.m982b("AI", "buildUnit: quantity cannot be < 1");
+            Core.m997b("AI", "buildUnit: quantity cannot be < 1");
             return false;
         }
-        AbstractC0623y m4927a = m4927a(interfaceC0303as, true, z);
-        if (m4927a == null) {
+        AbstractC0623y m5417a = m5417a(interfaceC0303as, true, z);
+        if (m5417a == null) {
         }
-        if (m4927a == null) {
+        if (m5417a == null) {
             return false;
         }
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        AbstractC0224s e = m4927a.m4316e(interfaceC0303as);
+        Core m1087A = Core.m1087A();
+        AbstractC0224s e = m5417a.m4661e(interfaceC0303as);
         if (e == null) {
-            LoggerMaybe.m982b("AI", "buildUnit: action is null!");
+            Core.m997b("AI", "buildUnit: action is null!");
             return false;
-        } else if (!e.mo3025b(m4927a)) {
-            LoggerMaybe.m982b("AI", "buildUnit: isAvailable==false");
+        } else if (!e.mo3084b(m5417a)) {
+            Core.m997b("AI", "buildUnit: isAvailable==false");
             return false;
-        } else if (!e.mo3027a((AbstractC0244am) m4927a, false)) {
-            LoggerMaybe.m982b("AI", "buildUnit: isActive==false");
+        } else if (!e.mo3086a((AbstractC0244am) m5417a, false)) {
+            Core.m997b("AI", "buildUnit: isActive==false");
             return false;
-        } else if (e.mo4123g(m4927a)) {
+        } else if (e.mo4864g(m5417a)) {
             return false;
         } else {
-            if (e.mo4486k_() && m1072A.f6228ar) {
+            if (e.mo4863k_() && m1087A.f6228ar) {
                 return false;
             }
             for (int i2 = 0; i2 < i; i2++) {
-                C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
-                m2370a.m2267a(m4927a);
-                m2370a.m2272a(e.mo4488z());
+                C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
+                m2422a.m2319a(m5417a);
+                m2422a.m2324a(e.m4867z());
             }
             return true;
         }
     }
 
     /* renamed from: l */
-    C0164i m4902l() {
+    C0164i m5391l() {
         C0164i c0164i;
         float f = -1.0f;
         C0164i c0164i2 = null;
         Iterator it = this.f760R.f600bm.iterator();
         while (it.hasNext()) {
             AbstractC0170o abstractC0170o = (AbstractC0170o) it.next();
-            if ((abstractC0170o instanceof C0164i) && (c0164i = (C0164i) abstractC0170o) != this && c0164i.m4911e() > 1) {
-                float a = c0164i.m4879a(this);
+            if ((abstractC0170o instanceof C0164i) && (c0164i = (C0164i) abstractC0170o) != this && c0164i.m5400e() > 1) {
+                float a = c0164i.m5366a(this);
                 if (c0164i2 == null || a < f) {
                     f = a;
                     c0164i2 = c0164i;
@@ -910,43 +910,43 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: m */
-    public void m4901m() {
-        AbstractC0623y m4892x;
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        C0164i m4902l = m4902l();
-        if (m4902l != null && m4902l.m4911e() > 1 && (m4892x = m4902l.m4892x()) != null) {
-            PointF w = m4870w();
-            if (C1117y.m469a(m4892x, w.f227a, w.f228b)) {
-                boolean m5062a = this.f760R.m5062a(m4892x, w.f227a, w.f228b);
-                if (m5062a || this.f760R.f567aF != 0) {
-                    C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
-                    m2370a.m2267a(m4892x);
-                    m2370a.m2277a(w.f227a, w.f228b);
+    public void m5390m() {
+        AbstractC0623y m5381x;
+        Core m1087A = Core.m1087A();
+        C0164i m5391l = m5391l();
+        if (m5391l != null && m5391l.m5400e() > 1 && (m5381x = m5391l.m5381x()) != null) {
+            PointF w = m5357w();
+            if (C1117y.m469a(m5381x, w.f227a, w.f228b)) {
+                boolean m5572a = this.f760R.m5572a(m5381x, w.f227a, w.f228b);
+                if (m5572a || this.f760R.f567aF != 0) {
+                    C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
+                    m2422a.m2319a(m5381x);
+                    m2422a.m2329a(w.f227a, w.f228b);
                     this.f696h++;
-                    this.f695g = C0758f.m2151a(1800, 2500);
+                    this.f695g = C0758f.m2203a(1800, 2500);
                     if (this.f696h >= 2) {
                         this.f695g += 11000.0f;
                     }
-                    m4902l.f725K--;
-                    if (!m5062a) {
+                    m5391l.f725K--;
+                    if (!m5572a) {
                         boolean z = true;
-                        if (m4892x.f3947aA != null) {
-                            if (!m4892x.f3947aA.mo4950a()) {
-                                m4892x.f3947aA.m4946b(m4892x);
+                        if (m5381x.f3947aA != null) {
+                            if (!m5381x.f3947aA.m5441a()) {
+                                m5381x.f3947aA.m5437b(m5381x);
                             } else {
                                 z = false;
-                                if (!m4892x.f3947aA.f688G.contains(m4892x)) {
-                                    m4892x.f3947aA.f688G.add(m4892x);
+                                if (!m5381x.f3947aA.f688G.contains(m5381x)) {
+                                    m5381x.f3947aA.f688G.add(m5381x);
                                 }
                             }
                         }
                         if (z) {
                             C0167l c0167l = new C0167l(this.f760R);
-                            c0167l.m4887c(m4892x);
+                            c0167l.m5375c(m5381x);
                             c0167l.f761S = w.f227a;
                             c0167l.f762T = w.f228b;
                         }
-                        this.f695g = C0758f.m2151a(12000, 14000);
+                        this.f695g = C0758f.m2203a(12000, 14000);
                     }
                 }
             }
@@ -954,12 +954,12 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: A */
-    private AbstractC0244am m4939A() {
+    private AbstractC0244am m5429A() {
         AbstractC0244am[] m498a = AbstractC0244am.f1590bD.m498a();
         int size = AbstractC0244am.f1590bD.size();
         for (int i = 0; i < size; i++) {
             AbstractC0244am abstractC0244am = m498a[i];
-            if (abstractC0244am.f1609bV == this.f760R && m4932a(abstractC0244am, true) && abstractC0244am.m4402bI() && (abstractC0244am.f1632cs < abstractC0244am.f1633ct - 1.0f || abstractC0244am.f1624ck < 1.0f)) {
+            if (abstractC0244am.f1609bV == this.f760R && m5422a(abstractC0244am, true) && abstractC0244am.m4758bI() && (abstractC0244am.f1632cs < abstractC0244am.f1633ct - 1.0f || abstractC0244am.f1624ck < 1.0f)) {
                 return abstractC0244am;
             }
         }
@@ -967,14 +967,14 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: n */
-    public void m4900n() {
-        LoggerMaybe.m1072A();
+    public void m5389n() {
+        Core.m1087A();
         if (this.f706r.size() == 0 || this.f707s) {
             return;
         }
         for (int i = 0; i < 8; i++) {
-            InterfaceC0303as m4976c = this.f760R.f613bz.m4976c();
-            if (m4976c != null && m4931a(m4976c) && m4912d(m4976c)) {
+            InterfaceC0303as m5473c = this.f760R.f613bz.m5473c();
+            if (m5473c != null && m5421a(m5473c) && m5401d(m5473c)) {
                 return;
             }
         }
@@ -987,38 +987,38 @@ public class C0164i extends AbstractC0170o {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public boolean m4912d(com.corrodinggames.rts.game.units.InterfaceC0303as r5) {
+    public boolean m5401d(com.corrodinggames.rts.game.units.InterfaceC0303as r5) {
         /*
             Method dump skipped, instructions count: 241
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.corrodinggames.rts.game.p010a.C0164i.m4912d(com.corrodinggames.rts.game.units.as):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.corrodinggames.rts.game.p010a.C0164i.m5401d(com.corrodinggames.rts.game.units.as):boolean");
     }
 
     /* renamed from: o */
-    public void m4899o() {
-        AbstractC0244am m4897r;
-        if (this.f706r.size() != 0 && (m4897r = m4897r()) != null) {
-            this.f712x.m5369a(m4897r.f6957el, m4897r.f6958em);
-            AbstractC0623y m4933a = m4933a(m4897r, this.f712x, true);
-            if (m4933a != null) {
-                m4924a(m4933a, m4897r);
+    public void m5388o() {
+        AbstractC0244am m5386r;
+        if (this.f706r.size() != 0 && (m5386r = m5386r()) != null) {
+            this.f712x.m5879a(m5386r.f6958el, m5386r.f6959em);
+            AbstractC0623y m5423a = m5423a(m5386r, this.f712x, true);
+            if (m5423a != null) {
+                m5414a(m5423a, m5386r);
             }
         }
     }
 
     /* renamed from: q */
-    public void m4898q() {
+    public void m5387q() {
         AbstractC0623y abstractC0623y;
-        C0305au m2853ar;
-        AbstractC0244am m4212i;
+        C0305au m2909ar;
+        AbstractC0244am m4434i;
         if (this.f706r.size() != 0 && this.f716B != null) {
             AbstractC0244am[] m498a = this.f705q.m498a();
             int size = this.f705q.size();
             for (int i = 0; i < size; i++) {
                 AbstractC0244am abstractC0244am = m498a[i];
-                if (abstractC0244am.f1609bV == this.f760R && m4934a(abstractC0244am) && abstractC0244am.f1651cL == null && abstractC0244am.mo5649r().mo4247n() && (abstractC0244am instanceof AbstractC0623y) && this.f760R.m5011i(abstractC0244am) && C0758f.m2084c(0.0f, 1.0f) <= 0.3d && (m2853ar = (abstractC0623y = (AbstractC0623y) abstractC0244am).m2853ar()) != null && m2853ar.m4222d() == EnumC0306av.reclaim && (m4212i = m2853ar.m4212i()) != null && m4212i.mo3250g() > 0.0f && !this.f716B.m3885c(m4212i.m4370cL())) {
-                    m4924a(abstractC0623y, m4897r());
+                if (abstractC0244am.f1609bV == this.f760R && m5424a(abstractC0244am) && abstractC0244am.f1651cL == null && abstractC0244am.mo1758r().mo4469n() && (abstractC0244am instanceof AbstractC0623y) && this.f760R.m5521i(abstractC0244am) && C0758f.m2136c(0.0f, 1.0f) <= 0.3d && (m2909ar = (abstractC0623y = (AbstractC0623y) abstractC0244am).m2909ar()) != null && m2909ar.m4444d() == EnumC0306av.f1817g && (m4434i = m2909ar.m4434i()) != null && m4434i.mo3352g() > 0.0f && !this.f716B.m4092c(m4434i.m4722cL())) {
+                    m5414a(abstractC0623y, m5386r());
                     return;
                 }
             }
@@ -1026,11 +1026,11 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: r */
-    public AbstractC0244am m4897r() {
+    public AbstractC0244am m5386r() {
         AbstractC0244am abstractC0244am = null;
         for (int i = 0; i < 20; i++) {
-            abstractC0244am = this.f706r.mo497a(C0758f.m2151a(0, this.f706r.size() - 1));
-            if (abstractC0244am == null || this.f716B == null || this.f716B.m3885c(abstractC0244am.m4370cL())) {
+            abstractC0244am = this.f706r.mo497a(C0758f.m2203a(0, this.f706r.size() - 1));
+            if (abstractC0244am == null || this.f716B == null || this.f716B.m4092c(abstractC0244am.m4722cL())) {
                 break;
             }
         }
@@ -1038,54 +1038,54 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public void m4924a(AbstractC0623y abstractC0623y, AbstractC0244am abstractC0244am) {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        if (abstractC0623y.mo3081g(abstractC0244am, true)) {
-            C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
-            m2370a.m2267a(abstractC0623y);
-            m2370a.m2256d(abstractC0244am);
+    public void m5414a(AbstractC0623y abstractC0623y, AbstractC0244am abstractC0244am) {
+        Core m1087A = Core.m1087A();
+        if (abstractC0623y.mo3166g(abstractC0244am, true)) {
+            C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
+            m2422a.m2319a(abstractC0623y);
+            m2422a.m2308d(abstractC0244am);
         }
     }
 
     /* renamed from: s */
-    public void m4896s() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        AbstractC0244am m4939A = m4939A();
-        if (m4939A != null) {
-            this.f712x.m5369a(m4939A.f6957el, m4939A.f6958em);
-            AbstractC0623y m4930a = m4930a((InterfaceC0303as) null, this.f712x, true);
-            if (m4930a != null && m4930a.mo3087a(m4939A) && m4939A.m4315e(m4930a) < 2) {
-                C0749e m2370a = m1072A.f6130cf.m2370a(this.f760R);
-                m2370a.m2267a(m4930a);
-                m2370a.m2261b(m4939A);
+    public void m5385s() {
+        Core m1087A = Core.m1087A();
+        AbstractC0244am m5429A = m5429A();
+        if (m5429A != null) {
+            this.f712x.m5879a(m5429A.f6958el, m5429A.f6959em);
+            AbstractC0623y m5420a = m5420a((InterfaceC0303as) null, this.f712x, true);
+            if (m5420a != null && m5420a.mo3172a(m5429A) && m5429A.m4660e(m5420a) < 2) {
+                C0749e m2422a = m1087A.f6130cf.m2422a(this.f760R);
+                m2422a.m2319a(m5420a);
+                m2422a.m2313b(m5429A);
             }
         }
     }
 
     /* renamed from: b */
-    public void m4919b(float f) {
-        m4916c(f);
+    public void m5408b(float f) {
+        m5405c(f);
         int i = this.f724J;
         int i2 = this.f723I;
-        m4920b();
-        this.f702n = m4890z();
+        m5409b();
+        this.f702n = m5379z();
         if (this.f702n) {
             this.f703o = true;
         }
         if (i >= 1) {
-            m4896s();
+            m5385s();
         }
         if (this.f727M && this.f723I > 0) {
-            m4900n();
-            m4898q();
-            m4899o();
+            m5389n();
+            m5387q();
+            m5388o();
         }
         if (i < 2 && this.f697i == 0.0f) {
             this.f697i = 300.0f;
-            int m5066a = this.f760R.m5066a(this.f760R.f612by, EnumC0157b.include);
-            if (!this.f707s || m5066a <= 2) {
-                boolean z = C0758f.m2151a(0, 100) < 5;
-                if (!z && m4935a(this.f760R.f612by, true)) {
+            int m5576a = this.f760R.m5576a(this.f760R.f612by, EnumC0157b.f643a);
+            if (!this.f707s || m5576a <= 2) {
+                boolean z = C0758f.m2203a(0, 100) < 5;
+                if (!z && m5425a(this.f760R.f612by, true)) {
                     this.f722H = false;
                     this.f697i = 900.0f;
                 } else {
@@ -1093,45 +1093,45 @@ public class C0164i extends AbstractC0170o {
                         this.f722H = true;
                     }
                     if (!this.f707s && this.f710v == 0.0f && i < 1 && this.f695g == 0.0f) {
-                        m4901m();
+                        m5390m();
                     }
                 }
             }
         }
-        int m4904j = m4904j();
+        int m5393j = m5393j();
         if (i == 0 && i2 == 0) {
             this.f699k += f;
-            if (m4904j > 2) {
+            if (m5393j > 2) {
                 this.f699k += 2.0f * f;
             }
-            if (m4904j > 5) {
+            if (m5393j > 5) {
                 this.f699k += 4.0f * f;
             }
         } else {
-            this.f699k = C0758f.m2159a(this.f699k, f);
+            this.f699k = C0758f.m2211a(this.f699k, f);
         }
         if (this.f699k > 11000.0f) {
-            mo4871p();
+            m5358p();
         }
-        if (this.f690b == EnumC0165j.f731a && ((i != 0 && i2 != 0) || (i2 > 5 && m4904j == 0))) {
+        if (this.f690b == EnumC0165j.f731a && ((i != 0 && i2 != 0) || (i2 > 5 && m5393j == 0))) {
             this.f700l += f;
             if (this.f700l > 2000.0f) {
                 this.f690b = EnumC0165j.f733c;
             }
         }
-        m4895t();
+        m5384t();
     }
 
     /* renamed from: t */
-    public void m4895t() {
+    public void m5384t() {
         if (this.f690b == null) {
-            LoggerMaybe.m1031a("fixOverlaps: this.state==null");
-            LoggerMaybe.m1031a("id:" + this.f759Q);
-            LoggerMaybe.m1031a("x:" + this.f761S);
-            LoggerMaybe.m1031a("y:" + this.f762T);
-            LoggerMaybe.m1031a("radius:" + this.f763U);
+            Core.m1046a("fixOverlaps: this.state==null");
+            Core.m1046a("id:" + this.f759Q);
+            Core.m1046a("x:" + this.f761S);
+            Core.m1046a("y:" + this.f762T);
+            Core.m1046a("radius:" + this.f763U);
             if (this.f760R != null) {
-                LoggerMaybe.m1031a("team:" + this.f760R.f1306k);
+                Core.m1046a("team:" + this.f760R.f1306k);
                 return;
             }
             return;
@@ -1141,13 +1141,13 @@ public class C0164i extends AbstractC0170o {
             AbstractC0170o abstractC0170o = (AbstractC0170o) it.next();
             if ((abstractC0170o instanceof C0164i) && abstractC0170o != this) {
                 C0164i c0164i = (C0164i) abstractC0170o;
-                if (C0758f.m2157a(this.f761S, this.f762T, c0164i.f761S, c0164i.f762T) < 400.0f) {
+                if (C0758f.m2209a(this.f761S, this.f762T, c0164i.f761S, c0164i.f762T) < 400.0f) {
                     if (c0164i.f690b == null) {
-                        LoggerMaybe.m1031a("fixOverlaps: targetBase.state==null");
-                    } else if (c0164i.f690b.m4889a() < this.f690b.m4889a()) {
-                        c0164i.mo4871p();
+                        Core.m1046a("fixOverlaps: targetBase.state==null");
+                    } else if (c0164i.f690b.m5378a() < this.f690b.m5378a()) {
+                        c0164i.m5358p();
                     } else {
-                        mo4871p();
+                        m5358p();
                     }
                 }
             }
@@ -1155,12 +1155,12 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: u */
-    public int m4894u() {
+    public int m5383u() {
         return this.f723I;
     }
 
     /* renamed from: c */
-    public void m4916c(float f) {
+    public void m5405c(float f) {
         this.f723I = 0;
         this.f724J = 0;
         this.f726L = 0;
@@ -1168,10 +1168,10 @@ public class C0164i extends AbstractC0170o {
         this.f727M = false;
         this.f706r.clear();
         if (1 != 0) {
-            Iterator it = m4903k().iterator();
+            Iterator it = m5392k().iterator();
             while (it.hasNext()) {
                 AbstractC0244am abstractC0244am = (AbstractC0244am) it.next();
-                if (abstractC0244am.mo3250g() > 0.0f && m4876b(abstractC0244am)) {
+                if (abstractC0244am.mo3352g() > 0.0f && m5363b(abstractC0244am)) {
                     this.f727M = true;
                     this.f706r.mo494a(abstractC0244am);
                 }
@@ -1183,22 +1183,22 @@ public class C0164i extends AbstractC0170o {
             AbstractC0244am abstractC0244am2 = m498a[i];
             if (abstractC0244am2.f1609bV == this.f760R && (abstractC0244am2 instanceof AbstractC0623y)) {
                 AbstractC0623y abstractC0623y = (AbstractC0623y) abstractC0244am2;
-                if (m4922a(abstractC0623y, false) && abstractC0244am2.m4396bS() && this.f760R.m5011i(abstractC0244am2) && !abstractC0244am2.mo1712u()) {
-                    InterfaceC0303as mo5649r = abstractC0244am2.mo5649r();
-                    if (mo5649r.mo4251j()) {
+                if (m5412a(abstractC0623y, false) && abstractC0244am2.m4751bS() && this.f760R.m5521i(abstractC0244am2) && !abstractC0244am2.mo1756u()) {
+                    InterfaceC0303as mo1758r = abstractC0244am2.mo1758r();
+                    if (mo1758r.mo4473j()) {
                         this.f723I++;
                     }
-                    if (mo5649r.mo4248m()) {
+                    if (mo1758r.mo4470m()) {
                         this.f724J++;
-                        if (C0161f.m4973a(abstractC0623y)) {
+                        if (C0161f.m5470a(abstractC0623y)) {
                             this.f725K++;
                         }
                     }
-                    if (mo5649r.mo4247n()) {
+                    if (mo1758r.mo4469n()) {
                         this.f726L++;
                     }
                     if (abstractC0244am2 instanceof InterfaceC0501l) {
-                        this.f724J += ((InterfaceC0501l) abstractC0244am2).mo3304h(EnumC0249ar.f1742h);
+                        this.f724J += ((InterfaceC0501l) abstractC0244am2).mo3428h(EnumC0249ar.f1742h);
                     }
                 }
             }
@@ -1206,9 +1206,9 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: d */
-    public void m4913d(float f) {
-        InterfaceC0303as m4917c;
-        this.f707s = m4910f();
+    public void m5402d(float f) {
+        InterfaceC0303as m5406c;
+        this.f707s = m5399f();
         this.f708t = this.f707s;
         if (this.f707s) {
             this.f710v += f;
@@ -1219,20 +1219,20 @@ public class C0164i extends AbstractC0170o {
         if (this.f710v > 6000.0f) {
             this.f707s = false;
         }
-        this.f701m = C0758f.m2159a(this.f701m, f);
-        this.f693e = C0758f.m2159a(this.f693e, f);
-        this.f695g = C0758f.m2159a(this.f695g, f);
-        this.f697i = C0758f.m2159a(this.f697i, f);
-        this.f698j = C0758f.m2159a(this.f698j, f);
+        this.f701m = C0758f.m2211a(this.f701m, f);
+        this.f693e = C0758f.m2211a(this.f693e, f);
+        this.f695g = C0758f.m2211a(this.f695g, f);
+        this.f697i = C0758f.m2211a(this.f697i, f);
+        this.f698j = C0758f.m2211a(this.f698j, f);
         if (this.f707s && this.f698j == 0.0f) {
             this.f698j = 100 + (this.f759Q % 15);
             if (!this.f760R.f585aX) {
-                m4905i();
+                m5394i();
             }
         }
         if (this.f693e <= 0.0f) {
             this.f693e = 270 + (this.f759Q % 15);
-            if (this.f760R.m5075Y()) {
+            if (this.f760R.m5585Y()) {
                 this.f693e = SlickToAndroidKeycodes.AndroidCodes.KEYCODE_BUTTON_3 + (this.f759Q % 15);
             }
             if (this.f694f < 0.2d) {
@@ -1241,60 +1241,60 @@ public class C0164i extends AbstractC0170o {
             if (this.f694f < 0.08d) {
                 this.f693e += 180.0f;
             }
-            if ((m4891y() != null) && (m4917c = m4917c()) != null && ((this.f694f > 0.8d || this.f760R.m4639a(1300.0d)) && ((this.f694f > 0.4d || this.f760R.m4639a(1700.0d)) && ((this.f694f > 0.2d || this.f760R.m4639a(2100.0d)) && ((this.f694f > 0.1d || this.f760R.m4639a(2800.0d)) && ((this.f694f > 0.05d || this.f760R.m4639a(3100.0d)) && (this.f694f > 0.01d || this.f760R.m4639a(4800.0d)))))))) {
+            if ((m5380y() != null) && (m5406c = m5406c()) != null && ((this.f694f > 0.8d || this.f760R.m5094a(1300.0d)) && ((this.f694f > 0.4d || this.f760R.m5094a(1700.0d)) && ((this.f694f > 0.2d || this.f760R.m5094a(2100.0d)) && ((this.f694f > 0.1d || this.f760R.m5094a(2800.0d)) && ((this.f694f > 0.05d || this.f760R.m5094a(3100.0d)) && (this.f694f > 0.01d || this.f760R.m5094a(4800.0d)))))))) {
                 this.f717C++;
-                if (!m4907g(m4917c)) {
+                if (!m5396g(m5406c)) {
                     this.f693e -= 120.0f;
                     this.f718D++;
                 }
             }
         }
-        float m4894u = m4894u() / 3.0f;
-        if (m4894u < 1.0f) {
-            m4894u = 1.0f;
+        float m5383u = m5383u() / 3.0f;
+        if (m5383u < 1.0f) {
+            m5383u = 1.0f;
         }
         if (this.f707s) {
             this.f692d = (float) (this.f692d + (f * 0.015d));
         }
         if (this.f694f < 0.6d) {
             if (this.f760R.f588ba < 2) {
-                this.f692d = (float) (this.f692d + (f * 7.0E-4d * m4894u));
-            } else if (this.f760R.m4639a(1200.0d)) {
-                this.f692d = (float) (this.f692d + (f * 1.0E-4d * m4894u));
+                this.f692d = (float) (this.f692d + (f * 7.0E-4d * m5383u));
+            } else if (this.f760R.m5094a(1200.0d)) {
+                this.f692d = (float) (this.f692d + (f * 1.0E-4d * m5383u));
             }
-            if (this.f760R.m4639a(1600.0d)) {
+            if (this.f760R.m5094a(1600.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.001d));
             }
-            if (this.f760R.m4639a(2200.0d)) {
+            if (this.f760R.m5094a(2200.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.001d));
             }
-            if (this.f760R.m4639a(2600.0d)) {
+            if (this.f760R.m5094a(2600.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.001d));
             }
-            if (this.f760R.m4639a(8000.0d)) {
+            if (this.f760R.m5094a(8000.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.005d));
             }
-            if (this.f760R.m4639a(9000.0d)) {
+            if (this.f760R.m5094a(9000.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.01d));
             }
-            if (this.f760R.m4639a(10100.0d)) {
+            if (this.f760R.m5094a(10100.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.01d));
             }
-            if (this.f760R.m4639a(30000.0d)) {
+            if (this.f760R.m5094a(30000.0d)) {
                 this.f692d = (float) (this.f692d + (f * 0.05d));
             }
         }
-        if (this.f760R.m4639a(5000.0d)) {
+        if (this.f760R.m5094a(5000.0d)) {
             this.f692d = (float) (this.f692d + (f * 0.001d));
         }
-        if (!this.f760R.m4639a(800.0d) && !this.f707s && this.f692d > 1.2f) {
+        if (!this.f760R.m5094a(800.0d) && !this.f707s && this.f692d > 1.2f) {
             this.f692d = 1.2f;
         }
         if (this.f692d > 3.5f) {
             this.f692d = 3.5f;
         }
         for (int i = 0; i < 12; i++) {
-            m4893v();
+            m5382v();
             if (this.f692d < 3.0f) {
                 return;
             }
@@ -1302,32 +1302,32 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public void m4921a(ArrayList arrayList, AbstractC0159d abstractC0159d, EnumC0246ao enumC0246ao, int i) {
+    public void m5410a(ArrayList arrayList, AbstractC0159d abstractC0159d, EnumC0246ao enumC0246ao, int i) {
         this.f728N.clear();
         for (int i2 = 0; i2 < i; i2++) {
-            InterfaceC0303as m4982a = abstractC0159d.m4982a(enumC0246ao);
-            if (m4982a != null && !this.f728N.contains(m4982a)) {
-                this.f728N.add(m4982a);
+            InterfaceC0303as m5479a = abstractC0159d.m5479a(enumC0246ao);
+            if (m5479a != null && !this.f728N.contains(m5479a)) {
+                this.f728N.add(m5479a);
             }
         }
         arrayList.addAll(this.f728N);
     }
 
     /* renamed from: v */
-    public void m4893v() {
+    public void m5382v() {
         EnumC0246ao enumC0246ao;
-        AbstractC0244am m4908g;
-        int m4914d = m4914d();
+        AbstractC0244am m5397g;
+        int m5403d = m5403d();
         int i = 12;
         int i2 = 50;
-        if (this.f760R.m5075Y()) {
+        if (this.f760R.m5585Y()) {
             i2 = 65;
             i = 16;
         }
-        boolean a = this.f760R.m4639a(25000.0d);
+        boolean a = this.f760R.m5094a(25000.0d);
         ArrayList arrayList = new ArrayList();
-        boolean m5043ae = this.f760R.m5043ae();
-        boolean m5042af = this.f760R.m5042af();
+        boolean m5553ae = this.f760R.m5553ae();
+        boolean m5552af = this.f760R.m5552af();
         float f = 0.4f;
         float f2 = 0.3f;
         if (!this.f760R.f594bg) {
@@ -1338,44 +1338,44 @@ public class C0164i extends AbstractC0170o {
             f = 0.2f;
             f2 = 0.1f;
         }
-        float m2084c = C0758f.m2084c(0.0f, 1.0f);
-        if (m2084c < f) {
+        float m2136c = C0758f.m2136c(0.0f, 1.0f);
+        if (m2136c < f) {
             enumC0246ao = EnumC0246ao.f1704b;
-        } else if (m2084c < f + f2) {
+        } else if (m2136c < f + f2) {
             enumC0246ao = EnumC0246ao.f1708f;
         } else {
             enumC0246ao = EnumC0246ao.f1706d;
         }
-        if ((this.f760R.m4639a(1300.0d) && this.f692d >= 1.0f) || (this.f760R.m4639a(300.0d) && this.f692d >= 3.0f)) {
-            if (this.f760R.m5044ad() && this.f760R.f589bb < i && C0758f.m2081c(100) < 35) {
-                m4921a(arrayList, this.f760R.f607bt, null, 2);
+        if ((this.f760R.m5094a(1300.0d) && this.f692d >= 1.0f) || (this.f760R.m5094a(300.0d) && this.f692d >= 3.0f)) {
+            if (this.f760R.m5554ad() && this.f760R.f589bb < i && C0758f.m2133c(100) < 35) {
+                m5410a(arrayList, this.f760R.f607bt, null, 2);
                 if (a) {
                 }
             }
-            if (m4914d < 3 && this.f760R.f587aZ < i2) {
+            if (m5403d < 3 && this.f760R.f587aZ < i2) {
                 if (enumC0246ao == EnumC0246ao.f1704b) {
-                    m4921a(arrayList, this.f760R.f604bq, null, 4);
+                    m5410a(arrayList, this.f760R.f604bq, null, 4);
                     if (a) {
                     }
                 } else if (enumC0246ao == EnumC0246ao.f1708f) {
-                    m4921a(arrayList, this.f760R.f605br, null, 4);
+                    m5410a(arrayList, this.f760R.f605br, null, 4);
                     if (a) {
                     }
                 } else {
-                    m4921a(arrayList, this.f760R.f606bs, null, 4);
+                    m5410a(arrayList, this.f760R.f606bs, null, 4);
                     if (a) {
                     }
                 }
             }
-            if (this.f692d >= 1.0f && m5043ae && this.f701m == 0.0f) {
-                int m5066a = this.f760R.m5066a(this.f760R.f610bw, EnumC0157b.include);
-                int m5066a2 = m5066a + this.f760R.m5066a(this.f760R.f611bx, EnumC0157b.include);
-                int m5037ak = this.f760R.m5037ak();
-                if ((this.f760R.m4639a(1700.0d) || m5037ak > 10 || (this.f760R.f598bk == 0 && m5037ak >= 1 && m5066a == 0)) && (m5066a2 < 3 || (m5037ak > 20 && m5066a2 < 5))) {
-                    if (m5042af && m5066a2 < 2) {
-                        m4921a(arrayList, this.f760R.f609bv, null, 2);
+            if (this.f692d >= 1.0f && m5553ae && this.f701m == 0.0f) {
+                int m5576a = this.f760R.m5576a(this.f760R.f610bw, EnumC0157b.f643a);
+                int m5576a2 = m5576a + this.f760R.m5576a(this.f760R.f611bx, EnumC0157b.f643a);
+                int m5547ak = this.f760R.m5547ak();
+                if ((this.f760R.m5094a(1700.0d) || m5547ak > 10 || (this.f760R.f598bk == 0 && m5547ak >= 1 && m5576a == 0)) && (m5576a2 < 3 || (m5547ak > 20 && m5576a2 < 5))) {
+                    if (m5552af && m5576a2 < 2) {
+                        m5410a(arrayList, this.f760R.f609bv, null, 2);
                     } else {
-                        m4921a(arrayList, this.f760R.f609bv, EnumC0246ao.f1706d, 2);
+                        m5410a(arrayList, this.f760R.f609bv, EnumC0246ao.f1706d, 2);
                     }
                 }
             }
@@ -1385,18 +1385,18 @@ public class C0164i extends AbstractC0170o {
         }
         while (arrayList.size() != 0) {
             InterfaceC0303as interfaceC0303as = (InterfaceC0303as) arrayList.remove(arrayList.size() - 1);
-            AbstractC0244am m4407b = AbstractC0244am.m4407b(interfaceC0303as);
+            AbstractC0244am m4763b = AbstractC0244am.m4763b(interfaceC0303as);
             boolean z = true;
-            if (this.f707s && C0758f.m2081c(100) < 10 && (m4908g = m4908g()) != null && !this.f760R.m5025b(m4407b, m4908g)) {
+            if (this.f707s && C0758f.m2133c(100) < 10 && (m5397g = m5397g()) != null && !this.f760R.m5535b(m4763b, m5397g)) {
                 this.f720F++;
                 z = false;
             }
             if (z) {
-                if (m4929a(interfaceC0303as, false)) {
+                if (m5419a(interfaceC0303as, false)) {
                     this.f720F++;
-                    this.f760R.f617bD.m4988a(interfaceC0303as);
+                    this.f760R.f617bD.m5485a(interfaceC0303as);
                     this.f692d -= 1.0f;
-                    if (this.f760R.m5014g(m4407b)) {
+                    if (this.f760R.m5524g(m4763b)) {
                         this.f701m = 1000.0f;
                         this.f760R.f598bk++;
                         return;
@@ -1409,14 +1409,14 @@ public class C0164i extends AbstractC0170o {
     }
 
     /* renamed from: a */
-    public void m4923a(AbstractC0623y abstractC0623y, C0424b c0424b, boolean z) {
-        this.f729O = abstractC0623y.mo5649r();
+    public void m5413a(AbstractC0623y abstractC0623y, C0424b c0424b, boolean z) {
+        this.f729O = abstractC0623y.mo1758r();
         if (z) {
             this.f730P = null;
             this.f716B = null;
             return;
         }
         this.f730P = c0424b;
-        this.f716B = c0424b.m3876i(abstractC0623y);
+        this.f716B = c0424b.m4083i(abstractC0623y);
     }
 }

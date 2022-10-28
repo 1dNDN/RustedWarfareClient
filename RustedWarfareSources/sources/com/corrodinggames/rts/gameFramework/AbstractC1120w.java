@@ -17,31 +17,31 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
     public long f6951ee;
 
     /* renamed from: eg */
-    public boolean f6952eg;
+    public boolean f6953eg;
 
     /* renamed from: eh */
-    public boolean f6953eh;
+    public boolean f6954eh;
 
     /* renamed from: ei */
-    public boolean f6954ei;
+    public boolean f6955ei;
 
     /* renamed from: ej */
-    public int f6955ej;
+    public int f6956ej;
 
     /* renamed from: ek */
-    public int f6956ek;
+    public int f6957ek;
 
     /* renamed from: el */
-    public float f6957el;
+    public float f6958el;
 
     /* renamed from: em */
-    public float f6958em;
+    public float f6959em;
 
     /* renamed from: en */
-    public float f6959en;
+    public float f6960en;
 
     /* renamed from: ef */
-    public static C1121x f6960ef = new C1121x();
+    public static C1121x f6952ef = new C1121x();
 
     /* renamed from: a */
     private static final C1104o f6961a = new C1104o();
@@ -50,40 +50,40 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
     public static final C1109s f6962eo = new C1109s("fastGameObjectList");
 
     /* renamed from: a */
-    public abstract void mo1718a(float f);
+    public abstract void mo1762a(float f);
 
     /* renamed from: a */
-    public abstract void mo2294a(float f, boolean z);
+    public abstract void mo3053a(float f, boolean z);
 
     /* renamed from: d */
-    public abstract void mo2284d(float f);
+    public abstract void m436d(float f);
 
     /* renamed from: e */
-    public abstract void mo2283e(float f);
+    public abstract void mo3151e(float f);
 
     /* renamed from: c */
-    public abstract boolean mo2285c(float f);
+    public abstract boolean mo3049c(float f);
 
     /* renamed from: f */
-    public abstract boolean mo2282f(float f);
+    public abstract boolean m432f(float f);
 
     /* renamed from: S */
     public void m447S(int i) {
-        this.f6955ej = i;
+        this.f6956ej = i;
     }
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
-        streamWriter.mo1314a(this.f6952eg);
-        streamWriter.mo1314a(this.f6953eh);
-        streamWriter.WriteInteger(this.f6955ej);
+    public void mo2441a(StreamWriter streamWriter) {
+        streamWriter.mo1329a(this.f6953eg);
+        streamWriter.mo1329a(this.f6954eh);
+        streamWriter.WriteInteger(this.f6956ej);
     }
 
     /* renamed from: a */
-    public void mo2291a(Reader reader) {
-        this.f6952eg = reader.ReadBool();
-        this.f6953eh = reader.ReadBool();
-        this.f6955ej = reader.ReadInt();
+    public void m440a(Reader reader) {
+        this.f6953eg = reader.ReadBool();
+        this.f6954eh = reader.ReadBool();
+        this.f6956ej = reader.ReadInt();
     }
 
     public AbstractC1120w() {
@@ -91,17 +91,17 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
     }
 
     public AbstractC1120w(boolean z) {
-        this.f6952eg = false;
-        this.f6953eh = false;
-        this.f6955ej = 2;
-        this.f6956ek = 0;
-        this.f6959en = 0.0f;
+        this.f6953eg = false;
+        this.f6954eh = false;
+        this.f6956ej = 2;
+        this.f6957ek = 0;
+        this.f6960en = 0.0f;
         if (!z) {
-            LoggerMaybe m1072A = LoggerMaybe.m1072A();
+            Core m1087A = Core.m1087A();
             if (this.f6951ee != 0) {
                 throw new RuntimeException("ID for GameObject is already set at:" + this.f6951ee);
             }
-            this.f6951ee = m1072A.f6122bX.m1414y();
+            this.f6951ee = m1087A.f6122bX.m1458y();
             if (this.f6951ee == 0) {
                 throw new RuntimeException("Adding object with id:0 class:" + getClass().getSimpleName());
             }
@@ -117,17 +117,17 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
     }
 
     /* renamed from: a */
-    public boolean mo2290a(LoggerMaybe loggerMaybe) {
+    public boolean m439a(Core core) {
         return true;
     }
 
     /* renamed from: a */
-    public void mo2635a() {
+    public void mo2689a() {
         if (this.f6951ee != 0) {
             f6961a.m517b(this);
             f6962eo.remove(this);
         }
-        this.f6952eg = true;
+        this.f6953eg = true;
     }
 
     /* renamed from: a */
@@ -145,11 +145,11 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
                 }
                 String name = abstractC1120w.getClass().getName();
                 String name2 = cls.getName();
-                C0831ad.m1449g("object id:" + j + " was found, but with type " + name.replace("com.corrodinggames.rts.", VariableScope.nullOrMissingString) + " instead of " + name2.replace("com.corrodinggames.rts.", VariableScope.nullOrMissingString));
+                C0831ad.m1493g("object id:" + j + " was found, but with type " + name.replace("com.corrodinggames.rts.", VariableScope.nullOrMissingString) + " instead of " + name2.replace("com.corrodinggames.rts.", VariableScope.nullOrMissingString));
             }
         }
         if (!z) {
-            C0831ad.m1449g("getFromId:" + j + " was not found");
+            C0831ad.m1493g("getFromId:" + j + " was not found");
             return null;
         }
         return null;
@@ -174,6 +174,6 @@ public abstract class AbstractC1120w extends AbstractC0726bk {
     /* renamed from: dJ */
     public static void m434dJ() {
         f6961a.m524a();
-        AbstractC0244am.m4404bG();
+        AbstractC0244am.m4760bG();
     }
 }

@@ -14,44 +14,44 @@ public class C0167l extends AbstractC0163h {
     float f739a;
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
+    public void mo2441a(StreamWriter streamWriter) {
         streamWriter.WriteInteger(this.f687F.size());
         Iterator it = this.f687F.iterator();
         while (it.hasNext()) {
-            streamWriter.mo1369a((AbstractC0623y) it.next());
+            streamWriter.m1419a((AbstractC0623y) it.next());
         }
-        streamWriter.mo1355c(1);
+        streamWriter.m1401c(1);
         streamWriter.WriteInteger(this.f688G.size());
         Iterator it2 = this.f688G.iterator();
         while (it2.hasNext()) {
-            streamWriter.mo1369a((AbstractC0623y) it2.next());
+            streamWriter.m1419a((AbstractC0623y) it2.next());
         }
-        streamWriter.mo1320a(this.f739a);
-        super.mo2292a(streamWriter);
+        streamWriter.mo1335a(this.f739a);
+        super.mo2441a(streamWriter);
     }
 
     /* renamed from: a */
-    public void mo4877a(Reader reader) {
-        m4940q();
+    public void m5377a(Reader reader) {
+        m5430q();
         int ReadInt = reader.ReadInt();
         for (int i = 0; i < ReadInt; i++) {
-            AbstractC0623y m1276p = reader.m1276p();
-            if (m1276p != null) {
-                mo4949a(m1276p);
+            AbstractC0623y m1291p = reader.m1291p();
+            if (m1291p != null) {
+                m5440a(m1291p);
             }
         }
-        if (reader.m1289d() >= 1) {
+        if (reader.m1304d() >= 1) {
             this.f688G.clear();
             int ReadInt2 = reader.ReadInt();
             for (int i2 = 0; i2 < ReadInt2; i2++) {
-                AbstractC0623y m1276p2 = reader.m1276p();
-                if (m1276p2 != null) {
-                    this.f688G.add(m1276p2);
+                AbstractC0623y m1291p2 = reader.m1291p();
+                if (m1291p2 != null) {
+                    this.f688G.add(m1291p2);
                 }
             }
-            this.f739a = reader.m1285g();
+            this.f739a = reader.m1300g();
         }
-        super.mo4877a(reader);
+        super.m5364a(reader);
     }
 
     public C0167l(C0136a c0136a) {
@@ -60,15 +60,15 @@ public class C0167l extends AbstractC0163h {
     }
 
     /* renamed from: c */
-    public void mo4945c(float f) {
-        m4942n();
-        if (!m4943m()) {
+    public void m5376c(float f) {
+        m5433n();
+        if (!m5434m()) {
             this.f739a += f;
         }
         Iterator it = this.f687F.iterator();
         while (it.hasNext()) {
             AbstractC0623y abstractC0623y = (AbstractC0623y) it.next();
-            if (m4874c((AbstractC0244am) abstractC0623y) < 3600.0f && abstractC0623y.f1651cL == null) {
+            if (m5361c((AbstractC0244am) abstractC0623y) < 3600.0f && abstractC0623y.f1651cL == null) {
                 if (abstractC0623y.f3947aA == this) {
                     abstractC0623y.f3947aA = null;
                 }
@@ -76,13 +76,13 @@ public class C0167l extends AbstractC0163h {
             }
         }
         if (this.f687F.size() == 0 || this.f739a > 5000.0f) {
-            mo4871p();
+            m5431p();
         }
     }
 
     /* renamed from: c */
-    public void m4887c(AbstractC0623y abstractC0623y) {
-        mo4949a(abstractC0623y);
+    public void m5375c(AbstractC0623y abstractC0623y) {
+        m5440a(abstractC0623y);
         this.f688G.add(abstractC0623y);
     }
 }

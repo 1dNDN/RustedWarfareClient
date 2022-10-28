@@ -1,7 +1,7 @@
 package com.corrodinggames.rts.gameFramework.utility;
 
 import com.corrodinggames.rts.appFramework.C0090c;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -28,23 +28,23 @@ public class C1098j extends InputStream {
     String f6886e;
 
     /* renamed from: a */
-    public boolean m548a() {
+    public boolean m543a() {
         if (this.f6882a instanceof FileInputStream) {
             return true;
         }
-        if (!LoggerMaybe.m1002au() && this.f6884c != null) {
+        if (!Core.m1010au() && this.f6884c != null) {
             return true;
         }
         return false;
     }
 
     /* renamed from: b */
-    public FileDescriptor m547b() {
+    public FileDescriptor m542b() {
         if (this.f6882a instanceof FileInputStream) {
             return ((FileInputStream) this.f6882a).getFD();
         }
-        if (!LoggerMaybe.m1002au() && this.f6884c != null) {
-            return C0090c.m5245a().mo5603d().m5588b(this.f6884c).getFileDescriptor();
+        if (!Core.m1010au() && this.f6884c != null) {
+            return C0090c.m5652a().mo6013d().m5998b(this.f6884c).getFileDescriptor();
         }
         throw new RuntimeException("AssetInputStream: unexpected stream for: " + this.f6883b);
     }
@@ -59,7 +59,7 @@ public class C1098j extends InputStream {
         this.f6882a = inputStream;
         this.f6883b = str;
         this.f6884c = str2;
-        this.f6886e = LoggerMaybe.m1060T();
+        this.f6886e = Core.m1068T();
     }
 
     public C1098j(FileInputStream fileInputStream, String str) {
@@ -68,7 +68,7 @@ public class C1098j extends InputStream {
         }
         this.f6882a = fileInputStream;
         this.f6883b = str;
-        this.f6886e = LoggerMaybe.m1060T();
+        this.f6886e = Core.m1068T();
     }
 
     public C1098j(InputStream inputStream, String str) {
@@ -77,12 +77,12 @@ public class C1098j extends InputStream {
         }
         this.f6882a = inputStream;
         this.f6883b = str;
-        this.f6886e = LoggerMaybe.m1060T();
+        this.f6886e = Core.m1068T();
     }
 
     /* renamed from: c */
-    public long m546c() {
-        if (!LoggerMaybe.m1002au()) {
+    public long m541c() {
+        if (!Core.m1010au()) {
             return -1L;
         }
         if (this.f6883b == null) {
@@ -92,7 +92,7 @@ public class C1098j extends InputStream {
     }
 
     /* renamed from: d */
-    public String m545d() {
+    public String m540d() {
         return this.f6883b;
     }
 
@@ -107,8 +107,8 @@ public class C1098j extends InputStream {
 
     protected void finalize() {
         if (!this.f6885d) {
-            LoggerMaybe.m990b("AssetInputStream was finalized with being closed");
-            LoggerMaybe.m990b(this.f6886e);
+            Core.m998b("AssetInputStream was finalized with being closed");
+            Core.m998b(this.f6886e);
         }
     }
 

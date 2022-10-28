@@ -3,7 +3,7 @@ package com.corrodinggames.rts.gameFramework.utility;
 import android.content.Context;
 import android.content.res.AssetManager;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public final class C1096i {
 
     public C1096i(Context context) {
         this.f6879a = context;
-        m554a();
+        m549a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,26 +35,26 @@ public final class C1096i {
         }
 
         public void run() {
-            C1096i.this.m551b();
+            C1096i.this.m546b();
         }
     }
 
     /* renamed from: a */
-    public void m554a() {
+    public void m549a() {
         new C10971().start();
     }
 
     /* renamed from: b */
-    public void m551b() {
+    public void m546b() {
         synchronized (this) {
             if (this.f6878c != null) {
                 return;
             }
-            AssetManager mo5603d = this.f6879a.mo5603d();
+            AssetManager mo6013d = this.f6879a.mo6013d();
             ArrayList arrayList = new ArrayList();
             try {
-                LoggerMaybe.LogDebug2("------- createIndex -------");
-                arrayList.addAll(m553a(mo5603d, VariableScope.nullOrMissingString, 1));
+                Core.LogDebug2("------- createIndex -------");
+                arrayList.addAll(m548a(mo6013d, VariableScope.nullOrMissingString, 1));
                 this.f6878c = arrayList;
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -63,17 +63,17 @@ public final class C1096i {
     }
 
     /* renamed from: a */
-    public ArrayList m553a(AssetManager assetManager, String str, int i) {
+    public ArrayList m548a(AssetManager assetManager, String str, int i) {
         ArrayList arrayList = new ArrayList();
-        String[] m5586c = assetManager.m5586c(str);
+        String[] m5996c = assetManager.m5996c(str);
         if (str.length() > 0) {
             str = str + "/";
         }
         if (i > 140) {
             throw new RuntimeException("dirLevel>140 for: " + str);
         }
-        LoggerMaybe.LogDebug2("c:" + str);
-        for (String str2 : m5586c) {
+        Core.LogDebug2("c:" + str);
+        for (String str2 : m5996c) {
             String str3 = str + str2;
             boolean z = false;
             if (!str2.contains(".")) {
@@ -82,7 +82,7 @@ public final class C1096i {
             if (!str2.equals(".") && !str2.equals("..") && !str2.equals(VariableScope.nullOrMissingString)) {
                 arrayList.add(str3);
                 if (z) {
-                    arrayList.addAll(m553a(assetManager, str3, i + 1));
+                    arrayList.addAll(m548a(assetManager, str3, i + 1));
                 }
             }
         }
@@ -90,30 +90,30 @@ public final class C1096i {
     }
 
     /* renamed from: c */
-    public ArrayList m549c() {
+    public ArrayList m544c() {
         if (this.f6878c != null) {
             if (this.f6880b) {
-                LoggerMaybe.LogDebug2("assetIndex: getFile was not blocked on load");
+                Core.LogDebug2("assetIndex: getFile was not blocked on load");
                 this.f6880b = false;
             }
             return this.f6878c;
         }
-        LoggerMaybe.m1059U();
-        m551b();
+        Core.m1067U();
+        m546b();
         if (this.f6880b) {
-            LoggerMaybe.LogDebug2("assetIndex: getFile is BLOCKED on load");
+            Core.LogDebug2("assetIndex: getFile is BLOCKED on load");
             this.f6880b = false;
         }
         return this.f6878c;
     }
 
     /* renamed from: a */
-    public boolean m552a(String str) {
+    public boolean m547a(String str) {
         if (str.endsWith(File.separator)) {
             str = str.substring(0, str.length() - 1);
         }
         String replace = str.replace("//", "/");
-        Iterator it = m549c().iterator();
+        Iterator it = m544c().iterator();
         while (it.hasNext()) {
             if (((String) it.next()).equals(replace)) {
                 return true;
@@ -123,14 +123,14 @@ public final class C1096i {
     }
 
     /* renamed from: b */
-    public String[] m550b(String str) {
+    public String[] m545b(String str) {
         ArrayList arrayList = new ArrayList();
         String str2 = str;
         if (str2.endsWith(File.separator)) {
             str2 = str2.substring(0, str2.length() - 1);
         }
         int i = 0;
-        Iterator it = m549c().iterator();
+        Iterator it = m544c().iterator();
         while (it.hasNext()) {
             String str3 = (String) it.next();
             if (str3.startsWith(str2)) {

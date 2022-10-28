@@ -102,7 +102,7 @@ public final class C0758f {
 
     static {
         for (int i = 0; i < f4891j.length; i++) {
-            f4891j[i] = (byte) StrictMath.round(m2163a(i));
+            f4891j[i] = (byte) StrictMath.round(m2212a(i));
         }
         f4892d = new PointF();
         f4893e = new PointF();
@@ -144,39 +144,39 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final void m2167a() {
+    public static final void m2216a() {
         f4889b.setSeed(0L);
     }
 
     /* renamed from: a */
-    public static final int m2140a(AbstractC0244am abstractC0244am, int i, int i2) {
-        return m2139a((AbstractC1120w) abstractC0244am, i, i2, 0);
+    public static final int m2189a(AbstractC0244am abstractC0244am, int i, int i2) {
+        return m2188a((AbstractC1120w) abstractC0244am, i, i2, 0);
     }
 
     /* renamed from: a */
-    public static final float m2141a(AbstractC0244am abstractC0244am, float f, float f2, int i) {
+    public static final float m2190a(AbstractC0244am abstractC0244am, float f, float f2, int i) {
         if (abstractC0244am == null) {
-            return m2152a((int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
+            return m2201a((int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
         }
-        return m2139a((AbstractC1120w) abstractC0244am, (int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
+        return m2188a((AbstractC1120w) abstractC0244am, (int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
     }
 
     /* renamed from: b */
-    public static final float m2100b(AbstractC0244am abstractC0244am, float f, float f2, int i) {
-        return m2139a((AbstractC1120w) abstractC0244am, (int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
+    public static final float m2149b(AbstractC0244am abstractC0244am, float f, float f2, int i) {
+        return m2188a((AbstractC1120w) abstractC0244am, (int) (f * 1000.0f), (int) (f2 * 1000.0f), i) * 0.001f;
     }
 
     /* renamed from: a */
-    public static final int m2139a(AbstractC1120w abstractC1120w, int i, int i2, int i3) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public static final int m2188a(AbstractC1120w abstractC1120w, int i, int i2, int i3) {
+        Core m1087A = Core.m1087A();
         if (i >= i2) {
             if (i > i2) {
-                LoggerMaybe.m990b("min>max");
+                Core.m998b("min>max");
             }
             return i;
         }
-        int i4 = m1079A.f6239bx + 1;
-        int i5 = (int) (((int) (((int) (((int) (((int) (m1079A.f6108bJ + (abstractC1120w.f6951ee * 1313))) + (abstractC1120w.f6957el * 13.0f))) + (abstractC1120w.f6958em * 13.0f))) + (abstractC1120w.f6957el * 130.0f))) + (abstractC1120w.f6958em * 130.0f));
+        int i4 = m1087A.f6239bx + 1;
+        int i5 = (int) (((int) (((int) (((int) (((int) (m1087A.f6108bJ + (abstractC1120w.f6951ee * 1313))) + (abstractC1120w.f6958el * 13.0f))) + (abstractC1120w.f6959em * 13.0f))) + (abstractC1120w.f6958el * 130.0f))) + (abstractC1120w.f6959em * 130.0f));
         if (abstractC1120w instanceof AbstractC0244am) {
             int i6 = ((AbstractC0244am) abstractC1120w).f1588bB;
             i5 = i5 + (i6 * 13131) + (i6 * i4);
@@ -189,43 +189,43 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final float m2158a(float f, float f2, int i) {
-        return m2152a((int) (f * 100.0f), (int) (f2 * 100.0f), i) / 100.0f;
+    public static final float m2207a(float f, float f2, int i) {
+        return m2201a((int) (f * 100.0f), (int) (f2 * 100.0f), i) / 100.0f;
     }
 
     /* renamed from: b */
-    public static final float m2107b(float f, float f2, int i) {
-        return m2152a((int) (f * 1000.0f), (int) (f2 * 1000.0f), i) / 1000.0f;
+    public static final float m2156b(float f, float f2, int i) {
+        return m2201a((int) (f * 1000.0f), (int) (f2 * 1000.0f), i) / 1000.0f;
     }
 
     /* renamed from: a */
-    public static final int m2152a(int i, int i2, int i3) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public static final int m2201a(int i, int i2, int i3) {
+        Core m1087A = Core.m1087A();
         if (i >= i2) {
             if (i > i2) {
-                LoggerMaybe.m990b("min>max");
+                Core.m998b("min>max");
             }
             return i;
         }
         int i4 = i2 - i;
-        int i5 = ((((m1079A.f6108bJ + ((i3 * 133333333) * i4)) + (i3 * 13131313)) + (i3 * (m1079A.f6239bx * 13131313))) + ((m1079A.f6239bx * 1313131313) + (m1079A.f6239bx % 10))) % i4;
+        int i5 = ((((m1087A.f6108bJ + ((i3 * 133333333) * i4)) + (i3 * 13131313)) + (i3 * (m1087A.f6239bx * 13131313))) + ((m1087A.f6239bx * 1313131313) + (m1087A.f6239bx % 10))) % i4;
         if (i5 < 0) {
             i5 = -i5;
         }
         int i6 = i5 + i;
         if (i6 < i || i6 > i2) {
-            LoggerMaybe.m990b("notRandInt number not in range: " + i6 + " min:" + i + " max:" + i2);
+            Core.m998b("notRandInt number not in range: " + i6 + " min:" + i + " max:" + i2);
         }
         return i6;
     }
 
     /* renamed from: a */
-    public static String m2130a(String str) {
+    public static String m2179a(String str) {
         return new SimpleDateFormat(str).format(Calendar.getInstance().getTime());
     }
 
     /* renamed from: a */
-    public static final void m2136a(InputStream inputStream, OutputStream outputStream) {
+    public static final void m2185a(InputStream inputStream, OutputStream outputStream) {
         byte[] bArr = new byte[8192];
         while (true) {
             int read = inputStream.read(bArr);
@@ -238,7 +238,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final String m2137a(InputStream inputStream) {
+    public static final String m2186a(InputStream inputStream) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] bArr = new byte[8192];
         while (true) {
@@ -258,20 +258,20 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final float m2163a(float f) {
+    public static final float m2212a(float f) {
         return (float) StrictMath.sqrt(f);
     }
 
     /* renamed from: a */
-    public static final int m2155a(int i) {
+    public static final int m2204a(int i) {
         if (i > 1000 || i < 0) {
-            return StrictMath.round(m2163a(i));
+            return StrictMath.round(m2212a(i));
         }
         return f4891j[i];
     }
 
     /* renamed from: a */
-    public static final float m2162a(float f, float f2) {
+    public static final float m2211a(float f, float f2) {
         if (f > f2) {
             return f - f2;
         }
@@ -282,7 +282,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final float m2161a(float f, float f2, float f3) {
+    public static final float m2210a(float f, float f2, float f3) {
         if (f > f2 + f3) {
             return f - f3;
         }
@@ -293,7 +293,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static final float m2110b(float f, float f2) {
+    public static final float m2159b(float f, float f2) {
         if (f > f2) {
             return f2;
         }
@@ -304,7 +304,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static final float m2109b(float f, float f2, float f3) {
+    public static final float m2158b(float f, float f2, float f3) {
         if (f > f3) {
             return f3;
         }
@@ -315,7 +315,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static final int m2104b(int i, int i2, int i3) {
+    public static final int m2153b(int i, int i2, int i3) {
         if (i > i3) {
             return i3;
         }
@@ -326,7 +326,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static final int m2106b(int i) {
+    public static final int m2155b(int i) {
         if (i > 255) {
             return 255;
         }
@@ -337,34 +337,34 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final void m2159a(float f, float f2, float f3, PointF pointF) {
-        float m2048h = m2048h(f3);
-        float m2043i = m2043i(f3);
+    public static final void m2208a(float f, float f2, float f3, PointF pointF) {
+        float m2097h = m2097h(f3);
+        float m2092i = m2092i(f3);
         pointF.f227a -= f;
         pointF.f228b -= f2;
-        float f4 = (pointF.f227a * m2043i) - (pointF.f228b * m2048h);
-        float f5 = (pointF.f227a * m2048h) + (pointF.f228b * m2043i);
+        float f4 = (pointF.f227a * m2092i) - (pointF.f228b * m2097h);
+        float f5 = (pointF.f227a * m2097h) + (pointF.f228b * m2092i);
         pointF.f227a = f4 + f;
         pointF.f228b = f5 + f2;
     }
 
     /* renamed from: a */
-    public static final float m2160a(float f, float f2, float f3, float f4) {
+    public static final float m2209a(float f, float f2, float f3, float f4) {
         return ((f - f3) * (f - f3)) + ((f2 - f4) * (f2 - f4));
     }
 
     /* renamed from: b */
-    public static final float m2108b(float f, float f2, float f3, float f4) {
+    public static final float m2157b(float f, float f2, float f3, float f4) {
         return (float) StrictMath.sqrt(((f - f3) * (f - f3)) + ((f2 - f4) * (f2 - f4)));
     }
 
     /* renamed from: c */
-    public static final int m2085c(float f, float f2, float f3, float f4) {
-        return m2155a((int) (((f - f3) * (f - f3)) + ((f2 - f4) * (f2 - f4))));
+    public static final int m2134c(float f, float f2, float f3, float f4) {
+        return m2204a((int) (((f - f3) * (f - f3)) + ((f2 - f4) * (f2 - f4))));
     }
 
     /* renamed from: a */
-    public static final int m2151a(int i, int i2, int i3, int i4) {
+    public static final int m2200a(int i, int i2, int i3, int i4) {
         int i5 = i - i3;
         int i6 = i2 - i4;
         if (i5 < 0) {
@@ -377,7 +377,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final float m2156a(float f, boolean z) {
+    public static final float m2205a(float f, boolean z) {
         if (!z) {
             while (true) {
                 if (f <= 180.0f && f >= -180.0f) {
@@ -407,7 +407,7 @@ public final class C0758f {
     }
 
     /* renamed from: c */
-    public static final float m2086c(float f, float f2, float f3) {
+    public static final float m2135c(float f, float f2, float f3) {
         float f4 = (f2 % 360.0f) - (f % 360.0f);
         if (f4 > 180.0f) {
             f4 -= 360.0f;
@@ -419,12 +419,12 @@ public final class C0758f {
     }
 
     /* renamed from: d */
-    public static final float m2074d(float f, float f2, float f3, float f4) {
-        return m2111b(m2042i(f4 - f2, f3 - f));
+    public static final float m2123d(float f, float f2, float f3, float f4) {
+        return m2160b(m2091i(f4 - f2, f3 - f));
     }
 
     /* renamed from: a */
-    public static final boolean m2148a(PointF pointF, PointF pointF2, PointF pointF3, PointF pointF4) {
+    public static final boolean m2197a(PointF pointF, PointF pointF2, PointF pointF3, PointF pointF4) {
         float f = ((pointF4.f228b - pointF3.f228b) * (pointF2.f227a - pointF.f227a)) - ((pointF4.f227a - pointF3.f227a) * (pointF2.f228b - pointF.f228b));
         float f2 = ((pointF4.f227a - pointF3.f227a) * (pointF.f228b - pointF3.f228b)) - ((pointF4.f228b - pointF3.f228b) * (pointF.f227a - pointF3.f227a));
         float f3 = ((pointF2.f227a - pointF.f227a) * (pointF.f228b - pointF3.f228b)) - ((pointF2.f228b - pointF.f228b) * (pointF.f227a - pointF3.f227a));
@@ -440,17 +440,17 @@ public final class C0758f {
     }
 
     /* renamed from: c */
-    public static final float m2087c(float f, float f2) {
+    public static final float m2136c(float f, float f2) {
         return (f4888a.nextFloat() * (f2 - f)) + f;
     }
 
     /* renamed from: d */
-    public static final float m2076d(float f, float f2) {
+    public static final float m2125d(float f, float f2) {
         return (f4888a.nextFloat() * (f2 - f)) + f;
     }
 
     /* renamed from: c */
-    public static final int m2084c(int i) {
+    public static final int m2133c(int i) {
         if (i == 0) {
             return 0;
         }
@@ -458,7 +458,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static int m2154a(int i, int i2) {
+    public static int m2203a(int i, int i2) {
         int nextInt;
         if (i2 == i) {
             nextInt = 0;
@@ -469,7 +469,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final void m2147a(Rect rect) {
+    public static final void m2196a(Rect rect) {
         if (rect.f232c < rect.f230a) {
             int i = rect.f232c;
             rect.f232c = rect.f230a;
@@ -483,7 +483,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final void m2144a(RectF rectF) {
+    public static final void m2193a(RectF rectF) {
         if (rectF.f236c < rectF.f234a) {
             float f = rectF.f236c;
             rectF.f236c = rectF.f234a;
@@ -497,81 +497,81 @@ public final class C0758f {
     }
 
     /* renamed from: d */
-    public static final PointF m2075d(float f, float f2, float f3) {
-        f4896h.m5472a(f, f2 - f3);
+    public static final PointF m2124d(float f, float f2, float f3) {
+        f4896h.m5879a(f, f2 - f3);
         return f4896h;
     }
 
     /* renamed from: b */
-    public static final float m2111b(float f) {
+    public static final float m2160b(float f) {
         return f * 57.29578f;
     }
 
     /* renamed from: e */
-    public static final float m2067e(float f, float f2) {
+    public static final float m2116e(float f, float f2) {
         return (float) StrictMath.pow(f, f2);
     }
 
     /* renamed from: a */
-    public static final double m2166a(double d) {
+    public static final double m2215a(double d) {
         return d < 0.0d ? -d : d;
     }
 
     /* renamed from: c */
-    public static final float m2088c(float f) {
+    public static final float m2137c(float f) {
         return f < 0.0f ? -f : f;
     }
 
     /* renamed from: d */
-    public static final int m2073d(int i) {
+    public static final int m2122d(int i) {
         return i < 0 ? -i : i;
     }
 
     /* renamed from: b */
-    public static final int m2105b(int i, int i2) {
+    public static final int m2154b(int i, int i2) {
         return i > i2 ? i : i2;
     }
 
     /* renamed from: c */
-    public static final int m2083c(int i, int i2) {
+    public static final int m2132c(int i, int i2) {
         return i < i2 ? i : i2;
     }
 
     /* renamed from: f */
-    public static final float m2059f(float f, float f2) {
+    public static final float m2108f(float f, float f2) {
         return f > f2 ? f : f2;
     }
 
     /* renamed from: g */
-    public static final float m2052g(float f, float f2) {
+    public static final float m2101g(float f, float f2) {
         return f < f2 ? f : f2;
     }
 
     /* renamed from: h */
-    public static final boolean m2047h(float f, float f2) {
-        return m2088c(f - f2) < 0.05f;
+    public static final boolean m2096h(float f, float f2) {
+        return m2137c(f - f2) < 0.05f;
     }
 
     /* renamed from: a */
-    public static final double m2165a(double d, double d2) {
+    public static final double m2214a(double d, double d2) {
         return d < d2 ? d : d2;
     }
 
     /* renamed from: e */
-    public static boolean m2066e(float f, float f2, float f3) {
-        if (m2088c(m2088c(f) - m2088c(f2)) < f3) {
+    public static boolean m2115e(float f, float f2, float f3) {
+        if (m2137c(m2137c(f) - m2137c(f2)) < f3) {
             return true;
         }
         return false;
     }
 
     /* renamed from: d */
-    public static float m2077d(float f) {
+    public static float m2126d(float f) {
         return (int) (f + 0.5f);
     }
 
     /* renamed from: e */
-    public static final int m2068e(float f) {
+    public static final int m2117e(float f) {
         if (f > 0.0f) {
             return (int) f;
         }
@@ -582,7 +582,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static void m2143a(RectF rectF, float f) {
+    public static void m2192a(RectF rectF, float f) {
         rectF.f234a -= f;
         rectF.f235b -= f;
         rectF.f236c += f;
@@ -590,7 +590,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static void m2146a(Rect rect, float f) {
+    public static void m2195a(Rect rect, float f) {
         rect.f230a = (int) (rect.f230a - f);
         rect.f231b = (int) (rect.f231b - f);
         rect.f232c = (int) (rect.f232c + f);
@@ -598,7 +598,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static void m2101b(Rect rect, float f) {
+    public static void m2150b(Rect rect, float f) {
         rect.f230a = (int) (rect.f230a - f);
         rect.f231b = (int) (rect.f231b - f);
         rect.f232c = (int) (rect.f232c + (f * 2.0f));
@@ -606,7 +606,7 @@ public final class C0758f {
     }
 
     /* renamed from: e */
-    public static String m2065e(int i) {
+    public static String m2114e(int i) {
         StringBuilder sb = new StringBuilder();
         for (int i2 = 0; i2 < i; i2++) {
             sb.append(f4897k[f4888a.nextInt(f4897k.length)]);
@@ -615,17 +615,17 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static String m2115b() {
+    public static String m2164b() {
         return UUID.randomUUID().toString();
     }
 
     /* renamed from: a */
-    public static String m2119a(boolean z) {
+    public static String m2168a(boolean z) {
         return z ? "true" : "false";
     }
 
     /* renamed from: b */
-    public static String m2114b(double d) {
+    public static String m2163b(double d) {
         if (d == ((int) d)) {
             return VariableScope.nullOrMissingString + ((int) d);
         }
@@ -633,44 +633,44 @@ public final class C0758f {
     }
 
     /* renamed from: f */
-    public static String m2060f(float f) {
-        return m2157a(f, 2);
+    public static String m2109f(float f) {
+        return m2206a(f, 2);
     }
 
     /* renamed from: c */
-    public static String m2089c(double d) {
+    public static String m2138c(double d) {
         if (d == ((int) d)) {
             return VariableScope.nullOrMissingString + ((int) d);
         }
-        return m2112b(d, 2);
+        return m2161b(d, 2);
     }
 
     /* renamed from: a */
-    public static String m2157a(float f, int i) {
+    public static String m2206a(float f, int i) {
         if (f == ((int) f)) {
             return VariableScope.nullOrMissingString + ((int) f);
         }
-        return m2112b(f, i);
+        return m2161b(f, i);
     }
 
     /* renamed from: a */
-    public static String m2164a(double d, int i) {
+    public static String m2213a(double d, int i) {
         if (d == ((int) d)) {
             return VariableScope.nullOrMissingString + ((int) d);
         }
-        return m2112b(d, i);
+        return m2161b(d, i);
     }
 
     /* renamed from: g */
-    public static String m2053g(float f) {
+    public static String m2102g(float f) {
         if (((int) (f * 10.0f)) == ((int) f) * 10) {
             return VariableScope.nullOrMissingString + ((int) f) + "s";
         }
-        return m2112b(f, 1) + "s";
+        return m2161b(f, 1) + "s";
     }
 
     /* renamed from: b */
-    public static String m2112b(double d, int i) {
+    public static String m2161b(double d, int i) {
         String str = VariableScope.nullOrMissingString + d;
         int indexOf = str.indexOf(".");
         if (indexOf == -1) {
@@ -687,7 +687,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2128a(String str, int i) {
+    public static String m2177a(String str, int i) {
         if (str == null) {
             return null;
         }
@@ -698,7 +698,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static String m2095b(String str, int i) {
+    public static String m2144b(String str, int i) {
         if (str == null) {
             return null;
         }
@@ -713,7 +713,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static String m2097b(String str) {
+    public static String m2146b(String str) {
         try {
             byte[] digest = MessageDigest.getInstance("MD5").digest(str.getBytes("UTF-8"));
             StringBuilder sb = new StringBuilder(digest.length * 2);
@@ -733,31 +733,31 @@ public final class C0758f {
     }
 
     /* renamed from: c */
-    public static String m2082c(String str) {
-        return m2128a(m2118a(m2056f(str)), 14);
+    public static String m2131c(String str) {
+        return m2177a(m2167a(m2105f(str)), 14);
     }
 
     /* renamed from: d */
-    public static String m2072d(String str) {
-        return m2128a(m2118a(m2056f(str)), 4);
+    public static String m2121d(String str) {
+        return m2177a(m2167a(m2105f(str)), 4);
     }
 
     /* renamed from: c */
-    public static String m2080c(String str, int i) {
-        String m2118a = m2118a(m2056f(str));
+    public static String m2129c(String str, int i) {
+        String m2167a = m2167a(m2105f(str));
         for (int i2 = 0; i2 < i; i2++) {
-            m2118a = m2118a(m2056f(m2118a));
+            m2167a = m2167a(m2105f(m2167a));
         }
-        return m2118a;
+        return m2167a;
     }
 
     /* renamed from: e */
-    public static String m2064e(String str) {
-        return m2118a(m2056f(str));
+    public static String m2113e(String str) {
+        return m2167a(m2105f(str));
     }
 
     /* renamed from: f */
-    static byte[] m2056f(String str) {
+    static byte[] m2105f(String str) {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.reset();
@@ -768,17 +768,17 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    static String m2118a(byte[] bArr) {
+    static String m2167a(byte[] bArr) {
         return String.format("%0" + (bArr.length * 2) + "X", new BigInteger(1, bArr));
     }
 
     /* renamed from: b */
-    public static String m2091b(byte[] bArr) {
-        return m2118a(m2078c(bArr));
+    public static String m2140b(byte[] bArr) {
+        return m2167a(m2127c(bArr));
     }
 
     /* renamed from: c */
-    static byte[] m2078c(byte[] bArr) {
+    static byte[] m2127c(byte[] bArr) {
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.reset();
@@ -789,7 +789,7 @@ public final class C0758f {
     }
 
     /* renamed from: c */
-    public static int m2090c() {
+    public static int m2139c() {
         int availableProcessors;
         int i = 1;
         try {
@@ -823,26 +823,26 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static void m2117a(byte[] bArr, byte[] bArr2) {
+    public static void m2166a(byte[] bArr, byte[] bArr2) {
         System.arraycopy(bArr, 0, bArr2, 0, bArr.length);
     }
 
     /* renamed from: f */
-    public static float m2058f(float f, float f2, float f3) {
+    public static float m2107f(float f, float f2, float f3) {
         return f + ((f2 - f) * f3);
     }
 
     /* renamed from: a */
-    public static int m2153a(int i, int i2, float f) {
-        int m5540a = Color.m5540a(i);
-        int m5536b = Color.m5536b(i);
-        int m5535c = Color.m5535c(i);
-        int m5534d = Color.m5534d(i);
-        return Color.m5538a((int) m2058f(m5540a, Color.m5540a(i2), f), (int) m2058f(m5536b, Color.m5536b(i2), f), (int) m2058f(m5535c, Color.m5535c(i2), f), (int) m2058f(m5534d, Color.m5534d(i2), f));
+    public static int m2202a(int i, int i2, float f) {
+        int m5950a = Color.m5950a(i);
+        int m5946b = Color.m5946b(i);
+        int m5945c = Color.m5945c(i);
+        int m5944d = Color.m5944d(i);
+        return Color.m5948a((int) m2107f(m5950a, Color.m5950a(i2), f), (int) m2107f(m5946b, Color.m5946b(i2), f), (int) m2107f(m5945c, Color.m5945c(i2), f), (int) m2107f(m5944d, Color.m5944d(i2), f));
     }
 
     /* renamed from: d */
-    public static String m2070d(String str, int i) {
+    public static String m2119d(String str, int i) {
         String str2 = VariableScope.nullOrMissingString;
         for (int i2 = 0; i2 <= i; i2++) {
             str2 = str2 + str;
@@ -851,7 +851,7 @@ public final class C0758f {
     }
 
     /* renamed from: e */
-    public static String m2062e(String str, int i) {
+    public static String m2111e(String str, int i) {
         for (int length = str.length(); length < i; length++) {
             str = str + " ";
         }
@@ -859,7 +859,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2127a(String str, int i, String str2) {
+    public static String m2176a(String str, int i, String str2) {
         for (int length = str.length(); length < i; length++) {
             str = str2 + str;
         }
@@ -867,12 +867,12 @@ public final class C0758f {
     }
 
     /* renamed from: f */
-    public static String m2055f(String str, int i) {
+    public static String m2104f(String str, int i) {
         return String.format("%1$-" + i + "s", str);
     }
 
     /* renamed from: a */
-    public static String m2134a(Class cls, int i) {
+    public static String m2183a(Class cls, int i) {
         Field[] fields;
         try {
             for (Field field : cls.getFields()) {
@@ -889,20 +889,20 @@ public final class C0758f {
     }
 
     /* renamed from: f */
-    public static String m2057f(int i) {
-        String m2134a = m2134a(C0067R.drawable.class, i);
-        if (m2134a != null) {
-            return C0750a.m2241a("res/drawable", m2134a);
+    public static String m2106f(int i) {
+        String m2183a = m2183a(C0067R.drawable.class, i);
+        if (m2183a != null) {
+            return C0750a.m2290a("res/drawable", m2183a);
         }
-        String m2134a2 = m2134a(C0067R.raw.class, i);
-        if (m2134a2 != null) {
-            return C0750a.m2241a("res/raw", m2134a2);
+        String m2183a2 = m2183a(C0067R.raw.class, i);
+        if (m2183a2 != null) {
+            return C0750a.m2290a("res/raw", m2183a2);
         }
         return null;
     }
 
     /* renamed from: g */
-    public static final String m2051g(int i) {
+    public static final String m2100g(int i) {
         if (-1000 < i && i < 1000) {
             return i + " B";
         }
@@ -915,12 +915,12 @@ public final class C0758f {
     }
 
     /* renamed from: h */
-    public static final String m2046h(int i) {
+    public static final String m2095h(int i) {
         return String.format("#%06X", Integer.valueOf(16777215 & i));
     }
 
     /* renamed from: g */
-    public static final String m2050g(String str) {
+    public static final String m2099g(String str) {
         if (str == null) {
             return null;
         }
@@ -928,7 +928,7 @@ public final class C0758f {
     }
 
     /* renamed from: h */
-    public static final String m2045h(String str) {
+    public static final String m2094h(String str) {
         if (str.contains("\\")) {
             str = str.replace('\\', '/');
         }
@@ -936,27 +936,27 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final boolean m2145a(Rect rect, RectF rectF) {
+    public static final boolean m2194a(Rect rect, RectF rectF) {
         return ((float) rect.f230a) < rectF.f236c && rectF.f234a < ((float) rect.f232c) && ((float) rect.f231b) < rectF.f237d && rectF.f235b < ((float) rect.f233d);
     }
 
     /* renamed from: a */
-    public static final boolean m2142a(RectF rectF, RectF rectF2) {
+    public static final boolean m2191a(RectF rectF, RectF rectF2) {
         return rectF.f234a < rectF2.f236c && rectF2.f234a < rectF.f236c && rectF.f235b < rectF2.f237d && rectF2.f235b < rectF.f237d;
     }
 
     /* renamed from: b */
-    public static final int m2103b(int i, int i2, int i3, int i4) {
+    public static final int m2152b(int i, int i2, int i3, int i4) {
         return (i << 24) | (i2 << 16) | (i3 << 8) | i4;
     }
 
     /* renamed from: a */
-    public static final long m2149a(long j, long j2) {
+    public static final long m2198a(long j, long j2) {
         return (j2 - j) / 1000000;
     }
 
     /* renamed from: a */
-    public static final int m2129a(String str, char c) {
+    public static final int m2178a(String str, char c) {
         int i = 0;
         for (int i2 = 0; i2 < str.length(); i2++) {
             if (str.charAt(i2) == c) {
@@ -967,12 +967,12 @@ public final class C0758f {
     }
 
     /* renamed from: i */
-    public static final String m2041i(String str) {
+    public static final String m2090i(String str) {
         return str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("${", "$ {");
     }
 
     /* renamed from: a */
-    public static String m2138a(File file) {
+    public static String m2187a(File file) {
         int read;
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -998,7 +998,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static String m2099b(InputStream inputStream) {
+    public static String m2148b(InputStream inputStream) {
         int read;
         try {
             try {
@@ -1023,19 +1023,19 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final String m2133a(Exception exc) {
+    public static final String m2182a(Exception exc) {
         StringWriter stringWriter = new StringWriter();
         exc.printStackTrace(new PrintWriter(stringWriter));
         return stringWriter.toString();
     }
 
     /* renamed from: b */
-    public static final String m2098b(Exception exc) {
-        return m2132a(exc, false);
+    public static final String m2147b(Exception exc) {
+        return m2181a(exc, false);
     }
 
     /* renamed from: a */
-    public static final String m2132a(Exception exc, boolean z) {
+    public static final String m2181a(Exception exc, boolean z) {
         Throwable th;
         String message = exc.getMessage();
         if (message == null) {
@@ -1088,7 +1088,7 @@ public final class C0758f {
     }
 
     /* renamed from: j */
-    public static String m2039j(String str) {
+    public static String m2088j(String str) {
         if (str.endsWith("\n")) {
             return str.substring(0, str.length() - 1);
         }
@@ -1096,7 +1096,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2125a(String str, String str2) {
+    public static String m2174a(String str, String str2) {
         if (str.endsWith(str2)) {
             return str.substring(0, str.length() - str2.length());
         }
@@ -1104,12 +1104,12 @@ public final class C0758f {
     }
 
     /* renamed from: k */
-    public static String m2038k(String str) {
+    public static String m2087k(String str) {
         return new File(str).getName();
     }
 
     /* renamed from: b */
-    public static String m2094b(String str, String str2) {
+    public static String m2143b(String str, String str2) {
         if (str2.startsWith("/") || str2.startsWith("\\")) {
             str2 = str2.substring(1);
         }
@@ -1123,7 +1123,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2135a(CharSequence charSequence, Iterable iterable) {
+    public static String m2184a(CharSequence charSequence, Iterable iterable) {
         StringBuilder sb = new StringBuilder();
         boolean z = true;
         Iterator it = iterable.iterator();
@@ -1140,27 +1140,27 @@ public final class C0758f {
     }
 
     /* renamed from: l */
-    public static Integer m2037l(String str) {
+    public static Integer m2086l(String str) {
         try {
             return Integer.valueOf(str);
         } catch (NumberFormatException e) {
-            LoggerMaybe.LogDebug2(e.toString());
+            Core.LogDebug2(e.toString());
             return null;
         }
     }
 
     /* renamed from: m */
-    public static Long m2036m(String str) {
+    public static Long m2085m(String str) {
         try {
             return Long.valueOf(str);
         } catch (NumberFormatException e) {
-            LoggerMaybe.LogDebug2(e.toString());
+            Core.LogDebug2(e.toString());
             return null;
         }
     }
 
     /* renamed from: n */
-    public static boolean m2035n(String str) {
+    public static boolean m2084n(String str) {
         int length = str.length();
         int i = 0;
         while (true) {
@@ -1178,19 +1178,19 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2150a(long j) {
-        int[] m2102b;
+    public static String m2199a(long j) {
+        int[] m2151b;
         String str;
-        if (m2102b(j)[0] == 0) {
-            str = m2127a(VariableScope.nullOrMissingString + m2102b[1], 2, "0") + ":" + m2127a(VariableScope.nullOrMissingString + m2102b[2], 2, "0");
+        if (m2151b(j)[0] == 0) {
+            str = m2176a(VariableScope.nullOrMissingString + m2151b[1], 2, "0") + ":" + m2176a(VariableScope.nullOrMissingString + m2151b[2], 2, "0");
         } else {
-            str = m2127a(VariableScope.nullOrMissingString + m2102b[0], 2, "0") + ":" + m2127a(VariableScope.nullOrMissingString + m2102b[1], 2, "0") + ":" + m2127a(VariableScope.nullOrMissingString + m2102b[2], 2, "0");
+            str = m2176a(VariableScope.nullOrMissingString + m2151b[0], 2, "0") + ":" + m2176a(VariableScope.nullOrMissingString + m2151b[1], 2, "0") + ":" + m2176a(VariableScope.nullOrMissingString + m2151b[2], 2, "0");
         }
         return str;
     }
 
     /* renamed from: b */
-    public static int[] m2102b(long j) {
+    public static int[] m2151b(long j) {
         int i = ((int) j) / 3600;
         int i2 = ((int) j) - (i * 3600);
         int i3 = i2 / 60;
@@ -1198,7 +1198,7 @@ public final class C0758f {
     }
 
     /* renamed from: i */
-    public static final float m2042i(float f, float f2) {
+    public static final float m2091i(float f, float f2) {
         try {
             if (f2 >= 0.0f) {
                 if (f >= 0.0f) {
@@ -1223,7 +1223,7 @@ public final class C0758f {
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             if (f4906i < 100) {
-                LoggerMaybe.LogDebug2("atan2 slow fallback for y:" + f + " x:" + f2);
+                Core.LogDebug2("atan2 slow fallback for y:" + f + " x:" + f2);
                 f4906i++;
             }
             return (float) StrictMath.atan2(f, f2);
@@ -1231,17 +1231,17 @@ public final class C0758f {
     }
 
     /* renamed from: h */
-    public static final float m2048h(float f) {
+    public static final float m2097h(float f) {
         return f4907t[((int) (f * 22.755556f)) & 8191];
     }
 
     /* renamed from: i */
-    public static final float m2043i(float f) {
+    public static final float m2092i(float f) {
         return f4908u[((int) (f * 22.755556f)) & 8191];
     }
 
     /* renamed from: o */
-    public static String m2034o(String str) {
+    public static String m2083o(String str) {
         if (str.contains("&")) {
             str = str.replace("&lt;", "<").replace("&gt;", ">").replace("&apos;", "'").replace("&quot;", "\"").replace("&amp;", "&");
         }
@@ -1249,7 +1249,7 @@ public final class C0758f {
     }
 
     /* renamed from: p */
-    public static String m2033p(String str) {
+    public static String m2082p(String str) {
         if (str == null || str.length() < 2) {
             return null;
         }
@@ -1276,7 +1276,7 @@ public final class C0758f {
     }
 
     /* renamed from: q */
-    public static String m2032q(String str) {
+    public static String m2081q(String str) {
         char[] charArray;
         boolean z = false;
         StringBuilder sb = new StringBuilder();
@@ -1293,25 +1293,25 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final String m2123a(String str, String str2, String str3) {
-        if (!m2079c(str, str2)) {
+    public static final String m2172a(String str, String str2, String str3) {
+        if (!m2128c(str, str2)) {
             return str;
         }
         return str.replace(str2, str3);
     }
 
     /* renamed from: c */
-    public static final boolean m2079c(String str, String str2) {
+    public static final boolean m2128c(String str, String str2) {
         return str.indexOf(str2) > -1;
     }
 
     /* renamed from: b */
-    public static final boolean m2096b(String str, char c) {
+    public static final boolean m2145b(String str, char c) {
         return str.indexOf(c) > -1;
     }
 
     /* renamed from: c */
-    public static String[] m2081c(String str, char c) {
+    public static String[] m2130c(String str, char c) {
         int i;
         if (str.length() == 0) {
             return new String[]{VariableScope.nullOrMissingString};
@@ -1353,7 +1353,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String m2116a(String[] strArr) {
+    public static String m2165a(String[] strArr) {
         StringBuffer stringBuffer = new StringBuffer();
         boolean z = true;
         int length = strArr.length;
@@ -1376,12 +1376,12 @@ public final class C0758f {
     }
 
     /* renamed from: r */
-    public static String[] m2031r(String str) {
-        return m2071d(str, ',');
+    public static String[] m2080r(String str) {
+        return m2120d(str, ',');
     }
 
     /* renamed from: d */
-    public static String[] m2071d(String str, char c) {
+    public static String[] m2120d(String str, char c) {
         char[] charArray;
         ArrayList arrayList = new ArrayList();
         boolean z = false;
@@ -1410,7 +1410,7 @@ public final class C0758f {
     }
 
     /* renamed from: e */
-    public static String[] m2063e(String str, char c) {
+    public static String[] m2112e(String str, char c) {
         char[] charArray;
         ArrayList arrayList = new ArrayList();
         boolean z = false;
@@ -1446,7 +1446,7 @@ public final class C0758f {
     }
 
     /* renamed from: s */
-    public static int m2030s(String str) {
+    public static int m2079s(String str) {
         int i = 0;
         for (int i2 = 0; i2 < str.length(); i2++) {
             char charAt = str.charAt(i2);
@@ -1460,7 +1460,7 @@ public final class C0758f {
     }
 
     /* renamed from: t */
-    public static int m2029t(String str) {
+    public static int m2078t(String str) {
         char[] charArray;
         int i = 0;
         boolean z = false;
@@ -1492,9 +1492,9 @@ public final class C0758f {
     }
 
     /* renamed from: g */
-    public static int m2049g(String str, int i) {
+    public static int m2098g(String str, int i) {
         if (str.charAt(i) != '(') {
-            LoggerMaybe.m990b("getBracketEnd: Did not start on a bracket");
+            Core.m998b("getBracketEnd: Did not start on a bracket");
             return -1;
         } else if (i + 1 >= str.length()) {
             return -1;
@@ -1516,12 +1516,12 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static String[] m2121a(String str, String str2, boolean z) {
-        return !str.contains(str2) ? new String[]{str} : (String[]) m2092b(str, str2, z).toArray(new String[0]);
+    public static String[] m2170a(String str, String str2, boolean z) {
+        return !str.contains(str2) ? new String[]{str} : (String[]) m2141b(str, str2, z).toArray(new String[0]);
     }
 
     /* renamed from: b */
-    public static ArrayList m2092b(String str, String str2, boolean z) {
+    public static ArrayList m2141b(String str, String str2, boolean z) {
         int i = 0;
         StringBuffer stringBuffer = new StringBuffer();
         ArrayList arrayList = new ArrayList();
@@ -1541,7 +1541,7 @@ public final class C0758f {
                 if (charAt == charAt2 && (length == 1 || str.indexOf(str2, i2) == i2)) {
                     z2 = true;
                 }
-                if (z2 && (!z || (!m2044h(str, i2 - 1) && !m2044h(str, i2 + str2.length())))) {
+                if (z2 && (!z || (!m2093h(str, i2 - 1) && !m2093h(str, i2 + str2.length())))) {
                     arrayList.add(stringBuffer.toString());
                     stringBuffer = new StringBuffer();
                     i2 += str2.length() - 1;
@@ -1556,7 +1556,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static ArrayList m2120a(String str, String str2, boolean z, boolean z2) {
+    public static ArrayList m2169a(String str, String str2, boolean z, boolean z2) {
         int i = 0;
         StringBuffer stringBuffer = new StringBuffer();
         ArrayList arrayList = new ArrayList();
@@ -1603,7 +1603,7 @@ public final class C0758f {
                 } else if (charAt2 == ')') {
                     i--;
                 }
-                if (i == 0 && charAt == charAt2 && ((length == 1 || str3.indexOf(str2, i2) == i2) && ((!z || (!m2044h(str, i2 - 1) && !m2044h(str, i2 + str2.length()))) && (!z6 || (c != '*' && c != '/' && c != '+'))))) {
+                if (i == 0 && charAt == charAt2 && ((length == 1 || str3.indexOf(str2, i2) == i2) && ((!z || (!m2093h(str, i2 - 1) && !m2093h(str, i2 + str2.length()))) && (!z6 || (c != '*' && c != '/' && c != '+'))))) {
                     arrayList.add(stringBuffer.toString());
                     stringBuffer.setLength(0);
                     i2 += str2.length() - 1;
@@ -1618,7 +1618,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static ArrayList m2122a(String str, String str2, String str3, boolean z) {
+    public static ArrayList m2171a(String str, String str2, String str3, boolean z) {
         int i = 0;
         StringBuffer stringBuffer = new StringBuffer();
         ArrayList arrayList = new ArrayList();
@@ -1636,11 +1636,11 @@ public final class C0758f {
                 i--;
             }
             if (i == 0) {
-                if (charAt == charAt3 && ((length == 1 || str.indexOf(str2, i2) == i2) && (!z || (!m2044h(str, i2 - 1) && !m2044h(str, i2 + str2.length()))))) {
+                if (charAt == charAt3 && ((length == 1 || str.indexOf(str2, i2) == i2) && (!z || (!m2093h(str, i2 - 1) && !m2093h(str, i2 + str2.length()))))) {
                     arrayList.add(stringBuffer.toString());
                     stringBuffer = new StringBuffer();
                     i2 += str2.length() - 1;
-                } else if (charAt2 == charAt3 && ((length2 == 1 || str.indexOf(str3, i2) == i2) && (!z || (!m2044h(str, i2 - 1) && !m2044h(str, i2 + str3.length()))))) {
+                } else if (charAt2 == charAt3 && ((length2 == 1 || str.indexOf(str3, i2) == i2) && (!z || (!m2093h(str, i2 - 1) && !m2093h(str, i2 + str3.length()))))) {
                     arrayList.add(stringBuffer.toString());
                     stringBuffer = new StringBuffer();
                     i2 += str3.length() - 1;
@@ -1655,12 +1655,12 @@ public final class C0758f {
     }
 
     /* renamed from: d */
-    public static int m2069d(String str, String str2) {
-        return m2124a(str, str2, 0);
+    public static int m2118d(String str, String str2) {
+        return m2173a(str, str2, 0);
     }
 
     /* renamed from: a */
-    public static int m2124a(String str, String str2, int i) {
+    public static int m2173a(String str, String str2, int i) {
         int i2 = 0;
         char charAt = str2.charAt(0);
         int length = str2.length();
@@ -1679,7 +1679,7 @@ public final class C0758f {
     }
 
     /* renamed from: h */
-    public static boolean m2044h(String str, int i) {
+    public static boolean m2093h(String str, int i) {
         if (i < 0 || i >= str.length()) {
             return false;
         }
@@ -1688,7 +1688,7 @@ public final class C0758f {
     }
 
     /* renamed from: u */
-    public static boolean m2028u(String str) {
+    public static boolean m2077u(String str) {
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
             if (!Character.isDigit(charAt) && charAt != '.' && (charAt != '-' || i != 0)) {
@@ -1699,7 +1699,7 @@ public final class C0758f {
     }
 
     /* renamed from: v */
-    public static boolean m2027v(String str) {
+    public static boolean m2076v(String str) {
         boolean z = false;
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
@@ -1715,17 +1715,17 @@ public final class C0758f {
     }
 
     /* renamed from: j */
-    public static boolean m2040j(float f, float f2) {
-        return m2088c(f - f2) < 1.0E-7f;
+    public static boolean m2089j(float f, float f2) {
+        return m2137c(f - f2) < 1.0E-7f;
     }
 
     /* renamed from: b */
-    public static boolean m2113b(double d, double d2) {
-        return m2166a(d - d2) < 1.0000000116860974E-7d;
+    public static boolean m2162b(double d, double d2) {
+        return m2215a(d - d2) < 1.0000000116860974E-7d;
     }
 
     /* renamed from: e */
-    public static final boolean m2061e(String str, String str2) {
+    public static final boolean m2110e(String str, String str2) {
         if (str == null) {
             return str2 == null;
         }
@@ -1733,7 +1733,7 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static final boolean m2131a(Integer num, Integer num2) {
+    public static final boolean m2180a(Integer num, Integer num2) {
         if (num == null) {
             return num2 == null;
         }
@@ -1741,7 +1741,7 @@ public final class C0758f {
     }
 
     /* renamed from: w */
-    public static final String m2026w(String str) {
+    public static final String m2075w(String str) {
         if (str == null) {
             return null;
         }
@@ -1752,7 +1752,7 @@ public final class C0758f {
     }
 
     /* renamed from: b */
-    public static int m2093b(String str, String str2, String str3) {
+    public static int m2142b(String str, String str2, String str3) {
         int indexOf = str.indexOf(str2);
         int indexOf2 = str.indexOf(str3);
         if (indexOf == -1) {
@@ -1765,19 +1765,19 @@ public final class C0758f {
     }
 
     /* renamed from: a */
-    public static int m2126a(String str, int i, String[] strArr) {
+    public static int m2175a(String str, int i, String[] strArr) {
         int i2 = -1;
         for (String str2 : strArr) {
-            int m2124a = m2124a(str, str2, i);
-            if (m2124a != -1 && (i2 > m2124a || i2 == -1)) {
-                i2 = m2124a;
+            int m2173a = m2173a(str, str2, i);
+            if (m2173a != -1 && (i2 > m2173a || i2 == -1)) {
+                i2 = m2173a;
             }
         }
         return i2;
     }
 
     /* renamed from: x */
-    public static String m2025x(String str) {
+    public static String m2074x(String str) {
         boolean z = false;
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
@@ -1797,7 +1797,7 @@ public final class C0758f {
     }
 
     /* renamed from: f */
-    public static String[] m2054f(String str, String str2) {
+    public static String[] m2103f(String str, String str2) {
         int indexOf = str.indexOf(str2);
         if (indexOf == -1) {
             return null;

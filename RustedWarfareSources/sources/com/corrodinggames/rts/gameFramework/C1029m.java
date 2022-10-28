@@ -15,22 +15,22 @@ public class C1029m {
     Paint f6595b;
 
     /* renamed from: c */
-    final /* synthetic */ LoggerMaybe f6596c;
+    final /* synthetic */ Core f6596c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public C1029m(LoggerMaybe loggerMaybe) {
-        this.f6596c = loggerMaybe;
+    public C1029m(Core core) {
+        this.f6596c = core;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a */
-    public void m816a() {
-        float m973e = this.f6596c.m973e(this.f6594a);
-        if (this.f6595b.m5481k() != m973e) {
+    public void m824a() {
+        float m981e = this.f6596c.m981e(this.f6594a);
+        if (this.f6595b.m5888k() != m981e) {
             if (this.f6595b instanceof C0930ag) {
-                ((C0930ag) this.f6595b).m897c(m973e);
+                ((C0930ag) this.f6595b).m904c(m981e);
             } else {
-                this.f6595b.mo899b(m973e);
+                this.f6595b.mo5909b(m981e);
             }
         }
     }

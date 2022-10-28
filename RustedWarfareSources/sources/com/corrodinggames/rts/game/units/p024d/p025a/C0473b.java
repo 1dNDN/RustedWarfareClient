@@ -14,7 +14,7 @@ import com.corrodinggames.rts.game.units.p013a.EnumC0225t;
 import com.corrodinggames.rts.game.units.p024d.AbstractC0498i;
 import com.corrodinggames.rts.game.units.p024d.C0499j;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p039g.C0820a;
 import com.corrodinggames.rts.gameFramework.p041i.C0831ad;
 import com.corrodinggames.rts.gameFramework.p041i.Reader;
@@ -29,82 +29,82 @@ import java.util.ArrayList;
 public class C0473b extends AbstractC0498i {
 
     /* renamed from: j */
-    boolean f3376j;
+    boolean f3384j;
 
     /* renamed from: k */
-    int f3377k;
+    int f3385k;
 
     /* renamed from: l */
-    AbstractC0478c f3378l;
+    AbstractC0478c f3386l;
 
     /* renamed from: H */
-    boolean f3379H;
+    boolean f3397H;
 
     /* renamed from: I */
-    float f3380I;
+    float f3398I;
 
     /* renamed from: J */
-    float f3381J;
+    float f3399J;
 
     /* renamed from: dI */
-    boolean f3382dI;
+    boolean f3400dI;
 
     /* renamed from: dJ */
-    Rect f3383dJ;
+    Rect f3401dJ;
 
     /* renamed from: g */
-    static C0934e f3384g = null;
+    static C0934e f3376g = null;
 
     /* renamed from: a */
-    private static C0934e f3385a = null;
+    private static C0934e f3377a = null;
 
     /* renamed from: b */
-    private static C0934e f3386b = null;
+    private static C0934e f3378b = null;
 
     /* renamed from: c */
-    private static C0934e f3387c = null;
+    private static C0934e f3379c = null;
 
     /* renamed from: d */
-    private static C0934e f3388d = null;
+    private static C0934e f3380d = null;
 
     /* renamed from: e */
-    private static C0934e f3389e = null;
+    private static C0934e f3381e = null;
 
     /* renamed from: h */
-    static C0934e[] f3390h = new C0934e[10];
+    static C0934e[] f3382h = new C0934e[10];
 
     /* renamed from: i */
-    static C0934e f3391i = null;
+    static C0934e f3383i = null;
 
     /* renamed from: t */
-    static String f3392t = "gun";
+    static String f3387t = "gun";
 
     /* renamed from: u */
-    static String f3393u = "gunT2";
+    static String f3388u = "gunT2";
 
     /* renamed from: v */
-    static String f3394v = "gunT3";
+    static String f3389v = "gunT3";
 
     /* renamed from: w */
-    static String f3395w = "artillery";
+    static String f3390w = "artillery";
 
     /* renamed from: x */
-    static String f3396x = "flamethrower";
+    static String f3391x = "flamethrower";
 
     /* renamed from: C */
-    static String f3397C = "aa_t1";
+    static String f3392C = "aa_t1";
 
     /* renamed from: D */
-    static String f3398D = "aa_t2";
+    static String f3393D = "aa_t2";
 
     /* renamed from: E */
-    static String f3399E = "aa_flak";
+    static String f3394E = "aa_flak";
 
     /* renamed from: F */
-    static C0934e f3400F = null;
+    static C0934e f3395F = null;
 
     /* renamed from: G */
-    static C0934e[] f3401G = new C0934e[10];
+    static C0934e[] f3396G = new C0934e[10];
 
     /* renamed from: dK */
     public static AbstractC0224s f3402dK = new C04741(101);
@@ -123,70 +123,70 @@ public class C0473b extends AbstractC0498i {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a */
-    public static /* synthetic */ PointF m3440a(C0473b c0473b, int i) {
-        return super.mo3073E(i);
+    public static /* synthetic */ PointF m3610a(C0473b c0473b, int i) {
+        return super.mo3156E(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: dA */
-    public static /* synthetic */ C0934e m3427dA() {
-        return f3385a;
+    public static /* synthetic */ C0934e m3591dA() {
+        return f3377a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: dB */
-    public static /* synthetic */ C0934e m3426dB() {
-        return f3386b;
+    public static /* synthetic */ C0934e m3590dB() {
+        return f3378b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: b */
-    public static /* synthetic */ PointF m3436b(C0473b c0473b, int i) {
-        return super.mo3073E(i);
+    public static /* synthetic */ PointF m3604b(C0473b c0473b, int i) {
+        return super.mo3156E(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: dC */
-    public static /* synthetic */ C0934e m3425dC() {
-        return f3387c;
+    public static /* synthetic */ C0934e m3589dC() {
+        return f3379c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: c */
-    public static /* synthetic */ PointF m3431c(C0473b c0473b, int i) {
-        return super.mo3073E(i);
+    public static /* synthetic */ PointF m3599c(C0473b c0473b, int i) {
+        return super.mo3156E(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: dD */
-    public static /* synthetic */ C0934e m3424dD() {
-        return f3388d;
+    public static /* synthetic */ C0934e m3588dD() {
+        return f3380d;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: dE */
-    public static /* synthetic */ C0934e m3423dE() {
-        return f3389e;
+    public static /* synthetic */ C0934e m3587dE() {
+        return f3381e;
     }
 
     /* renamed from: a */
-    static /* synthetic */ void m3441a(C0473b c0473b) {
-        c0473b.m2947W();
+    static /* synthetic */ void m3611a(C0473b c0473b) {
+        c0473b.m3004W();
     }
 
     /* renamed from: b */
-    static /* synthetic */ void m3437b(C0473b c0473b) {
-        c0473b.m2947W();
+    static /* synthetic */ void m3605b(C0473b c0473b) {
+        c0473b.m3004W();
     }
 
     /* renamed from: c */
-    static /* synthetic */ void m3432c(C0473b c0473b) {
-        c0473b.m2947W();
+    static /* synthetic */ void m3600c(C0473b c0473b) {
+        c0473b.m3004W();
     }
 
     /* renamed from: d */
-    static /* synthetic */ void m3428d(C0473b c0473b) {
-        c0473b.m2947W();
+    static /* synthetic */ void m3592d(C0473b c0473b) {
+        c0473b.m3004W();
     }
 
     static {
@@ -197,289 +197,289 @@ public class C0473b extends AbstractC0498i {
     }
 
     /* renamed from: L */
-    public int m3443L() {
-        return this.f3378l.mo3401b();
+    public int m3613L() {
+        return this.f3386l.mo3565b();
     }
 
     /* renamed from: H */
-    public float mo3094H(int i) {
-        return this.f3378l.mo3408h(i);
+    public float mo3181H(int i) {
+        return this.f3386l.mo3572h(i);
     }
 
     /* renamed from: a_ */
-    public void m3438a_(String str) {
-        m3435b(str);
+    public void m3607a_(String str) {
+        m3603b(str);
     }
 
     /* renamed from: b */
-    public void m3435b(String str) {
-        if (!this.f3378l.m3411a(str)) {
-            AbstractC0478c abstractC0478c = this.f3378l;
-            this.f3378l = m3430c(str);
-            this.f3378l.mo3402a(abstractC0478c);
+    public void m3603b(String str) {
+        if (!this.f3386l.m3575a(str)) {
+            AbstractC0478c abstractC0478c = this.f3386l;
+            this.f3386l = m3598c(str);
+            this.f3386l.mo3566a(abstractC0478c);
         }
     }
 
     /* renamed from: c */
-    public AbstractC0478c m3430c(String str) {
-        if (str.equals(f3392t)) {
+    public AbstractC0478c m3598c(String str) {
+        if (str.equals(f3387t)) {
             return new C0483h(this);
         }
-        if (str.equals(f3393u)) {
+        if (str.equals(f3388u)) {
             return new C0481f(this);
         }
-        if (str.equals(f3394v)) {
+        if (str.equals(f3389v)) {
             return new C0482g(this);
         }
-        if (str.equals(f3395w)) {
+        if (str.equals(f3390w)) {
             return new C0479d(this);
         }
-        if (str.equals(f3396x)) {
+        if (str.equals(f3391x)) {
             return new C0480e(this);
         }
         return null;
     }
 
     /* renamed from: a */
-    public void mo2292a(StreamWriter streamWriter) {
-        streamWriter.mo1314a(this.f3376j);
-        streamWriter.mo1314a(this.f3377k == 1);
-        streamWriter.WriteUTF(this.f3378l.mo3399c());
-        streamWriter.WriteInteger(this.f3377k);
-        super.mo2292a(streamWriter);
+    public void mo2441a(StreamWriter streamWriter) {
+        streamWriter.mo1329a(this.f3384j);
+        streamWriter.mo1329a(this.f3385k == 1);
+        streamWriter.WriteUTF(this.f3386l.mo3563c());
+        streamWriter.WriteInteger(this.f3385k);
+        super.mo2441a(streamWriter);
     }
 
     /* renamed from: a */
-    public void mo2291a(Reader reader) {
+    public void m3609a(Reader reader) {
         boolean ReadBool = reader.ReadBool();
         if (ReadBool) {
-            mo3174a(2);
+            mo3356a(2);
         }
-        if (reader.m1295b() >= 27) {
-            this.f3377k = reader.ReadBool() ? 1 : 0;
+        if (reader.m1310b() >= 27) {
+            this.f3385k = reader.ReadBool() ? 1 : 0;
         }
-        if (reader.m1295b() >= 35) {
+        if (reader.m1310b() >= 35) {
             String ReadUTF = reader.ReadUTF();
-            if (!this.f3378l.m3411a(ReadUTF)) {
-                m3435b(ReadUTF);
+            if (!this.f3386l.m3575a(ReadUTF)) {
+                m3603b(ReadUTF);
             }
-            this.f3377k = reader.ReadInt();
+            this.f3385k = reader.ReadInt();
         } else if (ReadBool && !(this instanceof C0471a)) {
-            m3435b(f3393u);
+            m3603b(f3388u);
         }
-        super.mo2291a(reader);
+        super.m3478a(reader);
     }
 
     /* renamed from: v */
-    public C0934e mo2977v() {
+    public C0934e mo3034v() {
         if (this.f1609bV.f1306k == -1) {
             return null;
         }
-        return f3401G[this.f1609bV.m4650O()];
+        return f3396G[this.f1609bV.m5105O()];
     }
 
     /* renamed from: dy */
-    public static void m3422dy() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        f3384g = m1072A.f6113bO.mo221a(C0067R.drawable.turret_base);
-        f3391i = m1072A.f6113bO.mo221a(C0067R.drawable.turret_base_dead);
-        f3385a = m1072A.f6113bO.mo221a(C0067R.drawable.turret_top);
-        f3386b = m1072A.f6113bO.mo221a(C0067R.drawable.turret_top_l2);
-        f3387c = m1072A.f6113bO.mo221a(C0067R.drawable.turret_top_l3);
-        f3388d = m1072A.f6113bO.mo221a(C0067R.drawable.turret_top_artillery);
-        f3389e = m1072A.f6113bO.mo221a(C0067R.drawable.turret_top_flame);
-        f3390h = AbstractC0197n.m4627a(f3384g);
-        f3400F = m1072A.f6113bO.mo221a(C0067R.drawable.unit_icon_building_turrent);
-        f3401G = AbstractC0197n.m4627a(f3400F);
+    public static void m3586dy() {
+        Core m1087A = Core.m1087A();
+        f3376g = m1087A.f6113bO.mo221a(C0067R.drawable.turret_base);
+        f3383i = m1087A.f6113bO.mo221a(C0067R.drawable.turret_base_dead);
+        f3377a = m1087A.f6113bO.mo221a(C0067R.drawable.turret_top);
+        f3378b = m1087A.f6113bO.mo221a(C0067R.drawable.turret_top_l2);
+        f3379c = m1087A.f6113bO.mo221a(C0067R.drawable.turret_top_l3);
+        f3380d = m1087A.f6113bO.mo221a(C0067R.drawable.turret_top_artillery);
+        f3381e = m1087A.f6113bO.mo221a(C0067R.drawable.turret_top_flame);
+        f3382h = AbstractC0197n.m5082a(f3376g);
+        f3395F = m1087A.f6113bO.mo221a(C0067R.drawable.unit_icon_building_turrent);
+        f3396G = AbstractC0197n.m5082a(f3395F);
     }
 
     /* renamed from: K */
-    public boolean mo3274K() {
-        this.f3885L = f3391i;
+    public boolean m3614K() {
+        this.f3885L = f3383i;
         m447S(0);
         this.f1606bS = false;
-        m2924a(EnumC0233ab.f1505d);
+        m2981a(EnumC0233ab.f1505d);
         return true;
     }
 
     /* renamed from: d */
-    public C0934e mo2989d() {
+    public C0934e mo3046d() {
         if (this.f1607bT) {
-            return f3391i;
+            return f3383i;
         }
         if (this.f1609bV == null) {
-            return f3390h[f3390h.length - 1];
+            return f3382h[f3382h.length - 1];
         }
-        return f3390h[this.f1609bV.m4650O()];
+        return f3382h[this.f1609bV.m5105O()];
     }
 
     /* renamed from: k */
-    public C0934e mo2980k() {
+    public C0934e mo3037k() {
         return null;
     }
 
     /* renamed from: d */
-    public C0934e mo2988d(int i) {
-        return this.f3378l.mo3397d(i);
+    public C0934e mo3045d(int i) {
+        return this.f3386l.mo3561d(i);
     }
 
     public C0473b(boolean z) {
         super(z);
-        this.f3378l = new C0483h(this);
-        this.f3379H = true;
-        this.f3383dJ = new Rect();
-        m2639T(35);
-        m2638U(42);
+        this.f3386l = new C0483h(this);
+        this.f3397H = true;
+        this.f3401dJ = new Rect();
+        m2693T(35);
+        m2692U(42);
         this.f1621ch = 16.0f;
         this.f1622ci = this.f1621ch;
         this.f1633ct = 700.0f;
         this.f1632cs = this.f1633ct;
-        this.f3885L = f3384g;
-        this.f1649cJ[0].f1712a = C0758f.m2137a(this, -180, (int) SlickToAndroidKeycodes.AndroidCodes.KEYCODE_STB_INPUT);
-        this.f3426n.m5364a(0, 0, 1, 1);
-        this.f3427o.m5364a(0, 0, 1, 1);
+        this.f3885L = f3376g;
+        this.f1649cJ[0].f1712a = C0758f.m2189a(this, -180, (int) SlickToAndroidKeycodes.AndroidCodes.KEYCODE_STB_INPUT);
+        this.f3426n.m5874a(0, 0, 1, 1);
+        this.f3427o.m5874a(0, 0, 1, 1);
     }
 
     /* renamed from: s */
-    public void mo3447s(float f) {
-        if (this.f1649cJ[0].m4295a()) {
-            if (this.f3379H) {
-                this.f3380I = this.f1649cJ[0].f1712a;
-                this.f3379H = false;
-                this.f3381J = C0758f.m2137a(this, 0, 120);
+    public void m3584s(float f) {
+        if (this.f1649cJ[0].m4639a()) {
+            if (this.f3397H) {
+                this.f3398I = this.f1649cJ[0].f1712a;
+                this.f3397H = false;
+                this.f3399J = C0758f.m2189a(this, 0, 120);
             }
-            this.f3381J += f;
-            if (this.f3381J > 450.0f) {
-                this.f3381J = C0758f.m2137a(this, 0, 30);
-                this.f3382dI = !this.f3382dI;
+            this.f3399J += f;
+            if (this.f3399J > 450.0f) {
+                this.f3399J = C0758f.m2189a(this, 0, 30);
+                this.f3400dI = !this.f3400dI;
             }
-            if (this.f3381J < 120.0f) {
-                if (this.f3382dI) {
-                    m2942a(f * 0.3f, this.f3380I - 20.0f, 0);
+            if (this.f3399J < 120.0f) {
+                if (this.f3400dI) {
+                    m2999a(f * 0.3f, this.f3398I - 20.0f, 0);
                     return;
                 } else {
-                    m2942a(f * 0.3f, this.f3380I + 20.0f, 0);
+                    m2999a(f * 0.3f, this.f3398I + 20.0f, 0);
                     return;
                 }
             }
             return;
         }
-        this.f3379H = true;
+        this.f3397H = true;
     }
 
     /* renamed from: a */
-    public void mo1718a(float f) {
-        super.mo1718a(f);
-        if (m4396bS()) {
-            this.f3378l.mo3405a(f);
+    public void mo1762a(float f) {
+        super.mo1762a(f);
+        if (m4751bS()) {
+            this.f3386l.mo3569a(f);
         }
     }
 
     /* renamed from: a */
-    public void mo2993a(AbstractC0244am abstractC0244am, int i) {
-        this.f3378l.mo3403a(abstractC0244am, i);
+    public void mo3051a(AbstractC0244am abstractC0244am, int i) {
+        this.f3386l.mo3567a(abstractC0244am, i);
     }
 
     /* renamed from: m */
-    public float mo2978m() {
-        return this.f3378l.mo3406a();
+    public float mo3035m() {
+        return this.f3386l.mo3570a();
     }
 
     /* renamed from: b */
-    public float mo2992b(int i) {
-        return this.f3378l.mo3404a(i);
+    public float mo3050b(int i) {
+        return this.f3386l.mo3568a(i);
     }
 
     /* renamed from: c */
-    public float mo2991c(int i) {
-        return this.f3378l.mo3410e(i);
+    public float mo3048c(int i) {
+        return this.f3386l.mo3574e(i);
     }
 
     /* renamed from: w */
-    public float mo3059w(int i) {
-        return this.f3378l.mo3409f(i);
+    public float mo3162w(int i) {
+        return this.f3386l.mo3573f(i);
     }
 
     /* renamed from: b */
-    public boolean mo3295b(int i, float f) {
+    public boolean m3606b(int i, float f) {
         return false;
     }
 
     /* renamed from: c */
-    public boolean mo2285c(float f) {
-        if (!super.mo2285c(f)) {
+    public boolean mo3049c(float f) {
+        if (!super.mo3049c(f)) {
             return false;
         }
         if (!this.f1607bT) {
-            m3421dz();
+            m3585dz();
             return true;
         }
         return true;
     }
 
     /* renamed from: dz */
-    void m3421dz() {
-        LoggerMaybe m1072A = LoggerMaybe.m1072A();
-        C0934e mo2988d = mo2988d(0);
-        PointF mo3089G = mo3089G(0);
-        m1072A.f6113bO.mo199a(mo2988d, mo3089G.f227a - LoggerMaybe.m1072A().f6144cv, mo3089G.f228b - LoggerMaybe.m1072A().f6145cw, this.f1649cJ[0].f1712a, mo3251f());
+    void m3585dz() {
+        Core m1087A = Core.m1087A();
+        C0934e mo3045d = mo3045d(0);
+        PointF mo3176G = mo3176G(0);
+        m1087A.f6113bO.mo199a(mo3045d, mo3176G.f227a - Core.m1087A().f6144cv, mo3176G.f228b - Core.m1087A().f6145cw, this.f1649cJ[0].f1712a, mo3353f());
     }
 
     /* renamed from: c */
-    public EnumC0249ar mo5649r() {
+    public EnumC0249ar mo1758r() {
         return EnumC0249ar.f1740f;
     }
 
     /* renamed from: l */
-    public boolean mo2979l() {
+    public boolean mo3036l() {
         return true;
     }
 
     /* renamed from: af */
-    public boolean mo3065af() {
+    public boolean mo3160af() {
         return false;
     }
 
     /* renamed from: g */
-    public float mo2983g(int i) {
-        return this.f3378l.mo3396g(i);
+    public float mo3040g(int i) {
+        return this.f3386l.mo3560g(i);
     }
 
     /* renamed from: M */
-    public void m3442M(int i) {
-        if (mo2992b(i) < 10.0f) {
+    public void m3612M(int i) {
+        if (mo3050b(i) < 10.0f) {
             return;
         }
-        super.m2954M(i);
+        super.m3011M(i);
     }
 
     /* renamed from: a */
-    public void mo3272a(C0499j c0499j) {
-        AbstractC0224s a = m4427a(c0499j.f3494j);
+    public void mo3437a(C0499j c0499j) {
+        AbstractC0224s a = m4788a(c0499j.f3496j);
         if (a != null) {
-            a.mo4494f(this);
+            a.mo4949f(this);
         } else {
-            C0831ad.m1543a("specialAction=null on completeQueueItem(turret) for item.uIndex:" + c0499j.f3494j + " id:" + this.f6951ee, true);
+            C0831ad.m1587a("specialAction=null on completeQueueItem(turret) for item.uIndex:" + c0499j.f3496j + " id:" + this.f6951ee, true);
         }
     }
 
     /* renamed from: cl */
-    public C0208c mo3267cl() {
-        if (m3443L() == 1) {
-            return f3402dK.m4507N();
+    public C0208c m3593cl() {
+        if (m3613L() == 1) {
+            return f3402dK.m4910N();
         }
-        if (this.f3378l instanceof C0481f) {
-            return f3403dL.m4507N();
+        if (this.f3386l instanceof C0481f) {
+            return f3403dL.m4910N();
         }
         return AbstractC0224s.f1462i;
     }
 
     /* renamed from: a */
-    public void mo3451a(ArrayList arrayList) {
+    public void m3608a(ArrayList arrayList) {
         arrayList.clear();
-        if (m3443L() == 1) {
-            arrayList.add(f3404dM.m4507N());
-            arrayList.add(f3405dN.m4507N());
+        if (m3613L() == 1) {
+            arrayList.add(f3404dM.m4910N());
+            arrayList.add(f3405dN.m4910N());
         }
     }
 
@@ -491,62 +491,62 @@ public class C0473b extends AbstractC0498i {
         }
 
         /* renamed from: g */
-        public boolean mo3019g() {
+        public boolean mo3078g() {
             return false;
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Increases HP, attack damage, and range";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.upgradeToGunT2", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.upgradeToGunT2", new Object[0]);
         }
 
         /* renamed from: c */
-        public int mo3023c() {
+        public int mo3082c() {
             return 1000;
         }
 
         /* renamed from: K */
-        public float mo3265K() {
+        public float mo3369K() {
             return 0.001f;
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            if (c0473b.m3443L() != 1 || c0473b.mo3313a(AbstractC0224s.f1462i, z) > 0) {
+            if (c0473b.m3613L() != 1 || c0473b.mo3438a(AbstractC0224s.f1462i, z) > 0) {
                 return false;
             }
-            return super.mo3027a(abstractC0244am, z);
+            return super.mo3086a(abstractC0244am, z);
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            if (((C0473b) abstractC0244am).m3443L() != 1) {
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            if (((C0473b) abstractC0244am).m3613L() != 1) {
                 return false;
             }
             return true;
         }
 
         /* renamed from: L */
-        public EnumC0249ar mo5648i() {
+        public EnumC0249ar mo6163i() {
             return null;
         }
 
         /* renamed from: f */
-        public EnumC0225t mo3020f() {
+        public EnumC0225t mo3079f() {
             return EnumC0225t.f1467c;
         }
 
         /* renamed from: f */
-        public void mo4494f(AbstractC0244am abstractC0244am) {
+        public void mo4949f(AbstractC0244am abstractC0244am) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            c0473b.m3435b(C0473b.f3393u);
-            C0473b.m3441a(c0473b);
+            c0473b.m3603b(C0473b.f3388u);
+            C0473b.m3611a(c0473b);
         }
     }
 
@@ -558,61 +558,61 @@ public class C0473b extends AbstractC0498i {
         }
 
         /* renamed from: g */
-        public boolean mo3019g() {
+        public boolean mo3078g() {
             return false;
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Extra attack damage, and range.\n-Large amount of HP\n-Self repair";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.upgradeToGunT3", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.upgradeToGunT3", new Object[0]);
         }
 
         /* renamed from: c */
-        public int mo3023c() {
+        public int mo3082c() {
             return 11000;
         }
 
         /* renamed from: K */
-        public float mo3265K() {
+        public float mo3369K() {
             return 3.0E-4f;
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
-            if (((C0473b) abstractC0244am).mo3313a(AbstractC0224s.f1462i, z) > 0) {
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
+            if (((C0473b) abstractC0244am).mo3438a(AbstractC0224s.f1462i, z) > 0) {
                 return false;
             }
-            return super.mo3027a(abstractC0244am, z);
+            return super.mo3086a(abstractC0244am, z);
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            if (!(((C0473b) abstractC0244am).f3378l instanceof C0481f)) {
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            if (!(((C0473b) abstractC0244am).f3386l instanceof C0481f)) {
                 return false;
             }
             return true;
         }
 
         /* renamed from: L */
-        public EnumC0249ar mo5648i() {
+        public EnumC0249ar mo6163i() {
             return null;
         }
 
         /* renamed from: f */
-        public EnumC0225t mo3020f() {
+        public EnumC0225t mo3079f() {
             return EnumC0225t.f1467c;
         }
 
         /* renamed from: f */
-        public void mo4494f(AbstractC0244am abstractC0244am) {
+        public void mo4949f(AbstractC0244am abstractC0244am) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            c0473b.m3435b(C0473b.f3394v);
-            C0473b.m3437b(c0473b);
+            c0473b.m3603b(C0473b.f3389v);
+            C0473b.m3605b(c0473b);
         }
     }
 
@@ -624,62 +624,62 @@ public class C0473b extends AbstractC0498i {
         }
 
         /* renamed from: g */
-        public boolean mo3019g() {
+        public boolean mo3078g() {
             return false;
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Large increase in range";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.upgradeToArtillery", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.upgradeToArtillery", new Object[0]);
         }
 
         /* renamed from: c */
-        public int mo3023c() {
+        public int mo3082c() {
             return 1600;
         }
 
         /* renamed from: K */
-        public float mo3265K() {
+        public float mo3369K() {
             return 4.0E-4f;
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            if (c0473b.m3443L() != 1 || c0473b.mo3313a(AbstractC0224s.f1462i, z) > 0) {
+            if (c0473b.m3613L() != 1 || c0473b.mo3438a(AbstractC0224s.f1462i, z) > 0) {
                 return false;
             }
-            return super.mo3027a(abstractC0244am, z);
+            return super.mo3086a(abstractC0244am, z);
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            if (((C0473b) abstractC0244am).m3443L() != 1) {
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            if (((C0473b) abstractC0244am).m3613L() != 1) {
                 return false;
             }
             return true;
         }
 
         /* renamed from: L */
-        public EnumC0249ar mo5648i() {
+        public EnumC0249ar mo6163i() {
             return null;
         }
 
         /* renamed from: f */
-        public EnumC0225t mo3020f() {
+        public EnumC0225t mo3079f() {
             return EnumC0225t.f1467c;
         }
 
         /* renamed from: f */
-        public void mo4494f(AbstractC0244am abstractC0244am) {
+        public void mo4949f(AbstractC0244am abstractC0244am) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            c0473b.m3435b(C0473b.f3395w);
-            C0473b.m3432c(c0473b);
+            c0473b.m3603b(C0473b.f3390w);
+            C0473b.m3600c(c0473b);
         }
     }
 
@@ -691,127 +691,127 @@ public class C0473b extends AbstractC0498i {
         }
 
         /* renamed from: g */
-        public boolean mo3019g() {
+        public boolean mo3078g() {
             return false;
         }
 
         /* renamed from: a */
-        public String mo3029a() {
+        public String mo3088a() {
             return "-Short range area affect\n-Adds self-repair";
         }
 
         /* renamed from: b */
-        public String mo3026b() {
-            return C0820a.m1687a("gui.actions.upgradeToFlamethrower", new Object[0]);
+        public String mo3085b() {
+            return C0820a.m1731a("gui.actions.upgradeToFlamethrower", new Object[0]);
         }
 
         /* renamed from: c */
-        public int mo3023c() {
+        public int mo3082c() {
             return 700;
         }
 
         /* renamed from: K */
-        public float mo3265K() {
+        public float mo3369K() {
             return 0.002f;
         }
 
         /* renamed from: a */
-        public boolean mo3027a(AbstractC0244am abstractC0244am, boolean z) {
+        public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            if (c0473b.m3443L() != 1 || c0473b.mo3313a(AbstractC0224s.f1462i, z) > 0) {
+            if (c0473b.m3613L() != 1 || c0473b.mo3438a(AbstractC0224s.f1462i, z) > 0) {
                 return false;
             }
-            return super.mo3027a(abstractC0244am, z);
+            return super.mo3086a(abstractC0244am, z);
         }
 
         /* renamed from: b */
-        public boolean mo3025b(AbstractC0244am abstractC0244am) {
-            if (((C0473b) abstractC0244am).m3443L() != 1) {
+        public boolean mo3084b(AbstractC0244am abstractC0244am) {
+            if (((C0473b) abstractC0244am).m3613L() != 1) {
                 return false;
             }
             return true;
         }
 
         /* renamed from: L */
-        public EnumC0249ar mo5648i() {
+        public EnumC0249ar mo6163i() {
             return null;
         }
 
         /* renamed from: f */
-        public EnumC0225t mo3020f() {
+        public EnumC0225t mo3079f() {
             return EnumC0225t.f1467c;
         }
 
         /* renamed from: f */
-        public void mo4494f(AbstractC0244am abstractC0244am) {
+        public void mo4949f(AbstractC0244am abstractC0244am) {
             C0473b c0473b = (C0473b) abstractC0244am;
-            c0473b.m3435b(C0473b.f3396x);
-            C0473b.m3428d(c0473b);
+            c0473b.m3603b(C0473b.f3391x);
+            C0473b.m3592d(c0473b);
         }
     }
 
     /* renamed from: a */
-    public void mo3174a(int i) {
+    public void mo3356a(int i) {
         if (i == 1) {
-            this.f3376j = false;
-        } else if (i == 2 && !this.f3376j) {
-            this.f3376j = true;
+            this.f3384j = false;
+        } else if (i == 2 && !this.f3384j) {
+            this.f3384j = true;
         }
     }
 
     /* renamed from: E */
-    public PointF mo3073E(int i) {
-        return this.f3378l.mo3407c(i);
+    public PointF mo3156E(int i) {
+        return this.f3386l.mo3571c(i);
     }
 
     /* renamed from: bU */
-    public float m3434bU() {
-        if (this.f1649cJ[0].f1716e > 0.0f && this.f3378l.m3411a(f3395w)) {
-            return 1.0f - (this.f1649cJ[0].f1716e / mo2992b(0));
+    public float m3602bU() {
+        if (this.f1649cJ[0].f1716e > 0.0f && this.f3386l.m3575a(f3390w)) {
+            return 1.0f - (this.f1649cJ[0].f1716e / mo3050b(0));
         }
-        return super.m3347bU();
+        return super.m3474bU();
     }
 
     /* renamed from: G */
-    public PointF mo3089G(int i) {
-        f3986bg.m5368a(super.mo3089G(i));
-        f3986bg.m5367b(0.0f, -5.0f);
+    public PointF mo3176G(int i) {
+        f3986bg.m5878a(super.mo3176G(i));
+        f3986bg.m5877b(0.0f, -5.0f);
         return f3986bg;
     }
 
     /* renamed from: N */
-    public ArrayList mo3068N() {
+    public ArrayList mo3174N() {
         return f3406dO;
     }
 
     /* renamed from: e */
-    public void mo2283e(float f) {
-        super.mo2283e(f);
-        C1117y.m470a(this, mo2978m());
+    public void mo3151e(float f) {
+        super.mo3151e(f);
+        C1117y.m470a(this, mo3035m());
     }
 
     /* renamed from: cX */
-    public float mo3292cX() {
-        return LoggerMaybe.m1072A().f6110bL.f785n;
+    public float m3596cX() {
+        return Core.m1087A().f6110bL.f785n;
     }
 
     /* renamed from: cY */
-    public float mo3291cY() {
-        return LoggerMaybe.m1072A().f6110bL.f786o;
+    public float m3595cY() {
+        return Core.m1087A().f6110bL.f786o;
     }
 
     /* renamed from: cZ */
-    public float mo3290cZ() {
-        return super.mo3290cZ() - 8.0f;
+    public float m3594cZ() {
+        return super.m4708cZ() - 8.0f;
     }
 
     /* renamed from: cK */
-    public int m3429cK() {
-        return this.f3378l.mo3398d();
+    public int m3597cK() {
+        return this.f3386l.mo3562d();
     }
 
     /* renamed from: q */
-    public float mo3060q(int i) {
-        return this.f3378l.mo3400b(i);
+    public float mo3150q(int i) {
+        return this.f3386l.mo3564b(i);
     }
 }

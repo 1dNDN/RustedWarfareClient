@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p044l.C0934e;
 
 /* renamed from: com.corrodinggames.rts.gameFramework.d.g */
@@ -51,23 +51,23 @@ public final class C0747g {
     static final RectF f4831m = new RectF();
 
     /* renamed from: a */
-    public void m2284a() {
-        this.f4828j = this.f4827i.mo5758clone();
-        this.f4828j.mo58j();
-        for (int i = 0; i < this.f4828j.mo390m(); i++) {
-            for (int i2 = 0; i2 < this.f4828j.mo391l(); i2++) {
-                this.f4828j.mo68a(i, i2, Color.m5538a(Color.m5540a(this.f4828j.mo69a(i, i2)), 0, 0, 0));
+    public void m2333a() {
+        this.f4828j = this.f4827i.mo54h();
+        this.f4828j.mo52j();
+        for (int i = 0; i < this.f4828j.mo386m(); i++) {
+            for (int i2 = 0; i2 < this.f4828j.mo387l(); i2++) {
+                this.f4828j.mo62a(i, i2, Color.m5948a(Color.m5950a(this.f4828j.mo63a(i, i2)), 0, 0, 0));
             }
         }
-        this.f4828j.mo54p();
-        this.f4828j.mo51s();
+        this.f4828j.mo48p();
+        this.f4828j.mo45s();
     }
 
     /* renamed from: a */
-    public void m2283a(int i, float f, float f2, Paint paint) {
+    public void m2332a(int i, float f, float f2, Paint paint) {
         Rect rect = f4830l;
         RectF rectF = f4831m;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         int i2 = i;
         int i3 = 0;
         if (i2 >= this.f4826h) {
@@ -76,11 +76,11 @@ public final class C0747g {
         }
         int i4 = this.f4822d + (i2 * this.f4824f);
         int i5 = this.f4823e + (i3 * this.f4825g);
-        f4830l.m5467a(i4, i5, i4 + this.f4820b, i5 + this.f4821c);
-        rectF.m5454a(f, f2, f + rect.m5465b(), f2 + rect.m5461c());
+        f4830l.m5874a(i4, i5, i4 + this.f4820b, i5 + this.f4821c);
+        rectF.m5861a(f, f2, f + rect.m5872b(), f2 + rect.m5868c());
         if (1 != 0) {
-            rectF.m5455a((-rectF.m5449b()) / 2.0f, (-rectF.m5445c()) / 2.0f);
+            rectF.m5862a((-rectF.m5856b()) / 2.0f, (-rectF.m5852c()) / 2.0f);
         }
-        m1079A.f6113bO.mo197a(this.f4827i, rect, rectF, paint);
+        m1087A.f6113bO.mo192a(this.f4827i, rect, rectF, paint);
     }
 }

@@ -1,7 +1,7 @@
 package com.corrodinggames.rts.game.p010a;
 
 import com.corrodinggames.rts.game.units.AbstractC0623y;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,20 +16,20 @@ public abstract class AbstractC0163h extends AbstractC0170o {
     ArrayList f688G;
 
     /* renamed from: c */
-    public abstract void mo4560c(float f);
+    public abstract void m5436c(float f);
 
     /* renamed from: l */
-    public int m4620l() {
+    public int m5435l() {
         return this.f687F.size();
     }
 
     /* renamed from: a */
-    public boolean mo4625a() {
+    public boolean m5441a() {
         return false;
     }
 
     /* renamed from: b */
-    public boolean mo4623b() {
+    public boolean m5439b() {
         return false;
     }
 
@@ -40,7 +40,7 @@ public abstract class AbstractC0163h extends AbstractC0170o {
     }
 
     /* renamed from: m */
-    public boolean m4619m() {
+    public boolean m5434m() {
         Iterator it = this.f760R.f599bl.iterator();
         while (it.hasNext()) {
             AbstractC0170o abstractC0170o = (AbstractC0170o) it.next();
@@ -52,13 +52,13 @@ public abstract class AbstractC0163h extends AbstractC0170o {
     }
 
     /* renamed from: n */
-    public void m4618n() {
+    public void m5433n() {
         Iterator it = this.f687F.iterator();
         while (it.hasNext()) {
             AbstractC0623y abstractC0623y = (AbstractC0623y) it.next();
             if (abstractC0623y == null || abstractC0623y.f1607bT) {
-                if (abstractC0623y != null && abstractC0623y.f3950aA == this) {
-                    abstractC0623y.f3950aA = null;
+                if (abstractC0623y != null && abstractC0623y.f3947aA == this) {
+                    abstractC0623y.f3947aA = null;
                 }
                 if (abstractC0623y != null) {
                     this.f688G.remove(abstractC0623y);
@@ -69,7 +69,7 @@ public abstract class AbstractC0163h extends AbstractC0170o {
     }
 
     /* renamed from: o */
-    public void m4617o() {
+    public void m5432o() {
         Iterator it = this.f688G.iterator();
         while (it.hasNext()) {
             AbstractC0623y abstractC0623y = (AbstractC0623y) it.next();
@@ -79,49 +79,48 @@ public abstract class AbstractC0163h extends AbstractC0170o {
         }
     }
 
-    @Override // com.corrodinggames.rts.game.p010a.AbstractC0170o
     /* renamed from: p */
-    public void mo4548p() {
-        m4616q();
+    public void m5431p() {
+        m5430q();
         this.f688G.clear();
-        super.mo4548p();
+        super.m5358p();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: a */
-    public void mo4624a(AbstractC0623y abstractC0623y) {
-        if (abstractC0623y.f3950aA != null) {
-            abstractC0623y.f3950aA.m4621b(abstractC0623y);
+    public void m5440a(AbstractC0623y abstractC0623y) {
+        if (abstractC0623y.f3947aA != null) {
+            abstractC0623y.f3947aA.m5437b(abstractC0623y);
         }
         if (abstractC0623y.f1609bV != null && abstractC0623y.f1609bV != this.f760R) {
-            AbstractC0916l.m957g("unit.team:" + abstractC0623y.f1609bV.f1317k + ", ai:" + this.f760R.f1317k);
+            Core.m973g("unit.team:" + abstractC0623y.f1609bV.f1306k + ", ai:" + this.f760R.f1306k);
         }
         this.f687F.add(abstractC0623y);
-        abstractC0623y.f3950aA = this;
+        abstractC0623y.f3947aA = this;
     }
 
     /* renamed from: b */
-    public void m4621b(AbstractC0623y abstractC0623y) {
+    public void m5437b(AbstractC0623y abstractC0623y) {
         this.f687F.remove(abstractC0623y);
         this.f688G.remove(abstractC0623y);
-        if (abstractC0623y.f3950aA == this) {
-            abstractC0623y.f3950aA = null;
+        if (abstractC0623y.f3947aA == this) {
+            abstractC0623y.f3947aA = null;
         }
     }
 
     /* renamed from: q */
-    public void m4616q() {
+    public void m5430q() {
         Iterator it = this.f687F.iterator();
         while (it.hasNext()) {
             AbstractC0623y abstractC0623y = (AbstractC0623y) it.next();
-            if (abstractC0623y != null && abstractC0623y.f3950aA == this) {
-                abstractC0623y.f3950aA = null;
+            if (abstractC0623y != null && abstractC0623y.f3947aA == this) {
+                abstractC0623y.f3947aA = null;
             }
         }
         this.f687F.clear();
     }
 
     /* renamed from: b */
-    public void mo4622b(float f) {
+    public void m5438b(float f) {
     }
 }

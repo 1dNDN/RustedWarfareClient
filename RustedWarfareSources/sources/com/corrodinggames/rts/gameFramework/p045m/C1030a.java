@@ -10,7 +10,7 @@ import com.corrodinggames.rts.game.units.InterfaceC0242ak;
 import com.corrodinggames.rts.game.units.custom.C0385az;
 import com.corrodinggames.rts.game.units.custom.C0413bn;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p041i.C0831ad;
 import com.corrodinggames.rts.gameFramework.p045m.p046a.AbstractC1031a;
 import com.corrodinggames.rts.gameFramework.utility.C1101m;
@@ -108,171 +108,171 @@ public class C1030a {
     public boolean f6617u = false;
 
     /* renamed from: a */
-    public void m813a(AbstractC1031a abstractC1031a) {
+    public void m821a(AbstractC1031a abstractC1031a) {
         this.f6602f.add(abstractC1031a);
     }
 
     /* renamed from: a */
-    public void m812a(String str) {
-        this.f6616t.m4966b(str);
+    public void m820a(String str) {
+        this.f6616t.m5349b(str);
     }
 
     /* renamed from: b */
-    public String m802b(String str) {
-        return this.f6616t.m4966b(str);
+    public String m810b(String str) {
+        return this.f6616t.m5349b(str);
     }
 
     /* renamed from: a */
-    public String m807a(String str, String str2) {
-        return this.f6616t.m4969a(str, str2);
+    public String m815a(String str, String str2) {
+        return this.f6616t.m5352a(str, str2);
     }
 
     /* renamed from: c */
-    public boolean m799c(String str) {
-        return this.f6616t.m4966b(str) != null;
+    public boolean m807c(String str) {
+        return this.f6616t.m5349b(str) != null;
     }
 
     /* renamed from: a */
-    public int m810a(String str, int i) {
-        String m807a = m807a(str, (String) null);
-        if (m807a == null) {
+    public int m818a(String str, int i) {
+        String m815a = m815a(str, (String) null);
+        if (m815a == null) {
             return i;
         }
         try {
-            return Integer.parseInt(m807a);
+            return Integer.parseInt(m815a);
         } catch (NumberFormatException e) {
-            throw m794f(str + ": Unexpected integer value:'" + m807a + "'");
+            throw m802f(str + ": Unexpected integer value:'" + m815a + "'");
         }
     }
 
     /* renamed from: b */
-    public int m801b(String str, int i) {
+    public int m809b(String str, int i) {
         double d;
-        String m802b = m802b(str);
-        if (m802b == null) {
+        String m810b = m810b(str);
+        if (m810b == null) {
             return i;
         }
-        if (m802b.endsWith("ms")) {
-            m802b = m802b.substring(0, m802b.length() - 2);
+        if (m810b.endsWith("ms")) {
+            m810b = m810b.substring(0, m810b.length() - 2);
             d = 1.0d;
-        } else if (m802b.endsWith("s")) {
-            m802b = m802b.substring(0, m802b.length() - 1);
+        } else if (m810b.endsWith("s")) {
+            m810b = m810b.substring(0, m810b.length() - 1);
             d = 1000.0d;
         } else {
             d = 1.0d;
         }
         try {
-            return (int) (Double.parseDouble(m802b) * d);
+            return (int) (Double.parseDouble(m810b) * d);
         } catch (NumberFormatException e) {
             e.printStackTrace();
-            throw m794f(str + ": Unexpected time:'" + m802b + "'");
+            throw m802f(str + ": Unexpected time:'" + m810b + "'");
         }
     }
 
     /* renamed from: a */
-    public float m811a(String str, float f) {
-        String m807a = m807a(str, (String) null);
-        if (m807a == null) {
+    public float m819a(String str, float f) {
+        String m815a = m815a(str, (String) null);
+        if (m815a == null) {
             return f;
         }
         try {
-            return Float.parseFloat(m807a);
+            return Float.parseFloat(m815a);
         } catch (NumberFormatException e) {
-            throw m794f(str + ": Unexpected float value:'" + m807a + "'");
+            throw m802f(str + ": Unexpected float value:'" + m815a + "'");
         }
     }
 
     /* renamed from: d */
-    public Integer m796d(String str) {
-        String m807a = m807a(str, (String) null);
-        if (m807a == null) {
+    public Integer m804d(String str) {
+        String m815a = m815a(str, (String) null);
+        if (m815a == null) {
             return null;
         }
         try {
-            return Integer.valueOf(Integer.parseInt(m807a));
+            return Integer.valueOf(Integer.parseInt(m815a));
         } catch (NumberFormatException e) {
-            throw m794f(str + ": Unexpected integer value:'" + m807a + "'");
+            throw m802f(str + ": Unexpected integer value:'" + m815a + "'");
         }
     }
 
     /* renamed from: e */
-    public Boolean m795e(String str) {
-        String m807a = m807a(str, (String) null);
-        if (m807a == null) {
+    public Boolean m803e(String str) {
+        String m815a = m815a(str, (String) null);
+        if (m815a == null) {
             return null;
         }
-        if (m807a.equalsIgnoreCase("true")) {
+        if (m815a.equalsIgnoreCase("true")) {
             return true;
         }
-        if (m807a.equalsIgnoreCase("false")) {
+        if (m815a.equalsIgnoreCase("false")) {
             return false;
         }
-        throw m794f(str + ": Unexpected boolean value:'" + m807a + "'");
+        throw m802f(str + ": Unexpected boolean value:'" + m815a + "'");
     }
 
     /* renamed from: a */
-    public boolean m806a(String str, String str2, boolean z) {
-        Boolean m795e = m795e(str);
-        if (m795e != null) {
-            return m795e.booleanValue();
+    public boolean m814a(String str, String str2, boolean z) {
+        Boolean m803e = m803e(str);
+        if (m803e != null) {
+            return m803e.booleanValue();
         }
-        Boolean m795e2 = m795e(str2);
-        if (m795e2 != null) {
-            return m795e2.booleanValue();
+        Boolean m803e2 = m803e(str2);
+        if (m803e2 != null) {
+            return m803e2.booleanValue();
         }
         return z;
     }
 
     /* renamed from: a */
-    public boolean m805a(String str, boolean z) {
-        String m807a = m807a(str, (String) null);
-        if (m807a == null) {
+    public boolean m813a(String str, boolean z) {
+        String m815a = m815a(str, (String) null);
+        if (m815a == null) {
             return z;
         }
-        if (m807a.equalsIgnoreCase("true")) {
+        if (m815a.equalsIgnoreCase("true")) {
             return true;
         }
-        if (m807a.equalsIgnoreCase("false")) {
+        if (m815a.equalsIgnoreCase("false")) {
             return false;
         }
-        throw m794f(str + ": Unexpected boolean value:'" + m807a + "'");
+        throw m802f(str + ": Unexpected boolean value:'" + m815a + "'");
     }
 
     /* renamed from: c */
-    public int m798c(String str, int i) {
-        String m802b = m802b(str);
-        if (m802b == null) {
+    public int m806c(String str, int i) {
+        String m810b = m810b(str);
+        if (m810b == null) {
             return i;
         }
-        if (m802b.equals(VariableScope.nullOrMissingString)) {
-            throw m794f(str + ": Unknown color:" + m802b);
+        if (m810b.equals(VariableScope.nullOrMissingString)) {
+            throw m802f(str + ": Unknown color:" + m810b);
         }
         try {
-            return Color.m5537a(m802b);
+            return Color.m5947a(m810b);
         } catch (IllegalArgumentException e) {
-            throw m794f(str + ": Unknown color:" + m802b);
+            throw m802f(str + ": Unknown color:" + m810b);
         }
     }
 
     /* renamed from: a */
-    public C0385az m809a(String str, C0385az c0385az) {
-        return this.f6616t.m4970a(str, c0385az);
+    public C0385az m817a(String str, C0385az c0385az) {
+        return this.f6616t.m5353a(str, c0385az);
     }
 
     /* renamed from: a */
-    public boolean m814a(AbstractC0244am abstractC0244am) {
-        return this.f6616t.m4972a(abstractC0244am);
+    public boolean m822a(AbstractC0244am abstractC0244am) {
+        return this.f6616t.m5355a(abstractC0244am);
     }
 
     /* renamed from: f */
-    public C0179f m794f(String str) {
-        return m808a(str, (Exception) null);
+    public C0179f m802f(String str) {
+        return m816a(str, (Exception) null);
     }
 
     /* renamed from: a */
-    public C0179f m808a(String str, Exception exc) {
+    public C0179f m816a(String str, Exception exc) {
         String str2 = "MapTrigger-Error (" + this.f6597a + " id:" + this.f6598b + "): " + str;
-        C0831ad.m1451g(str2);
+        C0831ad.m1493g(str2);
         if (exc == null) {
             return new C0179f(str2);
         }
@@ -280,46 +280,46 @@ public class C1030a {
     }
 
     /* renamed from: g */
-    public void m793g(String str) {
-        C0831ad.m1451g("MapTrigger-Error (" + this.f6597a + " id:" + this.f6598b + " type:" + this.f6603g + "): " + str);
+    public void m801g(String str) {
+        C0831ad.m1493g("MapTrigger-Error (" + this.f6597a + " id:" + this.f6598b + " type:" + this.f6603g + "): " + str);
     }
 
     /* renamed from: h */
-    public void m792h(String str) {
-        LoggerMaybe.LogDebug2("MapTrigger-Debug (" + this.f6598b + " type:" + this.f6603g + "): " + str);
+    public void m800h(String str) {
+        Core.LogDebug2("MapTrigger-Debug (" + this.f6598b + " type:" + this.f6603g + "): " + str);
     }
 
     /* renamed from: a */
-    public AbstractC0197n m815a() {
+    public AbstractC0197n m823a() {
         return this.f6621y;
     }
 
     /* renamed from: b */
-    public int m804b() {
-        return (int) this.f6616t.f776j.m5443d();
+    public int m812b() {
+        return (int) this.f6616t.f776j.m5850d();
     }
 
     /* renamed from: c */
-    public int m800c() {
-        return (int) this.f6616t.f776j.m5442e();
+    public int m808c() {
+        return (int) this.f6616t.f776j.m5849e();
     }
 
     /* renamed from: b */
-    public boolean m803b(AbstractC0244am abstractC0244am) {
-        AbstractC0197n m815a = m815a();
-        if (m815a != null && abstractC0244am.f1609bV != m815a) {
+    public boolean m811b(AbstractC0244am abstractC0244am) {
+        AbstractC0197n m823a = m823a();
+        if (m823a != null && abstractC0244am.f1609bV != m823a) {
             return false;
         }
-        if (m799c("onlyIfEmpty") && abstractC0244am.mo3209cq() && (abstractC0244am instanceof InterfaceC0242ak) && ((InterfaceC0242ak) abstractC0244am).mo3215bB() > 0) {
+        if (m807c("onlyIfEmpty") && abstractC0244am.m4691cq() && (abstractC0244am instanceof InterfaceC0242ak) && ((InterfaceC0242ak) abstractC0244am).mo4818bB() > 0) {
             return false;
         }
         return true;
     }
 
     /* renamed from: d */
-    public boolean m797d() {
+    public boolean m805d() {
         boolean z;
-        int i = LoggerMaybe.m1079A().f6102by;
+        int i = Core.m1087A().f6102by;
         boolean z2 = true;
         boolean z3 = false;
         if (!this.f6609m && this.f6614r != -1) {
@@ -330,8 +330,8 @@ public class C1030a {
                 z2 = false;
             }
         }
-        if (this.f6600d.m785a()) {
-            if (this.f6600d.m783b()) {
+        if (this.f6600d.m793a()) {
+            if (this.f6600d.m791b()) {
                 z3 = true;
             } else {
                 z2 = false;
@@ -341,8 +341,8 @@ public class C1030a {
             Iterator it = this.f6602f.iterator();
             while (it.hasNext()) {
                 AbstractC1031a abstractC1031a = (AbstractC1031a) it.next();
-                if (abstractC1031a.m791a(this)) {
-                    if (abstractC1031a.mo788b(this)) {
+                if (abstractC1031a.m799a(this)) {
+                    if (abstractC1031a.mo796b(this)) {
                         z3 = true;
                     } else {
                         z2 = false;

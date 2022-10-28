@@ -10,7 +10,7 @@ import com.corrodinggames.rts.game.units.custom.p021e.p022a.C0432d;
 import com.corrodinggames.rts.game.units.custom.p021e.p022a.C0433e;
 import com.corrodinggames.rts.game.units.custom.p021e.p022a.C0434f;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p044l.C0934e;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -66,7 +66,7 @@ public class C0428a {
     public boolean f2749o;
 
     /* renamed from: p */
-    public EnumC0435b f2750p = EnumC0435b.none;
+    public EnumC0435b f2750p = EnumC0435b.f2767a;
 
     /* renamed from: q */
     boolean f2751q;
@@ -102,40 +102,40 @@ public class C0428a {
     public static ArrayList f2761A = new ArrayList();
 
     /* renamed from: B */
-    public static final C0428a f2762B = m3831a(new C0431c());
+    public static final C0428a f2762B = m4055a(new C0431c());
 
     /* renamed from: C */
-    public static final C0428a f2763C = m3831a(new C0432d());
+    public static final C0428a f2763C = m4055a(new C0432d());
 
     /* renamed from: D */
-    public static final C0428a f2764D = m3831a(new C0430b());
+    public static final C0428a f2764D = m4055a(new C0430b());
 
     /* renamed from: F */
-    public static final C0428a f2765F = m3831a(new C0434f());
+    public static final C0428a f2766F = m4055a(new C0434f());
 
     /* renamed from: E */
-    public static final C0428a f2766E = m3831a(new C0433e());
+    public static final C0428a f2765E = m4055a(new C0433e());
 
     /* renamed from: a */
-    public boolean m3836a() {
+    public boolean m4060a() {
         return this.f2751q;
     }
 
     /* renamed from: b */
-    public boolean m3827b() {
+    public boolean m4051b() {
         return this.f2753s;
     }
 
     /* renamed from: c */
-    public boolean m3824c() {
+    public boolean m4048c() {
         return this.f2752r;
     }
 
     /* renamed from: d */
-    public static void m3823d() {
+    public static void m4047d() {
         Iterator it = f2759y.iterator();
         while (it.hasNext()) {
-            ((C0428a) it.next()).m3821f();
+            ((C0428a) it.next()).m4045f();
         }
         ArrayList arrayList = new ArrayList();
         Iterator it2 = f2759y.iterator();
@@ -149,22 +149,22 @@ public class C0428a {
     }
 
     /* renamed from: e */
-    public static ArrayList m3822e() {
+    public static ArrayList m4046e() {
         return f2760z;
     }
 
     /* renamed from: f */
-    public void m3821f() {
+    public void m4045f() {
         if (this.f2753s) {
             this.f2735a = true;
             return;
         }
         C0437d c0437d = null;
-        Iterator it = C0453l.f2906d.iterator();
+        Iterator it = C0453l.f3188d.iterator();
         while (it.hasNext()) {
-            C0437d m3550a = ((C0453l) it.next()).m3550a(this);
-            if (m3550a != null && (c0437d == null || c0437d.f2774c < m3550a.f2774c)) {
-                c0437d = m3550a;
+            C0437d m3726a = ((C0453l) it.next()).m3726a(this);
+            if (m3726a != null && (c0437d == null || c0437d.f2774c < m3726a.f2774c)) {
+                c0437d = m3726a;
             }
         }
         this.f2735a = c0437d != null;
@@ -193,44 +193,44 @@ public class C0428a {
     }
 
     /* renamed from: g */
-    public Integer m3820g() {
+    public Integer m4044g() {
         return this.f2746l;
     }
 
     /* renamed from: h */
-    public String m3819h() {
+    public String m4043h() {
         if (this.f2737c == null) {
             return this.f2736b;
         }
-        return this.f2737c.m3994b();
+        return this.f2737c.m4224b();
     }
 
     /* renamed from: i */
-    public String m3818i() {
+    public String m4042i() {
         if (this.f2738d != null) {
-            return this.f2738d.m3994b();
+            return this.f2738d.m4224b();
         }
-        return m3819h();
+        return m4043h();
     }
 
     /* renamed from: a */
-    public String m3834a(double d, boolean z) {
-        String m2089c;
+    public String m4058a(double d, boolean z) {
+        String m2138c;
         if (this.f2748n) {
-            m2089c = VariableScope.nullOrMissingString + ((int) d);
+            m2138c = VariableScope.nullOrMissingString + ((int) d);
         } else {
-            m2089c = C0758f.m2089c(d);
+            m2138c = C0758f.m2138c(d);
         }
-        return mo3816a(z) + m3829a(m2089c, this.f2750p) + m3825b(z);
+        return mo4040a(z) + m4053a(m2138c, this.f2750p) + m4049b(z);
     }
 
     /* renamed from: a */
-    public static String m3829a(String str, EnumC0435b enumC0435b) {
+    public static String m4053a(String str, EnumC0435b enumC0435b) {
         String str2;
-        if (enumC0435b == EnumC0435b.none) {
+        if (enumC0435b == EnumC0435b.f2767a) {
             return str;
         }
-        if (LoggerMaybe.m1079A().f6115bQ.disableDigitGrouping) {
+        if (Core.m1087A().settingEngine.disableDigitGrouping) {
             return str;
         }
         String str3 = str;
@@ -243,9 +243,9 @@ public class C0428a {
         if (str3.length() <= 3) {
             return str;
         }
-        if (enumC0435b == EnumC0435b.space) {
+        if (enumC0435b == EnumC0435b.f2768b) {
             str2 = " ";
-        } else if (enumC0435b == EnumC0435b.comma) {
+        } else if (enumC0435b == EnumC0435b.f2769c) {
             str2 = ",";
         } else {
             throw new RuntimeException("Unhandled grouping style: " + enumC0435b);
@@ -268,45 +268,45 @@ public class C0428a {
     }
 
     /* renamed from: a */
-    public static String m3832a(long j, EnumC0435b enumC0435b) {
-        if (enumC0435b == EnumC0435b.none) {
+    public static String m4056a(long j, EnumC0435b enumC0435b) {
+        if (enumC0435b == EnumC0435b.f2767a) {
             return VariableScope.nullOrMissingString + j;
         }
-        if (enumC0435b == EnumC0435b.space) {
+        if (enumC0435b == EnumC0435b.f2768b) {
             return String.format(Locale.US, "%,d", Long.valueOf(j)).replace(",", " ");
         }
-        if (enumC0435b == EnumC0435b.comma) {
+        if (enumC0435b == EnumC0435b.f2769c) {
             return String.format(Locale.US, "%,d", Long.valueOf(j));
         }
         throw new RuntimeException("Unhandled grouping style: " + enumC0435b);
     }
 
     /* renamed from: a */
-    public String mo3816a(boolean z) {
+    public String mo4040a(boolean z) {
         if (this.f2741g != null) {
-            return this.f2741g.m3994b();
+            return this.f2741g.m4224b();
         }
         if (z && this.f2739e) {
             return VariableScope.nullOrMissingString;
         }
-        return m3819h() + ": ";
+        return m4043h() + ": ";
     }
 
     /* renamed from: b */
-    public String m3825b(boolean z) {
+    public String m4049b(boolean z) {
         if (this.f2742h != null) {
-            return this.f2742h.m3994b();
+            return this.f2742h.m4224b();
         }
         return VariableScope.nullOrMissingString;
     }
 
     /* renamed from: j */
-    public C0934e m3817j() {
+    public C0934e m4041j() {
         return this.f2757w;
     }
 
     /* renamed from: a */
-    public static C0428a m3830a(String str) {
+    public static C0428a m4054a(String str) {
         String lowerCase = str.toLowerCase(Locale.ENGLISH);
         Iterator it = f2761A.iterator();
         while (it.hasNext()) {
@@ -319,7 +319,7 @@ public class C0428a {
     }
 
     /* renamed from: a */
-    public static C0428a m3831a(C0428a c0428a) {
+    public static C0428a m4055a(C0428a c0428a) {
         Iterator it = f2759y.iterator();
         while (it.hasNext()) {
             if (((C0428a) it.next()).f2736b.equals(c0428a.f2736b)) {
@@ -332,7 +332,7 @@ public class C0428a {
     }
 
     /* renamed from: a */
-    public static C0428a m3828a(String str, boolean z, boolean z2) {
+    public static C0428a m4052a(String str, boolean z, boolean z2) {
         Iterator it = f2759y.iterator();
         while (it.hasNext()) {
             C0428a c0428a = (C0428a) it.next();
@@ -349,7 +349,7 @@ public class C0428a {
     }
 
     /* renamed from: b */
-    public static C0428a m3826b(String str) {
+    public static C0428a m4050b(String str) {
         Iterator it = f2759y.iterator();
         while (it.hasNext()) {
             C0428a c0428a = (C0428a) it.next();
@@ -361,30 +361,30 @@ public class C0428a {
     }
 
     /* renamed from: a */
-    private String m3835a(double d) {
-        return m3829a(C0758f.m2164a(d, 1), this.f2750p);
+    private String m4059a(double d) {
+        return m4053a(C0758f.m2213a(d, 1), this.f2750p);
     }
 
     /* renamed from: a */
-    public String m3833a(double d, boolean z, boolean z2) {
+    public String m4057a(double d, boolean z, boolean z2) {
         String str;
         if (z2 && this.f2740f) {
             str = VariableScope.nullOrMissingString;
         } else {
-            str = m3818i() + ": ";
+            str = m4042i() + ": ";
         }
         if (this == f2762B) {
             str = "$";
         }
         if (z) {
             if (d > 0.0d) {
-                return "+" + str + m3835a(d);
+                return "+" + str + m4059a(d);
             }
-            return "-" + str + m3835a(-d);
+            return "-" + str + m4059a(-d);
         } else if (d > 0.0d) {
-            return str + m3835a(d);
+            return str + m4059a(d);
         } else {
-            return str + m3835a(d);
+            return str + m4059a(d);
         }
     }
 
@@ -393,28 +393,28 @@ public class C0428a {
     }
 
     /* renamed from: a */
-    public double mo3815a(AbstractC0244am abstractC0244am) {
+    public double mo4039a(AbstractC0244am abstractC0244am) {
         if (this.f2752r) {
-            return abstractC0244am.f1609bV.m4673c(this);
+            return abstractC0244am.f1609bV.m5052c(this);
         }
-        return abstractC0244am.m4501a(this);
+        return abstractC0244am.m4781a(this);
     }
 
     /* renamed from: a */
-    public void mo3814a(AbstractC0244am abstractC0244am, double d) {
+    public void mo4038a(AbstractC0244am abstractC0244am, double d) {
         if (this.f2752r) {
-            abstractC0244am.f1609bV.m4722S().m3797a(this, d);
+            abstractC0244am.f1609bV.m5101S().m4021a(this, d);
         } else {
-            abstractC0244am.mo1717dd().m3797a(this, d);
+            abstractC0244am.mo1759dd().m4021a(this, d);
         }
     }
 
     /* renamed from: b */
-    public void mo3813b(AbstractC0244am abstractC0244am, double d) {
+    public void mo4037b(AbstractC0244am abstractC0244am, double d) {
         if (this.f2752r) {
-            abstractC0244am.f1609bV.m4722S().m3782b(this, d);
+            abstractC0244am.f1609bV.m5101S().m4006b(this, d);
         } else {
-            abstractC0244am.mo1717dd().m3782b(this, d);
+            abstractC0244am.mo1759dd().m4006b(this, d);
         }
     }
 }

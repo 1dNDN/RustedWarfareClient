@@ -15,7 +15,7 @@ import android.support.p004v4.content.ContextCompat;
 import android.widget.Toast;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p036e.C0750a;
 import com.corrodinggames.rts.gameFramework.p039g.C0820a;
 import java.io.File;
@@ -39,11 +39,11 @@ public class C0090c {
     public static EnumC0095e f425d = f424c;
 
     /* renamed from: a */
-    public static int m5235a(String str) {
+    public static int m5642a(String str) {
         String[] split;
         String str2 = null;
         if (str != null) {
-            str2 = C0758f.m2038k(str);
+            str2 = C0758f.m2087k(str);
         }
         if (str2 != null) {
             Matcher matcher = Pattern.compile("^ *\\[([^\\]]*)\\].*").matcher(str2);
@@ -54,19 +54,19 @@ public class C0090c {
                         try {
                             return Integer.parseInt(substring);
                         } catch (NumberFormatException e) {
-                            LoggerMaybe.LogDebug2("getNumberOfPlayersInMap: NumberFormatException:" + substring);
+                            Core.LogDebug2("getNumberOfPlayersInMap: NumberFormatException:" + substring);
                             return -1;
                         }
                     }
                 }
             }
         }
-        LoggerMaybe.LogDebug2("getNumberOfPlayersInMap: fail to match:" + str2);
+        Core.LogDebug2("getNumberOfPlayersInMap: fail to match:" + str2);
         return -1;
     }
 
     /* renamed from: b */
-    public static String m5232b(String str) {
+    public static String m5639b(String str) {
         if (str == null) {
             return null;
         }
@@ -126,31 +126,31 @@ public class C0090c {
     }
 
     /* renamed from: c */
-    public static String m5230c(String str) {
+    public static String m5637c(String str) {
         return str.replace(".tmx", VariableScope.nullOrMissingString) + "_map.png";
     }
 
     /* renamed from: c */
-    private static void m5231c(Activity activity) {
+    private static void m5638c(Activity activity) {
         if (Build.VERSION.SDK_INT >= 19) {
-            activity.m5620a().getDecorView().setSystemUiVisibility(5894);
+            activity.m6030a().getDecorView().setSystemUiVisibility(5894);
         }
     }
 
     /* renamed from: d */
-    private static void m5229d(Activity activity) {
+    private static void m5636d(Activity activity) {
     }
 
     /* renamed from: a */
-    public static void m5236a(Runnable runnable) {
+    public static void m5643a(Runnable runnable) {
         if (f422a == null) {
-            f422a = new Handler(Looper.m5404b());
+            f422a = new Handler(Looper.m5811b());
         }
-        f422a.m5414a(runnable);
+        f422a.m5821a(runnable);
     }
 
     /* renamed from: a */
-    public static Context m5245a() {
+    public static Context m5652a() {
         if (f423b == null) {
             throw new RuntimeException("ApplicationContext==null");
         }
@@ -158,68 +158,68 @@ public class C0090c {
     }
 
     /* renamed from: a */
-    public static void m5244a(Activity activity) {
+    public static void m5651a(Activity activity) {
         if (f423b == null) {
-            f423b = activity.mo5600g();
+            f423b = activity.mo6010g();
         }
     }
 
     /* renamed from: a */
-    public static void m5238a(Context context) {
+    public static void m5645a(Context context) {
         if (f423b == null) {
-            f423b = context.mo5600g();
+            f423b = context.mo6010g();
         }
     }
 
     /* renamed from: a */
-    public static void m5239a(Activity activity, boolean z, boolean z2) {
-        m5244a(activity);
+    public static void m5646a(Activity activity, boolean z, boolean z2) {
+        m5651a(activity);
         if (z2) {
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
-            if (m1079A != null && m1079A.f6115bQ.immersiveFullScreen) {
-                m5231c(activity);
+            Core m1087A = Core.m1087A();
+            if (m1087A != null && m1087A.settingEngine.immersiveFullScreen) {
+                m5638c(activity);
             }
         } else {
-            m5229d(activity);
+            m5636d(activity);
         }
-        LoggerMaybe m1079A2 = LoggerMaybe.m1079A();
-        if (m1079A2 != null) {
-            m1079A2.m1022aa();
+        Core m1087A2 = Core.m1087A();
+        if (m1087A2 != null) {
+            m1087A2.m1030aa();
         }
         if (z) {
-            activity.m5620a().setBackgroundDrawable(null);
+            activity.m6030a().setBackgroundDrawable(null);
         }
     }
 
     /* renamed from: a */
-    public static void m5240a(Activity activity, boolean z) {
+    public static void m5647a(Activity activity, boolean z) {
         if (z) {
-            activity.m5618a(0, 0);
+            activity.m6028a(0, 0);
         }
     }
 
     /* renamed from: a */
-    public static boolean m5242a(Activity activity, Runnable runnable) {
-        LoggerMaybe.m1079A();
-        if (m5241a(activity, runnable, false)) {
+    public static boolean m5649a(Activity activity, Runnable runnable) {
+        Core.m1087A();
+        if (m5648a(activity, runnable, false)) {
             return true;
         }
         return false;
     }
 
     /* renamed from: a */
-    public static boolean m5241a(Activity activity, Runnable runnable, boolean z) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        if ((!z && m1079A.f6115bQ.hasSelectedAStorageType) || Build.VERSION.SDK_INT < 19) {
+    public static boolean m5648a(Activity activity, Runnable runnable, boolean z) {
+        Core m1087A = Core.m1087A();
+        if ((!z && m1087A.settingEngine.hasSelectedAStorageType) || Build.VERSION.SDK_INT < 19) {
             return false;
         }
-        DialogInterface$OnClickListenerC00911 dialogInterface$OnClickListenerC00911 = new DialogInterface$OnClickListenerC00911(m1079A, runnable);
-        DialogInterface$OnClickListenerC00922 dialogInterface$OnClickListenerC00922 = new DialogInterface$OnClickListenerC00922(activity, m1079A, runnable);
-        String m1689a = C0820a.m1689a("menus.mods.androidStorageSetupTitle", new Object[0]);
-        String m1689a2 = C0820a.m1689a("menus.mods.androidStorageSetupMessage", new Object[0]);
-        String m1689a3 = C0820a.m1689a("menus.mods.androidStorageSetupInternal", new Object[0]);
-        new AlertDialog.Builder(activity).setIcon(17301543).setTitle(m1689a).setMessage(m1689a2).setPositiveButton(m1689a3, dialogInterface$OnClickListenerC00911).setNeutralButton(C0820a.m1689a("menus.mods.androidStorageSetupExternal", new Object[0]), dialogInterface$OnClickListenerC00922).show();
-        LoggerMaybe.LogDebug2("Showing storage setup");
+        DialogInterface$OnClickListenerC00911 dialogInterface$OnClickListenerC00911 = new DialogInterface$OnClickListenerC00911(m1087A, runnable);
+        DialogInterface$OnClickListenerC00922 dialogInterface$OnClickListenerC00922 = new DialogInterface$OnClickListenerC00922(activity, m1087A, runnable);
+        String m1731a = C0820a.m1731a("menus.mods.androidStorageSetupTitle", new Object[0]);
+        String m1731a2 = C0820a.m1731a("menus.mods.androidStorageSetupMessage", new Object[0]);
+        String m1731a3 = C0820a.m1731a("menus.mods.androidStorageSetupInternal", new Object[0]);
+        new AlertDialog.Builder(activity).setIcon(17301543).setTitle(m1731a).setMessage(m1731a2).setPositiveButton(m1731a3, dialogInterface$OnClickListenerC00911).setNeutralButton(C0820a.m1731a("menus.mods.androidStorageSetupExternal", new Object[0]), dialogInterface$OnClickListenerC00922).show();
+        Core.LogDebug2("Showing storage setup");
         return true;
     }
 
@@ -229,21 +229,21 @@ public class C0090c {
     public final class DialogInterface$OnClickListenerC00911 implements DialogInterface.OnClickListener {
 
         /* renamed from: a */
-        final /* synthetic */ LoggerMaybe f426a;
+        final /* synthetic */ Core f426a;
 
         /* renamed from: b */
         final /* synthetic */ Runnable f427b;
 
-        DialogInterface$OnClickListenerC00911(LoggerMaybe loggerMaybe, Runnable runnable) {
-            this.f426a = loggerMaybe;
+        DialogInterface$OnClickListenerC00911(Core core, Runnable runnable) {
+            this.f426a = core;
             this.f427b = runnable;
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            this.f426a.f6115bQ.storageType = 1;
-            this.f426a.f6115bQ.hasSelectedAStorageType = true;
-            C0750a.m2237b();
-            this.f426a.f6115bQ.save();
+            this.f426a.settingEngine.storageType = 1;
+            this.f426a.settingEngine.hasSelectedAStorageType = true;
+            C0750a.m2286b();
+            this.f426a.settingEngine.save();
             if (this.f427b != null) {
                 this.f427b.run();
             }
@@ -259,42 +259,42 @@ public class C0090c {
         final /* synthetic */ Activity f428a;
 
         /* renamed from: b */
-        final /* synthetic */ LoggerMaybe f429b;
+        final /* synthetic */ Core f429b;
 
         /* renamed from: c */
         final /* synthetic */ Runnable f430c;
 
-        DialogInterface$OnClickListenerC00922(Activity activity, LoggerMaybe loggerMaybe, Runnable runnable) {
+        DialogInterface$OnClickListenerC00922(Activity activity, Core core, Runnable runnable) {
             this.f428a = activity;
-            this.f429b = loggerMaybe;
+            this.f429b = core;
             this.f430c = runnable;
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            if (!C0750a.m2238a(true).f4871b) {
-                LoggerMaybe.LogDebug2("Storage setup: Not using SAF, not showing setup folder popup");
-                if (C0090c.m5234b(this.f428a)) {
-                    this.f429b.f6115bQ.storageType = 2;
-                    this.f429b.f6115bQ.hasSelectedAStorageType = true;
-                    C0750a.m2237b();
-                    this.f429b.f6115bQ.save();
+            if (!C0750a.m2287a(true).f4871b) {
+                Core.LogDebug2("Storage setup: Not using SAF, not showing setup folder popup");
+                if (C0090c.m5641b(this.f428a)) {
+                    this.f429b.settingEngine.storageType = 2;
+                    this.f429b.settingEngine.hasSelectedAStorageType = true;
+                    C0750a.m2286b();
+                    this.f429b.settingEngine.save();
                 }
             } else if (this.f428a instanceof ActivityC0133s) {
-                LoggerMaybe.LogDebug2("Storage setup: Already on settings page");
-                ((ActivityC0133s) this.f428a).m5179l();
+                Core.LogDebug2("Storage setup: Already on settings page");
+                ((ActivityC0133s) this.f428a).m5587l();
             } else {
                 Intent intent = new Intent(this.f428a, ActivityC0133s.class);
                 intent.putExtra("mode", "setupExternalFolder");
-                C0090c.m5237a(intent);
-                this.f428a.mo5609a(intent);
+                C0090c.m5644a(intent);
+                this.f428a.mo6019a(intent);
                 if (this.f428a instanceof ActivityC0089b) {
                     if (this.f430c != null) {
-                        ((ActivityC0089b) this.f428a).m5246a(new RunnableC00931());
+                        ((ActivityC0089b) this.f428a).m5653a(new RunnableC00931());
                         return;
                     }
                     return;
                 }
-                LoggerMaybe.m990b("context not instance CommonActivity");
+                Core.m998b("context not instance CommonActivity");
             }
         }
 
@@ -305,7 +305,7 @@ public class C0090c {
             }
 
             public void run() {
-                if (DialogInterface$OnClickListenerC00922.this.f429b.f6115bQ.hasSelectedAStorageType) {
+                if (DialogInterface$OnClickListenerC00922.this.f429b.settingEngine.hasSelectedAStorageType) {
                     DialogInterface$OnClickListenerC00922.this.f430c.run();
                 }
             }
@@ -313,39 +313,39 @@ public class C0090c {
     }
 
     /* renamed from: b */
-    public static boolean m5233b(Context context) {
-        if (LoggerMaybe.f6205aU || !C0750a.m2225f() || Build.VERSION.SDK_INT < 23 || ContextCompat.m5376a(context, "android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
+    public static boolean m5640b(Context context) {
+        if (Core.f6205aU || !C0750a.m2274f() || Build.VERSION.SDK_INT < 23 || ContextCompat.m5783a(context, "android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
             return true;
         }
         return false;
     }
 
     /* renamed from: b */
-    public static boolean m5234b(Activity activity) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        if (!LoggerMaybe.f6205aU && C0750a.m2225f() && Build.VERSION.SDK_INT >= 23) {
-            if (m1079A.m1025aC() == null) {
+    public static boolean m5641b(Activity activity) {
+        Core m1087A = Core.m1087A();
+        if (!Core.f6205aU && C0750a.m2274f() && Build.VERSION.SDK_INT >= 23) {
+            if (m1087A.m1033aC() == null) {
             }
-            if (ContextCompat.m5376a(activity, "android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
-                m1079A.f6115bQ.hadStoragePermissionInPast = true;
-                LoggerMaybe.LogDebug2("File Permission is granted");
+            if (ContextCompat.m5783a(activity, "android.permission.WRITE_EXTERNAL_STORAGE") == 0) {
+                m1087A.settingEngine.hadStoragePermissionInPast = true;
+                Core.LogDebug2("File Permission is granted");
                 return true;
             }
-            LoggerMaybe.LogDebug2("Permission is revoked");
-            ActivityCompat.m5377a(activity, new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 1);
+            Core.LogDebug2("Permission is revoked");
+            ActivityCompat.m5784a(activity, new String[]{"android.permission.WRITE_EXTERNAL_STORAGE"}, 1);
             return false;
         }
         return true;
     }
 
     /* renamed from: a */
-    public static void m5237a(Intent intent) {
+    public static void m5644a(Intent intent) {
         intent.addFlags(65536);
     }
 
     /* renamed from: a */
-    public static void m5243a(Activity activity, int i, boolean z, String str, Uri uri) {
-        LoggerMaybe.LogDebug2("Show folder chooser. Write:" + z);
+    public static void m5650a(Activity activity, int i, boolean z, String str, Uri uri) {
+        Core.LogDebug2("Show folder chooser. Write:" + z);
         Intent intent = new Intent("android.intent.action.OPEN_DOCUMENT_TREE");
         intent.addFlags(64);
         intent.addFlags(1);
@@ -357,7 +357,7 @@ public class C0090c {
         }
         intent.putExtra("android.content.extra.SHOW_ADVANCED", true);
         try {
-            activity.m5616a(Intent.createChooser(intent, str), i);
+            activity.m6026a(Intent.createChooser(intent, str), i);
         } catch (ActivityNotFoundException e) {
             Toast.makeText(activity, "Failed to open file list. Please install a File Manager.", 0).show();
         }

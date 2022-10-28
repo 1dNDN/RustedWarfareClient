@@ -2,7 +2,7 @@ package com.corrodinggames.rts.gameFramework.p039g;
 
 import android.os.Build;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.SettingsEngine;
 import com.corrodinggames.rts.gameFramework.p036e.C0750a;
 import com.corrodinggames.rts.gameFramework.utility.C1098j;
@@ -29,10 +29,10 @@ public final class C0820a {
     static boolean f5399b;
 
     /* renamed from: d */
-    public static String f5400d;
+    public static String f5401d;
 
     /* renamed from: c */
-    public static int f5401c = 0;
+    public static int f5400c = 0;
 
     /* renamed from: e */
     static Pattern f5402e = Pattern.compile("(.*)(\\(.*\\)( *\\[by.*\\])?)");
@@ -41,27 +41,27 @@ public final class C0820a {
     static final Pattern f5403f = Pattern.compile("\\[i:([^\\]]*?)\\]");
 
     /* renamed from: a */
-    public static void m1694a() {
-        m1682e();
+    public static void m1736a() {
+        m1724e();
     }
 
     /* renamed from: b */
-    static ResourceBundle m1688b() {
+    static ResourceBundle m1730b() {
         if (f5398a == null) {
-            m1682e();
+            m1724e();
         }
         return f5398a;
     }
 
     /* renamed from: a */
-    static PropertyResourceBundle m1693a(String str) {
-        C1098j m2220j = C0750a.m2220j("translations/" + str);
-        if (m2220j == null) {
+    static PropertyResourceBundle m1735a(String str) {
+        C1098j m2269j = C0750a.m2269j("translations/" + str);
+        if (m2269j == null) {
             return null;
         }
         PropertyResourceBundle propertyResourceBundle = null;
         try {
-            InputStreamReader inputStreamReader = new InputStreamReader(m2220j, "UTF-8");
+            InputStreamReader inputStreamReader = new InputStreamReader(m2269j, "UTF-8");
             propertyResourceBundle = new PropertyResourceBundle(inputStreamReader);
             inputStreamReader.close();
         } catch (UnsupportedEncodingException e) {
@@ -73,7 +73,7 @@ public final class C0820a {
     }
 
     /* renamed from: a */
-    public static String m1690a(String str, Locale locale, boolean z, boolean z2) {
+    public static String m1732a(String str, Locale locale, boolean z, boolean z2) {
         String str2;
         String str3;
         if (locale == Locale.ROOT) {
@@ -106,50 +106,50 @@ public final class C0820a {
     }
 
     /* renamed from: a */
-    static ResourceBundle m1691a(String str, Locale locale) {
-        String str2 = m1690a(str, Locale.ROOT, false, false) + ".properties";
-        PropertyResourceBundle m1693a = m1693a(str2);
-        if (m1693a == null) {
+    static ResourceBundle m1733a(String str, Locale locale) {
+        String str2 = m1732a(str, Locale.ROOT, false, false) + ".properties";
+        PropertyResourceBundle m1735a = m1735a(str2);
+        if (m1735a == null) {
             throw new RuntimeException("Root locate file:" + str2 + " is missing, it is required");
         }
         if (Locale.ROOT.equals(locale)) {
-            LoggerMaybe.LogDebug2("Locale: Using " + str2 + " as locale");
-            return m1693a;
+            Core.LogDebug2("Locale: Using " + str2 + " as locale");
+            return m1735a;
         }
-        String str3 = m1690a(str, locale, true, true) + ".properties";
-        PropertyResourceBundle m1693a2 = m1693a(str3);
-        if (m1693a2 == null) {
-            LoggerMaybe.LogDebug2("Locale: No locale for " + str3 + " checking locale without variant ");
-            str3 = m1690a(str, locale, true, false) + ".properties";
-            m1693a2 = m1693a(str3);
-            if (m1693a2 == null) {
-                LoggerMaybe.LogDebug2("Locale: No locale for " + str3 + " checking locale without variant or country");
-                str3 = m1690a(str, locale, false, false) + ".properties";
-                m1693a2 = m1693a(str3);
-                if (m1693a2 == null) {
-                    LoggerMaybe.LogDebug2("Locale: No locale for " + str3 + " using base locale");
-                    return m1693a;
+        String str3 = m1732a(str, locale, true, true) + ".properties";
+        PropertyResourceBundle m1735a2 = m1735a(str3);
+        if (m1735a2 == null) {
+            Core.LogDebug2("Locale: No locale for " + str3 + " checking locale without variant ");
+            str3 = m1732a(str, locale, true, false) + ".properties";
+            m1735a2 = m1735a(str3);
+            if (m1735a2 == null) {
+                Core.LogDebug2("Locale: No locale for " + str3 + " checking locale without variant or country");
+                str3 = m1732a(str, locale, false, false) + ".properties";
+                m1735a2 = m1735a(str3);
+                if (m1735a2 == null) {
+                    Core.LogDebug2("Locale: No locale for " + str3 + " using base locale");
+                    return m1735a;
                 }
             }
         }
-        LoggerMaybe.LogDebug2("Locale: Using " + str3 + " as locale");
-        return new C0821b(m1693a2, m1693a);
+        Core.LogDebug2("Locale: Using " + str3 + " as locale");
+        return new C0821b(m1735a2, m1735a);
     }
 
     /* renamed from: c */
-    public static String m1686c() {
-        if (f5400d != null) {
-            return f5400d;
+    public static String m1728c() {
+        if (f5401d != null) {
+            return f5401d;
         }
-        return m1684d().getLanguage();
+        return m1726d().getLanguage();
     }
 
     /* renamed from: d */
-    public static Locale m1684d() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public static Locale m1726d() {
+        Core m1087A = Core.m1087A();
         SettingsEngine settingsEngine = null;
-        if (m1079A != null) {
-            settingsEngine = m1079A.f6115bQ;
+        if (m1087A != null) {
+            settingsEngine = m1087A.settingEngine;
         }
         boolean z = false;
         if (settingsEngine != null && settingsEngine.forceEnglish) {
@@ -162,37 +162,37 @@ public final class C0820a {
     }
 
     /* renamed from: e */
-    public static synchronized void m1682e() {
-        f5401c++;
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    public static synchronized void m1724e() {
+        f5400c++;
+        Core m1087A = Core.m1087A();
         SettingsEngine settingsEngine = null;
-        if (m1079A != null) {
-            settingsEngine = m1079A.f6115bQ;
+        if (m1087A != null) {
+            settingsEngine = m1087A.settingEngine;
         }
         boolean z = false;
         if (settingsEngine != null && settingsEngine.forceEnglish) {
             z = true;
         }
         if (f5398a != null && f5399b == z) {
-            LoggerMaybe.LogDebug2("Locale.reload: skipping reload");
+            Core.LogDebug2("Locale.reload: skipping reload");
         }
         if (Build.VERSION.SDK_INT >= 9) {
             ResourceBundle.clearCache();
         }
         if (z) {
-            LoggerMaybe.LogDebug2("Locale: forceEnglish");
-            f5398a = m1691a("Strings", Locale.ROOT);
-        } else if (f5400d != null) {
-            f5398a = m1691a("Strings", new Locale(f5400d));
+            Core.LogDebug2("Locale: forceEnglish");
+            f5398a = m1733a("Strings", Locale.ROOT);
+        } else if (f5401d != null) {
+            f5398a = m1733a("Strings", new Locale(f5401d));
         } else if (settingsEngine != null && settingsEngine.overrideLanguageCode != null && !settingsEngine.overrideLanguageCode.equals(VariableScope.nullOrMissingString)) {
-            f5398a = m1691a("Strings", new Locale(settingsEngine.overrideLanguageCode));
+            f5398a = m1733a("Strings", new Locale(settingsEngine.overrideLanguageCode));
         } else {
             Locale locale = Locale.getDefault();
-            LoggerMaybe.LogDebug2("Locale: default targetLocale:" + locale);
+            Core.LogDebug2("Locale: default targetLocale:" + locale);
             if (locale != null) {
-                LoggerMaybe.LogDebug2("Locale: default targetLocale ISO3:" + locale.getISO3Language());
+                Core.LogDebug2("Locale: default targetLocale ISO3:" + locale.getISO3Language());
             }
-            f5398a = m1691a("Strings", locale);
+            f5398a = m1733a("Strings", locale);
         }
         f5399b = z;
         if (0 != 0) {
@@ -200,9 +200,9 @@ public final class C0820a {
     }
 
     /* renamed from: d */
-    private static final String m1683d(String str) {
+    private static final String m1725d(String str) {
         try {
-            String string = m1688b().getString(str);
+            String string = m1730b().getString(str);
             if (string.contains("[") || string.contains("]")) {
                 string = string.replace("[[", "{{").replace("]]", "}}").replace("[", "{{").replace("]", "}}");
             }
@@ -211,14 +211,14 @@ public final class C0820a {
             }
             return string;
         } catch (NullPointerException e) {
-            throw new RuntimeException("NullPointer with key:" + str + " locale:" + m1688b().getLocale().toString(), e);
+            throw new RuntimeException("NullPointer with key:" + str + " locale:" + m1730b().getLocale().toString(), e);
         }
     }
 
     /* renamed from: e */
-    private static final boolean m1681e(String str) {
+    private static final boolean m1723e(String str) {
         try {
-            m1688b().getString(str);
+            m1730b().getString(str);
             return true;
         } catch (MissingResourceException e) {
             return false;
@@ -226,25 +226,25 @@ public final class C0820a {
     }
 
     /* renamed from: a */
-    public static final String m1692a(String str, String str2, Object... objArr) {
+    public static final String m1734a(String str, String str2, Object... objArr) {
         try {
-            return m1689a(str, objArr);
+            return m1731a(str, objArr);
         } catch (MissingResourceException e) {
             return str2;
         }
     }
 
     /* renamed from: a */
-    public static final String m1689a(String str, Object... objArr) {
-        String m1683d = m1683d(str);
+    public static final String m1731a(String str, Object... objArr) {
+        String m1725d = m1725d(str);
         if (objArr.length == 0) {
-            return m1683d;
+            return m1725d;
         }
-        return new MessageFormat(m1683d).format(objArr, new StringBuffer(), (FieldPosition) null).toString();
+        return new MessageFormat(m1725d).format(objArr, new StringBuffer(), (FieldPosition) null).toString();
     }
 
     /* renamed from: b */
-    public static final String m1687b(String str) {
+    public static final String m1729b(String str) {
         if (str == null) {
             return null;
         }
@@ -256,22 +256,22 @@ public final class C0820a {
             str3 = matcher.group(2);
         }
         String str4 = "maps.name." + str2.trim().replace(" ", "_").replace(".tmx", VariableScope.nullOrMissingString).toLowerCase(Locale.ENGLISH);
-        if (m1681e(str4)) {
-            String m1689a = m1689a(str4, new Object[0]);
+        if (m1723e(str4)) {
+            String m1731a = m1731a(str4, new Object[0]);
             if (str3 != null) {
-                m1689a = m1689a + str3;
+                m1731a = m1731a + str3;
             }
-            LoggerMaybe.LogDebug2("translated:" + m1689a);
-            if (m1689a != null) {
-                m1689a = m1689a.replace("_", " ");
+            Core.LogDebug2("translated:" + m1731a);
+            if (m1731a != null) {
+                m1731a = m1731a.replace("_", " ");
             }
-            return m1689a;
+            return m1731a;
         }
         return str;
     }
 
     /* renamed from: c */
-    public static String m1685c(String str) {
+    public static String m1727c(String str) {
         if (!str.contains("[i:")) {
             return str;
         }
@@ -281,16 +281,16 @@ public final class C0820a {
         while (matcher.find()) {
             i++;
             if (i > 100) {
-                LoggerMaybe.m990b("convertInlineBlocks: Too many loops while parsing: " + str);
+                Core.m998b("convertInlineBlocks: Too many loops while parsing: " + str);
                 return str;
             }
             String group = matcher.group(1);
-            String m1692a = m1692a(group, null, new Object[0]);
-            if (m1692a == null) {
-                LoggerMaybe.LogDebug2("convertInlineBlocks: No key:" + group);
-                m1692a = "[No key: " + group + "]";
+            String m1734a = m1734a(group, null, new Object[0]);
+            if (m1734a == null) {
+                Core.LogDebug2("convertInlineBlocks: No key:" + group);
+                m1734a = "[No key: " + group + "]";
             }
-            matcher.appendReplacement(stringBuffer, m1692a);
+            matcher.appendReplacement(stringBuffer, m1734a);
         }
         matcher.appendTail(stringBuffer);
         return stringBuffer.toString();

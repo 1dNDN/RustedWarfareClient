@@ -11,8 +11,8 @@ import com.corrodinggames.rts.game.units.custom.logicBooleans.LogicNumberFunctio
 import com.corrodinggames.rts.game.units.custom.logicBooleans.LogicString;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.UnitReference;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
 import com.corrodinggames.rts.gameFramework.C0758f;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
@@ -167,7 +167,6 @@ public abstract class LogicBoolean implements Cloneable {
     public abstract class LogicBooleanCommon extends LogicBoolean {
         public abstract String getName();
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
             return getName() + "=" + (read(abstractC0623y) ? "true" : "false") + VariableScope.nullOrMissingString;
         }
@@ -177,7 +176,6 @@ public abstract class LogicBoolean implements Cloneable {
     public abstract class LogicBooleanCommonLocking extends LogicBoolean {
         boolean locked = false;
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public LogicBoolean createLocked() {
             try {
                 LogicBooleanCommonLocking logicBooleanCommonLocking = (LogicBooleanCommonLocking) clone();
@@ -188,7 +186,6 @@ public abstract class LogicBoolean implements Cloneable {
             }
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean isLocked() {
             return this.locked;
         }
@@ -284,10 +281,10 @@ public abstract class LogicBoolean implements Cloneable {
     public String valueToStringDebug(AbstractC0623y abstractC0623y) {
         ReturnType returnType = getReturnType();
         if (returnType == ReturnType.number) {
-            return C0758f.m2144a(readNumber(abstractC0623y), 2);
+            return C0758f.m2206a(readNumber(abstractC0623y), 2);
         }
         if (returnType == ReturnType.unit) {
-            return AbstractC0244am.m4132A(readUnit(abstractC0623y));
+            return AbstractC0244am.m4802A(readUnit(abstractC0623y));
         }
         if (returnType == ReturnType.string) {
             return readString(abstractC0623y);
@@ -321,7 +318,6 @@ public abstract class LogicBoolean implements Cloneable {
 
     /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/custom/logicBooleans/LogicBoolean$StaticBoolean.class */
     public abstract class StaticBoolean extends LogicBoolean {
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public LogicBoolean with(String str) {
             return this;
         }
@@ -329,12 +325,10 @@ public abstract class LogicBoolean implements Cloneable {
 
     /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/custom/logicBooleans/LogicBoolean$StaticBooleanTrue.class */
     public final class StaticBooleanTrue extends StaticBoolean {
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
             return "true";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             return true;
         }
@@ -342,12 +336,10 @@ public abstract class LogicBoolean implements Cloneable {
 
     /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/custom/logicBooleans/LogicBoolean$StaticBooleanFalse.class */
     public final class StaticBooleanFalse extends StaticBoolean {
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
             return "false";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             return false;
         }
@@ -393,7 +385,6 @@ public abstract class LogicBoolean implements Cloneable {
             return mathDivideJoinerBoolean;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
             LogicBoolean[] logicBooleanArr;
             String str = "(";
@@ -409,7 +400,6 @@ public abstract class LogicBoolean implements Cloneable {
             return str + ")";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getDebugDetails(C0451j c0451j) {
             LogicBoolean[] logicBooleanArr;
             String str = "(";
@@ -425,11 +415,9 @@ public abstract class LogicBoolean implements Cloneable {
             return str + ")";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public final void validate(String str, String str2, String str3, LogicBooleanLoader.LogicBooleanContext logicBooleanContext, boolean z) {
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public LogicBoolean validateAndOptimize(String str, String str2, String str3, LogicBooleanLoader.LogicBooleanContext logicBooleanContext, boolean z) {
             return this;
         }
@@ -441,12 +429,10 @@ public abstract class LogicBoolean implements Cloneable {
 
     /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/custom/logicBooleans/LogicBoolean$OrBoolean.class */
     public final class OrBoolean extends JoinerBoolean {
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean.JoinerBoolean
         public String type() {
             return "or";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             for (LogicBoolean logicBoolean : this.children) {
                 if (logicBoolean.read(abstractC0623y)) {
@@ -459,12 +445,10 @@ public abstract class LogicBoolean implements Cloneable {
 
     /* loaded from: game-lib.jar:com/corrodinggames/rts/game/units/custom/logicBooleans/LogicBoolean$AndBoolean.class */
     public final class AndBoolean extends JoinerBoolean {
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean.JoinerBoolean
         public String type() {
             return "and";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             for (LogicBoolean logicBoolean : this.children) {
                 if (!logicBoolean.read(abstractC0623y)) {
@@ -483,12 +467,10 @@ public abstract class LogicBoolean implements Cloneable {
             this.child = logicBoolean;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             return !this.child.read(abstractC0623y);
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
             return "not(" + this.child.getMatchFailReasonForPlayer(abstractC0623y) + ")";
         }
@@ -521,22 +503,18 @@ public abstract class LogicBoolean implements Cloneable {
     public abstract class LogicNumberOnly extends LogicBoolean {
         public abstract String getName();
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public abstract float readNumber(AbstractC0623y abstractC0623y);
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public ReturnType getReturnType() {
             return ReturnType.number;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             return false;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
-            return getName() + "(" + getAllParametersDebug(this, abstractC0623y) + ")=" + C0758f.m2144a(readNumber(abstractC0623y), 3) + VariableScope.nullOrMissingString;
+            return getName() + "(" + getAllParametersDebug(this, abstractC0623y) + ")=" + C0758f.m2206a(readNumber(abstractC0623y), 3) + VariableScope.nullOrMissingString;
         }
     }
 
@@ -563,7 +541,6 @@ public abstract class LogicBoolean implements Cloneable {
             this.lessThan = f + 1.0E-4f;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public ReturnType getReturnType() {
             if (this.greaterThan == -1.0f && this.lessThan == -1.0f && !this.full && !this.empty) {
                 return ReturnType.number;
@@ -571,7 +548,6 @@ public abstract class LogicBoolean implements Cloneable {
             return ReturnType.bool;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public void validate(String str, String str2, String str3, LogicBooleanLoader.LogicBooleanContext logicBooleanContext, boolean z) {
             super.validate(str, str2, str3, logicBooleanContext, z);
             if (z && this.greaterThan == -1.0f && this.lessThan == -1.0f && !this.full && !this.empty) {
@@ -579,14 +555,12 @@ public abstract class LogicBoolean implements Cloneable {
             }
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public float readNumber(AbstractC0623y abstractC0623y) {
             return getValue(abstractC0623y);
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
-            String str = getName() + "=" + C0758f.m2144a(getValue(abstractC0623y), 3) + VariableScope.nullOrMissingString;
+            String str = getName() + "=" + C0758f.m2206a(getValue(abstractC0623y), 3) + VariableScope.nullOrMissingString;
             if (this.full) {
                 str = str + "(full)";
             }
@@ -594,15 +568,14 @@ public abstract class LogicBoolean implements Cloneable {
                 str = str + "(empty)";
             }
             if (this.greaterThan != -1.0f) {
-                str = str + ">" + C0758f.m2144a(this.greaterThan, 3);
+                str = str + ">" + C0758f.m2206a(this.greaterThan, 3);
             }
             if (this.lessThan != -1.0f) {
-                str = str + "<" + C0758f.m2144a(this.lessThan, 3);
+                str = str + "<" + C0758f.m2206a(this.lessThan, 3);
             }
             return str;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             float value = getValue(abstractC0623y);
             boolean z = true;
@@ -633,7 +606,6 @@ public abstract class LogicBoolean implements Cloneable {
 
         public abstract int getTime(AbstractC0623y abstractC0623y);
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public ReturnType getReturnType() {
             if (this.laterThanSeconds == -1.0f && this.withinSeconds == -1.0f) {
                 return ReturnType.number;
@@ -641,7 +613,6 @@ public abstract class LogicBoolean implements Cloneable {
             return ReturnType.bool;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public void validate(String str, String str2, String str3, LogicBooleanLoader.LogicBooleanContext logicBooleanContext, boolean z) {
             super.validate(str, str2, str3, logicBooleanContext, z);
             if (z && this.laterThanSeconds == -1.0f && this.withinSeconds == -1.0f) {
@@ -649,9 +620,8 @@ public abstract class LogicBoolean implements Cloneable {
             }
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
-            String str = getName() + "=" + msToSecondsString(AbstractC0916l.m1071A().f6145by - getTime(abstractC0623y));
+            String str = getName() + "=" + msToSecondsString(Core.m1087A().f6102by - getTime(abstractC0623y));
             if (this.laterThanSeconds != -1.0f) {
                 str = str + ">" + msToSecondsString(this.laterThanSeconds * 1000.0f);
             }
@@ -662,23 +632,21 @@ public abstract class LogicBoolean implements Cloneable {
         }
 
         private String msToSecondsString(float f) {
-            return C0758f.m2047f(f / 1000.0f) + "s";
+            return C0758f.m2109f(f / 1000.0f) + "s";
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public float readNumber(AbstractC0623y abstractC0623y) {
-            return (AbstractC0916l.m1071A().f6145by - getTime(abstractC0623y)) * 0.001f;
+            return (Core.m1087A().f6102by - getTime(abstractC0623y)) * 0.001f;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public boolean read(AbstractC0623y abstractC0623y) {
             int time = getTime(abstractC0623y);
             boolean z = true;
-            AbstractC0916l m1071A = AbstractC0916l.m1071A();
-            if (this.withinSeconds > 0.0f && m1071A.f6145by - (this.withinSeconds * 1000.0f) > time) {
+            Core m1087A = Core.m1087A();
+            if (this.withinSeconds > 0.0f && m1087A.f6102by - (this.withinSeconds * 1000.0f) > time) {
                 z = false;
             }
-            if (this.laterThanSeconds > 0.0f && m1071A.f6145by - (this.laterThanSeconds * 1000.0f) < time) {
+            if (this.laterThanSeconds > 0.0f && m1087A.f6102by - (this.laterThanSeconds * 1000.0f) < time) {
                 z = false;
             }
             return z;
@@ -709,12 +677,10 @@ public abstract class LogicBoolean implements Cloneable {
             this.staticNumber = f;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean.LogicNumberOnly
         public String getName() {
             return VariableScope.nullOrMissingString + this.staticNumber;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean.LogicNumberOnly, com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public final float readNumber(AbstractC0623y abstractC0623y) {
             return this.staticNumber;
         }
@@ -723,9 +689,8 @@ public abstract class LogicBoolean implements Cloneable {
             return this.staticNumber;
         }
 
-        @Override // com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean.LogicNumberOnly, com.corrodinggames.rts.game.units.custom.logicBooleans.LogicBoolean
         public String getMatchFailReasonForPlayer(AbstractC0623y abstractC0623y) {
-            return C0758f.m2144a(this.staticNumber, 3);
+            return C0758f.m2206a(this.staticNumber, 3);
         }
     }
 

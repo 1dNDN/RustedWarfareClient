@@ -154,28 +154,28 @@ public class SettingsEngine {
     }
 
     public boolean getBooleanPref(String str, boolean z) {
-        if (LoggerMaybe.f6205aU) {
+        if (Core.f6205aU) {
             return z;
         }
         return this.prefs.getBoolean(str, z);
     }
 
     public int getIntPref(String str, int i) {
-        if (LoggerMaybe.f6205aU) {
+        if (Core.f6205aU) {
             return i;
         }
         return this.prefs.getInt(str, i);
     }
 
     public float getFloatPref(String str, float f) {
-        if (LoggerMaybe.f6205aU) {
+        if (Core.f6205aU) {
             return f;
         }
         return this.prefs.getFloat(str, f);
     }
 
     public String getStringPref(String str, String str2) {
-        if (LoggerMaybe.f6205aU) {
+        if (Core.f6205aU) {
             return str2;
         }
         return this.prefs.getString(str, str2);
@@ -226,13 +226,13 @@ public class SettingsEngine {
     }
 
     public String getPreferencesPath() {
-        return C0750a.m2226e("/SD/rustedWarfare/preferences.ini");
+        return C0750a.m2275e("/SD/rustedWarfare/preferences.ini");
     }
 
     public boolean saveToFileSystem() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         File file = new File(getPreferencesPath());
-        LoggerMaybe.LogDebug2("Saving settings to: " + file.getAbsolutePath());
+        Core.LogDebug2("Saving settings to: " + file.getAbsolutePath());
         try {
             PrintWriter printWriter = new PrintWriter(file);
             printWriter.println("[settings]");
@@ -249,63 +249,63 @@ public class SettingsEngine {
                 printWriter.println(str + ":" + valueDynamic.replace("\\", "\\\\").replace("\n", "\\n"));
             }
             printWriter.println("[keys]");
-            Iterator it2 = m1079A.f6118bT.f4145al.iterator();
+            Iterator it2 = m1087A.f6118bT.f4145al.iterator();
             while (it2.hasNext()) {
                 C0639ad c0639ad = (C0639ad) it2.next();
-                if (c0639ad.f4150b && !c0639ad.mo2678d()) {
-                    printWriter.println((VariableScope.nullOrMissingString + c0639ad.m2679e()) + ":" + m1079A.f6118bT.m2698a(c0639ad));
+                if (c0639ad.f4150b && !c0639ad.mo2726d()) {
+                    printWriter.println((VariableScope.nullOrMissingString + c0639ad.m2727e()) + ":" + m1087A.f6118bT.m2746a(c0639ad));
                 }
             }
             printWriter.close();
             return true;
         } catch (IOException e) {
             e.printStackTrace();
-            LoggerMaybe.m1079A().m1037a("Failed to save preferences, IO error", 1);
+            Core.m1087A().m1045a("Failed to save preferences, IO error", 1);
             return false;
         }
     }
 
     public void loadFromFileSystem() {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+        Core m1087A = Core.m1087A();
         String preferencesPath = getPreferencesPath();
         File file = new File(preferencesPath);
         if (!file.exists()) {
-            LoggerMaybe.LogDebug2("preferences not found, not loading (" + preferencesPath + ")");
+            Core.LogDebug2("preferences not found, not loading (" + preferencesPath + ")");
             return;
         }
-        LoggerMaybe.LogDebug2("loadFromFileSystem filepath: " + file.getAbsolutePath());
+        Core.LogDebug2("loadFromFileSystem filepath: " + file.getAbsolutePath());
         try {
             C1072ab c1072ab = new C1072ab(preferencesPath);
             for (Map.Entry entry : this.settingFields.entrySet()) {
                 String str = (String) entry.getKey();
-                String m649b = c1072ab.m649b("settings", str, (String) null);
-                if (LoggerMaybe.f6210aZ) {
-                    LoggerMaybe.LogDebug2(str + "= " + m649b);
+                String m656b = c1072ab.m656b("settings", str, (String) null);
+                if (Core.f6210aZ) {
+                    Core.LogDebug2(str + "= " + m656b);
                 }
-                if (m649b != null && !VariableScope.nullOrMissingString.equals(m649b)) {
+                if (m656b != null && !VariableScope.nullOrMissingString.equals(m656b)) {
                     if (str.startsWith("key.")) {
                         String replace = str.replace("key.", VariableScope.nullOrMissingString);
-                        LoggerMaybe.LogDebug2("loading keybind:" + replace);
-                        m1079A.f6118bT.m2695a(replace, m649b);
+                        Core.LogDebug2("loading keybind:" + replace);
+                        m1087A.f6118bT.m2743a(replace, m656b);
                     } else {
-                        setValueDynamic(str, m649b);
+                        setValueDynamic(str, m656b);
                     }
                 }
             }
-            Iterator it = m1079A.f6118bT.f4145al.iterator();
+            Iterator it = m1087A.f6118bT.f4145al.iterator();
             while (it.hasNext()) {
                 C0639ad c0639ad = (C0639ad) it.next();
-                if (c0639ad.f4150b && !c0639ad.mo2678d()) {
-                    String m2679e = c0639ad.m2679e();
-                    String m649b2 = c1072ab.m649b("keys", m2679e, (String) null);
-                    if (m649b2 != null && !VariableScope.nullOrMissingString.equals(m649b2)) {
-                        m1079A.f6118bT.m2695a(m2679e, m649b2);
+                if (c0639ad.f4150b && !c0639ad.mo2726d()) {
+                    String m2727e = c0639ad.m2727e();
+                    String m656b2 = c1072ab.m656b("keys", m2727e, (String) null);
+                    if (m656b2 != null && !VariableScope.nullOrMissingString.equals(m656b2)) {
+                        m1087A.f6118bT.m2743a(m2727e, m656b2);
                     }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
-            LoggerMaybe.m1079A().m1037a("Failed to load preferences, IO error", 1);
+            Core.m1087A().m1045a("Failed to load preferences, IO error", 1);
         }
     }
 
@@ -325,15 +325,15 @@ public class SettingsEngine {
         for (Field field : getClass().getFields()) {
             String name = field.getName();
             if (this.settingFields.get(name) != null) {
-                LoggerMaybe.LogDebug2("SettingsEngine: fields: " + name + " already exists");
+                Core.LogDebug2("SettingsEngine: fields: " + name + " already exists");
             }
-            if (LoggerMaybe.f6210aZ) {
-                LoggerMaybe.LogDebug2("SettingsEngine: field:" + name);
+            if (Core.f6210aZ) {
+                Core.LogDebug2("SettingsEngine: field:" + name);
             }
             this.settingFields.put(name, field);
         }
-        if (!LoggerMaybe.f6205aU) {
-            this.prefs = context.mo5607a("rts_settings", 0);
+        if (!Core.f6205aU) {
+            this.prefs = context.mo6017a("rts_settings", 0);
         }
         int intPref = getIntPref("settingVersion", 1);
         int intPref2 = getIntPref("settingsGameVersion", 0);
@@ -356,7 +356,7 @@ public class SettingsEngine {
         this.androidNoSoundPrioritiesDebug = getBooleanPref("androidNoSoundPrioritiesDebug", false);
         this.disableDigitGrouping = getBooleanPref("disableDigitGrouping", false);
         this.musicVolume = getFloatPref("musicVolume", 0.25f);
-        this.masterVolume = getFloatPref("masterVolume", LoggerMaybe.m1002au() ? 0.5f : 1.0f);
+        this.masterVolume = getFloatPref("masterVolume", Core.m1010au() ? 0.5f : 1.0f);
         this.gameVolume = getFloatPref("gameVolume", 1.0f);
         this.interfaceVolume = getFloatPref("interfaceVolume", 0.8f);
         this.scrollSpeed = getFloatPref("scrollSpeed", 1.0f);
@@ -365,7 +365,7 @@ public class SettingsEngine {
         this.trackpad = getBooleanPref("trackpad", true);
         this.dpad = getBooleanPref("dpad", true);
         this.batterySaving = getBooleanPref("batterySaving", false);
-        this.highRefreshRate = getBooleanPref("highRefreshRate", LoggerMaybe.m1002au());
+        this.highRefreshRate = getBooleanPref("highRefreshRate", Core.m1010au());
         this.unlockedScreenRotation = getBooleanPref("unlockedScreenRotation", false);
         this.renderBackground = getBooleanPref("renderBackground", true);
         this.renderExtraLayers = getBooleanPref("renderExtraLayers", true);
@@ -373,15 +373,15 @@ public class SettingsEngine {
         this.immersiveFullScreen = getBooleanPref("immersiveFullScreen", true);
         this.renderDoubleScale = getBooleanPref("renderDoubleScale", false);
         this.showUnitGroups = getBooleanPref("showUnitGroups", true);
-        this.renderClouds = getBooleanPref("renderClouds", LoggerMaybe.f6210aZ ? true : LoggerMaybe.m1002au());
-        this.softFogFading = getBooleanPref("softFogFading", LoggerMaybe.f6210aZ ? true : LoggerMaybe.m1002au());
+        this.renderClouds = getBooleanPref("renderClouds", Core.f6210aZ ? true : Core.m1010au());
+        this.softFogFading = getBooleanPref("softFogFading", Core.f6210aZ ? true : Core.m1010au());
         this.showUnitWaypoints = getBooleanPref("showUnitWaypoints", true);
         this.useMinimapAllyColors = getBooleanPref("useMinimapAllyColors", true);
-        this.showWarLogOnScreen = getBooleanPref("showWarLogOnScreen", LoggerMaybe.m1002au());
+        this.showWarLogOnScreen = getBooleanPref("showWarLogOnScreen", Core.m1010au());
         this.classicInterface = getBooleanPref("classicInterface", false);
-        boolean z = LoggerMaybe.m1002au();
+        boolean z = Core.m1010au();
         this.quickRally = getBooleanPref("quickRally", z);
-        if (intPref <= 1 && !LoggerMaybe.m1002au()) {
+        if (intPref <= 1 && !Core.m1010au()) {
             this.quickRally = z;
         }
         this.doubleClickToAttackMove = getBooleanPref("doubleClickToAttackMove", true);
@@ -401,10 +401,10 @@ public class SettingsEngine {
         this.teamShaders = getBooleanPref("teamShaders", false);
         this.sendReports = getBooleanPref("sendReports", true);
         this.shownAudioWarning = getBooleanPref("shownAudioWarning", false);
-        this.mouseSupport = getBooleanPref("mouseSupport", !LoggerMaybe.m977d(context));
+        this.mouseSupport = getBooleanPref("mouseSupport", !Core.m985d(context));
         this.keyboardSupport = getBooleanPref("keyboardSupport", true);
-        this.forceEnglish = getBooleanPref("forceEnglish", LoggerMaybe.f6210aZ);
-        boolean z2 = LoggerMaybe.m1002au();
+        this.forceEnglish = getBooleanPref("forceEnglish", Core.f6210aZ);
+        boolean z2 = Core.m1010au();
         this.saveMultiplayerReplays = getBooleanPref("saveMultiplayerReplays", z2);
         if (intPref <= 1) {
             this.saveMultiplayerReplays = z2;
@@ -444,7 +444,7 @@ public class SettingsEngine {
         this.modSettings = getStringPref("modSettings", VariableScope.nullOrMissingString);
         this.modSettingsVersion = getIntPref("modSettingsVersion", 0);
         boolean z3 = false;
-        if (LoggerMaybe.m1004as() && C0090c.m5233b(C0090c.m5245a())) {
+        if (Core.m1012as() && C0090c.m5640b(C0090c.m5652a())) {
             z3 = true;
         }
         this.storageType = getIntPref("storageType", z3 ? 2 : 0);
@@ -464,14 +464,14 @@ public class SettingsEngine {
         this.mouseOrders = getIntPref("mouseOrders", 1);
         this.mousePlacement = getIntPref("mousePlacement", 1);
         this.autosaving = getBooleanPref("autosaving", true);
-        if (LoggerMaybe.f6207aW) {
+        if (Core.f6207aW) {
             loadFromFileSystem();
         }
     }
 
     public synchronized boolean save() {
-        if (LoggerMaybe.f6205aU) {
-            if (LoggerMaybe.f6207aW) {
+        if (Core.f6205aU) {
+            if (Core.f6207aW) {
                 return saveToFileSystem();
             }
             return true;
@@ -490,7 +490,7 @@ public class SettingsEngine {
         edit.putBoolean("enableMouseCapture", this.enableMouseCapture);
         edit.putBoolean("androidNoSoundPrioritiesDebug", this.androidNoSoundPrioritiesDebug);
         edit.putBoolean("disableDigitGrouping", this.disableDigitGrouping);
-        Log.m5365d("RustedWarfare", "put mv:" + this.musicVolume);
+        Log.m5772d("RustedWarfare", "put mv:" + this.musicVolume);
         edit.putFloat("musicVolume", this.musicVolume);
         edit.putFloat("masterVolume", this.masterVolume);
         edit.putFloat("gameVolume", this.gameVolume);
@@ -587,45 +587,45 @@ public class SettingsEngine {
     }
 
     public boolean loadMainExternalFolder(boolean z) {
-        if (!LoggerMaybe.m1004as()) {
+        if (!Core.m1012as()) {
             return false;
         }
-        LoggerMaybe.LogDebug2("loadMainExternalFolder..");
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        if (z && m1079A.m987c()) {
-            LoggerMaybe.LogDebug2("Not loading due to extra safe mode");
+        Core.LogDebug2("loadMainExternalFolder..");
+        Core m1087A = Core.m1087A();
+        if (z && m1087A.m995c()) {
+            Core.LogDebug2("Not loading due to extra safe mode");
             return false;
         }
-        String str = m1079A.f6115bQ.externalSAFLink;
-        String str2 = m1079A.f6115bQ.externalSAFPathShown;
-        String str3 = m1079A.f6115bQ.externalSAFPathExtra;
+        String str = m1087A.settingEngine.externalSAFLink;
+        String str2 = m1087A.settingEngine.externalSAFPathShown;
+        String str3 = m1087A.settingEngine.externalSAFPathExtra;
         if (str == null) {
-            LoggerMaybe.LogDebug2("No external folder set");
+            Core.LogDebug2("No external folder set");
             return false;
         }
-        LoggerMaybe.LogDebug2("External saf link: " + str);
-        LoggerMaybe.LogDebug2("External saf shown path: " + str2);
-        LoggerMaybe.LogDebug2("External saf extra: " + str3);
+        Core.LogDebug2("External saf link: " + str);
+        Core.LogDebug2("External saf shown path: " + str2);
+        Core.LogDebug2("External saf extra: " + str3);
         try {
             Uri parse = Uri.parse(str);
             boolean z2 = false;
             String str4 = null;
-            String m720a = C1068a.m720a(parse, true);
-            LoggerMaybe.LogDebug2("safVirualPathBase: " + m720a);
-            if (m720a == null) {
-                LoggerMaybe.LogDebug2("createSAFLink failed for uri: " + parse);
+            String m727a = C1068a.m727a(parse, true);
+            Core.LogDebug2("safVirualPathBase: " + m727a);
+            if (m727a == null) {
+                Core.LogDebug2("createSAFLink failed for uri: " + parse);
                 z2 = true;
             } else {
-                str4 = m720a + str3;
-                LoggerMaybe.LogDebug2("safVirualPath: " + str4);
-                if (!C0750a.m2224f(str4)) {
-                    LoggerMaybe.LogDebug2("isDirectory failed for: " + str4);
+                str4 = m727a + str3;
+                Core.LogDebug2("safVirualPath: " + str4);
+                if (!C0750a.m2273f(str4)) {
+                    Core.LogDebug2("isDirectory failed for: " + str4);
                     z2 = true;
                 }
             }
             if (z2) {
-                LoggerMaybe.LogDebug2("error for uri: " + parse);
-                m1079A.f6115bQ.externalSAFWorking = false;
+                Core.LogDebug2("error for uri: " + parse);
+                m1087A.settingEngine.externalSAFWorking = false;
                 String str5 = "Failed to read: " + str2 + " - Folder might have moved or permission expired. Please setup again under in-game settings.";
                 if (C0823a.f5411a == null) {
                     C0823a.f5411a = VariableScope.nullOrMissingString;
@@ -634,8 +634,8 @@ public class SettingsEngine {
                 C0823a.f5412b = str5;
                 return false;
             }
-            LoggerMaybe.LogDebug2("Using external path");
-            m1079A.f6115bQ.externalSAFWorking = true;
+            Core.LogDebug2("Using external path");
+            m1087A.settingEngine.externalSAFWorking = true;
             C0750a.f4868d = str4;
             return true;
         } catch (Exception e) {

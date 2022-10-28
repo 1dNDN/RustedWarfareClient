@@ -2,10 +2,10 @@ package com.corrodinggames.rts.gameFramework.p045m;
 
 import android.graphics.PointF;
 import com.corrodinggames.rts.game.p012b.C0179f;
-import com.corrodinggames.rts.game.units.AbstractC0249ar;
+import com.corrodinggames.rts.game.units.EnumC0249ar;
 import com.corrodinggames.rts.game.units.InterfaceC0303as;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.regex.Matcher;
@@ -47,15 +47,15 @@ public class C1050g {
     }
 
     /* renamed from: a */
-    public boolean m746a(String str) {
+    public boolean m754a(String str) {
         String group;
         String str2;
         String trim = str.trim();
-        LoggerMaybe.LogDebug2("Got:" + trim);
+        Core.LogDebug2("Got:" + trim);
         if (trim.length() == 0) {
             return false;
         }
-        LoggerMaybe.LogDebug2("..");
+        Core.LogDebug2("..");
         String str3 = null;
         String str4 = null;
         String str5 = null;
@@ -66,7 +66,7 @@ public class C1050g {
                 str4 = matcher.group(2);
                 group = matcher.group(4);
                 str5 = matcher.group(5);
-                LoggerMaybe.LogDebug2("Got o:" + group + " d:" + str3 + " dn:" + str4 + " units:" + str5);
+                Core.LogDebug2("Got o:" + group + " d:" + str3 + " dn:" + str4 + " units:" + str5);
             } else {
                 throw new C0179f("Unknown wave line in map: " + trim);
             }
@@ -134,12 +134,12 @@ public class C1050g {
                 String trim6 = trim4.substring(indexOf + 1).trim();
                 try {
                     int parseInt = Integer.parseInt(trim5);
-                    InterfaceC0303as m4372a = AbstractC0249ar.m4372a(trim6);
-                    if (m4372a == null) {
+                    InterfaceC0303as m4623a = EnumC0249ar.m4623a(trim6);
+                    if (m4623a == null) {
                         throw new C0179f("Could not find unit '" + trim6 + "' in: " + trim);
                     }
                     C1052i c1052i = new C1052i(this.f6712i);
-                    c1052i.m743b(m4372a, parseInt);
+                    c1052i.m751b(m4623a, parseInt);
                     this.f6704a.add(c1052i);
                 } catch (NumberFormatException e2) {
                     throw new C0179f("Expected starting number in wave format '" + trim4 + "' in: " + trim);
@@ -151,18 +151,18 @@ public class C1050g {
     }
 
     /* renamed from: a */
-    public void m747a() {
-        LoggerMaybe.LogDebug2("Activating wave");
+    public void m755a() {
+        Core.LogDebug2("Activating wave");
         if (!this.f6712i.f6701R) {
-            this.f6712i.m756e();
+            this.f6712i.m764e();
         }
         PointF pointF = this.f6712i.f6699P;
         Iterator it = this.f6704a.iterator();
         while (it.hasNext()) {
-            ((C1052i) it.next()).m745a(pointF.f227a, pointF.f228b);
+            ((C1052i) it.next()).m753a(pointF.f227a, pointF.f228b);
         }
         if (!this.f6712i.f6700Q) {
-            this.f6712i.m756e();
+            this.f6712i.m764e();
         }
         if (this.f6705b) {
             this.f6712i.f6700Q = true;

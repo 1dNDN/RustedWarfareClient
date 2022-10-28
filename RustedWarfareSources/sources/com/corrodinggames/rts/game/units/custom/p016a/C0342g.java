@@ -12,7 +12,7 @@ import com.corrodinggames.rts.game.units.custom.p020d.C0424b;
 import com.corrodinggames.rts.game.units.p013a.AbstractC0228w;
 import com.corrodinggames.rts.game.units.p013a.EnumC0225t;
 import com.corrodinggames.rts.game.units.p013a.EnumC0226u;
-import com.corrodinggames.rts.gameFramework.AbstractC0916l;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p037f.C0760a;
 import com.corrodinggames.rts.gameFramework.p037f.C0785ad;
 import com.corrodinggames.rts.gameFramework.p044l.C0934e;
@@ -32,124 +32,116 @@ public class C0342g extends AbstractC0228w {
 
     public C0342g(C0339d c0339d, C0463u c0463u) {
         super((String) null);
-        this.f2151c = EnumC0340e.disabled;
+        this.f2151c = EnumC0340e.f2138b;
         String str = VariableScope.nullOrMissingString;
-        m4178a((c0339d.f2057j != null ? str + c0339d.f2057j : str) + "_" + c0339d.f2048a);
+        m4898a((c0339d.f2056j != null ? str + c0339d.f2056j : str) + "_" + c0339d.f2048a);
         this.f2149a = c0339d;
         this.f2150b = c0463u;
-        if (c0339d.f2082I != null) {
-            this.f2150b = c0339d.f2082I;
+        if (c0339d.f2080I != null) {
+            this.f2150b = c0339d.f2080I;
         }
         this.f2151c = c0339d.f2136aK;
-        if (this.f2151c == EnumC0340e.auto) {
+        if (this.f2151c == EnumC0340e.f2137a) {
             boolean z = false;
             boolean z2 = false;
-            if (c0339d.f2105af != null && c0339d.f2106ag == null) {
+            if (c0339d.f2093af != null && c0339d.f2094ag == null) {
                 z2 = true;
             }
-            if (c0339d.f2063p.m3708c()) {
+            if (c0339d.f2061p.m4096c()) {
                 z = true;
-                this.f2151c = EnumC0340e.upgrade;
+                this.f2151c = EnumC0340e.f2139c;
             }
             if (z && !z2) {
-                this.f2151c = EnumC0340e.upgrade;
+                this.f2151c = EnumC0340e.f2139c;
             } else {
-                this.f2151c = EnumC0340e.movementChange;
+                this.f2151c = EnumC0340e.f2140d;
             }
-            if (c0339d.f2081H != null) {
-                this.f2151c = EnumC0340e.sameAsBuilding;
+            if (c0339d.f2079H != null) {
+                this.f2151c = EnumC0340e.f2141e;
             }
         }
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: P */
-    public C0449h mo3950P() {
-        return this.f2149a.f2065r;
+    public C0449h m4346P() {
+        return this.f2149a.f2063r;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: F */
-    public boolean mo3955F() {
+    public boolean m4351F() {
         return true;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: d */
-    public boolean mo3944d(AbstractC0244am abstractC0244am, boolean z) {
-        return this.f2149a.f2085L;
+    public boolean m4339d(AbstractC0244am abstractC0244am, boolean z) {
+        return this.f2149a.f2126L;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: k */
-    public boolean mo3938k(AbstractC0244am abstractC0244am) {
-        return this.f2149a.f2087N;
+    public boolean m4332k(AbstractC0244am abstractC0244am) {
+        return this.f2149a.f2128N;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: l */
-    public boolean mo3937l(AbstractC0244am abstractC0244am) {
-        return this.f2149a.f2088O;
+    public boolean m4331l(AbstractC0244am abstractC0244am) {
+        return this.f2149a.f2129O;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0228w, com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: u */
-    public boolean mo3930u() {
-        return super.mo3930u();
+    public boolean mo4857u() {
+        return super.mo4857u();
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public boolean mo2987a(AbstractC0244am abstractC0244am, boolean z) {
+    public boolean mo3086a(AbstractC0244am abstractC0244am, boolean z) {
         C0451j c0451j = (C0451j) abstractC0244am;
-        if (!this.f2149a.f2086M && c0451j.mo3228a(m4185N(), z) > 0) {
+        if (!this.f2149a.f2127M && c0451j.mo3438a(m4910N(), z) > 0) {
             return false;
         }
-        if (this.f2149a.f2067t != null) {
-            if (z && mo3949Q()) {
-                if (!C0785ad.m1902a(this.f2149a.f2067t, c0451j)) {
+        if (this.f2149a.f2065t != null) {
+            if (z && m4345Q()) {
+                if (!C0785ad.m1954a(this.f2149a.f2065t, c0451j)) {
                     return false;
                 }
-            } else if (!this.f2149a.f2067t.read(c0451j)) {
+            } else if (!this.f2149a.f2065t.read(c0451j)) {
                 return false;
             }
         }
-        return super.mo2987a(abstractC0244am, z);
+        return super.mo3086a(abstractC0244am, z);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: g */
-    public boolean mo3942g(AbstractC0244am abstractC0244am) {
-        if (m3948a(abstractC0244am, -1)) {
+    public boolean mo4864g(AbstractC0244am abstractC0244am) {
+        if (m4343a(abstractC0244am, -1)) {
             return true;
         }
-        return super.mo3942g(abstractC0244am);
+        return super.mo4864g(abstractC0244am);
     }
 
     /* renamed from: a */
-    public boolean m3948a(AbstractC0244am abstractC0244am, int i) {
-        if (this.f2149a.f2072y != null && (i == -1 || i == 1)) {
+    public boolean m4343a(AbstractC0244am abstractC0244am, int i) {
+        if (this.f2149a.f2070y != null && (i == -1 || i == 1)) {
             if (!(abstractC0244am instanceof C0451j)) {
-                AbstractC0916l.m943n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1708r().mo3403i() + " is not a custom unit");
+                Core.m959n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1758r().mo4474i() + " is not a custom unit");
                 return false;
-            } else if (this.f2149a.f2072y.read((C0451j) abstractC0244am)) {
+            } else if (this.f2149a.f2070y.read((C0451j) abstractC0244am)) {
                 return true;
             }
         }
-        if (this.f2149a.f2074A != null && (i == -1 || i == 2)) {
+        if (this.f2149a.f2072A != null && (i == -1 || i == 2)) {
             if (!(abstractC0244am instanceof C0451j)) {
-                AbstractC0916l.m943n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1708r().mo3403i() + " is not a custom unit");
+                Core.m959n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1758r().mo4474i() + " is not a custom unit");
                 return false;
-            } else if (this.f2149a.f2074A.read((C0451j) abstractC0244am)) {
+            } else if (this.f2149a.f2072A.read((C0451j) abstractC0244am)) {
                 return true;
             }
         }
-        if (this.f2149a.f2076C != null) {
+        if (this.f2149a.f2074C != null) {
             if (i == -1 || i == 3) {
                 if (!(abstractC0244am instanceof C0451j)) {
-                    AbstractC0916l.m943n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1708r().mo3403i() + " is not a custom unit");
+                    Core.m959n("CustomActionConfig lockedInGame:" + abstractC0244am.mo1758r().mo4474i() + " is not a custom unit");
                     return false;
-                } else if (this.f2149a.f2076C.read((C0451j) abstractC0244am)) {
+                } else if (this.f2149a.f2074C.read((C0451j) abstractC0244am)) {
                     return true;
                 } else {
                     return false;
@@ -160,98 +152,89 @@ public class C0342g extends AbstractC0228w {
         return false;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: j */
-    public String mo3939j(AbstractC0244am abstractC0244am) {
-        if (m3948a(abstractC0244am, 1) && this.f2149a.f2073z != null) {
-            return this.f2149a.f2073z.m3863b(abstractC0244am);
+    public String m4333j(AbstractC0244am abstractC0244am) {
+        if (m4343a(abstractC0244am, 1) && this.f2149a.f2071z != null) {
+            return this.f2149a.f2071z.m4257b(abstractC0244am);
         }
-        if (m3948a(abstractC0244am, 2) && this.f2149a.f2075B != null) {
-            return this.f2149a.f2075B.m3863b(abstractC0244am);
+        if (m4343a(abstractC0244am, 2) && this.f2149a.f2073B != null) {
+            return this.f2149a.f2073B.m4257b(abstractC0244am);
         }
-        if (m3948a(abstractC0244am, 3) && this.f2149a.f2077D != null) {
-            return this.f2149a.f2077D.m3863b(abstractC0244am);
+        if (m4343a(abstractC0244am, 3) && this.f2149a.f2075D != null) {
+            return this.f2149a.f2075D.m4257b(abstractC0244am);
         }
-        return super.mo3939j(abstractC0244am);
+        return super.m4884j(abstractC0244am);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: r */
-    public boolean mo3933r(AbstractC0244am abstractC0244am) {
+    public boolean mo4861r(AbstractC0244am abstractC0244am) {
         C0451j c0451j = (C0451j) abstractC0244am;
-        if (this.f2149a.f2068u != null) {
-            if (mo3949Q()) {
-                return C0785ad.m1902a(this.f2149a.f2068u, c0451j);
+        if (this.f2149a.f2066u != null) {
+            if (m4345Q()) {
+                return C0785ad.m1954a(this.f2149a.f2066u, c0451j);
             }
-            return this.f2149a.f2068u.read(c0451j);
+            return this.f2149a.f2066u.read(c0451j);
         }
-        return super.mo2985b(abstractC0244am);
+        return super.mo3084b(abstractC0244am);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public boolean mo2985b(AbstractC0244am abstractC0244am) {
+    public boolean mo3084b(AbstractC0244am abstractC0244am) {
         C0451j c0451j = (C0451j) abstractC0244am;
-        if (this.f2149a.f2068u != null) {
-            return this.f2149a.f2068u.read(c0451j);
+        if (this.f2149a.f2066u != null) {
+            return this.f2149a.f2066u.read(c0451j);
         }
-        return super.mo2985b(abstractC0244am);
+        return super.mo3084b(abstractC0244am);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public boolean mo3947a(AbstractC0244am abstractC0244am, AbstractC0197n abstractC0197n) {
-        if (!this.f2149a.f2069v && !this.f2149a.f2070w) {
+    public boolean m4342a(AbstractC0244am abstractC0244am, AbstractC0197n abstractC0197n) {
+        if (!this.f2149a.f2067v && !this.f2149a.f2068w) {
             return false;
         }
-        if (abstractC0244am.f1609bV.m4264d(abstractC0197n)) {
-            return this.f2149a.f2069v;
+        if (abstractC0244am.f1609bV.m5042d(abstractC0197n)) {
+            return this.f2149a.f2067v;
         }
-        return this.f2149a.f2070w;
+        return this.f2149a.f2068w;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: o_ */
-    public C0424b mo3934o_() {
-        C0424b mo3963b = this.f1461h.mo3963b();
-        if (mo3963b != null) {
-            return mo3963b;
+    public C0424b mo4862o_() {
+        C0424b mo4359b = this.f1461h.mo4359b();
+        if (mo4359b != null) {
+            return mo4359b;
         }
-        return this.f2149a.f2064q;
+        return this.f2149a.f2062q;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0228w, com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public int mo2984b(AbstractC0244am abstractC0244am, boolean z) {
-        if (this.f2149a.f2131aF) {
-            return this.f2149a.f2063p.m3731a(abstractC0244am, true);
+    public int mo3083b(AbstractC0244am abstractC0244am, boolean z) {
+        if (this.f2149a.f2118aF) {
+            return this.f2149a.f2061p.m4119a(abstractC0244am, true);
         }
-        return super.mo2984b(abstractC0244am, z);
+        return super.mo3083b(abstractC0244am, z);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: d */
-    public String mo3014d() {
-        return super.mo3014d();
+    public String mo3129d() {
+        return super.mo3129d();
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: b */
-    public String mo2986b() {
+    public String mo3085b() {
         String str = null;
         if (this.f2149a.f2050c != null) {
-            str = this.f2149a.f2050c.m3864b();
+            str = this.f2149a.f2050c.m4258b();
         }
         return str;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: d */
-    public String mo3945d(AbstractC0244am abstractC0244am) {
+    public String mo4951d(AbstractC0244am abstractC0244am) {
         InterfaceC0303as typeOrNull;
         String str = null;
         if (this.f2149a.f2050c != null) {
-            str = this.f2149a.f2050c.m3863b(abstractC0244am);
+            str = this.f2149a.f2050c.m4257b(abstractC0244am);
         }
         if (this.f2149a.f2051d != null && (typeOrNull = this.f2149a.f2051d.getTypeOrNull(abstractC0244am)) != null) {
             if (str == null) {
@@ -259,7 +242,7 @@ public class C0342g extends AbstractC0228w {
             } else if (!str.equals(VariableScope.nullOrMissingString)) {
                 str = str + " ";
             }
-            str = str + typeOrNull.mo3411e();
+            str = str + typeOrNull.mo4478e();
         }
         if (this.f2149a.f2054g != null) {
             if (str == null) {
@@ -267,30 +250,28 @@ public class C0342g extends AbstractC0228w {
             } else if (!str.equals(VariableScope.nullOrMissingString)) {
                 str = str + " ";
             }
-            str = str + this.f2149a.f2054g.m3830b();
+            str = str + this.f2149a.f2054g.m4224b();
         }
         return str;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public String mo2989a() {
+    public String mo3088a() {
         String str = null;
         if (this.f2149a.f2055h != null) {
-            str = this.f2149a.f2055h.m3864b();
+            str = this.f2149a.f2055h.m4258b();
         }
         return str;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: e */
-    public String mo3943e(AbstractC0244am abstractC0244am) {
+    public String mo4950e(AbstractC0244am abstractC0244am) {
         AbstractC0244am unitReferenceOrNull;
         AbstractC0244am unitOrSharedUnit;
         InterfaceC0303as typeOrNull;
         String str = null;
         if (this.f2149a.f2055h != null) {
-            str = this.f2149a.f2055h.m3863b(abstractC0244am);
+            str = this.f2149a.f2055h.m4257b(abstractC0244am);
         }
         if (this.f2149a.f2052e != null && (typeOrNull = this.f2149a.f2052e.getTypeOrNull(abstractC0244am)) != null) {
             if (str == null) {
@@ -298,7 +279,7 @@ public class C0342g extends AbstractC0228w {
             } else if (!str.equals(VariableScope.nullOrMissingString)) {
                 str = str + " ";
             }
-            str = str + typeOrNull.mo3409f();
+            str = str + typeOrNull.mo4477f();
         }
         if (this.f2149a.f2053f != null) {
             if (this.f2149a.f2053f.getUnitReferenceOrNull(abstractC0244am) != null) {
@@ -307,7 +288,7 @@ public class C0342g extends AbstractC0228w {
                 } else if (!str.equals(VariableScope.nullOrMissingString)) {
                     str = str + "\n\n";
                 }
-                str = str + C0760a.m1997a(unitReferenceOrNull, false, false, false);
+                str = str + C0760a.m2059a(unitReferenceOrNull, false, false, false);
             } else {
                 if (this.f2149a.f2053f.getUnitOrSharedUnit(abstractC0244am) != null) {
                     if (str == null) {
@@ -315,7 +296,7 @@ public class C0342g extends AbstractC0228w {
                     } else if (!str.equals(VariableScope.nullOrMissingString)) {
                         str = str + "\n\n";
                     }
-                    str = str + C0760a.m1997a(unitOrSharedUnit, false, false, true);
+                    str = str + C0760a.m2059a(unitOrSharedUnit, false, false, true);
                 }
             }
         }
@@ -323,188 +304,164 @@ public class C0342g extends AbstractC0228w {
     }
 
     /* renamed from: L */
-    public boolean m3951L() {
-        return this.f2149a.f2093T;
+    public boolean m4347L() {
+        return this.f2149a.f2132T;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0228w
     /* renamed from: K */
-    public float mo3182K() {
-        if (this.f2149a.f2091R >= 1.0f) {
+    public float mo3369K() {
+        if (this.f2149a.f2130R >= 1.0f) {
             return 1000.0f;
         }
-        return this.f2149a.f2091R;
+        return this.f2149a.f2130R;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0228w, com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: e */
-    public EnumC0226u mo2982e() {
-        return this.f2149a.f2056i;
+    public EnumC0226u mo3081e() {
+        return this.f2149a.f2122i;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: B */
-    public C0424b mo3957B() {
-        C0424b mo3970a = this.f1461h.mo3970a();
-        if (mo3970a != null) {
-            return mo3970a;
+    public C0424b mo4866B() {
+        C0424b mo4366a = this.f1461h.mo4366a();
+        if (mo4366a != null) {
+            return mo4366a;
         }
-        return this.f2149a.f2063p;
+        return this.f2149a.f2061p;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: c */
-    public int mo2983c() {
-        return mo3957B().m3738a();
+    public int mo3082c() {
+        return mo4866B().m4126a();
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: i */
-    public InterfaceC0303as mo2977i() {
+    public InterfaceC0303as mo6163i() {
         if (this.f2150b == null) {
             return null;
         }
-        return this.f2150b.mo3362c();
+        return this.f2150b.mo3643c();
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: y */
-    public InterfaceC0303as mo3928y() {
-        if (this.f2149a.f2082I != null) {
-            return this.f2149a.f2082I.mo3362c();
+    public InterfaceC0303as mo4859y() {
+        if (this.f2149a.f2080I != null) {
+            return this.f2149a.f2080I.mo3643c();
         }
         return null;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: E */
-    public InterfaceC0303as mo3956E() {
-        if (this.f2149a.f2081H != null) {
-            return this.f2149a.f2081H.mo3362c();
+    public InterfaceC0303as m4352E() {
+        if (this.f2149a.f2079H != null) {
+            return this.f2149a.f2079H.mo3643c();
         }
         return null;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: A */
-    public boolean mo3958A() {
+    public boolean m4354A() {
         return true;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: g */
-    public boolean mo2979g() {
-        if (this.f2149a.f2082I != null) {
+    public boolean mo3078g() {
+        if (this.f2149a.f2080I != null) {
             return true;
         }
         return false;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: f */
-    public EnumC0225t mo2980f() {
-        return this.f2149a.f2129aD;
+    public EnumC0225t mo3079f() {
+        return this.f2149a.f2134aD;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: m */
-    public boolean mo3936m(AbstractC0244am abstractC0244am) {
-        return this.f2149a.f2079F.read((C0451j) abstractC0244am);
+    public boolean m4330m(AbstractC0244am abstractC0244am) {
+        return this.f2149a.f2077F.read((C0451j) abstractC0244am);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: n */
-    public boolean mo3935n(AbstractC0244am abstractC0244am) {
-        if (this.f2149a.f2078E == null) {
+    public boolean m4329n(AbstractC0244am abstractC0244am) {
+        if (this.f2149a.f2076E == null) {
             return false;
         }
         if (!(abstractC0244am instanceof C0451j)) {
-            AbstractC0916l.m982b("ai_isHighPriority non customUnit:" + abstractC0244am.mo1708r().mo3403i());
+            Core.m998b("ai_isHighPriority non customUnit:" + abstractC0244am.mo1758r().mo4474i());
             return false;
         }
-        return this.f2149a.f2078E.read((C0451j) abstractC0244am);
+        return this.f2149a.f2076E.read((C0451j) abstractC0244am);
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: v */
-    public EnumC0340e mo3929v(AbstractC0244am abstractC0244am) {
+    public EnumC0340e m4323v(AbstractC0244am abstractC0244am) {
         return this.f2151c;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: H */
-    public boolean mo3954H() {
-        return this.f2149a.f2083J;
+    public boolean m4350H() {
+        return this.f2149a.f2124J;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: I */
-    public boolean mo3953I() {
-        return this.f2149a.f2084K;
+    public boolean m4349I() {
+        return this.f2149a.f2125K;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: j */
-    public C0934e mo3041j() {
-        return this.f2149a.f2121av;
+    public C0934e mo4939j() {
+        return this.f2149a.f2109av;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: h */
-    public C0934e mo3941h(AbstractC0244am abstractC0244am) {
-        if (this.f2149a.f2124ay != null && (abstractC0244am instanceof C0451j) && !C0785ad.m1902a(this.f2149a.f2124ay, (C0451j) abstractC0244am)) {
+    public C0934e mo4948h(AbstractC0244am abstractC0244am) {
+        if (this.f2149a.f2112ay != null && (abstractC0244am instanceof C0451j) && !C0785ad.m1954a(this.f2149a.f2112ay, (C0451j) abstractC0244am)) {
             return null;
         }
-        return this.f2149a.f2122aw;
+        return this.f2149a.f2110aw;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: J */
-    public int mo3952J() {
-        return this.f2149a.f2123ax;
+    public int m4348J() {
+        return this.f2149a.f2111ax;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: i */
-    public AbstractC0244am mo3940i(AbstractC0244am abstractC0244am) {
-        if (this.f2149a.f2125az != null) {
-            return this.f2149a.f2125az.getUnitOrSharedUnit(abstractC0244am);
+    public AbstractC0244am mo4947i(AbstractC0244am abstractC0244am) {
+        if (this.f2149a.f2113az != null) {
+            return this.f2149a.f2113az.getUnitOrSharedUnit(abstractC0244am);
         }
         return null;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: s */
-    public boolean mo3932s(AbstractC0244am abstractC0244am) {
-        return this.f2149a.f2126aA;
+    public boolean m4326s(AbstractC0244am abstractC0244am) {
+        return this.f2149a.f2114aA;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: t */
-    public boolean mo3931t(AbstractC0244am abstractC0244am) {
-        return this.f2149a.f2127aB;
+    public boolean m4325t(AbstractC0244am abstractC0244am) {
+        return this.f2149a.f2115aB;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public boolean mo3043a(AbstractC0244am abstractC0244am) {
-        if (this.f2149a.f2128aC != null) {
-            return C0785ad.m1902a(this.f2149a.f2128aC, (C0451j) abstractC0244am);
+    public boolean mo4955a(AbstractC0244am abstractC0244am) {
+        if (this.f2149a.f2116aC != null) {
+            return C0785ad.m1954a(this.f2149a.f2116aC, (C0451j) abstractC0244am);
         }
         return false;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: Q */
-    public boolean mo3949Q() {
-        return this.f2149a.f2061n;
+    public boolean m4345Q() {
+        return this.f2149a.f2060n;
     }
 
-    @Override // com.corrodinggames.rts.game.units.p013a.AbstractC0224s
     /* renamed from: a */
-    public void mo3946a(AbstractC0623y abstractC0623y) {
-        if (this.f2149a.f2103ad != null) {
-            C0785ad.m1900b(abstractC0623y, this.f2149a.f2103ad);
+    public void m4341a(AbstractC0623y abstractC0623y) {
+        if (this.f2149a.f2091ad != null) {
+            C0785ad.m1952b(abstractC0623y, this.f2149a.f2091ad);
         }
     }
 }

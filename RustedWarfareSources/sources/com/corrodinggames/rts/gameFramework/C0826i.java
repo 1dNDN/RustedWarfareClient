@@ -17,111 +17,111 @@ public class C0826i implements Thread.UncaughtExceptionHandler {
     }
 
     public synchronized void uncaughtException(Thread thread, Throwable th) {
-        LoggerMaybe loggerMaybe = null;
+        Core core = null;
         try {
-            LoggerMaybe.f6220dP = null;
-            LoggerMaybe.f6221dQ = null;
-            LoggerMaybe.f6178dO = null;
+            Core.f6220dP = null;
+            Core.f6221dQ = null;
+            Core.f6178dO = null;
             System.gc();
             try {
-                LoggerMaybe.LogDebug2("uncaughtException start");
-                loggerMaybe = LoggerMaybe.m1079A();
-                if (loggerMaybe != null && (th instanceof OutOfMemoryError)) {
-                    LoggerMaybe.LogDebug2("Freeing memory");
+                Core.LogDebug2("uncaughtException start");
+                core = Core.m1087A();
+                if (core != null && (th instanceof OutOfMemoryError)) {
+                    Core.LogDebug2("Freeing memory");
                     try {
                         C0173b.f830al = null;
-                        if (loggerMaybe.f6110bL != null) {
-                            loggerMaybe.f6110bL = null;
+                        if (core.f6110bL != null) {
+                            core.f6110bL = null;
                         }
-                        if (loggerMaybe.f6112bN != null) {
-                            loggerMaybe.f6112bN.m2653i();
-                            loggerMaybe.f6112bN = null;
+                        if (core.f6112bN != null) {
+                            core.f6112bN.m2701i();
+                            core.f6112bN = null;
                         }
                         System.gc();
-                        LoggerMaybe.LogDebug2("uncaughtException: Memory freed");
+                        Core.LogDebug2("uncaughtException: Memory freed");
                     } catch (Throwable th2) {
-                        LoggerMaybe.LogDebug2("exception freeing memory");
+                        Core.LogDebug2("exception freeing memory");
                         th2.printStackTrace();
                     }
                 }
-                LoggerMaybe.m1033a("gameEngine:uncaughtExceptionHandler", th);
-                String m1031a = LoggerMaybe.m1031a(th);
+                Core.m1041a("gameEngine:uncaughtExceptionHandler", th);
+                String m1039a = Core.m1039a(th);
                 boolean z = false;
                 boolean z2 = false;
-                if (loggerMaybe != null) {
-                    SettingsEngine settingsEngine = loggerMaybe.f6115bQ;
+                if (core != null) {
+                    SettingsEngine settingsEngine = core.settingEngine;
                     if (settingsEngine != null) {
                         z = settingsEngine.sendReports;
                     } else {
-                        LoggerMaybe.LogDebug2("CustomExceptionHandler: no settings");
+                        Core.LogDebug2("CustomExceptionHandler: no settings");
                     }
                 } else {
-                    LoggerMaybe.LogDebug2("CustomExceptionHandler: no game");
+                    Core.LogDebug2("CustomExceptionHandler: no game");
                 }
-                if (LoggerMaybe.f6219dN) {
-                    LoggerMaybe.LogDebug2("CustomExceptionHandler: a crash was already sent");
+                if (Core.f6219dN) {
+                    Core.LogDebug2("CustomExceptionHandler: a crash was already sent");
                     z = false;
                     z2 = true;
                 }
-                LoggerMaybe.f6219dN = true;
+                Core.f6219dN = true;
                 if (z) {
                     try {
-                        LoggerMaybe.LogDebug2("Starting errorReport");
-                        C0879n.m1262a("uncaughtException", m1031a);
-                        LoggerMaybe.LogDebug2("waiting");
+                        Core.LogDebug2("Starting errorReport");
+                        C0879n.m1275a("uncaughtException", m1039a);
+                        Core.LogDebug2("waiting");
                         Thread.sleep(800L);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                if (!z2 && loggerMaybe != null && loggerMaybe.f6279dG != null) {
-                    loggerMaybe.f6279dG.mo113a(th);
+                if (!z2 && core != null && core.f6279dG != null) {
+                    core.f6279dG.mo107a(th);
                 }
-                LoggerMaybe.m970e("fatal", m1031a);
+                Core.m978e("fatal", m1039a);
             } catch (Exception e2) {
-                LoggerMaybe.LogDebug2("exception sending crash");
+                Core.LogDebug2("exception sending crash");
                 e2.printStackTrace();
             }
-            if (loggerMaybe != null) {
-                if (loggerMaybe.f6279dG != null && loggerMaybe.f6279dG.m740a()) {
-                    LoggerMaybe.LogDebug2("gameCrashesDontExit=true");
+            if (core != null) {
+                if (core.f6279dG != null && core.f6279dG.m748a()) {
+                    Core.LogDebug2("gameCrashesDontExit=true");
                     if (1 == 0) {
-                        LoggerMaybe.LogDebug2("Crash was not handled, exiting");
+                        Core.LogDebug2("Crash was not handled, exiting");
                         Runtime.getRuntime().halt(1);
                         return;
                     }
                     return;
-                } else if (loggerMaybe.f6122bX != null && loggerMaybe.f6122bX.lock1) {
-                    LoggerMaybe.LogDebug2("Sending disconnect");
-                    loggerMaybe.f6122bX.m1481c("Game crash");
+                } else if (core.f6122bX != null && core.f6122bX.lock1) {
+                    Core.LogDebug2("Sending disconnect");
+                    core.f6122bX.m1523c("Game crash");
                 }
             }
-            if (!LoggerMaybe.f6084az) {
+            if (!Core.f6084az) {
                 if (this.f5469a != null) {
-                    LoggerMaybe.LogDebug2("CustomExceptionHandler: sending to: defaultUEH.uncaughtException");
+                    Core.LogDebug2("CustomExceptionHandler: sending to: defaultUEH.uncaughtException");
                     this.f5469a.uncaughtException(thread, th);
-                    LoggerMaybe.LogDebug2("CustomExceptionHandler: back from: defaultUEH.uncaughtException");
+                    Core.LogDebug2("CustomExceptionHandler: back from: defaultUEH.uncaughtException");
                 } else {
-                    LoggerMaybe.LogDebug2("CustomExceptionHandler: defaultUEH==null");
+                    Core.LogDebug2("CustomExceptionHandler: defaultUEH==null");
                     System.exit(2);
                 }
             }
-            LoggerMaybe.f6082av = th;
+            Core.f6082av = th;
             if (1 == 0) {
-                LoggerMaybe.LogDebug2("Crash was not handled, exiting");
+                Core.LogDebug2("Crash was not handled, exiting");
                 Runtime.getRuntime().halt(1);
             }
         } catch (Throwable th3) {
             try {
-                LoggerMaybe.LogDebug2("Exception in uncaughtException");
+                Core.LogDebug2("Exception in uncaughtException");
                 th3.printStackTrace();
                 if (0 == 0) {
-                    LoggerMaybe.LogDebug2("Crash was not handled, exiting");
+                    Core.LogDebug2("Crash was not handled, exiting");
                     Runtime.getRuntime().halt(1);
                 }
             } catch (Throwable th4) {
                 if (0 == 0) {
-                    LoggerMaybe.LogDebug2("Crash was not handled, exiting");
+                    Core.LogDebug2("Crash was not handled, exiting");
                     Runtime.getRuntime().halt(1);
                 }
                 throw th4;

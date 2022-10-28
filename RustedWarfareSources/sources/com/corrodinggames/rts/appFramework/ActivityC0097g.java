@@ -19,8 +19,8 @@ import android.widget.Toast;
 import com.corrodinggames.rts.C0067R;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.C0758f;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.EnumC1063s;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
 import com.corrodinggames.rts.gameFramework.p039g.C0820a;
 import com.corrodinggames.rts.gameFramework.p047n.C1058a;
 
@@ -35,82 +35,82 @@ public class ActivityC0097g extends ActivityC0089b {
     ProgressDialog f441e;
 
     /* renamed from: d */
-    final Handler f440d = new Handler(Looper.m5404b());
+    final Handler f440d = new Handler(Looper.m5811b());
 
     /* renamed from: f */
     boolean f442f = true;
 
     /* renamed from: a */
-    static /* synthetic */ void m5226a(ActivityC0097g activityC0097g, String str) {
-        activityC0097g.m5221f(str);
+    static /* synthetic */ void m5633a(ActivityC0097g activityC0097g, String str) {
+        activityC0097g.m5628f(str);
     }
 
     /* renamed from: b */
-    static /* synthetic */ void m5224b(ActivityC0097g activityC0097g, String str) {
-        activityC0097g.m5222e(str);
+    static /* synthetic */ void m5631b(ActivityC0097g activityC0097g, String str) {
+        activityC0097g.m5629e(str);
     }
 
     /* renamed from: a */
-    static /* synthetic */ void m5227a(ActivityC0097g activityC0097g) {
-        activityC0097g.m5219n();
+    static /* synthetic */ void m5634a(ActivityC0097g activityC0097g) {
+        activityC0097g.m5626n();
     }
 
     /* renamed from: b */
-    public void mo5212b() {
-        LoggerMaybe.LogDebug2("IngameActivity: finish");
-        super.mo5212b();
-        C0090c.m5240a((Activity) this, true);
+    public void mo5591b() {
+        Core.LogDebug2("IngameActivity: finish");
+        super.mo5591b();
+        C0090c.m5647a((Activity) this, true);
     }
 
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
         if (z) {
-            C0090c.m5239a((Activity) this, false, true);
+            C0090c.m5646a((Activity) this, false, true);
         }
-        this.f439c.mo256a(z);
+        this.f439c.mo252a(z);
     }
 
     /* renamed from: a */
-    public boolean mo5614a(Menu menu) {
-        super.mo5614a(menu);
+    public boolean mo6024a(Menu menu) {
+        super.mo6024a(menu);
         menu.clear();
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
-        menu.add(0, 12, 0, C0820a.m1689a("menus.ingame.save", new Object[0])).setIcon(17301582);
-        if (m1079A.f6100bv && !LoggerMaybe.f6210aZ) {
-            menu.add(0, 18, 0, C0820a.m1689a("menus.ingame.exportMap", new Object[0])).setIcon(17301582);
+        Core m1087A = Core.m1087A();
+        menu.add(0, 12, 0, C0820a.m1731a("menus.ingame.save", new Object[0])).setIcon(17301582);
+        if (m1087A.f6100bv && !Core.f6210aZ) {
+            menu.add(0, 18, 0, C0820a.m1731a("menus.ingame.exportMap", new Object[0])).setIcon(17301582);
         }
-        menu.add(0, 2, 0, C0820a.m1689a("menus.ingame.settings", new Object[0])).setIcon(17301577);
-        if (!m1079A.m1067M()) {
+        menu.add(0, 2, 0, C0820a.m1731a("menus.ingame.settings", new Object[0])).setIcon(17301577);
+        if (!m1087A.m1075M()) {
         }
-        if (m1079A.f6126cb != null && m1079A.f6126cb.m2413h()) {
-            menu.add(0, 22, 0, C0820a.m1689a("menus.ingame.hideInterface", new Object[0])).setIcon(17301584);
+        if (m1087A.f6126cb != null && m1087A.f6126cb.m2464h()) {
+            menu.add(0, 22, 0, C0820a.m1731a("menus.ingame.hideInterface", new Object[0])).setIcon(17301584);
         }
-        if (m1079A.m1067M()) {
-            menu.add(0, 13, 0, C0820a.m1689a("menus.ingame.chat", new Object[0])).setIcon(17301584);
-            menu.add(0, 14, 0, C0820a.m1689a("menus.ingame.players", new Object[0])).setIcon(17301661);
-            if (m1079A.f6122bX.IsServer && C1058a.m739a().m738e()) {
-                menu.add(0, 17, 0, C0820a.m1689a("menus.ingame.steam_reinvite", new Object[0])).setIcon(17301584);
+        if (m1087A.m1075M()) {
+            menu.add(0, 13, 0, C0820a.m1731a("menus.ingame.chat", new Object[0])).setIcon(17301584);
+            menu.add(0, 14, 0, C0820a.m1731a("menus.ingame.players", new Object[0])).setIcon(17301661);
+            if (m1087A.f6122bX.IsServer && C1058a.m747a().m746e()) {
+                menu.add(0, 17, 0, C0820a.m1731a("menus.ingame.steam_reinvite", new Object[0])).setIcon(17301584);
             }
             boolean z = false;
-            if (m1079A.f6099bs != null && m1079A.f6099bs.f1330F) {
+            if (m1087A.f6099bs != null && m1087A.f6099bs.f1330F) {
                 z = true;
             }
-            if (!z && !m1079A.f6267dp) {
-                menu.add(0, 19, 0, C0820a.m1689a("menus.ingame.surrender", new Object[0])).setIcon(17301552);
+            if (!z && !m1087A.f6267dp) {
+                menu.add(0, 19, 0, C0820a.m1731a("menus.ingame.surrender", new Object[0])).setIcon(17301552);
             }
-            if (!m1079A.f6122bX.IsServer) {
-                menu.add(0, 10, 0, C0820a.m1689a("menus.ingame.disconnect", new Object[0])).setIcon(17301552);
+            if (!m1087A.f6122bX.IsServer) {
+                menu.add(0, 10, 0, C0820a.m1731a("menus.ingame.disconnect", new Object[0])).setIcon(17301552);
             } else {
-                menu.add(0, 10, 0, C0820a.m1689a("menus.ingame.exitGame", new Object[0])).setIcon(17301552);
+                menu.add(0, 10, 0, C0820a.m1731a("menus.ingame.exitGame", new Object[0])).setIcon(17301552);
             }
         } else {
-            if (m1079A.f6129ce != null && m1079A.f6129ce.f6665h != null) {
-                menu.add(0, 11, 0, C0820a.m1689a("menus.ingame.briefing", new Object[0])).setIcon(17301659);
+            if (m1087A.f6129ce != null && m1087A.f6129ce.f6665h != null) {
+                menu.add(0, 11, 0, C0820a.m1731a("menus.ingame.briefing", new Object[0])).setIcon(17301659);
             }
-            menu.add(0, 15, 0, C0820a.m1689a("menus.ingame.exitGame", new Object[0])).setIcon(17301552);
+            menu.add(0, 15, 0, C0820a.m1731a("menus.ingame.exitGame", new Object[0])).setIcon(17301552);
         }
-        if (m1079A != null && m1079A.f6115bQ.allowGameRecording) {
-            if (!m1079A.f6234bo) {
+        if (m1087A != null && m1087A.settingEngine.allowGameRecording) {
+            if (!m1087A.f6234bo) {
                 menu.add(0, 9, 0, "Start Recording");
                 return true;
             }
@@ -121,9 +121,9 @@ public class ActivityC0097g extends ActivityC0089b {
     }
 
     /* renamed from: c */
-    public void mo121c(int i) {
-        LoggerMaybe.LogDebug2("outer selectMenuOption: " + i);
-        this.f440d.m5414a(new RunnableC00981(i));
+    public void mo115c(int i) {
+        Core.LogDebug2("outer selectMenuOption: " + i);
+        this.f440d.m5821a(new RunnableC00981(i));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -139,29 +139,29 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void run() {
-            LoggerMaybe.LogDebug2("inner selectMenuOption: " + this.f443a);
-            ActivityC0097g.this.mo120d(this.f443a);
+            Core.LogDebug2("inner selectMenuOption: " + this.f443a);
+            ActivityC0097g.this.mo114d(this.f443a);
         }
     }
 
     /* renamed from: d */
-    public void mo120d(int i) {
+    public void mo114d(int i) {
         switch (i) {
             case 2:
-                m5616a(new Intent(m5610k(), ActivityC0133s.class), 0);
+                m6026a(new Intent(m6020k(), ActivityC0133s.class), 0);
                 return;
             case 3:
                 new AlertDialog.Builder(this).setIcon(17301543).setTitle("Skip?").setMessage("Are you sure you want to skip this level?").setPositiveButton("Yes", new DialogInterface$OnClickListenerC01159()).setNegativeButton("No", (DialogInterface.OnClickListener) null).show();
                 return;
             case 4:
-                LoggerMaybe.m1079A().f6245cg = !LoggerMaybe.m1079A().f6245cg;
+                Core.m1087A().f6245cg = !Core.m1087A().f6245cg;
                 return;
             case 5:
                 new AlertDialog.Builder(this).setIcon(17301543).setTitle("Restart?").setMessage("Are you sure you want to restart this level?").setPositiveButton("Yes", new DialogInterface$OnClickListenerC009910()).setNegativeButton("No", (DialogInterface.OnClickListener) null).show();
                 return;
             case 6:
-                LoggerMaybe m1079A = LoggerMaybe.m1079A();
-                m1079A.f6231bl = !m1079A.f6231bl;
+                Core m1087A = Core.m1087A();
+                m1087A.f6231bl = !m1087A.f6231bl;
                 return;
             case 7:
             case 8:
@@ -169,51 +169,51 @@ public class ActivityC0097g extends ActivityC0089b {
             default:
                 return;
             case 9:
-                LoggerMaybe m1079A2 = LoggerMaybe.m1079A();
-                if (!m1079A2.f6234bo) {
-                    m1079A2.f6234bo = true;
+                Core m1087A2 = Core.m1087A();
+                if (!m1087A2.f6234bo) {
+                    m1087A2.f6234bo = true;
                     return;
                 } else {
-                    m1079A2.f6234bo = false;
+                    m1087A2.f6234bo = false;
                     return;
                 }
             case 10:
-                LoggerMaybe m1079A3 = LoggerMaybe.m1079A();
-                String m1689a = C0820a.m1689a("menus.ingame.multiplayerClose.titleDisconnect", new Object[0]);
-                String m1689a2 = C0820a.m1689a("menus.ingame.multiplayerClose.messageDisconnect", new Object[0]);
-                String m1689a3 = C0820a.m1689a("menus.ingame.multiplayerClose.disconnectButton", new Object[0]);
-                if (m1079A3.f6122bX.IsServer) {
-                    m1689a = C0820a.m1689a("menus.ingame.multiplayerClose.title", new Object[0]);
-                    m1689a2 = C0820a.m1689a("menus.ingame.multiplayerClose.messageEndGame", new Object[0]);
-                    m1689a3 = C0820a.m1689a("menus.ingame.exitGame", new Object[0]);
+                Core m1087A3 = Core.m1087A();
+                String m1731a = C0820a.m1731a("menus.ingame.multiplayerClose.titleDisconnect", new Object[0]);
+                String m1731a2 = C0820a.m1731a("menus.ingame.multiplayerClose.messageDisconnect", new Object[0]);
+                String m1731a3 = C0820a.m1731a("menus.ingame.multiplayerClose.disconnectButton", new Object[0]);
+                if (m1087A3.f6122bX.IsServer) {
+                    m1731a = C0820a.m1731a("menus.ingame.multiplayerClose.title", new Object[0]);
+                    m1731a2 = C0820a.m1731a("menus.ingame.multiplayerClose.messageEndGame", new Object[0]);
+                    m1731a3 = C0820a.m1731a("menus.ingame.exitGame", new Object[0]);
                 }
-                AlertDialog.Builder negativeButton = new AlertDialog.Builder(this).setIcon(17301543).setTitle(m1689a).setMessage(m1689a2).setPositiveButton(m1689a3, new DialogInterface$OnClickListenerC010213()).setNegativeButton(C0820a.m1689a("menus.common.back", new Object[0]), (DialogInterface.OnClickListener) null);
-                if (m1079A3.f6122bX.IsServer) {
-                    negativeButton.setNeutralButton(C0820a.m1689a("menus.ingame.multiplayerClose.returnToBattleroom", new Object[0]), new DialogInterface$OnClickListenerC010314());
+                AlertDialog.Builder negativeButton = new AlertDialog.Builder(this).setIcon(17301543).setTitle(m1731a).setMessage(m1731a2).setPositiveButton(m1731a3, new DialogInterface$OnClickListenerC010213()).setNegativeButton(C0820a.m1731a("menus.common.back", new Object[0]), (DialogInterface.OnClickListener) null);
+                if (m1087A3.f6122bX.IsServer) {
+                    negativeButton.setNeutralButton(C0820a.m1731a("menus.ingame.multiplayerClose.returnToBattleroom", new Object[0]), new DialogInterface$OnClickListenerC010314());
                 }
                 negativeButton.show();
                 return;
             case 11:
-                LoggerMaybe m1079A4 = LoggerMaybe.m1079A();
-                if (m1079A4.f6129ce != null && m1079A4.f6129ce.f6665h != null) {
-                    m1079A4.m1036a("Briefing", m1079A4.f6129ce.f6665h);
+                Core m1087A4 = Core.m1087A();
+                if (m1087A4.f6129ce != null && m1087A4.f6129ce.f6665h != null) {
+                    m1087A4.m1044a("Briefing", m1087A4.f6129ce.f6665h);
                     return;
                 }
                 return;
             case 12:
                 RunnableC010011 runnableC010011 = new RunnableC010011(this);
-                if (!C0090c.m5242a(this, runnableC010011)) {
+                if (!C0090c.m5649a(this, runnableC010011)) {
                     runnableC010011.run();
                     return;
                 }
                 return;
             case 13:
-                m5225a(false);
+                m5632a(false);
                 return;
             case 14:
-                LoggerMaybe m1079A5 = LoggerMaybe.m1079A();
-                if (m1079A5.f6122bX != null) {
-                    m1079A5.f6122bX.m1598H();
+                Core m1087A5 = Core.m1087A();
+                if (m1087A5.f6122bX != null) {
+                    m1087A5.f6122bX.m1640H();
                     return;
                 }
                 return;
@@ -221,11 +221,11 @@ public class ActivityC0097g extends ActivityC0089b {
                 new AlertDialog.Builder(this).setIcon(17301543).setTitle("Exit?").setMessage("Are you sure you want to exit this game?").setPositiveButton("Yes", new DialogInterface$OnClickListenerC010415()).setNegativeButton("No", (DialogInterface.OnClickListener) null).show();
                 return;
             case 16:
-                m5225a(true);
+                m5632a(true);
                 return;
             case 18:
-                if (C0090c.m5234b((Activity) this)) {
-                    m5222e(null);
+                if (C0090c.m5641b((Activity) this)) {
+                    m5629e(null);
                     return;
                 }
                 return;
@@ -233,17 +233,17 @@ public class ActivityC0097g extends ActivityC0089b {
                 new AlertDialog.Builder(this).setIcon(17301543).setTitle("Disconnect?").setMessage("Are you sure you want to surrender this game?").setPositiveButton("Surrender", new DialogInterface$OnClickListenerC010112()).setNegativeButton("No", (DialogInterface.OnClickListener) null).show();
                 return;
             case 20:
-                mo5212b();
+                mo5591b();
                 return;
             case 21:
-                mo5212b();
-                ActivityC0122n.m5193o();
-                ActivityC0122n.m5195m();
+                mo5591b();
+                ActivityC0122n.m5601o();
+                ActivityC0122n.m5603m();
                 return;
             case 22:
-                LoggerMaybe m1079A6 = LoggerMaybe.m1079A();
-                m1079A6.f6161cT = true;
-                m1079A6.f6117bS.f5126p = false;
+                Core m1087A6 = Core.m1087A();
+                m1087A6.f6161cT = true;
+                m1087A6.f6117bS.f5126p = false;
                 return;
         }
     }
@@ -256,7 +256,7 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            LoggerMaybe.m1079A().f6271dt = true;
+            Core.m1087A().f6271dt = true;
         }
     }
 
@@ -268,10 +268,10 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
-            m1079A.m1069K();
-            m1079A.m1029a(true, EnumC1063s.f6740b);
-            m1079A.m1071I();
+            Core m1087A = Core.m1087A();
+            m1087A.m1077K();
+            m1087A.m1037a(true, EnumC1063s.f6740b);
+            m1087A.m1079I();
         }
     }
 
@@ -288,8 +288,8 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void run() {
-            if (C0090c.m5234b(this.f446a)) {
-                ActivityC0097g.m5226a(ActivityC0097g.this, (String) null);
+            if (C0090c.m5641b(this.f446a)) {
+                ActivityC0097g.m5633a(ActivityC0097g.this, (String) null);
             }
         }
     }
@@ -302,7 +302,7 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            LoggerMaybe.m1079A().f6122bX.m1431m("-surrender");
+            Core.m1087A().f6122bX.m1473m("-surrender");
         }
     }
 
@@ -314,8 +314,8 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            LoggerMaybe.m1079A().f6122bX.m1493b("exited");
-            ActivityC0097g.this.mo5212b();
+            Core.m1087A().f6122bX.m1535b("exited");
+            ActivityC0097g.this.mo5591b();
         }
     }
 
@@ -327,10 +327,10 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            LoggerMaybe.LogDebug2("Returning to battleroom clicked.");
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
-            m1079A.f6122bX.m1525ag();
-            m1079A.f6117bS.f5126p = false;
+            Core.LogDebug2("Returning to battleroom clicked.");
+            Core m1087A = Core.m1087A();
+            m1087A.f6122bX.m1567ag();
+            m1087A.f6117bS.f5126p = false;
         }
     }
 
@@ -342,13 +342,13 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
-            ActivityC0097g.this.mo5212b();
+            ActivityC0097g.this.mo5591b();
         }
     }
 
     /* renamed from: a */
-    private void m5225a(boolean z) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    private void m5632a(boolean z) {
+        Core m1087A = Core.m1087A();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         if (!z) {
             builder.setTitle("Send Message");
@@ -359,7 +359,7 @@ public class ActivityC0097g extends ActivityC0089b {
         builder.setView(inflate);
         TextView textView = (TextView) inflate.findViewById(C0067R.C0068id.chat_messages);
         EditText editText = (EditText) inflate.findViewById(C0067R.C0068id.chat_text);
-        textView.setText(m1079A.f6122bX.f5605aS.m1620a());
+        textView.setText(m1087A.f6122bX.f5605aS.m1662a());
         editText.setText(VariableScope.nullOrMissingString);
         editText.requestFocus();
         builder.setPositiveButton(z ? "Send Team" : "Send", new DialogInterface$OnClickListenerC010516(editText, z));
@@ -386,15 +386,15 @@ public class ActivityC0097g extends ActivityC0089b {
 
         public void onClick(DialogInterface dialogInterface, int i) {
             String obj = this.f452a.getText().toString();
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
+            Core m1087A = Core.m1087A();
             if (!obj.trim().equals(VariableScope.nullOrMissingString)) {
                 if (this.f453b) {
-                    m1079A.f6122bX.m1433l(obj);
+                    m1087A.f6122bX.m1475l(obj);
                 } else {
-                    m1079A.f6122bX.m1431m(obj);
+                    m1087A.f6122bX.m1473m(obj);
                 }
             }
-            m1079A.f6117bS.f5126p = false;
+            m1087A.f6117bS.f5126p = false;
         }
     }
 
@@ -416,16 +416,16 @@ public class ActivityC0097g extends ActivityC0089b {
 
         public void onClick(DialogInterface dialogInterface, int i) {
             String obj = this.f455a.getText().toString();
-            LoggerMaybe m1079A = LoggerMaybe.m1079A();
+            Core m1087A = Core.m1087A();
             if (!obj.trim().equals(VariableScope.nullOrMissingString)) {
                 if (this.f456b) {
-                    m1079A.f6122bX.m1433l(obj);
+                    m1087A.f6122bX.m1475l(obj);
                 } else {
-                    m1079A.f6122bX.m1431m(obj);
+                    m1087A.f6122bX.m1473m(obj);
                 }
             }
-            m1079A.f6117bS.f5126p = false;
-            m1079A.f6117bS.m1872H();
+            m1087A.f6117bS.f5126p = false;
+            m1087A.f6117bS.m1914H();
         }
     }
 
@@ -441,19 +441,19 @@ public class ActivityC0097g extends ActivityC0089b {
     }
 
     /* renamed from: e */
-    private void m5222e(String str) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    private void m5629e(String str) {
+        Core m1087A = Core.m1087A();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Export Map");
         builder.setMessage("Enter a name to export the map as");
         EditText editText = new EditText(this);
         if (str == null) {
-            editText.setText(("New " + m1079A.m1012ak() + " (" + C0758f.m2130a("d MMM yyyy").replace(".", VariableScope.nullOrMissingString) + " " + C0758f.m2130a("HH.mm.ss") + ")").replace("  ", " "));
+            editText.setText(("New " + m1087A.m1020ak() + " (" + C0758f.m2179a("d MMM yyyy").replace(".", VariableScope.nullOrMissingString) + " " + C0758f.m2179a("HH.mm.ss") + ")").replace("  ", " "));
         } else {
             editText.setText(str);
         }
         builder.setView(editText);
-        builder.setPositiveButton("Ok", new DialogInterface$OnClickListenerC01084(editText, m1079A));
+        builder.setPositiveButton("Ok", new DialogInterface$OnClickListenerC01084(editText, m1087A));
         builder.setNegativeButton("Cancel", new DialogInterface$OnClickListenerC01105());
         builder.show();
     }
@@ -467,11 +467,11 @@ public class ActivityC0097g extends ActivityC0089b {
         final /* synthetic */ EditText f459a;
 
         /* renamed from: b */
-        final /* synthetic */ LoggerMaybe f460b;
+        final /* synthetic */ Core f460b;
 
-        DialogInterface$OnClickListenerC01084(EditText editText, LoggerMaybe loggerMaybe) {
+        DialogInterface$OnClickListenerC01084(EditText editText, Core core) {
             this.f459a = editText;
-            this.f460b = loggerMaybe;
+            this.f460b = core;
         }
 
         public void onClick(DialogInterface dialogInterface, int i) {
@@ -484,7 +484,7 @@ public class ActivityC0097g extends ActivityC0089b {
                 builder.show();
                 return;
             }
-            this.f460b.f6110bL.m4936a(this.f460b.f6165dk, "/SD/rustedWarfare/maps/" + obj + ".tmx");
+            this.f460b.f6110bL.m5319a(this.f460b.f6165dk, "/SD/rustedWarfare/maps/" + obj + ".tmx");
         }
 
         /* renamed from: com.corrodinggames.rts.appFramework.g$4$1 */
@@ -499,7 +499,7 @@ public class ActivityC0097g extends ActivityC0089b {
             }
 
             public void onClick(DialogInterface dialogInterface, int i) {
-                ActivityC0097g.m5224b(ActivityC0097g.this, this.f462a);
+                ActivityC0097g.m5631b(ActivityC0097g.this, this.f462a);
             }
         }
     }
@@ -516,14 +516,14 @@ public class ActivityC0097g extends ActivityC0089b {
     }
 
     /* renamed from: f */
-    private void m5221f(String str) {
-        LoggerMaybe m1079A = LoggerMaybe.m1079A();
+    private void m5628f(String str) {
+        Core m1087A = Core.m1087A();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Save Game");
         builder.setMessage("Enter a name to save the game under");
         EditText editText = new EditText(this);
         if (str == null) {
-            editText.setText(m1079A.m1012ak() + " (" + C0758f.m2130a("d MMM yyyy").replace(".", VariableScope.nullOrMissingString) + " " + C0758f.m2130a("HH.mm.ss") + ")");
+            editText.setText(m1087A.m1020ak() + " (" + C0758f.m2179a("d MMM yyyy").replace(".", VariableScope.nullOrMissingString) + " " + C0758f.m2179a("HH.mm.ss") + ")");
         } else {
             editText.setText(str);
         }
@@ -555,7 +555,7 @@ public class ActivityC0097g extends ActivityC0089b {
                 builder.show();
                 return;
             }
-            ActivityC0097g.this.m5223d(obj);
+            ActivityC0097g.this.m5630d(obj);
         }
 
         /* renamed from: com.corrodinggames.rts.appFramework.g$6$1 */
@@ -570,7 +570,7 @@ public class ActivityC0097g extends ActivityC0089b {
             }
 
             public void onClick(DialogInterface dialogInterface, int i) {
-                ActivityC0097g.m5226a(ActivityC0097g.this, this.f467a);
+                ActivityC0097g.m5633a(ActivityC0097g.this, this.f467a);
             }
         }
     }
@@ -587,8 +587,8 @@ public class ActivityC0097g extends ActivityC0089b {
     }
 
     /* renamed from: d */
-    public void m5223d(String str) {
-        m5619a(0);
+    public void m5630d(String str) {
+        m6029a(0);
         RunnableC0116h runnableC0116h = new RunnableC0116h(this);
         runnableC0116h.f472a = str;
         new Thread(runnableC0116h).start();
@@ -602,25 +602,25 @@ public class ActivityC0097g extends ActivityC0089b {
         }
 
         public void run() {
-            ActivityC0097g.m5227a(ActivityC0097g.this);
+            ActivityC0097g.m5634a(ActivityC0097g.this);
         }
     }
 
     /* renamed from: l */
-    public void m5220l() {
-        this.f440d.m5414a(new RunnableC01148());
+    public void m5627l() {
+        this.f440d.m5821a(new RunnableC01148());
     }
 
     /* renamed from: n */
-    private void m5219n() {
+    private void m5626n() {
         try {
-            mo5609a(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=com.corrodinggames.rts")));
+            mo6019a(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=com.corrodinggames.rts")));
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(mo5600g(), "Failed to open Android Market", 0).show();
+            Toast.makeText(mo6010g(), "Failed to open Android Market", 0).show();
         }
     }
 
     /* renamed from: m */
-    public void mo117m() {
+    public void mo111m() {
     }
 }

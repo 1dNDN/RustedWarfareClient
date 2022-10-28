@@ -3,7 +3,7 @@ package com.corrodinggames.rts.gameFramework.p040h;
 import com.corrodinggames.rts.game.units.custom.C0412bm;
 import com.corrodinggames.rts.game.units.custom.logicBooleans.VariableScope;
 import com.corrodinggames.rts.gameFramework.C0758f;
-import com.corrodinggames.rts.gameFramework.LoggerMaybe;
+import com.corrodinggames.rts.gameFramework.Core;
 import com.corrodinggames.rts.gameFramework.p036e.C0750a;
 import com.corrodinggames.rts.gameFramework.p036e.C0756g;
 import com.corrodinggames.rts.gameFramework.utility.C1072ab;
@@ -175,7 +175,7 @@ public class C0824b implements Comparable {
     }
 
     /* renamed from: a */
-    public String m1649a() {
+    public String m1691a() {
         if (this.f5435s != null) {
             return this.f5435s;
         }
@@ -186,74 +186,74 @@ public class C0824b implements Comparable {
     }
 
     /* renamed from: b */
-    public String m1644b() {
-        return C0758f.m2128a(m1649a(), 25);
+    public String m1686b() {
+        return C0758f.m2177a(m1691a(), 25);
     }
 
     /* renamed from: c */
-    public String m1642c() {
-        return C0758f.m2128a(m1649a(), 40);
+    public String m1684c() {
+        return C0758f.m2177a(m1691a(), 40);
     }
 
     /* renamed from: d */
-    public int m1640d() {
+    public int m1682d() {
         return this.f5454L;
     }
 
     /* renamed from: e */
-    public String m1639e() {
-        return m1638f();
+    public String m1681e() {
+        return m1680f();
     }
 
     /* renamed from: f */
-    public String m1638f() {
+    public String m1680f() {
         String str = VariableScope.nullOrMissingString;
         if (this.f5437u != null) {
             str = str + this.f5437u;
         }
-        String str2 = "RAM:" + m1625s();
+        String str2 = "RAM:" + m1667s();
         if (this.f5430n != null) {
             str2 = str2 + " Storage: slow external unpacked";
         }
-        if (LoggerMaybe.m1004as() && this.f5433q != null && C0750a.m2242a(this.f5433q) && !this.f5426j) {
+        if (Core.m1012as() && this.f5433q != null && C0750a.m2291a(this.f5433q) && !this.f5426j) {
             str2 = str2 + " Warning: slow external storage";
         }
         return str + "\n (" + str2 + ")";
     }
 
     /* renamed from: g */
-    public String m1637g() {
+    public String m1679g() {
         if (this.f5441y) {
             return this.f5433q;
         }
-        return C0750a.m2226e(this.f5433q);
+        return C0750a.m2275e(this.f5433q);
     }
 
     /* renamed from: h */
-    public String m1636h() {
+    public String m1678h() {
         if (this.f5441y) {
             return this.f5432p;
         }
-        return C0750a.m2226e(this.f5432p);
+        return C0750a.m2275e(this.f5432p);
     }
 
     /* renamed from: i */
-    public String m1635i() {
-        return new File(m1637g()).getAbsolutePath();
+    public String m1677i() {
+        return new File(m1679g()).getAbsolutePath();
     }
 
     /* renamed from: j */
-    public String m1634j() {
+    public String m1676j() {
         return this.f5433q;
     }
 
     /* renamed from: k */
-    public String m1633k() {
-        return new File(m1637g()).getCanonicalPath();
+    public String m1675k() {
+        return new File(m1679g()).getCanonicalPath();
     }
 
     /* renamed from: l */
-    public String m1632l() {
+    public String m1674l() {
         String str = this.f5461S;
         if (this.f5462T != null) {
             if (str == null) {
@@ -293,16 +293,16 @@ public class C0824b implements Comparable {
     }
 
     /* renamed from: m */
-    public boolean m1631m() {
+    public boolean m1673m() {
         return !this.f5422f && this.f5460R == null;
     }
 
     /* renamed from: a */
-    public void m1646a(String str) {
-        LoggerMaybe.m990b("Adding error for mod: " + m1644b() + ": " + str);
+    public void m1688a(String str) {
+        Core.m998b("Adding error for mod: " + m1686b() + ": " + str);
         if (this.f5460R == null) {
             if (!this.f5422f) {
-                LoggerMaybe.m1079A().m961i(str);
+                Core.m1087A().m969i(str);
             }
             this.f5460R = str;
         }
@@ -310,7 +310,7 @@ public class C0824b implements Comparable {
     }
 
     /* renamed from: b */
-    public void m1643b(String str) {
+    public void m1685b(String str) {
         if (this.f5463U.contains(str)) {
             return;
         }
@@ -318,46 +318,46 @@ public class C0824b implements Comparable {
     }
 
     /* renamed from: a */
-    public String m1645a(String str, int i) {
-        String[] m2223g;
-        String m1645a;
-        if (i > 4 || (m2223g = C0750a.m2223g(str)) == null) {
+    public String m1687a(String str, int i) {
+        String[] m2272g;
+        String m1687a;
+        if (i > 4 || (m2272g = C0750a.m2272g(str)) == null) {
             return null;
         }
-        for (String str2 : m2223g) {
+        for (String str2 : m2272g) {
             if (str2.equalsIgnoreCase("mod-info.txt")) {
                 return str + "/mod-info.txt";
             }
         }
-        if (m2223g.length > 5) {
+        if (m2272g.length > 5) {
             return null;
         }
-        int length = m2223g.length;
+        int length = m2272g.length;
         for (int i2 = 0; i2 < length; i2++) {
-            String str3 = str + "/" + m2223g[i2];
-            if (C0750a.m2224f(str3) && (m1645a = m1645a(str3, i + 1)) != null) {
-                return m1645a;
+            String str3 = str + "/" + m2272g[i2];
+            if (C0750a.m2273f(str3) && (m1687a = m1687a(str3, i + 1)) != null) {
+                return m1687a;
             }
         }
         return null;
     }
 
     /* renamed from: n */
-    public void m1630n() {
-        if (LoggerMaybe.m1079A().m979d()) {
-            LoggerMaybe.LogDebug2("SAFE MODE: skipping setSourceFolder");
-        } else if (!C0756g.m2169f("mods-info", this.f5433q + "/mod-info.txt")) {
+    public void m1672n() {
+        if (Core.m1087A().m987d()) {
+            Core.LogDebug2("SAFE MODE: skipping setSourceFolder");
+        } else if (!C0756g.m2218f("mods-info", this.f5433q + "/mod-info.txt")) {
             String str = this.f5433q;
             if (str == null) {
-                LoggerMaybe.LogDebug2("setSourceFolder: sourceFolder==null");
+                Core.LogDebug2("setSourceFolder: sourceFolder==null");
                 return;
             }
-            String[] m2171d = C0756g.m2171d("mods-dir-search", str);
-            if (m2171d != null && m2171d.length == 1) {
-                String str2 = str + "/" + m2171d[0];
+            String[] m2220d = C0756g.m2220d("mods-dir-search", str);
+            if (m2220d != null && m2220d.length == 1) {
+                String str2 = str + "/" + m2220d[0];
                 String str3 = str2 + "/mod-info.txt";
-                if (C0750a.m2224f(str2) && C0750a.m2222h(str3)) {
-                    LoggerMaybe.LogDebug2("Changing mod sourceFolder to:" + str2);
+                if (C0750a.m2273f(str2) && C0750a.m2271h(str3)) {
+                    Core.LogDebug2("Changing mod sourceFolder to:" + str2);
                     this.f5433q = str2;
                 }
             }
@@ -367,207 +367,207 @@ public class C0824b implements Comparable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v61, types: [java.io.InputStream] */
     /* renamed from: o */
-    public C1072ab m1629o() {
-        C1098j m2220j;
-        String m1645a;
+    public C1072ab m1671o() {
+        C1098j m2269j;
+        String m1687a;
         if (this.f5433q == null) {
-            LoggerMaybe.LogDebug2("No source yet for mod: " + this.f5419c);
+            Core.LogDebug2("No source yet for mod: " + this.f5419c);
             return null;
         }
         String str = this.f5433q + "/mod-info.txt";
         try {
             if (this.f5426j) {
-                m2220j = C0756g.m2170e("mods-info", str);
+                m2269j = C0756g.m2219e("mods-info", str);
             } else {
-                m2220j = C0750a.m2220j(str);
+                m2269j = C0750a.m2269j(str);
             }
-            if (m2220j == null && (m1645a = m1645a(this.f5433q, 1)) != null) {
-                C1098j m2220j2 = C0750a.m2220j(str);
-                if (m2220j2 != null) {
-                    LoggerMaybe.m1038a("mod-info.txt cache seems to be invalid for: " + str);
-                    C0756g.m2172c("mods-info", str);
-                    m2220j = m2220j2;
+            if (m2269j == null && (m1687a = m1687a(this.f5433q, 1)) != null) {
+                C1098j m2269j2 = C0750a.m2269j(str);
+                if (m2269j2 != null) {
+                    Core.m1046a("mod-info.txt cache seems to be invalid for: " + str);
+                    C0756g.m2221c("mods-info", str);
+                    m2269j = m2269j2;
                 } else {
-                    m1646a("No mod info at " + C0750a.m2228d(str) + " but found one nested at: " + C0750a.m2228d(m1645a) + " (Hint: This mod might have been extracted with an extra folder)");
+                    m1688a("No mod info at " + C0750a.m2277d(str) + " but found one nested at: " + C0750a.m2277d(m1687a) + " (Hint: This mod might have been extracted with an extra folder)");
                 }
             }
-            if (m2220j == null) {
-                LoggerMaybe.LogDebug2("No mod info for: " + this.f5419c + " at " + str);
+            if (m2269j == null) {
+                Core.LogDebug2("No mod info for: " + this.f5419c + " at " + str);
                 return null;
             }
             try {
-                return new C1072ab(m2220j, str);
+                return new C1072ab(m2269j, str);
             } catch (IOException e) {
-                LoggerMaybe.LogDebug2("Error loading mod info for: " + this.f5419c + " at " + str);
+                Core.LogDebug2("Error loading mod info for: " + this.f5419c + " at " + str);
                 e.printStackTrace();
-                m1643b("Error loading mod-info.txt: " + e.getMessage());
+                m1685b("Error loading mod-info.txt: " + e.getMessage());
                 return null;
             }
         } catch (Exception e2) {
-            LoggerMaybe.LogDebug2("Error loading mod info for: " + this.f5419c + " at " + str);
+            Core.LogDebug2("Error loading mod info for: " + this.f5419c + " at " + str);
             e2.printStackTrace();
-            m1643b("Error loading mod-info.txt: " + e2.getMessage());
+            m1685b("Error loading mod-info.txt: " + e2.getMessage());
             return null;
         }
     }
 
     /* renamed from: p */
-    public String m1628p() {
-        String m1641c = m1641c("thumbnail");
-        if (m1641c != null) {
-            return m1635i() + "/" + m1641c;
+    public String m1670p() {
+        String m1683c = m1683c("thumbnail");
+        if (m1683c != null) {
+            return m1677i() + "/" + m1683c;
         }
         return null;
     }
 
     /* renamed from: q */
-    public ArrayList m1627q() {
+    public ArrayList m1669q() {
         return this.f5459Q;
     }
 
     /* renamed from: c */
-    public String m1641c(String str) {
-        C1072ab m1629o = m1629o();
-        if (m1629o == null) {
+    public String m1683c(String str) {
+        C1072ab m1671o = m1671o();
+        if (m1671o == null) {
             return null;
         }
-        return m1629o.m649b("mod", str, (String) null);
+        return m1671o.m656b("mod", str, (String) null);
     }
 
     /* renamed from: r */
-    public void m1626r() {
-        if (LoggerMaybe.m1079A().m979d()) {
-            LoggerMaybe.LogDebug2("SAFE MODE: refreshData: Skipping mod read");
+    public void m1668r() {
+        if (Core.m1087A().m987d()) {
+            Core.LogDebug2("SAFE MODE: refreshData: Skipping mod read");
             this.f5437u = "<< SAFE MODE ACTIVE: MOD DATA SKIPPED. RESTART IN NORMAL MODE. >>";
             return;
         }
-        C1072ab m1629o = m1629o();
-        if (m1629o == null) {
+        C1072ab m1671o = m1671o();
+        if (m1671o == null) {
             return;
         }
-        this.f5435s = m1629o.m649b("mod", "title", (String) null);
-        this.f5437u = m1629o.m649b("mod", "description", (String) null);
+        this.f5435s = m1671o.m656b("mod", "title", (String) null);
+        this.f5437u = m1671o.m656b("mod", "description", (String) null);
         if (this.f5437u != null && this.f5437u.contains("\\n")) {
             this.f5437u = this.f5437u.replace("\\n", "\n");
         }
-        this.f5438v = m1629o.m649b("mod", "minVersion", (String) null);
+        this.f5438v = m1671o.m656b("mod", "minVersion", (String) null);
         if (this.f5438v != null && !this.f5438v.trim().equals(VariableScope.nullOrMissingString)) {
             try {
-                C0823a.m1677a(this.f5438v);
+                C0823a.m1719a(this.f5438v);
             } catch (C0412bm e) {
-                m1646a(e.getMessage());
+                m1688a(e.getMessage());
             }
         }
-        this.f5455M = m1629o.m649b("music", "sourceFolder", (String) null);
-        this.f5456N = m1629o.m668a("music", "whenUsingUnitsFromThisMod_playExclusively", (Boolean) false).booleanValue();
-        this.f5457O = m1629o.m668a("music", "addToNormalPlaylist", (Boolean) false).booleanValue();
-        if (this.f5455M != null && m1631m()) {
-            LoggerMaybe.LogDebug2("Loading music for: " + m1649a());
-            String m2094b = C0758f.m2094b(this.f5433q, this.f5455M);
-            String[] m2171d = C0756g.m2171d("mods-dir-music", m2094b);
-            if (m2171d == null) {
-                m1643b("Could not read target music folder: " + C0750a.m2226e(m2094b));
+        this.f5455M = m1671o.m656b("music", "sourceFolder", (String) null);
+        this.f5456N = m1671o.m675a("music", "whenUsingUnitsFromThisMod_playExclusively", (Boolean) false).booleanValue();
+        this.f5457O = m1671o.m675a("music", "addToNormalPlaylist", (Boolean) false).booleanValue();
+        if (this.f5455M != null && m1673m()) {
+            Core.LogDebug2("Loading music for: " + m1691a());
+            String m2143b = C0758f.m2143b(this.f5433q, this.f5455M);
+            String[] m2220d = C0756g.m2220d("mods-dir-music", m2143b);
+            if (m2220d == null) {
+                m1685b("Could not read target music folder: " + C0750a.m2275e(m2143b));
             } else {
                 ArrayList arrayList = new ArrayList();
-                for (String str : m2171d) {
+                for (String str : m2220d) {
                     if (str.toLowerCase().endsWith(".ogg")) {
-                        String m2094b2 = C0758f.m2094b(m2094b, str);
-                        if (!this.f5459Q.contains(m2094b2)) {
-                            LoggerMaybe.LogDebug2("Found music track: " + str);
+                        String m2143b2 = C0758f.m2143b(m2143b, str);
+                        if (!this.f5459Q.contains(m2143b2)) {
+                            Core.LogDebug2("Found music track: " + str);
                         }
-                        arrayList.add(m2094b2);
+                        arrayList.add(m2143b2);
                     }
                 }
                 this.f5459Q = arrayList;
                 if (this.f5459Q.size() == 0) {
-                    m1643b("Could not find any .ogg files in music folder: " + C0750a.m2226e(m2094b));
+                    m1685b("Could not find any .ogg files in music folder: " + C0750a.m2275e(m2143b));
                 }
             }
         }
         this.f5434r = true;
-        String m1621w = m1621w();
-        File file = new File(m1621w);
+        String m1663w = m1663w();
+        File file = new File(m1663w);
         if (file.exists() && !file.isDirectory()) {
             C1072ab c1072ab = null;
             try {
-                c1072ab = new C1072ab(m1621w);
+                c1072ab = new C1072ab(m1663w);
             } catch (IOException e2) {
                 e2.printStackTrace();
-                m1643b("IO error reading: " + C0750a.m2226e(m1621w));
+                m1685b("IO error reading: " + C0750a.m2275e(m1663w));
             }
             if (c1072ab != null) {
-                this.f5427k = c1072ab.m673a("steam", "id", 0L);
+                this.f5427k = c1072ab.m680a("steam", "id", 0L);
             }
         }
     }
 
     /* renamed from: w */
-    private String m1621w() {
-        return m1637g() + "/steam.dat";
+    private String m1663w() {
+        return m1679g() + "/steam.dat";
     }
 
     /* renamed from: a */
-    public boolean m1648a(long j) {
+    public boolean m1690a(long j) {
         this.f5427k = j;
-        String m1621w = m1621w();
+        String m1663w = m1663w();
         try {
-            PrintWriter printWriter = new PrintWriter(m1621w);
+            PrintWriter printWriter = new PrintWriter(m1663w);
             printWriter.println("[steam]");
             printWriter.println("id: " + j);
             printWriter.close();
             return true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            LoggerMaybe.m1079A().m961i("IO error: Failed to save workshop id for mod at: " + m1621w);
+            Core.m1087A().m969i("IO error: Failed to save workshop id for mod at: " + m1663w);
             return false;
         }
     }
 
     /* renamed from: s */
-    public String m1625s() {
+    public String m1667s() {
         return VariableScope.nullOrMissingString + String.format("%.2f", Float.valueOf((float) (((this.f5449G + this.f5450H) / 1000.0d) / 1000.0d))) + " mb" + (this.f5445C ? " - disabled" : VariableScope.nullOrMissingString);
     }
 
     /* renamed from: t */
-    public void m1624t() {
-        LoggerMaybe.LogDebug2("Mod: '" + m1649a() + "' - Memory use:" + m1625s() + " " + (m1631m() ? VariableScope.nullOrMissingString : " (disabled)"));
+    public void m1666t() {
+        Core.LogDebug2("Mod: '" + m1691a() + "' - Memory use:" + m1667s() + " " + (m1673m() ? VariableScope.nullOrMissingString : " (disabled)"));
     }
 
     /* renamed from: u */
-    public boolean m1623u() {
-        LoggerMaybe.LogDebug2("Trying to delete mod: '" + m1649a() + "'");
-        String m1636h = m1636h();
-        LoggerMaybe.LogDebug2("sourceFolder: '" + m1636h + "'");
-        if (!m1622v()) {
-            LoggerMaybe.LogDebug2("Mod: '" + m1649a() + "' - Cannot be deleted");
+    public boolean m1665u() {
+        Core.LogDebug2("Trying to delete mod: '" + m1691a() + "'");
+        String m1678h = m1678h();
+        Core.LogDebug2("sourceFolder: '" + m1678h + "'");
+        if (!m1664v()) {
+            Core.LogDebug2("Mod: '" + m1691a() + "' - Cannot be deleted");
             return false;
         }
-        File file = new File(m1636h);
-        if (!C0750a.m2222h(file.getAbsolutePath())) {
-            LoggerMaybe.LogDebug2("Mod: '" + m1649a() + "' - cannot delete: Not a file");
+        File file = new File(m1678h);
+        if (!C0750a.m2271h(file.getAbsolutePath())) {
+            Core.LogDebug2("Mod: '" + m1691a() + "' - cannot delete: Not a file");
             return false;
         }
-        boolean m2236b = C0750a.m2236b(file);
-        LoggerMaybe.LogDebug2("Delete result: " + m2236b);
-        return m2236b;
+        boolean m2285b = C0750a.m2285b(file);
+        Core.LogDebug2("Delete result: " + m2285b);
+        return m2285b;
     }
 
     /* renamed from: v */
-    public boolean m1622v() {
+    public boolean m1664v() {
         if (this.f5442z) {
             return false;
         }
-        if (LoggerMaybe.f6210aZ && this.f5426j) {
+        if (Core.f6210aZ && this.f5426j) {
             return true;
         }
-        if (LoggerMaybe.m1004as() && this.f5426j) {
+        if (Core.m1012as() && this.f5426j) {
             return true;
         }
         return false;
     }
 
     /* renamed from: a */
-    public int mo1647a(C0824b c0824b) {
+    public int mo1645a(C0824b c0824b) {
         if (c0824b == null) {
             return 0;
         }
@@ -576,14 +576,14 @@ public class C0824b implements Comparable {
         if (i != i2) {
             return i - i2;
         }
-        String m1649a = m1649a();
-        String m1649a2 = c0824b.m1649a();
-        if (m1649a == null) {
-            m1649a = VariableScope.nullOrMissingString;
+        String m1691a = m1691a();
+        String m1691a2 = c0824b.m1691a();
+        if (m1691a == null) {
+            m1691a = VariableScope.nullOrMissingString;
         }
-        if (m1649a2 == null) {
-            m1649a2 = VariableScope.nullOrMissingString;
+        if (m1691a2 == null) {
+            m1691a2 = VariableScope.nullOrMissingString;
         }
-        return m1649a.compareTo(m1649a2);
+        return m1691a.compareTo(m1691a2);
     }
 }
