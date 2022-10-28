@@ -37,17 +37,11 @@ public static class PacketUtils
     public static string ComputeUuidForPacket(string clientUuid, string serverUuid)
     {
         var clientGuid = Guid.Parse(clientUuid);
-        Console.WriteLine(nameof(clientGuid) + " " + clientGuid);
         var serverGuid = Guid.Parse(serverUuid);
-        Console.WriteLine(nameof(serverGuid) + " " + serverGuid);
         BigInteger clientNumGuid = new(clientGuid.ToByteArray());
-        Console.WriteLine(nameof(clientNumGuid) + " " + clientNumGuid);
         BigInteger serverNumGuid = new(serverGuid.ToByteArray());
-        Console.WriteLine(nameof(serverNumGuid) + " " + serverNumGuid);
         var sumGuid = clientNumGuid + serverNumGuid;
-        Console.WriteLine(nameof(sumGuid) + " " + sumGuid);
         var sumGuidHash = ComputeSha256Hash(sumGuid.ToByteArray());
-        Console.WriteLine(nameof(sumGuidHash) + " " + sumGuidHash);
         return sumGuidHash;
     }
 

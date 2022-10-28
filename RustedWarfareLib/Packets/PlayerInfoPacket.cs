@@ -26,7 +26,7 @@ public class PlayerInfoPacket : Packet
             Password = ReadString();
         AnotherPackageName = ReadString();
         ReadString(); //uuid sum
-        MagicValue = ReadInt();
+        ClientUnitsChecksum = ReadInt();
         ReadString(); //token
     }
 
@@ -54,7 +54,7 @@ public class PlayerInfoPacket : Packet
 
     public string UuidSum => PacketUtils.ComputeUuidForPacket(ClientUuid, NetworkServerId);
 
-    public int MagicValue { get; set; } = 1008125362;
+    public int ClientUnitsChecksum { get; set; } = 1008125362;
 
     public string Token => PacketUtils.ComputeKeyForPacket(ServerKey);
 
@@ -70,7 +70,7 @@ public class PlayerInfoPacket : Packet
             Write(Password);
         Write(AnotherPackageName);
         Write(UuidSum);
-        Write(MagicValue);
+        Write(ClientUnitsChecksum);
         Write(Token);
         WriteLength();
         return Payload.ToArray();
