@@ -30,6 +30,8 @@ public partial class Api
     public string NetworkServerId { get; private set; } = "";
 
     public string ClientUuid { get; set; } = "";
+    
+    public int Color { get; set; }
 
     public int PlayerPosition { get; private set; }
 

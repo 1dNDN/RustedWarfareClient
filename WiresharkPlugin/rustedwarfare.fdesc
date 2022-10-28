@@ -55,7 +55,7 @@ struct T_register_connection
     int16 length_server_uuid;
     string(length_server_uuid) server_uuid;
     int32 server_key;
-    int32 server_key2;
+    int32 color;
     int32 zero;
 }
 
@@ -170,6 +170,8 @@ struct T_player_info
     int32 client_units_checksum;
     int16 length_token;
     string(length_token) token;
+    int16 length_color_hex;
+    string(length_color_hex) color_hex;
 }
 
 struct T_kick

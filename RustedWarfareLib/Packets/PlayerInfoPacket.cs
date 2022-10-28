@@ -9,10 +9,13 @@ namespace RustedWarfareLib.Packets;
  */
 public class PlayerInfoPacket : Packet
 {
-    public PlayerInfoPacket(string serverUuid, int serverKey) : base(PacketType.PACKET_PLAYER_INFO)
+    private string nickname = "Unnamed";
+
+    public PlayerInfoPacket(string serverUuid, int serverKey, int color) : base(PacketType.PACKET_PLAYER_INFO)
     {
         NetworkServerId = serverUuid;
         ServerKey = serverKey;
+        Color = color;
     }
 
     public PlayerInfoPacket(List<byte> payload) : base(payload)
@@ -28,6 +31,7 @@ public class PlayerInfoPacket : Packet
         ReadString(); //uuid sum
         ClientUnitsChecksum = ReadInt();
         ReadString(); //token
+        ReadString();
     }
 
     public string ClientUuid { get; set; } = string.Empty;
@@ -36,6 +40,8 @@ public class PlayerInfoPacket : Packet
 
     public int ServerKey { get; set; }
 
+    public int Color { get; set; }
+
     public string PackageName { get; set; } = "com.corrodinggames.rts";
 
     public int ProtocolVersion { get; set; } = 4;
@@ -43,8 +49,16 @@ public class PlayerInfoPacket : Packet
     public int GameVersion { get; set; } = 173;
 
     public int AnotherGameVersion { get; set; } = 160;
+    
+    public string Nickname
+    {
+        get => nickname;
+        set {
+            const int maxLength = 20;
+            nickname = value[..maxLength];
 
-    public string Nickname { get; set; } = "Unnamed";
+        }
+    }
 
     public bool HavePassword => !string.IsNullOrWhiteSpace(Password);
 
@@ -56,7 +70,9 @@ public class PlayerInfoPacket : Packet
 
     public int ClientUnitsChecksum { get; set; } = 1008125362;
 
-    public string Token => PacketUtils.ComputeKeyForPacket(ServerKey);
+    public string IntegrityChecksum => PacketUtils.ComputeKeyForPacket(ServerKey);
+
+    public string ColorHex => PacketUtils.ComputeColorForPacket(Color);
 
     public override byte[] ToBytesArray()
     {
@@ -71,7 +87,8 @@ public class PlayerInfoPacket : Packet
         Write(AnotherPackageName);
         Write(UuidSum);
         Write(ClientUnitsChecksum);
-        Write(Token);
+        Write(IntegrityChecksum);
+        Write(ColorHex);
         WriteLength();
         return Payload.ToArray();
     }

@@ -10,5 +10,6 @@ public partial class Api
 
         NetworkServerId = packet.NetworkServerId;
         ServerKey = packet.ServerKey;
+        Color = packet.Color;
     }
 }

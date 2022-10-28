@@ -17,7 +17,7 @@ public class RegisterConnectionPacket : Packet
         PkgName = ReadString();
         NetworkServerId = ReadString();
         ServerKey = ReadInt();
-        ServerKey2 = ReadInt();
+        Color = ReadInt();
         Zero = ReadInt();
     }
 
@@ -35,7 +35,7 @@ public class RegisterConnectionPacket : Packet
 
     public int ServerKey { get; set; }
     
-    public int ServerKey2 { get; set; }
+    public int Color { get; set; }
     
     private int Zero { get; set; }
 
@@ -48,7 +48,7 @@ public class RegisterConnectionPacket : Packet
         Write(PkgName);
         Write(NetworkServerId);
         Write(ServerKey);
-        Write(ServerKey2);
+        Write(Color);
         Write(Zero);
         WriteLength();
         return Payload.ToArray();

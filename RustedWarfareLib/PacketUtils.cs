@@ -73,4 +73,7 @@ public static class PacketUtils
                $"t1:{t1}" +
                $"d:{5 * serverKey}";
     }
+
+    public static string ComputeColorForPacket(int color) =>
+        $"#{color:X6}";
 }
