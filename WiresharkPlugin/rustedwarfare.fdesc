@@ -139,6 +139,8 @@ struct T_preregister_connection
     string(length_relay_id) relay_id;
     int16 length_nickname;
     string(length_nickname) nickname;
+    int16 length_locale;
+    string(length_locale) locale;
 }
 
 struct T_player_info

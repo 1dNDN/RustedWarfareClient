@@ -21,11 +21,12 @@ public class PreregisterConnectionPacket : Packet
         AnotherGameVersion = ReadInt();
         RelayId = ReadString();
         Nickname = ReadString();
+        Locale = ReadString();
     }
 
     public string PackageName { get; set; } = "com.corrodinggames.rts";
 
-    public int ProtocolVersion { get; set; } = 3;
+    public int ProtocolVersion { get; set; } = 4;
 
     public int GameVersion { get; set; } = 173;
 
@@ -34,6 +35,8 @@ public class PreregisterConnectionPacket : Packet
     public string RelayId { get; set; } = string.Empty;
 
     public string Nickname { get; set; } = "Unnamed";
+
+    public string Locale { get; set; } = "ru";
 
     public override byte[] ToBytesArray()
     {
@@ -44,6 +47,7 @@ public class PreregisterConnectionPacket : Packet
         if (ProtocolVersion >= 2) WriteIsString(RelayId);
         if (ProtocolVersion >= 3) Write(Nickname);
         WriteLength();
+        Write(Locale);
         return Payload.ToArray();
     }
 }
