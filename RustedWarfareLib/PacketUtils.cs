@@ -75,5 +75,5 @@ public static class PacketUtils
     }
 
     public static string ComputeColorForPacket(int color) =>
-        $"#{color:X6}";
+        $"#{(16777215&color):X6}";
 }
