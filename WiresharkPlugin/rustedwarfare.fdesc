@@ -164,7 +164,7 @@ struct T_player_info
     int16 length_another_package_name;
     string(length_another_package_name) another_package_name;
     int16 length_network_server_id
-    string(length_uuid_sum) network_server_id
+    string(length_network_server_id) network_server_id
     int32 magic_value;
     int16 length_token;
     string(length_token) token;
