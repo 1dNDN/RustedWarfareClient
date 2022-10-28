@@ -17,6 +17,8 @@ public class RegisterConnectionPacket : Packet
         PkgName = ReadString();
         NetworkServerId = ReadString();
         ServerKey = ReadInt();
+        ServerKey2 = ReadInt();
+        Zero = ReadInt();
     }
 
     public string ServerId { get; set; } = "com.corrodinggames.rts";
@@ -32,6 +34,10 @@ public class RegisterConnectionPacket : Packet
     public string NetworkServerId { get; set; } = string.Empty;
 
     public int ServerKey { get; set; }
+    
+    public int ServerKey2 { get; set; }
+    
+    private int Zero { get; set; }
 
     public override byte[] ToBytesArray()
     {
@@ -42,6 +48,8 @@ public class RegisterConnectionPacket : Packet
         Write(PkgName);
         Write(NetworkServerId);
         Write(ServerKey);
+        Write(ServerKey2);
+        Write(Zero);
         WriteLength();
         return Payload.ToArray();
     }

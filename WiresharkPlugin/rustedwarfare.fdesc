@@ -55,6 +55,8 @@ struct T_register_connection
     int16 length_server_uuid;
     string(length_server_uuid) server_uuid;
     int32 server_key;
+    int32 server_key2;
+    int32 zero;
 }
 
 struct T_team_list
