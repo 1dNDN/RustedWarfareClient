@@ -15,7 +15,7 @@ public class RegisterConnectionPacket : Packet
         GameVersion = ReadInt();
         AnotherGameVersion = ReadInt();
         PkgName = ReadString();
-        ServerUuid = ReadString();
+        NetworkServerId = ReadString();
         ServerKey = ReadInt();
     }
 
@@ -29,7 +29,7 @@ public class RegisterConnectionPacket : Packet
 
     public string PkgName { get; set; } = "com.corrodinggames.rts.java";
 
-    public string ServerUuid { get; set; } = string.Empty;
+    public string NetworkServerId { get; set; } = string.Empty;
 
     public int ServerKey { get; set; }
 
@@ -40,7 +40,7 @@ public class RegisterConnectionPacket : Packet
         Write(GameVersion);
         Write(AnotherGameVersion);
         Write(PkgName);
-        Write(ServerUuid);
+        Write(NetworkServerId);
         Write(ServerKey);
         WriteLength();
         return Payload.ToArray();

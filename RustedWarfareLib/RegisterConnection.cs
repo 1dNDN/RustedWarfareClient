@@ -8,7 +8,7 @@ public partial class Api
     {
         RegisterConnectionPacket packet = new(bytes);
 
-        ServerUuid = packet.ServerUuid;
+        NetworkServerId = packet.NetworkServerId;
         ServerKey = packet.ServerKey;
     }
 }

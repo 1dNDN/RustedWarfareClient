@@ -9,7 +9,7 @@ public partial class Api
         if (string.IsNullOrWhiteSpace(ClientUuid))
             ClientUuid = Guid.NewGuid().ToString();
 
-        PlayerInfoPacket packet = new(ServerUuid, ServerKey) {
+        PlayerInfoPacket packet = new(NetworkServerId, ServerKey) {
             Nickname = Nickname,
             Password = Password,
             ClientUuid = ClientUuid

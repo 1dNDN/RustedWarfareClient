@@ -11,7 +11,7 @@ public class PlayerInfoPacket : Packet
 {
     public PlayerInfoPacket(string serverUuid, int serverKey) : base(PacketType.PACKET_PLAYER_INFO)
     {
-        ServerUuid = serverUuid;
+        NetworkServerId = serverUuid;
         ServerKey = serverKey;
     }
 
@@ -32,7 +32,7 @@ public class PlayerInfoPacket : Packet
 
     public string ClientUuid { get; set; } = string.Empty;
 
-    public string ServerUuid { get; set; } = string.Empty;
+    public string NetworkServerId { get; set; } = string.Empty;
 
     public int ServerKey { get; set; }
 
@@ -52,7 +52,7 @@ public class PlayerInfoPacket : Packet
 
     public string AnotherPackageName { get; set; } = "com.corrodinggames.rts";
 
-    public string UuidSum => PacketUtils.ComputeUuidForPacket(ClientUuid, ServerUuid);
+    public string UuidSum => PacketUtils.ComputeUuidForPacket(ClientUuid, NetworkServerId);
 
     public int MagicValue { get; set; } = 1008125362;
 
