@@ -27,9 +27,9 @@ public class PreregisterConnectionPacket : Packet
 
     public int ProtocolVersion { get; set; } = 3;
 
-    public int GameVersion { get; set; } = 160;
+    public int GameVersion { get; set; } = 173;
 
-    public int AnotherGameVersion { get; set; } = 1;
+    public int AnotherGameVersion { get; set; } = 2;
 
     public string RelayId { get; set; } = string.Empty;
 

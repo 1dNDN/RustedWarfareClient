@@ -61,7 +61,7 @@ public class ServerInfoPacket : Packet
 
     public string PackageName { get; set; } = "com.corrodinggames.rts";
 
-    public int GameVersion { get; set; } = 160;
+    public int GameVersion { get; set; } = 173;
 
     public int MapType { get; set; }
 

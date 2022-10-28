@@ -40,7 +40,7 @@ public class PlayerInfoPacket : Packet
 
     public int ProtocolVersion { get; set; } = 4;
 
-    public int GameVersion { get; set; } = 160;
+    public int GameVersion { get; set; } = 173;
 
     public int AnotherGameVersion { get; set; } = 160;
 

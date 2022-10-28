@@ -23,7 +23,7 @@ public class RegisterConnectionPacket : Packet
 
     public int ProtocolVersion { get; set; } = 1;
 
-    public int GameVersion { get; set; } = 160;
+    public int GameVersion { get; set; } = 173;
 
     public int AnotherGameVersion { get; set; } = 160;
 
