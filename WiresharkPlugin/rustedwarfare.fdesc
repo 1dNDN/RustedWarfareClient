@@ -144,7 +144,7 @@ struct T_preregister_connection
     int16 length_locale;
     string(length_locale) locale;
     int16 length_steam_misc;
-    string(length_locale) steam_misc;
+    string(length_steam_misc) steam_misc;
 }
 
 struct T_player_info
@@ -165,11 +165,11 @@ struct T_player_info
     }
     int16 length_another_package_name;
     string(length_another_package_name) another_package_name;
-    int16 length_network_server_id
-    string(length_network_server_id) network_server_id
+    int16 length_network_server_id;
+    string(length_network_server_id) network_server_id;
     int32 client_units_checksum;
-    int16 length_token;
-    string(length_token) token;
+    int16 length_integrity_checksum;
+    string(length_integrity_checksum) integrity_checksum;
     int16 length_color_hex;
     string(length_color_hex) color_hex;
 }

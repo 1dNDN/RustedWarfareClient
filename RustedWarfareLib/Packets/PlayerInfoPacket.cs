@@ -44,18 +44,18 @@ public class PlayerInfoPacket : Packet
 
     public string PackageName { get; set; } = "com.corrodinggames.rts";
 
-    public int ProtocolVersion { get; set; } = 4;
+    public int ProtocolVersion { get; set; } = 5;
 
     public int GameVersion { get; set; } = 173;
 
-    public int AnotherGameVersion { get; set; } = 160;
+    public int AnotherGameVersion { get; set; } = 173;
     
     public string Nickname
     {
         get => nickname;
         set {
             const int maxLength = 20;
-            nickname = value[..maxLength];
+            nickname = value.Length > maxLength ? value[..maxLength] : value;
 
         }
     }
@@ -64,11 +64,11 @@ public class PlayerInfoPacket : Packet
 
     public string Password { get; set; } = string.Empty;
 
-    public string AnotherPackageName { get; set; } = "com.corrodinggames.rts";
+    public string AnotherPackageName { get; set; } = "com.corrodinggames.rts.java";
 
     public string UuidSum => PacketUtils.ComputeUuidForPacket(ClientUuid, NetworkServerId);
 
-    public int ClientUnitsChecksum { get; set; } = 1008125362;
+    public int ClientUnitsChecksum { get; set; } = 678359601;
 
     public string IntegrityChecksum => PacketUtils.ComputeKeyForPacket(ServerKey);
 

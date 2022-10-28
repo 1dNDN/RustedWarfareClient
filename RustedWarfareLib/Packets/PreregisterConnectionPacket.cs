@@ -22,7 +22,7 @@ public class PreregisterConnectionPacket : Packet
         RelayId = ReadString();
         Nickname = ReadString();
         Locale = ReadString();
-        SteamMisc = ReadString();
+        ReadShort();
     }
 
     public string PackageName { get; set; } = "com.corrodinggames.rts";
@@ -39,8 +39,6 @@ public class PreregisterConnectionPacket : Packet
 
     public string Locale { get; set; } = "ru";
 
-    public string SteamMisc { get; set; } = string.Empty;
-
     public override byte[] ToBytesArray()
     {
         Write(PackageName);
@@ -49,9 +47,9 @@ public class PreregisterConnectionPacket : Packet
         Write(AnotherGameVersion);
         if (ProtocolVersion >= 2) WriteIsString(RelayId);
         if (ProtocolVersion >= 3) Write(Nickname);
-        WriteLength();
         Write(Locale);
-        Write(SteamMisc);
+        Write((short)0); // in real its string, but strange
+        WriteLength();
         return Payload.ToArray();
     }
 }
